@@ -35,8 +35,8 @@
   </header>
 
   <main class="hero" id="top">
-    <video autoplay muted loop playsinline data-i18n-aria-label="home.videoAria" aria-label="Theme park background video">
-      <source src="img/video/video_mediakit.mp4" type="video/mp4">
+    <video id="hero-video" class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" disablepictureinpicture data-i18n-aria-label="home.videoAria" aria-label="Theme park background video">
+      <source src="img/video/video_mediakit.mp4?v=20260403" type="video/mp4">
     </video>
 
     <section class="hero-content">
@@ -388,6 +388,32 @@
           une prochaine visite, observations sur les comportements des visiteurs, astuces pratiques et comparatifs d'attractions entre
           différents parcs.
         </p>
+
+        <div class="gear-section" aria-label="Mon matériel vidéo">
+          <div class="gear-grid">
+            <figure class="gear-card">
+              <figcaption>Harnais torse</figcaption>
+              <img src="img/cam/harnaistorse.jpg" alt="Harnais torse" loading="lazy" />
+            </figure>
+            <figure class="gear-card">
+              <figcaption>Insta360 X4</figcaption>
+              <img src="img/cam/insta360-x4.jpg" alt="Insta360 X4" loading="lazy" />
+            </figure>
+            <figure class="gear-card">
+              <figcaption>iPhone 16 Pro</figcaption>
+              <img src="img/cam/iphone16pro.jpg" alt="iPhone 16 Pro" loading="lazy" />
+            </figure>
+            <figure class="gear-card">
+              <figcaption>Perche</figcaption>
+              <img src="img/cam/perche.jpg" alt="Perche" loading="lazy" />
+            </figure>
+            <figure class="gear-card">
+              <figcaption>Ray-Ban Meta</figcaption>
+              <img class="gear-glasses" src="img/cam/raybanmeta.jpg" alt="Ray-Ban Meta" loading="lazy" />
+            </figure>
+          </div>
+          <p class="gear-note"><em data-i18n="myVideos.gearNote">Je réalise l'ensemble de mes contenus avec cet équipement, qui constitue mon matériel principal de tournage au quotidien.</em></p>
+        </div>
       </div>
     </div>
   </section>
@@ -397,8 +423,8 @@
       <h2 class="partners-title" data-i18n="contact.title">Contact</h2>
 
       <div class="contact-list">
-        <p><strong data-i18n="contact.phoneLabel">Phone:</strong> <a href="tel:+33602564363">+33 6 02 56 43 63</a></p>
-        <p><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:clip2ep@proton.me">clip2ep@proton.me</a></p>
+        <p class="contact-item"><strong data-i18n="contact.phoneLabel">Phone:</strong> <a href="tel:+33602564363">+33 6 02 56 43 63</a></p>
+        <p class="contact-item"><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:clip2ep@proton.me">clip2ep@proton.me</a></p>
       </div>
     </div>
   </section>

@@ -65,7 +65,7 @@
       kicker: 'À propos de moi',
       title: 'Créateur de contenu parcs d\'attractions',
       p1: 'Je m\'appelle Baptiste DIDIER, j\'ai 19 ans. Je fais actuellement des études en informatique à Belfort, et je consacre mon temps libre à la création de contenu spécialisé dans les parcs d\'attractions. Je publie des vidéos courtes chaque jour, dynamiques et engageantes, avec un angle éditorial orienté conseils pratiques et souvenirs de visite.',
-      p2: 'Ma communauté la plus forte est sur TikTok, avec un contenu d\'abord centré sur Europa-Park puis élargi à de grandes destinations européennes et américaines. J\'ai déjà réalisé des contenus dans plusieurs parcs majeurs, avec une audience réactive et fidèle.',
+      p2: 'Ma communauté la plus forte est sur TikTok, avec un contenu d\'abord centré sur Europa-Park puis élargi à de grandes destinations européennes. J\'ai déjà réalisé des contenus dans plusieurs parcs majeurs, avec une audience réactive et fidèle.',
       p3: 'Mon objectif est simple : produire des contenus modernes, authentiques et performants, en suivant les tendances du moment, afin de valoriser votre parc auprès d\'un public français passionné.'
     },
     partners: {
@@ -111,7 +111,8 @@
     myVideos: {
       title: 'Mes vidéos',
       p1: "Je publie en moyenne une vidéo par jour, consacrée à un parc ou à une attraction, en m'appuyant sur les tendances du moment sur les réseaux sociaux. Mes formats incluent notamment des POV d'attractions, des contenus réaction et des séquences immersives pensées pour capter l'attention dès les premières secondes.",
-      p2: "Ma ligne éditoriale repose sur des accroches qui favorisent l'interaction : souvenirs liés aux parcs, identification d'amis pour une prochaine visite, observations sur les comportements des visiteurs, astuces pratiques et comparatifs d'attractions entre différents parcs."
+      p2: "Ma ligne éditoriale repose sur des accroches qui favorisent l'interaction : souvenirs liés aux parcs, identification d'amis pour une prochaine visite, observations sur les comportements des visiteurs, astuces pratiques et comparatifs d'attractions entre différents parcs.",
+      gearNote: "Je réalise l'ensemble de mes contenus avec cet équipement, qui constitue mon matériel principal de tournage au quotidien."
     },
     clip: {
       heading: 'Clip2ep',
@@ -233,7 +234,8 @@
     myVideos: {
       title: 'My Videos',
       p1: 'I publish around one video per day, focused on a park or attraction, by leveraging current social media trends. My formats include ride POVs, reaction content, and immersive sequences designed to capture attention in the first seconds.',
-      p2: 'My editorial style relies on hooks that drive interaction: park memories, tagging friends for future visits, observations about guest behavior, practical tips, and attraction comparisons across different parks.'
+      p2: 'My editorial style relies on hooks that drive interaction: park memories, tagging friends for future visits, observations about guest behavior, practical tips, and attraction comparisons across different parks.',
+      gearNote: 'I create all my content with this equipment, which is my main filming setup on a daily basis.'
     },
     clip: {
       heading: 'Clip2ep',
@@ -355,7 +357,8 @@
     myVideos: {
       title: 'Meine Videos',
       p1: 'Ich veröffentliche durchschnittlich ein Video pro Tag, mit Fokus auf einen Park oder eine Attraktion, basierend auf aktuellen Social-Media-Trends. Meine Formate umfassen Ride-POVs, Reaktions-Content und immersive Sequenzen, die in den ersten Sekunden Aufmerksamkeit erzeugen.',
-      p2: 'Mein redaktioneller Stil basiert auf Hooks, die Interaktion fördern: Park-Erinnerungen, Markierungen von Freunden für den nächsten Besuch, Beobachtungen zum Besucherverhalten, praktische Tipps und Vergleiche zwischen Attraktionen in verschiedenen Parks.'
+      p2: 'Mein redaktioneller Stil basiert auf Hooks, die Interaktion fördern: Park-Erinnerungen, Markierungen von Freunden für den nächsten Besuch, Beobachtungen zum Besucherverhalten, praktische Tipps und Vergleiche zwischen Attraktionen in verschiedenen Parks.',
+      gearNote: 'Ich produziere all meine Inhalte mit diesem Equipment, das mein zentrales tägliches Dreh-Setup ist.'
     },
     clip: {
       heading: 'Clip2ep',
@@ -477,7 +480,8 @@
     myVideos: {
       title: "Mijn video's",
       p1: 'Ik publiceer gemiddeld één video per dag, gericht op een park of attractie, op basis van actuele socialmediatrends. Mijn formats omvatten ride-POV\'s, reactiecontent en meeslepende sequenties die in de eerste seconden de aandacht grijpen.',
-      p2: 'Mijn redactionele stijl steunt op hooks die interactie stimuleren: parkherinneringen, vrienden taggen voor een volgend bezoek, observaties over bezoekersgedrag, praktische tips en vergelijkingen tussen attracties in verschillende parken.'
+      p2: 'Mijn redactionele stijl steunt op hooks die interactie stimuleren: parkherinneringen, vrienden taggen voor een volgend bezoek, observaties over bezoekersgedrag, praktische tips en vergelijkingen tussen attracties in verschillende parken.',
+      gearNote: 'Ik maak al mijn content met deze uitrusting, die mijn belangrijkste dagelijkse filmsetup vormt.'
     },
     clip: {
       heading: 'Clip2ep',
@@ -835,7 +839,42 @@ async function initCaseStatsFromJson() {
   });
 }
 
+function initHeroBackgroundVideo() {
+  const video = document.getElementById('hero-video');
+  if (!video) {
+    return;
+  }
+
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+
+  const tryPlay = () => {
+    const playAttempt = video.play();
+    if (playAttempt && typeof playAttempt.catch === 'function') {
+      playAttempt.catch(() => {
+        // Browser autoplay policies may still block playback until interaction.
+      });
+    }
+  };
+
+  if (video.readyState >= 2) {
+    tryPlay();
+  } else {
+    video.addEventListener('loadeddata', tryPlay, { once: true });
+  }
+
+  video.addEventListener('canplay', tryPlay);
+
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+      tryPlay();
+    }
+  });
+}
+
 initLanguageSwitcher();
 initCasesCarousel();
 initCaseStatsFromJson();
+initHeroBackgroundVideo();
 

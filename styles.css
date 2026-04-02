@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
 
 :root {
-  --yellow: #ffd400;
+  --yellow: #7dd3fc;
   --black: #0d0d0d;
   --white: #ffffff;
   --muted: #2f2f2f;
@@ -96,6 +96,8 @@ main[id] {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.62) contrast(1.06) saturate(1.04);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero::before {
@@ -103,6 +105,7 @@ main[id] {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.8));
+  z-index: 1;
 }
 
 .hero-content {
@@ -230,6 +233,15 @@ h1 {
   box-shadow: none;
 }
 
+.platform-analytics.tiktok {
+  padding-right: 20px;
+}
+
+.platform-analytics.youtube {
+  border-left: 1px solid rgba(0, 0, 0, 0.16);
+  padding-left: 24px;
+}
+
 .platform-head {
   display: flex;
   justify-content: space-between;
@@ -340,13 +352,13 @@ h1 {
 }
 
 .platform-analytics.tiktok .bar-track span {
-  background: linear-gradient(90deg, #f5bf00, #ffd84e);
-  box-shadow: 0 0 10px rgba(255, 205, 46, 0.45);
+  background: #4fb8f5;
+  box-shadow: none;
 }
 
 .platform-analytics.youtube .bar-track span {
-  background: linear-gradient(90deg, #ffc400, #ffe27c);
-  box-shadow: 0 0 10px rgba(255, 214, 92, 0.45);
+  background: #3caeea;
+  box-shadow: none;
 }
 
 .lang-switcher {
@@ -362,7 +374,7 @@ h1 {
   gap: 0;
   border: 1px solid rgba(0, 0, 0, 0.16);
   border-radius: 999px;
-  background: linear-gradient(180deg, #ffffff, #fff9df);
+  background: linear-gradient(180deg, #ffffff, #e8f7ff);
   color: #111;
   font-weight: 800;
   font-size: 1.05rem;
@@ -375,11 +387,11 @@ h1 {
 .lang-toggle:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(180deg, #ffffff, #fff3b5);
+  background: linear-gradient(180deg, #ffffff, #d6f1ff);
 }
 
 .lang-toggle[aria-expanded='true'] {
-  box-shadow: 0 0 0 3px rgba(255, 212, 0, 0.55);
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.55);
 }
 
 .lang-flag {
@@ -431,7 +443,53 @@ h1 {
 
 .lang-option:hover,
 .lang-option.active {
-  background: linear-gradient(90deg, #fff4bf, #ffec88);
+  background: linear-gradient(90deg, #e4f6ff, #cbeeff);
+}
+
+.gear-section {
+  margin-top: 22px;
+}
+
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gear-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.gear-card figcaption {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.gear-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+  background: #ffffff;
+}
+
+.gear-glasses {
+  transform: scale(1.08);
+  transform-origin: center;
+}
+
+.gear-note {
+  margin-top: 12px;
+  color: #1a1a1a;
+  font-size: 0.95rem;
 }
 
 .lang-option .left {
@@ -582,8 +640,10 @@ h1 {
 }
 
 .cases-section {
-  background: #ffffff;
-  padding: 24px 20px 34px;
+  background:
+    radial-gradient(circle at 4% 0%, rgba(125, 211, 252, 0.22), transparent 34%),
+    linear-gradient(180deg, #ffffff, #f4faff);
+  padding: 34px 20px 44px;
 }
 
 .cases-layout {
@@ -607,11 +667,19 @@ h1 {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(60, 146, 207, 0.28);
   background: #ffffff;
-  color: #111;
+  color: #164b7d;
   font-size: 1.1rem;
   cursor: pointer;
+  box-shadow: 0 8px 18px rgba(19, 61, 95, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.cases-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(19, 61, 95, 0.16);
+  background: #f4fbff;
 }
 
 .cases-carousel {
@@ -630,8 +698,13 @@ h1 {
 }
 
 .cases-copy {
-  margin-top: 16px;
+  margin: 16px auto 0;
   max-width: 960px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(73, 149, 203, 0.2);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 14px 26px rgba(18, 52, 84, 0.08);
 }
 
 .cases-copy p {
@@ -647,10 +720,18 @@ h1 {
 .case-slide {
   position: relative;
   min-height: 430px;
-  border-radius: 0;
+  border-radius: 18px;
   overflow: hidden;
   scroll-snap-align: start;
   cursor: pointer;
+  border: 1px solid rgba(73, 149, 203, 0.2);
+  box-shadow: 0 16px 26px rgba(17, 54, 88, 0.16);
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.case-slide:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px rgba(17, 54, 88, 0.2);
 }
 
 .case-image {
@@ -689,8 +770,10 @@ h1 {
 }
 
 .contact-section {
-  background: #ffffff;
-  padding: 26px 20px 70px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(125, 211, 252, 0.2), transparent 36%),
+    linear-gradient(180deg, #ffffff, #f4fbff);
+  padding: 34px 20px 80px;
 }
 
 .contact-layout {
@@ -698,17 +781,29 @@ h1 {
 }
 
 .contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   color: #1c1c1c;
   font-size: 1.04rem;
 }
 
 .contact-list a {
-  color: #111;
+  color: #0f3e69;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.contact-item {
+  background: #ffffff;
+  border: 1px solid rgba(67, 143, 194, 0.22);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 20px rgba(16, 58, 95, 0.08);
+}
+
+.contact-item strong {
+  color: #133d67;
 }
 
 .aboutme-layout {
@@ -847,6 +942,17 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .platform-analytics.tiktok {
+    padding-right: 4px;
+  }
+
+  .platform-analytics.youtube {
+    border-left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+    padding-left: 4px;
+    padding-top: 16px;
+  }
+
   .kpi-grid {
     grid-template-columns: 1fr;
   }
@@ -873,6 +979,10 @@ h1 {
     padding: 8px 16px 48px;
   }
 
+  .contact-list {
+    grid-template-columns: 1fr;
+  }
+
   .cases-section {
     padding: 14px 16px 26px;
   }
@@ -884,6 +994,10 @@ h1 {
 
   .cases-carousel {
     grid-auto-columns: 82%;
+  }
+
+  .gear-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .case-slide {
