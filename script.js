@@ -852,6 +852,10 @@ function initHeroBackgroundVideo() {
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;
+  video.preload = 'auto';
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.load();
 
   const tryPlay = () => {
     const playAttempt = video.play();
@@ -860,6 +864,13 @@ function initHeroBackgroundVideo() {
         // Browser autoplay policies may still block playback until interaction.
       });
     }
+  };
+
+  const retryOnInteraction = () => {
+    tryPlay();
+    document.removeEventListener('pointerdown', retryOnInteraction);
+    document.removeEventListener('touchstart', retryOnInteraction);
+    document.removeEventListener('keydown', retryOnInteraction);
   };
 
   if (video.readyState >= 2) {
@@ -875,6 +886,10 @@ function initHeroBackgroundVideo() {
       tryPlay();
     }
   });
+
+  document.addEventListener('pointerdown', retryOnInteraction, { passive: true });
+  document.addEventListener('touchstart', retryOnInteraction, { passive: true });
+  document.addEventListener('keydown', retryOnInteraction);
 }
 
 initLanguageSwitcher();
