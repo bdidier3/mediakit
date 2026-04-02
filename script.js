@@ -64,9 +64,9 @@
     aboutme: {
       kicker: 'À propos de moi',
       title: 'Créateur de contenu parcs d\'attractions',
-      p1: 'Je m\'appelle Baptiste DIDIER, j\'ai 19 ans. Je fais actuellement des études en informatique à Belfort, et je consacre mon temps libre à la création de contenu spécialisé dans les parcs d\'attractions. Je publie des vidéos courtes chaque jour, dynamiques et engageantes, avec un angle éditorial orienté conseils pratiques et souvenirs de visite.',
-      p2: 'Ma communauté la plus forte est sur TikTok, avec un contenu d\'abord centré sur Europa-Park puis élargi à de grandes destinations européennes. J\'ai déjà réalisé des contenus dans plusieurs parcs majeurs, avec une audience réactive et fidèle.',
-      p3: 'Mon objectif est simple : produire des contenus modernes, authentiques et performants, en suivant les tendances du moment, afin de valoriser votre parc auprès d\'un public français passionné.'
+      p1: 'Je m\'appelle <strong>Baptiste DIDIER</strong>, j\'ai 19 ans. Je fais actuellement des études en informatique à Belfort, et je consacre mon temps libre à la création de contenu spécialisé dans les <strong>parcs d\'attractions</strong>. Je publie des vidéos courtes chaque jour, dynamiques et engageantes, avec un angle éditorial orienté conseils pratiques et souvenirs de visite.',
+      p2: 'Ma communauté la plus forte est sur <strong>TikTok</strong>, avec un contenu d\'abord centré sur <strong>Europa-Park</strong> puis élargi à de grandes destinations européennes. J\'ai déjà réalisé des contenus dans plusieurs parcs majeurs, avec une audience réactive et fidèle.',
+      p3: 'Mon objectif est simple : produire des contenus <strong>modernes, authentiques et performants</strong>, en suivant les tendances du moment, afin de valoriser votre parc auprès d\'un public français passionné.'
     },
     partners: {
       title: 'Parcs en partenariat officiel',
@@ -110,7 +110,7 @@
     },
     myVideos: {
       title: 'Mes vidéos',
-      p1: "Je publie en moyenne une vidéo par jour, consacrée à un parc ou à une attraction, en m'appuyant sur les tendances du moment sur les réseaux sociaux. Mes formats incluent notamment des POV d'attractions, des contenus réaction et des séquences immersives pensées pour capter l'attention dès les premières secondes.",
+      p1: "Je publie en moyenne <strong>une vidéo par jour</strong>, consacrée à un parc ou à une attraction, en m'appuyant sur les tendances du moment sur les réseaux sociaux. Mes formats incluent notamment des <strong>POV d'attractions</strong>, des contenus réaction et des séquences immersives pensées pour capter l'attention dès les premières secondes.",
       p2: "Ma ligne éditoriale repose sur des accroches qui favorisent l'interaction : souvenirs liés aux parcs, identification d'amis pour une prochaine visite, observations sur les comportements des visiteurs, astuces pratiques et comparatifs d'attractions entre différents parcs.",
       gearNote: "Je réalise l'ensemble de mes contenus avec cet équipement, qui constitue mon matériel principal de tournage au quotidien."
     },
@@ -542,7 +542,11 @@ function applyLanguage(lang) {
     const key = node.getAttribute('data-i18n');
     const text = getValueByPath(dict, key);
     if (text !== null) {
-      node.textContent = text;
+      if (node.hasAttribute('data-i18n-html')) {
+        node.innerHTML = text;
+      } else {
+        node.textContent = text;
+      }
     }
   });
 
