@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidéos parc | Clip2ep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #ffd400;
+      --text: #111;
+      --muted: #4c4c4c;
+      --line: #d9d9d9;
+      --bg: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Plus Jakarta Sans", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 6% -8%, rgba(255, 212, 0, 0.28), transparent 40%),
+        linear-gradient(180deg, #ffffff, #fafafa 34%, #f5f5f5 100%);
+      color: var(--text);
+      padding: 102px 18px 50px;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      background: var(--yellow);
+      color: #111;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 22px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.94rem;
+    }
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+      color: #111;
+      text-decoration: none;
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #111;
+    }
+    .lang-switcher {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ffffff, #fff9df);
+      color: #111;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 8px 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    .lang-toggle:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(180deg, #ffffff, #fff3b5);
+    }
+    .lang-toggle[aria-expanded="true"] {
+      box-shadow: 0 0 0 3px rgba(255, 212, 0, 0.55);
+    }
+    .lang-flag {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .lang-caret {
+      font-size: 0.68rem;
+      opacity: 0.75;
+      margin-left: 6px;
+    }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      list-style: none;
+      margin: 0;
+      padding: 6px;
+      width: 180px;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 18px 28px rgba(0, 0, 0, 0.16);
+      display: none;
+      z-index: 50;
+    }
+    .lang-menu.open {
+      display: block;
+    }
+    .lang-option {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-radius: 10px;
+      padding: 9px 10px;
+      font-size: 0.86rem;
+      cursor: pointer;
+      font-family: "Plus Jakarta Sans", Arial, sans-serif;
+    }
+    .lang-option:hover,
+    .lang-option.active {
+      background: linear-gradient(90deg, #fff4bf, #ffec88);
+    }
+    .lang-option .left {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      position: sticky;
+      top: 84px;
+      z-index: 40;
+      background: #ffffffd9;
+      backdrop-filter: blur(6px);
+      padding: 8px 0;
+    }
+    .back {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 16px;
+      text-decoration: none;
+      color: #111;
+      font-weight: 700;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .back:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      margin-bottom: 8px;
+    }
+    .lead {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .stat {
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 14px;
+      padding: 14px;
+      background: linear-gradient(165deg, #ffffff, #fffdf0);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 2px;
+    }
+    .stat span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .platform {
+      border-top: 2px solid rgba(0, 0, 0, 0.1);
+      padding-top: 18px;
+      margin-top: 18px;
+    }
+    .platform h2 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    li {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+    .title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+    .hashtags {
+      font-size: 0.86rem;
+      color: #222;
+      margin-bottom: 8px;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+    .link {
+      color: #111;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      word-break: break-all;
+    }
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      color: var(--muted);
+      background: #fff;
+    }
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 22px;
+        font-size: 0.84rem;
+      }
+    }
+    @media (max-width: 760px) {
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-inner {
+        justify-content: flex-start;
+        padding: 16px 12px;
+      }
+      .nav-links {
+        gap: 18px;
+        font-size: 0.74rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        max-width: 100%;
+        padding-right: 92px;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .lang-switcher { right: 8px; }
+      .lang-toggle {
+        padding: 6px 8px;
+        font-size: 0.95rem;
+      }
+      .lang-menu { width: 160px; }
+      .top {
+        top: 66px;
+      }
+      body {
+        padding: 96px 12px 32px;
+      }
+    }
+    @media (max-width: 560px) {
+      h1 {
+        font-size: clamp(1.45rem, 8vw, 2rem);
+      }
+      .lead {
+        font-size: 0.94rem;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      .meta {
+        font-size: 0.84rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html#top" data-i18n="nav.home">Accueil</a>
+        <a href="index.html#stats" data-i18n="nav.stats">Statistiques</a>
+        <a href="index.html#about" data-i18n="nav.about">À propos</a>
+        <a href="index.html#partners" data-i18n="nav.partners">Partenariats</a>
+        <a class="active" href="index.html#highlights" data-i18n="nav.highlights">Highlights</a>
+        <a href="index.html#videos" data-i18n="nav.videos">Mes vidéos</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="lang-switcher">
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language switcher">
+          <span id="lang-flag" class="lang-flag" aria-hidden="true">🇫🇷</span>
+          <span class="lang-caret" aria-hidden="true">▾</span>
+        </button>
+        <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language options">
+          <li><button class="lang-option" type="button" data-lang="fr"><span class="left"><span>🇫🇷</span><span>Français</span></span><span>FR</span></button></li>
+          <li><button class="lang-option" type="button" data-lang="en"><span class="left"><span>🇬🇧</span><span>English</span></span><span>EN</span></button></li>
+          <li><button class="lang-option" type="button" data-lang="de"><span class="left"><span>🇩🇪</span><span>Deutsch</span></span><span>DE</span></button></li>
+          <li><button class="lang-option" type="button" data-lang="nl"><span class="left"><span>🇳🇱</span><span>Nederlands</span></span><span>NL</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="top">
+      <a class="back" href="index.html" data-i18n="videos.back">Retour à l'accueil</a>
+    </div>
+
+    <h1 id="park-title" data-i18n="videos.parkTitle">Parc</h1>
+    <p class="lead" id="park-lead" data-i18n="videos.parkLead">Toutes les vidéos et performances disponibles pour ce parc.</p>
+
+    <div id="content"></div>
+  </div>
+
+  <script>
+    const uiTranslations = {
+      fr: {
+        nav: { home: 'Accueil', stats: 'Statistiques', about: 'À propos', partners: 'Partenariats', highlights: 'Highlights', videos: 'Mes vidéos', contact: 'Contact' },
+        videos: { back: "Retour à l'accueil", parkTitle: 'Parc', parkLead: 'Toutes les vidéos et performances disponibles pour ce parc.' }
+      },
+      en: {
+        nav: { home: 'Home', stats: 'Analytics', about: 'About', partners: 'Partnerships', highlights: 'Highlights', videos: 'My Videos', contact: 'Contact' },
+        videos: { back: 'Back to home', parkTitle: 'Park', parkLead: 'All available videos and performance for this park.' }
+      },
+      de: {
+        nav: { home: 'Start', stats: 'Statistiken', about: 'Über mich', partners: 'Partnerschaften', highlights: 'Highlights', videos: 'Meine Videos', contact: 'Kontakt' },
+        videos: { back: 'Zurück zur Startseite', parkTitle: 'Park', parkLead: 'Alle verfügbaren Videos und Leistungen für diesen Park.' }
+      },
+      nl: {
+        nav: { home: 'Home', stats: 'Statistieken', about: 'Over mij', partners: 'Partnerschappen', highlights: 'Highlights', videos: "Mijn video's", contact: 'Contact' },
+        videos: { back: 'Terug naar home', parkTitle: 'Park', parkLead: 'Alle beschikbare video\'s en prestaties voor dit park.' }
+      }
+    };
+
+    const languageMeta = {
+      fr: { label: 'FR', flag: '🇫🇷' },
+      en: { label: 'EN', flag: '🇬🇧' },
+      de: { label: 'DE', flag: '🇩🇪' },
+      nl: { label: 'NL', flag: '🇳🇱' }
+    };
+
+    function getValueByPath(obj, path) {
+      return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : null), obj);
+    }
+
+    function updateLanguageUi(selected) {
+      const flag = document.getElementById('lang-flag');
+      const meta = languageMeta[selected] || languageMeta.en;
+
+      if (flag) {
+        flag.textContent = meta.flag;
+      }
+
+      document.querySelectorAll('.lang-option').forEach((option) => {
+        option.classList.toggle('active', option.dataset.lang === selected);
+      });
+    }
+
+    function applyUiLanguage(lang) {
+      const selected = uiTranslations[lang] ? lang : 'fr';
+      const dict = uiTranslations[selected];
+
+      document.documentElement.lang = selected;
+
+      document.querySelectorAll('[data-i18n]').forEach((node) => {
+        const key = node.getAttribute('data-i18n');
+        const text = getValueByPath(dict, key);
+        if (text !== null) {
+          node.textContent = text;
+        }
+      });
+
+      const nav = document.querySelector('.nav-links');
+      if (nav && dict.nav && dict.nav.home) {
+        nav.setAttribute('aria-label', selected === 'fr' ? 'Navigation principale' : selected === 'de' ? 'Hauptnavigation' : selected === 'nl' ? 'Hoofdnavigatie' : 'Main navigation');
+      }
+
+      updateLanguageUi(selected);
+      localStorage.setItem('siteLanguage', selected);
+    }
+
+    function initLanguageSwitcher() {
+      const toggle = document.getElementById('lang-toggle');
+      const menu = document.getElementById('lang-menu');
+      const options = Array.from(document.querySelectorAll('.lang-option'));
+
+      if (!toggle || !menu || options.length === 0) {
+        return;
+      }
+
+      const saved = localStorage.getItem('siteLanguage');
+      const browser = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+      const initial = uiTranslations[saved] ? saved : uiTranslations[browser] ? browser : 'fr';
+      applyUiLanguage(initial);
+
+      toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      options.forEach((option) => {
+        option.addEventListener('click', () => {
+          const selected = option.dataset.lang;
+          applyUiLanguage(selected);
+          menu.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+          menu.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    initLanguageSwitcher();
+
+    const allStatsFiles = ["stats_compact.json", "stats.json"];
+    const statsBaseCandidates = ["stats/", "./stats/", "../stats/", "MediaKit/stats/", "/MediaKit/stats/", "/stats/"];
+
+    const parkHashtagsMap = {
+      "europapark": ["#europapark"],
+      "efteling": ["#efteling"],
+      "bobbejaanland": ["#bobbejaanland", "#bobejaanland"],
+      "bobejaanland": ["#bobbejaanland", "#bobejaanland"],
+      "toverland": ["#toverland"],
+      "phantasialand": ["#phantasialand"],
+      "nigloland": ["#nigloland"],
+      "rulantica": ["#rulantica"],
+      "energylandia": ["#energylandia"],
+      "parc-asterix": ["#parcasterix", "#parcasterix", "#parc-asterix"],
+      "traumatica": ["#traumatica"],
+      "seaworld": ["#seaworld", "#seaworldorlando"],
+      "universal": ["#universalorlando", "#epicuniverse", "#islandsofadventure", "#islandofadventure", "#universalstudiosorlando"],
+      "disneyworld": ["#disneyworld", "#waltdisneyworld"]
+    };
+
+    const parkKeywordsMap = {
+      "europapark": ["europa-park", "europapark"],
+      "efteling": ["efteling"],
+      "bobbejaanland": ["bobbejaanland", "bobejaanland"],
+      "bobejaanland": ["bobbejaanland", "bobejaanland"],
+      "toverland": ["toverland"],
+      "phantasialand": ["phantasialand"],
+      "nigloland": ["nigloland"],
+      "rulantica": ["rulantica"],
+      "energylandia": ["energylandia"],
+      "parc-asterix": ["parcasterix", "parc-asterix", "parc asterix"],
+      "traumatica": ["traumatica"],
+      "seaworld": ["seaworld", "sea world", "seaworld orlando"],
+      "universal": ["universal orlando", "universalorlando", "epic universe", "epicuniverse", "islands of adventure", "islandsofadventure"],
+      "disneyworld": ["disney world", "disneyworld", "walt disney world", "magic kingdom"]
+    };
+
+    const parkDisplayName = {
+      "europapark": "Europa-Park",
+      "efteling": "Efteling",
+      "bobbejaanland": "Bobbejaanland",
+      "bobejaanland": "Bobbejaanland",
+      "toverland": "Toverland",
+      "phantasialand": "Phantasialand",
+      "nigloland": "Nigloland",
+      "rulantica": "Rulantica",
+      "energylandia": "Energylandia",
+      "parc-asterix": "Parc Asterix",
+      "traumatica": "Traumatica",
+      "seaworld": "SeaWorld",
+      "universal": "Universal",
+      "disneyworld": "Disney World"
+    };
+
+    const forcedVideoUrlsByPark = {
+      "seaworld": ["https://www.tiktok.com/@clip2ep.fan/video/7616407866504711446?is_from_webapp=1&sender_device=pc&web_id=7499489214192043542"],
+      "universal": ["https://www.tiktok.com/@clip2ep.fan/video/7616407866504711446?is_from_webapp=1&sender_device=pc&web_id=7499489214192043542"],
+      "disneyworld": ["https://www.tiktok.com/@clip2ep.fan/video/7616407866504711446?is_from_webapp=1&sender_device=pc&web_id=7499489214192043542"]
+    };
+
+    const fallbackData = {
+      efteling: {
+        name: "Efteling",
+        totalVideos: 9,
+        totalViews: 1378287,
+        totalLikes: 91286,
+        totalComments: 682,
+        tiktok: [
+          { title: "#efteling #manege #peur #extreme #parcdattraction", views: 88300, likes: 4461, comments: 98, url: "https://www.tiktok.com/@clip2ep.fan/video/7596000438927789334" },
+          { title: "#efteling #disneylandparis #parcdattraction #paysbas #trend", views: 248600, likes: 20800, comments: 173, url: "https://www.tiktok.com/@clip2ep.fan/video/7594508669669149974" },
+          { title: "#efteling #extreme #peur #coaster #attraction", views: 55900, likes: 4709, comments: 109, url: "https://www.tiktok.com/@clip2ep.fan/video/7591442608824569110" },
+          { title: "Publicite - Collaboration avec @Efteling #hotels", views: 68200, likes: 3211, comments: 27, url: "https://www.tiktok.com/@clip2ep.fan/video/7591166501227384086" },
+          { title: "Publicite - Collaboration avec @Efteling (2 jours incroyables)", views: 405100, likes: 29900, comments: 142, url: "https://www.tiktok.com/@clip2ep.fan/video/7589948040631389462" },
+          { title: "Publicite - Collaboration avec @Efteling #manege #sensation", views: 411500, likes: 25200, comments: 76, url: "https://www.tiktok.com/@clip2ep.fan/video/7589581770425666838" }
+        ],
+        youtube: [
+          { title: "C'est moi ou Efteling c'est pas connu en France alors que ca eteint Disney ?", views: 17196, likes: 838, comments: 15, url: "https://www.youtube.com/watch?v=_vedNcX5oL4" },
+          { title: "Le plus beau parc d'attractions a seulement 2h de la France", views: 78548, likes: 2028, comments: 38, url: "https://www.youtube.com/watch?v=LjS4m9Zf2O4" },
+          { title: "Pov : tu vas dans le 3e parc d'attractions le plus visite d'Europe", views: 4943, likes: 139, comments: 4, url: "https://www.youtube.com/watch?v=IZfnMSBR2Bg" }
+        ]
+      }
+    };
+
+    function extractHashtags(...texts) {
+      const merged = texts.filter(Boolean).join(" ");
+      const tags = merged.match(/#[^\s#]+/g) || [];
+      const unique = [];
+      const seen = new Set();
+
+      for (const tag of tags) {
+        const key = tag.toLowerCase();
+        if (seen.has(key)) {
+          continue;
+        }
+        seen.add(key);
+        unique.push(tag);
+      }
+
+      return unique;
+    }
+
+    function normalizeVideo(v, platform) {
+      const title = v.title || v.description || "Video";
+      const description = v.description || "";
+      return {
+        id: v.id || "",
+        title,
+        description,
+        hashtags: extractHashtags(title, description),
+        views: Number(v.views || 0),
+        likes: Number(v.likes || 0),
+        comments: Number(v.comments || 0),
+        platform,
+        url: v.url || "#"
+      };
+    }
+
+    function sortByViews(items, platform) {
+      return [...items]
+        .map((v) => normalizeVideo(v, platform))
+        .sort((a, b) => b.views - a.views);
+    }
+
+    function extractVideosFromRaw(raw) {
+      const out = [];
+
+      if (Array.isArray(raw?.videos)) {
+        for (const item of raw.videos) {
+          out.push({
+            id: item.id,
+            title: item.title || item.description || "",
+            description: item.description || "",
+            views: item.views || 0,
+            likes: item.likes || 0,
+            comments: item.comments || 0,
+            url: item.url || "",
+            platform: item.platform || "tiktok"
+          });
+        }
+      }
+
+      if (raw?.sources?.tiktok?.videos) {
+        for (const item of raw.sources.tiktok.videos) {
+          const flat = item.entry_flat || item;
+          const full = item.full_info || {};
+          out.push({
+            id: flat.id,
+            title: flat.title || flat.description || "",
+            description: flat.description || full.description || "",
+            views: flat.view_count || 0,
+            likes: flat.like_count || 0,
+            comments: flat.comment_count || 0,
+            url: item.video_url || flat.url || "",
+            platform: "tiktok"
+          });
+        }
+      }
+
+      if (raw?.sources?.youtube?.videos) {
+        for (const item of raw.sources.youtube.videos) {
+          const flat = item.entry_flat || item;
+          const full = item.full_info || {};
+          out.push({
+            id: flat.id,
+            title: flat.title || full.title || flat.description || "",
+            description: flat.description || full.description || "",
+            views: flat.view_count || flat.views || 0,
+            likes: flat.like_count || flat.likes || 0,
+            comments: flat.comment_count || flat.comments || 0,
+            url: item.video_url || flat.url || "",
+            platform: "youtube"
+          });
+        }
+      }
+
+      if (raw?.plateformes?.tiktok?.videos) {
+        for (const item of raw.plateformes.tiktok.videos) {
+          out.push({ ...item, platform: "tiktok" });
+        }
+      }
+
+      if (raw?.plateformes?.youtube?.videos) {
+        for (const item of raw.plateformes.youtube.videos) {
+          out.push({ ...item, platform: "youtube" });
+        }
+      }
+
+      return out;
+    }
+
+    function buildParkDataFromVideos(videos, parkKey) {
+      const tiktok = videos
+        .filter((v) => v.platform === "tiktok")
+        .sort((a, b) => b.views - a.views);
+      const youtube = videos
+        .filter((v) => v.platform === "youtube")
+        .sort((a, b) => b.views - a.views);
+      const allVideos = [...tiktok, ...youtube];
+
+      const computedTotals = allVideos.reduce(
+        (acc, v) => {
+          acc.views += v.views;
+          acc.likes += v.likes;
+          acc.comments += v.comments;
+          return acc;
+        },
+        { views: 0, likes: 0, comments: 0 }
+      );
+
+      return {
+        name: parkDisplayName[parkKey] || parkKey,
+        totalVideos: allVideos.length,
+        totalViews: computedTotals.views,
+        totalLikes: computedTotals.likes,
+        totalComments: computedTotals.comments,
+        tiktok,
+        youtube
+      };
+    }
+
+    function hasParkHashtag(video, parkKey) {
+      const expected = (parkHashtagsMap[parkKey] || []).map((t) => t.toLowerCase());
+      const current = (video.hashtags || []).map((t) => t.toLowerCase());
+      const byHashtag = expected.length > 0 && current.some((tag) => expected.includes(tag));
+
+      const keywords = (parkKeywordsMap[parkKey] || []).map((k) => k.toLowerCase());
+      const text = `${video.title || ""} ${video.description || ""}`.toLowerCase();
+      const byKeyword = keywords.length > 0 && keywords.some((k) => text.includes(k));
+
+      return byHashtag || byKeyword;
+    }
+
+    function dedupeVideos(videos) {
+      const byKey = new Map();
+
+      for (const v of videos) {
+        const key = v.url && v.url !== "#" ? v.url : `${v.platform}:${v.id || v.title}`;
+        const existing = byKey.get(key);
+        if (!existing || v.views > existing.views) {
+          byKey.set(key, v);
+        }
+      }
+
+      return [...byKey.values()];
+    }
+
+    function normalizeTikTokUrl(url) {
+      return (url || "").split("?")[0];
+    }
+
+    function extractTikTokId(url) {
+      const m = (url || "").match(/\/video\/(\d+)/);
+      return m ? m[1] : "";
+    }
+
+    async function fetchStatsByFileName(fileName) {
+      for (const base of statsBaseCandidates) {
+        try {
+          const response = await fetch(`${base}${fileName}`, { cache: "no-store" });
+          if (!response.ok) {
+            continue;
+          }
+          return await response.json();
+        } catch (_) {
+          // Try next candidate base path.
+        }
+      }
+
+      return null;
+    }
+
+    async function loadAllStats() {
+      for (const fileName of allStatsFiles) {
+        const one = await fetchStatsByFileName(fileName);
+        if (one) {
+          return [one];
+        }
+      }
+
+      return [];
+    }
+
+    async function loadParkData(parkKey) {
+      const allStats = await loadAllStats();
+      const allNormalizedVideos = allStats
+        .flatMap((raw) => extractVideosFromRaw(raw))
+        .map((v) => normalizeVideo(v, v.platform || "tiktok"));
+
+      const collected = allNormalizedVideos.filter((v) => hasParkHashtag(v, parkKey));
+
+      const uniqueVideos = dedupeVideos(collected);
+
+      const forcedUrls = forcedVideoUrlsByPark[parkKey] || [];
+      for (const forcedUrl of forcedUrls) {
+        const forcedNorm = normalizeTikTokUrl(forcedUrl);
+        const exists = uniqueVideos.some((v) => normalizeTikTokUrl(v.url) === forcedNorm);
+        if (!exists) {
+          const fromJson = allNormalizedVideos.find((v) => normalizeTikTokUrl(v.url) === forcedNorm);
+          if (fromJson) {
+            uniqueVideos.push(fromJson);
+          } else {
+            uniqueVideos.push({
+              id: extractTikTokId(forcedUrl),
+              title: "Video ajoutee manuellement",
+              description: "",
+              hashtags: ["#etatsunis🇺🇸"],
+              views: 0,
+              likes: 0,
+              comments: 0,
+              platform: "tiktok",
+              url: forcedUrl
+            });
+          }
+        }
+      }
+
+      if (uniqueVideos.length > 0) {
+        const usParks = new Set(["seaworld", "universal", "disneyworld"]);
+        const normalized = usParks.has(parkKey)
+          ? uniqueVideos.map((v) => {
+              const hasUsTag = (v.hashtags || []).some((tag) => tag.toLowerCase() === "#etatsunis🇺🇸");
+              if (hasUsTag) {
+                return v;
+              }
+              return { ...v, hashtags: [...(v.hashtags || []), "#etatsunis🇺🇸"] };
+            })
+          : uniqueVideos;
+
+        return buildParkDataFromVideos(normalized, parkKey);
+      }
+
+      return fallbackData[parkKey] || null;
+    }
+
+    function fmt(n) {
+      return new Intl.NumberFormat("fr-FR").format(n);
+    }
+
+    function renderList(items) {
+      if (!items || items.length === 0) {
+        return '<div class="empty">Aucune video enregistree pour le moment.</div>';
+      }
+      return `<ul>${items.map(v => `
+        <li>
+          <div class="title">${v.title}</div>
+          <div class="meta">${fmt(v.views)} vues · ${fmt(v.likes)} likes · ${fmt(v.comments)} commentaires</div>
+          <div class="hashtags">${v.hashtags.length ? v.hashtags.join(" ") : "Aucun hashtag detecte"}</div>
+          <a class="link" href="${v.url}" target="_blank" rel="noopener noreferrer">${v.url}</a>
+        </li>
+      `).join("")}</ul>`;
+    }
+
+    async function renderPage() {
+      const park = new URLSearchParams(window.location.search).get("park") || "";
+      const content = document.getElementById("content");
+      const title = document.getElementById("park-title");
+
+      if (!park) {
+        title.textContent = "Videos parc";
+        content.innerHTML = '<div class="empty">Aucun parc selectionne.</div>';
+        return;
+      }
+
+      content.innerHTML = '<div class="empty">Chargement des statistiques...</div>';
+      const d = await loadParkData(park);
+
+      if (!d) {
+        title.textContent = "Videos parc";
+        content.innerHTML = '<div class="empty">Les details videos pour ce parc arrivent bientot.</div>';
+        return;
+      }
+
+      title.textContent = d.name;
+      content.innerHTML = `
+        <div class="stats">
+          <div class="stat"><strong>${fmt(d.totalVideos)}</strong><span>videos total</span></div>
+          <div class="stat"><strong>${fmt(d.totalViews)}</strong><span>vues total</span></div>
+          <div class="stat"><strong>${fmt(d.totalLikes)}</strong><span>likes total</span></div>
+          <div class="stat"><strong>${fmt(d.totalComments)}</strong><span>commentaires total</span></div>
+        </div>
+        <section class="platform" id="tiktok-section">
+          <h2>TikTok (${d.tiktok.length})</h2>
+          ${renderList(d.tiktok)}
+        </section>
+        <section class="platform" id="youtube-section">
+          <h2>YouTube (${d.youtube.length})</h2>
+          ${renderList(d.youtube)}
+        </section>
+      `;
+    }
+
+    renderPage();
+  </script>
+</body>
+</html>
