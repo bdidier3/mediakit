@@ -1,2 +1,2 @@
-img/video/video_mediakit.mp4 -filter -diff -merge text
+img/video/video_mediakit.mp4 -filter -diff -merge -text
 stats/stats.json filter=lfs diff=lfs merge=lfs -text
