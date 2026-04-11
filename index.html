@@ -11,12 +11,16 @@
 <body data-page="home">
   <header class="navbar">
     <div class="nav-inner">
-      <nav class="nav-links" aria-label="Main navigation">
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+      </button>
+      <nav id="main-nav" class="nav-links" aria-label="Main navigation">
         <a href="#top" data-i18n="nav.home">Accueil</a>
         <a href="#stats" data-i18n="nav.stats">Statistiques</a>
         <a href="#about" data-i18n="nav.about">À propos</a>
         <a href="#partners" data-i18n="nav.partners">Partenariats</a>
-        <a href="#highlights" data-i18n="nav.highlights">Highlights</a>
         <a href="#videos" data-i18n="nav.videos">Mes vidéos</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -28,6 +32,7 @@
         <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language options">
           <li><button class="lang-option" type="button" data-lang="fr"><span class="left"><span>🇫🇷</span><span>Français</span></span><span>FR</span></button></li>
           <li><button class="lang-option" type="button" data-lang="en"><span class="left"><span>🇬🇧</span><span>English</span></span><span>EN</span></button></li>
+          <li><button class="lang-option" type="button" data-lang="es"><span class="left"><span>🇪🇸</span><span>Español</span></span><span>ES</span></button></li>
           <li><button class="lang-option" type="button" data-lang="de"><span class="left"><span>🇩🇪</span><span>Deutsch</span></span><span>DE</span></button></li>
           <li><button class="lang-option" type="button" data-lang="nl"><span class="left"><span>🇳🇱</span><span>Nederlands</span></span><span>NL</span></button></li>
         </ul>
@@ -273,7 +278,6 @@
 
   <section class="cases-section" id="videos">
     <div class="container cases-layout">
-      <span id="highlights"></span>
       <div class="cases-head">
         <div>
           <h2 class="partners-title" data-i18n="myVideos.title">Mes vidéos</h2>
@@ -422,10 +426,36 @@
   <section class="contact-section" id="contact">
     <div class="container contact-layout">
       <h2 class="partners-title" data-i18n="contact.title">Contact</h2>
+      <p class="partners-subtitle" data-i18n="contact.subtitle">Pour les partenariats et demandes de media kit.</p>
 
-      <div class="contact-list">
-        <p class="contact-item"><strong data-i18n="contact.phoneLabel">Phone:</strong> <a href="tel:+33602564363">+33 6 02 56 43 63</a></p>
-        <p class="contact-item"><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:clip2ep@proton.me">clip2ep@proton.me</a></p>
+      <div class="contact-shell">
+        <p class="contact-intro" data-i18n="contact.reachOut">Vous pouvez me contacter via TikTok, mail, numéro et Instagram.</p>
+        <div class="contact-actions">
+          <a class="contact-action" href="https://www.tiktok.com/@clip2ep.fan" target="_blank" rel="noopener noreferrer" aria-label="TikTok Clip2ep">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"></path></svg>
+            </span>
+            <span class="contact-meta"><strong>TikTok</strong><small>@clip2ep.fan</small></span>
+          </a>
+          <a class="contact-action" href="mailto:clip2ep@proton.me" aria-label="Envoyer un email">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+            </span>
+            <span class="contact-meta"><strong>Email</strong><small>clip2ep@proton.me</small></span>
+          </a>
+          <a class="contact-action" href="tel:+33602564363" aria-label="Appeler le numéro">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.8.62 2.64a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6.27 6.27l1.26-1.28a2 2 0 0 1 2.11-.45c.84.29 1.74.5 2.64.62A2 2 0 0 1 22 16.92z"></path></svg>
+            </span>
+            <span class="contact-meta"><strong data-i18n="contact.phoneLabel">Téléphone:</strong><small>+33 6 02 56 43 63</small></span>
+          </a>
+          <a class="contact-action" href="https://www.instagram.com/baptiste.ddr_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram baptiste.ddr_">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg>
+            </span>
+            <span class="contact-meta"><strong>Instagram</strong><small>@baptiste.ddr_</small></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>

@@ -52,10 +52,30 @@
       text-transform: uppercase;
       font-size: 0.94rem;
     }
+    .nav-toggle {
+      display: none;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      background: transparent;
+      border-radius: 10px;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+    .nav-toggle-line {
+      width: 18px;
+      height: 2px;
+      border-radius: 99px;
+      background: #ffffff;
+    }
     .nav-links a {
       position: relative;
       padding-bottom: 4px;
-      color: #111;
+      color: #ffffff;
       text-decoration: none;
     }
     .nav-links a:hover::after,
@@ -66,7 +86,7 @@
       bottom: 0;
       width: 100%;
       height: 2px;
-      background: #111;
+      background: #ffffff;
     }
     .lang-switcher {
       position: absolute;
@@ -271,19 +291,48 @@
     @media (max-width: 760px) {
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .nav-inner {
-        justify-content: flex-start;
+        justify-content: center;
         padding: 16px 12px;
+        min-height: 64px;
+      }
+      .nav-toggle {
+        display: inline-flex;
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 56;
       }
       .nav-links {
-        gap: 18px;
-        font-size: 0.74rem;
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
-        max-width: 100%;
-        padding-right: 92px;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        font-size: 0.86rem;
+        background: var(--yellow);
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+        border-radius: 0 0 16px 16px;
+        padding: 6px;
+        box-shadow: 0 14px 24px rgba(18, 74, 113, 0.3);
+        backdrop-filter: blur(8px);
       }
-      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        padding: 10px 12px;
+        border-radius: 10px;
+        color: #ffffff;
+      }
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        display: none;
+      }
       .lang-switcher { right: 8px; }
       .lang-toggle {
         padding: 6px 8px;
@@ -316,13 +365,17 @@
 <body>
   <header class="navbar">
     <div class="nav-inner">
-      <nav class="nav-links" aria-label="Main navigation">
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+      </button>
+      <nav id="main-nav" class="nav-links" aria-label="Main navigation">
         <a href="index.html#top" data-i18n="nav.home">Accueil</a>
         <a href="index.html#stats" data-i18n="nav.stats">Statistiques</a>
         <a href="index.html#about" data-i18n="nav.about">À propos</a>
         <a href="index.html#partners" data-i18n="nav.partners">Partenariats</a>
-        <a class="active" href="index.html#highlights" data-i18n="nav.highlights">Highlights</a>
-        <a href="index.html#videos" data-i18n="nav.videos">Mes vidéos</a>
+        <a class="active" href="index.html#videos" data-i18n="nav.videos">Mes vidéos</a>
         <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="lang-switcher">
@@ -333,6 +386,7 @@
         <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language options">
           <li><button class="lang-option" type="button" data-lang="fr"><span class="left"><span>🇫🇷</span><span>Français</span></span><span>FR</span></button></li>
           <li><button class="lang-option" type="button" data-lang="en"><span class="left"><span>🇬🇧</span><span>English</span></span><span>EN</span></button></li>
+          <li><button class="lang-option" type="button" data-lang="es"><span class="left"><span>🇪🇸</span><span>Español</span></span><span>ES</span></button></li>
           <li><button class="lang-option" type="button" data-lang="de"><span class="left"><span>🇩🇪</span><span>Deutsch</span></span><span>DE</span></button></li>
           <li><button class="lang-option" type="button" data-lang="nl"><span class="left"><span>🇳🇱</span><span>Nederlands</span></span><span>NL</span></button></li>
         </ul>
@@ -361,6 +415,10 @@
         nav: { home: 'Home', stats: 'Analytics', about: 'About', partners: 'Partnerships', highlights: 'Highlights', videos: 'My Videos', contact: 'Contact' },
         videos: { back: 'Back to home', parkTitle: 'Park', parkLead: 'All available videos and performance for this park.' }
       },
+      es: {
+        nav: { home: 'Inicio', stats: 'Estadísticas', about: 'Acerca de', partners: 'Colaboraciones', highlights: 'Highlights', videos: 'Mis videos', contact: 'Contacto' },
+        videos: { back: 'Volver al inicio', parkTitle: 'Parque', parkLead: 'Todos los videos y resultados disponibles para este parque.' }
+      },
       de: {
         nav: { home: 'Start', stats: 'Statistiken', about: 'Über mich', partners: 'Partnerschaften', highlights: 'Highlights', videos: 'Meine Videos', contact: 'Kontakt' },
         videos: { back: 'Zurück zur Startseite', parkTitle: 'Park', parkLead: 'Alle verfügbaren Videos und Leistungen für diesen Park.' }
@@ -374,6 +432,7 @@
     const languageMeta = {
       fr: { label: 'FR', flag: '🇫🇷' },
       en: { label: 'EN', flag: '🇬🇧' },
+      es: { label: 'ES', flag: '🇪🇸' },
       de: { label: 'DE', flag: '🇩🇪' },
       nl: { label: 'NL', flag: '🇳🇱' }
     };
@@ -411,7 +470,7 @@
 
       const nav = document.querySelector('.nav-links');
       if (nav && dict.nav && dict.nav.home) {
-        nav.setAttribute('aria-label', selected === 'fr' ? 'Navigation principale' : selected === 'de' ? 'Hauptnavigation' : selected === 'nl' ? 'Hoofdnavigatie' : 'Main navigation');
+        nav.setAttribute('aria-label', selected === 'fr' ? 'Navigation principale' : selected === 'es' ? 'Navegación principal' : selected === 'de' ? 'Hauptnavigation' : selected === 'nl' ? 'Hoofdnavigatie' : 'Main navigation');
       }
 
       updateLanguageUi(selected);
@@ -454,7 +513,43 @@
       });
     }
 
+    function initMobileNav() {
+      const toggle = document.getElementById('nav-toggle');
+      const nav = document.getElementById('main-nav');
+
+      if (!toggle || !nav) {
+        return;
+      }
+
+      const closeNav = () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      };
+
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeNav);
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+          closeNav();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 760) {
+          closeNav();
+        }
+      });
+    }
+
     initLanguageSwitcher();
+    initMobileNav();
 
     const allStatsFiles = ["stats_compact.json", "stats.json"];
     const statsBaseCandidates = ["stats/", "./stats/", "../stats/", "MediaKit/stats/", "/MediaKit/stats/", "/stats/"];

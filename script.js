@@ -84,7 +84,8 @@
       title: 'Contact',
       subtitle: 'Pour les partenariats et demandes de media kit.',
       phoneLabel: 'Téléphone :',
-      emailLabel: 'Email:'
+      emailLabel: 'Email:',
+      reachOut: 'Vous pouvez me contacter via TikTok, mail, numéro et Instagram.'
     },
     cases: {
       title: 'Highlights des vidéos par parc',
@@ -207,7 +208,8 @@
       title: 'Contact',
       subtitle: 'For partnerships and media kit requests.',
       phoneLabel: 'Phone:',
-      emailLabel: 'Email:'
+      emailLabel: 'Email:',
+      reachOut: 'You can contact me via TikTok, email, phone number, and Instagram.'
     },
     cases: {
       title: 'Park Video Highlights',
@@ -243,6 +245,130 @@
       tiktokDesc: 'Best moments, new attractions, and theme park recommendations.',
       youtubeDesc: 'Longer formats, immersive vlogs, and premium content.',
       footer: 'Thank you for your attention - Collaboration available on request'
+    }
+  },
+  es: {
+    titles: {
+      home: 'Clip2ep',
+      about: 'Acerca de | Clip2ep',
+      clip2ep: 'Clip2ep'
+    },
+    meta: {
+      home: 'Sitio oficial de Clip2ep - creador de contenido de parques temáticos en TikTok y YouTube.',
+      about: 'Acerca de Clip2ep, creador de contenido sobre parques temáticos.',
+      clip2ep: 'Enlaces y universo de contenido de Clip2ep en TikTok y YouTube.'
+    },
+    nav: {
+      home: 'Inicio',
+      stats: 'Estadísticas',
+      about: 'Acerca de',
+      partners: 'Colaboraciones',
+      highlights: 'Highlights',
+      videos: 'Mis videos',
+      contact: 'Contacto'
+    },
+    platform: {
+      tiktok: 'TikTok',
+      youtube: 'YouTube'
+    },
+    common: {
+      footerMain: '© Clip2ep - 2026'
+    },
+    stats: {
+      heading: 'Análisis de audiencia',
+      subheading: 'Resumen actualizado de tus últimas métricas de plataforma.',
+      gender: 'Distribución por género',
+      age: 'Grupos de edad',
+      regions: 'Regiones principales',
+      age65: '65 años o más',
+      genderLabels: {
+        men: 'Hombres',
+        women: 'Mujeres',
+        other: 'Otro',
+        userSpecified: 'Especificado por el usuario'
+      },
+      region: {
+        france: 'Francia',
+        germany: 'Alemania',
+        belgium: 'Bélgica',
+        switzerland: 'Suiza',
+        usa: 'Estados Unidos',
+        canada: 'Canadá',
+        reunion: 'La Reunión'
+      },
+      tiktok: {
+        title: 'TikTok',
+        since: 'Desde 2023',
+        kpiViews: 'Visualizaciones por año',
+        kpiFollowers: 'Seguidores'
+      },
+      youtube: {
+        title: 'YouTube',
+        since: 'Desde el 25 sep. 2025',
+        kpiViews: 'Visualizaciones totales',
+        kpiFollowers: 'Suscriptores'
+      }
+    },
+    aboutme: {
+      kicker: 'Sobre mí',
+      title: 'De contenido sobre parques temáticos en francés a colaboraciones europeas.',
+      p1: 'Soy Baptiste, creador francés especializado en parques temáticos con una comunidad muy activa. Produzco videos cortos, dinámicos y narrativos para animar a la gente a visitar los parques en la vida real.',
+      p2: 'Mi comunidad más fuerte está en TikTok, con contenido inicialmente centrado en Europa-Park y ahora ampliado a grandes destinos europeos. Ya he producido contenido en parques como Energylandia, Efteling, Toverland y Universal Orlando.',
+      p3: 'Mi objetivo es claro: crear contenido moderno, auténtico y de alto rendimiento para destacar la experiencia de tu parque ante una audiencia francesa apasionada.'
+    },
+    partners: {
+      title: 'Parques con colaboración oficial',
+      subtitle: 'Colaboraciones confirmadas con parques europeos reconocidos.',
+      official: 'Colaboración oficial',
+      toverland: 'Toverland',
+      efteling: 'Efteling',
+      bobejjaland: 'Bobbejaanland'
+    },
+    nonPartners: {
+      title: 'Parques visitados sin colaboración',
+      subtitle: 'Destacados en mis videos sin colaboración oficial.'
+    },
+    contact: {
+      title: 'Contacto',
+      subtitle: 'Para colaboraciones y solicitudes de media kit.',
+      phoneLabel: 'Teléfono:',
+      emailLabel: 'Email:',
+      reachOut: 'Puedes contactarme por TikTok, email, teléfono e Instagram.'
+    },
+    cases: {
+      title: 'Highlights de videos por parque',
+      subtitle: 'Carrusel de tarjetas con el total de visualizaciones.',
+      viewsLabel: 'visualizaciones totales'
+    },
+    home: {
+      videoAria: 'Video de fondo de parque temático',
+      title: 'Creador de contenido francés dedicado a los parques temáticos',
+      lead: '+150 000 seguidores en TikTok, una audiencia apasionada y contenido de alto rendimiento sobre los parques temáticos más grandes de Europa.'
+    },
+    about: {
+      heading: 'Acerca de',
+      p1: 'Soy un creador de contenido francés especializado en parques temáticos en TikTok, con una comunidad de más de 150 000 seguidores. Mi cuenta está centrada principalmente en Europa-Park, y ahora quiero ampliar mi contenido a otros parques europeos.',
+      p2: 'Ya he creado videos en varios parques como Energylandia, Efteling, Toverland y Universal Orlando, y esos videos lograron una gran interacción con mi audiencia.',
+      stat1: 'Seguidores en TikTok',
+      stat2: 'Parques internacionales cubiertos',
+      stat3: 'Audiencia principalmente francesa',
+      p3: 'Me interesaría mucho destacar PortAventura World mediante la creación de contenido de video dentro del parque. Su destino me inspira desde hace tiempo y estoy convencido de que mis videos pueden ayudar a promocionar el parque ante una audiencia francesa apasionada.',
+      p4: 'Estoy disponible para compartir estadísticas detalladas y hablar sobre las condiciones de una posible colaboración.',
+      contactLabel: 'Contacto para colaboración:',
+      connector: '&'
+    },
+    myVideos: {
+      title: 'Mis videos',
+      p1: 'Publico de media un video al día, centrado en un parque o una atracción, aprovechando las tendencias actuales de redes sociales. Mis formatos incluyen POV de atracciones, contenido de reacción y secuencias inmersivas diseñadas para captar la atención en los primeros segundos.',
+      p2: 'Mi línea editorial se basa en ganchos que fomentan la interacción: recuerdos en parques, etiquetar amigos para una próxima visita, observaciones sobre el comportamiento de los visitantes, consejos prácticos y comparaciones de atracciones entre distintos parques.',
+      gearNote: 'Creo todo mi contenido con este equipo, que es mi configuración principal de grabación diaria.'
+    },
+    clip: {
+      heading: 'Clip2ep',
+      p1: 'Aquí encontrarás mis plataformas principales. Mi objetivo es mostrar experiencias en parques con formatos cortos, inmersivos y atractivos.',
+      tiktokDesc: 'Mejores momentos, novedades y recomendaciones de parques.',
+      youtubeDesc: 'Formatos más largos, vlogs inmersivos y contenido premium.',
+      footer: 'Gracias por tu atención - Colaboración disponible bajo solicitud'
     }
   },
   de: {
@@ -330,7 +456,8 @@
       title: 'Kontakt',
       subtitle: 'Fur Partnerschaften und Media-Kit-Anfragen.',
       phoneLabel: 'Telefon:',
-      emailLabel: 'E-Mail:'
+      emailLabel: 'E-Mail:',
+      reachOut: 'Du kannst mich über TikTok, E-Mail, Telefonnummer und Instagram kontaktieren.'
     },
     cases: {
       title: 'Video-Highlights nach Park',
@@ -453,7 +580,8 @@
       title: 'Contact',
       subtitle: 'Voor samenwerkingen en media kit-aanvragen.',
       phoneLabel: 'Telefoon:',
-      emailLabel: 'E-mail:'
+      emailLabel: 'E-mail:',
+      reachOut: 'Je kunt contact met me opnemen via TikTok, e-mail, telefoonnummer en Instagram.'
     },
     cases: {
       title: 'Video-highlights per park',
@@ -500,6 +628,7 @@ function getValueByPath(obj, path) {
 const languageMeta = {
   fr: { label: 'FR', flag: '\uD83C\uDDEB\uD83C\uDDF7' },
   en: { label: 'EN', flag: '\uD83C\uDDEC\uD83C\uDDE7' },
+  es: { label: 'ES', flag: '\uD83C\uDDEA\uD83C\uDDF8' },
   de: { label: 'DE', flag: '\uD83C\uDDE9\uD83C\uDDEA' },
   nl: { label: 'NL', flag: '\uD83C\uDDF3\uD83C\uDDF1' }
 };
@@ -560,7 +689,7 @@ function applyLanguage(lang) {
 
   const nav = document.querySelector('.nav-links');
   if (nav && dict.nav && dict.nav.home) {
-    nav.setAttribute('aria-label', selected === 'fr' ? 'Navigation principale' : selected === 'de' ? 'Hauptnavigation' : selected === 'nl' ? 'Hoofdnavigatie' : 'Main navigation');
+    nav.setAttribute('aria-label', selected === 'fr' ? 'Navigation principale' : selected === 'es' ? 'Navegación principal' : selected === 'de' ? 'Hauptnavigation' : selected === 'nl' ? 'Hoofdnavigatie' : 'Main navigation');
   }
 
   updateLanguageUi(selected);
@@ -601,6 +730,41 @@ function initLanguageSwitcher() {
     if (!menu.contains(event.target) && !toggle.contains(event.target)) {
       menu.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+function initMobileNav() {
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('main-nav');
+
+  if (!toggle || !nav) {
+    return;
+  }
+
+  const closeNav = () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeNav);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+      closeNav();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) {
+      closeNav();
     }
   });
 }
@@ -790,6 +954,8 @@ async function initCaseStatsFromJson() {
     .flatMap((raw) => extractVideosFromRaw(raw))
     .map(normalizeVideo);
 
+  const totalsByPark = {};
+
   slides.forEach((slide) => {
     const park = slide.dataset.park;
     const expected = (parkHashtagsMap[park] || []).map((tag) => tag.toLowerCase());
@@ -828,6 +994,7 @@ async function initCaseStatsFromJson() {
     }
 
     const totalViews = [...byUrl.values()].reduce((sum, v) => sum + v.views, 0);
+    totalsByPark[park] = totalViews;
 
     const label = slide.querySelector('.case-overlay p span');
     const row = slide.querySelector('.case-overlay p');
@@ -841,6 +1008,17 @@ async function initCaseStatsFromJson() {
     const suffixText = getValueByPath(currentDict, suffixKey) || (label ? label.textContent : 'total views');
     row.innerHTML = `${formatCompactViews(totalViews)} <span data-i18n="${suffixKey}">${suffixText}</span>`;
   });
+
+  const orderedSlides = [...slides].sort((a, b) => {
+    const aViews = totalsByPark[a.dataset.park] || 0;
+    const bViews = totalsByPark[b.dataset.park] || 0;
+    return bViews - aViews;
+  });
+
+  const carousel = document.getElementById('cases-carousel');
+  if (carousel) {
+    orderedSlides.forEach((slide) => carousel.appendChild(slide));
+  }
 }
 
 function initHeroBackgroundVideo() {
@@ -893,6 +1071,7 @@ function initHeroBackgroundVideo() {
 }
 
 initLanguageSwitcher();
+initMobileNav();
 initCasesCarousel();
 initCaseStatsFromJson();
 initHeroBackgroundVideo();
