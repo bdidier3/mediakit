@@ -626,11 +626,11 @@ function getValueByPath(obj, path) {
 }
 
 const languageMeta = {
-  fr: { label: 'FR', flag: '\uD83C\uDDEB\uD83C\uDDF7' },
-  en: { label: 'EN', flag: '\uD83C\uDDEC\uD83C\uDDE7' },
-  es: { label: 'ES', flag: '\uD83C\uDDEA\uD83C\uDDF8' },
-  de: { label: 'DE', flag: '\uD83C\uDDE9\uD83C\uDDEA' },
-  nl: { label: 'NL', flag: '\uD83C\uDDF3\uD83C\uDDF1' }
+  fr: { label: 'FR', flagClass: 'flag-fr' },
+  en: { label: 'EN', flagClass: 'flag-en' },
+  es: { label: 'ES', flagClass: 'flag-es' },
+  de: { label: 'DE', flagClass: 'flag-de' },
+  nl: { label: 'NL', flagClass: 'flag-nl' }
 };
 
 function updateLanguageUi(selected) {
@@ -639,7 +639,8 @@ function updateLanguageUi(selected) {
   const meta = languageMeta[selected] || languageMeta.en;
 
   if (flag) {
-    flag.textContent = meta.flag;
+    flag.className = `lang-flag flag-icon ${meta.flagClass}`;
+    flag.textContent = '';
   }
 
   if (label) {
