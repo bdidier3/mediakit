@@ -15,7 +15,7 @@ OUTPUT_FULL = STATS_DIR / "stats.json"
 
 SOURCES = [
     {"platform": "tiktok", "url": "https://www.tiktok.com/@clip2ep.fan"},
-    {"platform": "youtube", "url": "https://www.youtube.com/@clip2ep-fan/videos"},
+    {"platform": "youtube", "url": "https://www.youtube.com/@clip2ep-fan/shorts"},
 ]
 
 MAX_ITEMS_PER_SOURCE = 1200
