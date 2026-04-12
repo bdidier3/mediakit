@@ -1,0 +1,44 @@
+name: Update Media Stats
+
+on:
+  schedule:
+    - cron: "15 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install yt-dlp
+
+      - name: Generate stats files
+        run: python scripts/update_stats.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- stats/stats_compact.json stats/stats.json; then
+            echo "No stats changes to commit"
+            exit 0
+          fi
+
+          git add stats/stats_compact.json stats/stats.json
+          git commit -m "chore(stats): daily refresh"
+          git push

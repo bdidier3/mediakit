@@ -82,7 +82,7 @@
     },
     contact: {
       title: 'Contact',
-      subtitle: 'Pour les partenariats et demandes de media kit.',
+      subtitle: 'Pour les partenariats vous pouvez me contacter via ces différentes adresses',
       phoneLabel: 'Téléphone :',
       emailLabel: 'Email:',
       reachOut: 'Vous pouvez me contacter via TikTok, mail, numéro et Instagram.'
@@ -206,7 +206,7 @@
     },
     contact: {
       title: 'Contact',
-      subtitle: 'For partnerships and media kit requests.',
+      subtitle: 'For partnerships, you can contact me through these different addresses.',
       phoneLabel: 'Phone:',
       emailLabel: 'Email:',
       reachOut: 'You can contact me via TikTok, email, phone number, and Instagram.'
@@ -330,7 +330,7 @@
     },
     contact: {
       title: 'Contacto',
-      subtitle: 'Para colaboraciones y solicitudes de media kit.',
+      subtitle: 'Para colaboraciones, puedes contactarme a través de estas diferentes direcciones.',
       phoneLabel: 'Teléfono:',
       emailLabel: 'Email:',
       reachOut: 'Puedes contactarme por TikTok, email, teléfono e Instagram.'
@@ -454,7 +454,7 @@
     },
     contact: {
       title: 'Kontakt',
-      subtitle: 'Fur Partnerschaften und Media-Kit-Anfragen.',
+      subtitle: 'Für Partnerschaften kannst du mich über diese verschiedenen Adressen kontaktieren.',
       phoneLabel: 'Telefon:',
       emailLabel: 'E-Mail:',
       reachOut: 'Du kannst mich über TikTok, E-Mail, Telefonnummer und Instagram kontaktieren.'
@@ -578,7 +578,7 @@
     },
     contact: {
       title: 'Contact',
-      subtitle: 'Voor samenwerkingen en media kit-aanvragen.',
+      subtitle: 'Voor samenwerkingen kun je contact met mij opnemen via deze verschillende adressen.',
       phoneLabel: 'Telefoon:',
       emailLabel: 'E-mail:',
       reachOut: 'Je kunt contact met me opnemen via TikTok, e-mail, telefoonnummer en Instagram.'
