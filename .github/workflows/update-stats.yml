@@ -27,6 +27,8 @@ jobs:
           pip install yt-dlp
 
       - name: Generate stats files
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scripts/update_stats.py
 
       - name: Commit and push if changed

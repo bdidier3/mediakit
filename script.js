@@ -847,7 +847,7 @@ async function initCaseStatsFromJson() {
     'toverland': ['toverland'],
     'phantasialand': ['phantasialand'],
     'nigloland': ['nigloland'],
-    'rulantica': ['rulantica'],
+    'rulantica': ['rulantica', 'water park europa-park', 'parc aquatique europa-park', 'water world rulantica'],
     'energylandia': ['energylandia'],
     'parc-asterix': ['parcasterix', 'parc-asterix', 'parc asterix'],
     'traumatica': ['traumatica'],
@@ -870,7 +870,11 @@ async function initCaseStatsFromJson() {
   };
 
   const normalizeVideo = (video) => ({
+    platform: (video.platform || '').toLowerCase(),
+    id: video.id || '',
     url: video.url || '',
+    title: video.title || '',
+    description: video.description || '',
     views: Number(video.views || 0),
     hashtags: extractHashtags(video.title || '', video.description || '').map((tag) => tag.toLowerCase())
   });
@@ -974,7 +978,7 @@ async function initCaseStatsFromJson() {
         continue;
       }
 
-      const key = video.url || '';
+      const key = video.url || `${video.platform}:${video.id || video.title}`;
       const existing = byUrl.get(key);
       if (!existing || video.views > existing.views) {
         byUrl.set(key, video);
