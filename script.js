@@ -829,14 +829,14 @@ async function initCaseStatsFromJson() {
     'bobejaanland': ['#bobbejaanland', '#bobejaanland'],
     'toverland': ['#toverland'],
     'phantasialand': ['#phantasialand'],
-    'nigloland': ['#nigloland'],
+    'nigloland': ['#nigloland', '#niglo'],
     'rulantica': ['#rulantica'],
     'energylandia': ['#energylandia'],
     'parc-asterix': ['#parcasterix', '#parc-asterix'],
     'traumatica': ['#traumatica'],
     'seaworld': ['#seaworld', '#seaworldorlando'],
     'universal': ['#universalorlando', '#epicuniverse', '#islandsofadventure', '#islandofadventure', '#universalstudiosorlando'],
-    'disneyworld': ['#disneyworld', '#waltdisneyworld']
+    'disneyworld': ['#disneyworld', '#waltdisneyworld', '#wdw', '#magickingdom', '#epcot', '#animalkingdom', '#hollywoodstudios', '#disneyparks']
   };
 
   const parkKeywordsMap = {
@@ -846,14 +846,14 @@ async function initCaseStatsFromJson() {
     'bobejaanland': ['bobbejaanland', 'bobejaanland'],
     'toverland': ['toverland'],
     'phantasialand': ['phantasialand'],
-    'nigloland': ['nigloland'],
+    'nigloland': ['nigloland', 'niglo'],
     'rulantica': ['rulantica', 'water park europa-park', 'parc aquatique europa-park', 'water world rulantica'],
     'energylandia': ['energylandia'],
     'parc-asterix': ['parcasterix', 'parc-asterix', 'parc asterix'],
     'traumatica': ['traumatica'],
     'seaworld': ['seaworld', 'sea world', 'seaworld orlando'],
     'universal': ['universal orlando', 'universalorlando', 'epic universe', 'epicuniverse', 'islands of adventure', 'islandsofadventure'],
-    'disneyworld': ['disney world', 'disneyworld', 'walt disney world', 'magic kingdom']
+    'disneyworld': ['disney world', 'disneyworld', 'walt disney world', 'waltdisneyworld', 'magic kingdom', 'epcot', 'animal kingdom', 'hollywood studios', 'wdw']
   };
 
   const forcedVideoUrlsByPark = {
@@ -978,7 +978,8 @@ async function initCaseStatsFromJson() {
         continue;
       }
 
-      const key = video.url || `${video.platform}:${video.id || video.title}`;
+      const normalizedUrl = video.platform === 'tiktok' ? normalizeTikTokUrl(video.url) : (video.url || '');
+      const key = normalizedUrl || `${video.platform}:${video.id || video.title}`;
       const existing = byUrl.get(key);
       if (!existing || video.views > existing.views) {
         byUrl.set(key, video);
