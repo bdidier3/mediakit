@@ -108,7 +108,7 @@
       gap: 0;
       border: 1px solid rgba(0, 0, 0, 0.16);
       border-radius: 999px;
-      background: linear-gradient(180deg, #ffffff, #fff9df);
+      background: #ffffff;
       color: #111;
       font-weight: 800;
       font-size: 1.05rem;
@@ -120,7 +120,7 @@
     .lang-toggle:hover {
       transform: translateY(-1px);
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-      background: linear-gradient(180deg, #ffffff, #fff3b5);
+      background: #ffffff;
     }
     .lang-toggle[aria-expanded="true"] {
       box-shadow: 0 0 0 3px rgba(255, 212, 0, 0.55);
@@ -187,7 +187,7 @@
       color: #111;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 8px;
       border-radius: 10px;
       padding: 9px 10px;
@@ -456,11 +456,11 @@
           <span class="lang-caret" aria-hidden="true">▾</span>
         </button>
         <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language options">
-          <li><button class="lang-option" type="button" data-lang="fr"><span class="left"><span class="flag-icon flag-fr" aria-hidden="true"></span><span>Français</span></span><span>FR</span></button></li>
-          <li><button class="lang-option" type="button" data-lang="en"><span class="left"><span class="flag-icon flag-en" aria-hidden="true"></span><span>English</span></span><span>EN</span></button></li>
-          <li><button class="lang-option" type="button" data-lang="es"><span class="left"><span class="flag-icon flag-es" aria-hidden="true"></span><span>Español</span></span><span>ES</span></button></li>
-          <li><button class="lang-option" type="button" data-lang="de"><span class="left"><span class="flag-icon flag-de" aria-hidden="true"></span><span>Deutsch</span></span><span>DE</span></button></li>
-          <li><button class="lang-option" type="button" data-lang="nl"><span class="left"><span class="flag-icon flag-nl" aria-hidden="true"></span><span>Nederlands</span></span><span>NL</span></button></li>
+          <li><button class="lang-option" type="button" data-lang="fr"><span class="left"><span class="flag-icon flag-fr" aria-hidden="true"></span><span>Français</span></span></button></li>
+          <li><button class="lang-option" type="button" data-lang="en"><span class="left"><span class="flag-icon flag-en" aria-hidden="true"></span><span>English</span></span></button></li>
+          <li><button class="lang-option" type="button" data-lang="es"><span class="left"><span class="flag-icon flag-es" aria-hidden="true"></span><span>Español</span></span></button></li>
+          <li><button class="lang-option" type="button" data-lang="de"><span class="left"><span class="flag-icon flag-de" aria-hidden="true"></span><span>Deutsch</span></span></button></li>
+          <li><button class="lang-option" type="button" data-lang="nl"><span class="left"><span class="flag-icon flag-nl" aria-hidden="true"></span><span>Nederlands</span></span></button></li>
         </ul>
       </div>
     </div>

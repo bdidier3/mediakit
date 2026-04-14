@@ -94,8 +94,8 @@
     },
     home: {
       videoAria: "Vidéo de fond d'un parc d'attractions",
-      title: 'Créateur de contenu français dédié aux parcs d\'attractions',
-      lead: '+150 000 abonnés sur TikTok, une audience passionnée, et des contenus à fort engagement autour des plus grands parcs d\'attractions.'
+      title: 'L\'un des plus gros créateur de contenu français dédié aux parcs d\'attractions',
+      lead: '+150 000 abonnés sur TikTok et +20 000 sur YouTube, contenus à fort engagement autour des plus grands parcs d\'attractions du monde !'
     },
     about: {
       heading: 'À propos',
