@@ -234,13 +234,22 @@
     .view-chip {
       border: 1px solid rgba(15, 71, 119, 0.22);
       background: #ffffff;
-      color: #123f66;
+      color: #111;
       border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 8px 12px;
       font-size: 0.84rem;
       font-weight: 700;
+      font-family: "Plus Jakarta Sans", Arial, sans-serif;
       cursor: pointer;
       transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    .chip-icon {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
     }
     .view-chip:hover {
       background: #eef8ff;
@@ -279,6 +288,55 @@
       color: var(--muted);
       margin-bottom: 22px;
     }
+    .park-overview {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+    .park-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      min-width: 0;
+    }
+    .park-logo {
+      width: 164px;
+      height: 164px;
+      object-fit: contain;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 14px;
+      box-shadow: 0 16px 34px rgba(17, 58, 92, 0.16);
+      flex: 0 0 auto;
+    }
+    .stats-title {
+      font-size: 1.06rem;
+      font-weight: 800;
+      color: #0f4777;
+      margin: 4px 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .park-map-card {
+      border: 1px solid rgba(74, 151, 203, 0.2);
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 10px;
+      box-shadow: 0 16px 34px rgba(17, 58, 92, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+    #park-map {
+      width: 100%;
+      height: 210px;
+      border: 0;
+      border-radius: 12px;
+      display: block;
+    }
     .stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -297,7 +355,21 @@
       font-size: 1.35rem;
       margin-bottom: 2px;
     }
+    .stat-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    .stat-icon {
+      width: 18px;
+      height: 18px;
+      color: #111;
+      flex: 0 0 auto;
+    }
     .stat span {
+      display: block;
+      margin-top: 6px;
       color: var(--muted);
       font-size: 0.85rem;
     }
@@ -307,8 +379,18 @@
       margin-top: 18px;
     }
     .platform h2 {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-size: 1.35rem;
       margin-bottom: 10px;
+    }
+    .platform-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      color: #111;
+      flex: 0 0 auto;
     }
     ul {
       list-style: none;
@@ -414,6 +496,15 @@
         align-items: flex-start;
         top: 66px;
       }
+      .park-overview {
+        grid-template-columns: 1fr;
+      }
+      .park-map-card {
+        max-width: 100%;
+      }
+      #park-map {
+        height: 190px;
+      }
       body {
         padding: 96px 12px 32px;
       }
@@ -469,15 +560,17 @@
   <div class="wrap">
     <div class="top">
       <a class="back" href="index.html" data-i18n="videos.back">Retour à l'accueil</a>
-      <div class="view-filter" aria-label="Filtrer la vue vidéos">
-        <button class="view-chip active" type="button" data-view="both" data-i18n="videos.viewBoth">TikTok + YouTube</button>
-        <button class="view-chip" type="button" data-view="tiktok" data-i18n="videos.viewTikTok">TikTok</button>
-        <button class="view-chip" type="button" data-view="youtube" data-i18n="videos.viewYouTube">YouTube</button>
-      </div>
     </div>
 
-    <h1 id="park-title" data-i18n="videos.parkTitle">Parc</h1>
-    <p class="lead" id="park-lead" data-i18n="videos.parkLead">Toutes les vidéos et performances disponibles pour ce parc.</p>
+    <section class="park-overview" id="park-overview">
+      <div class="park-title-wrap">
+        <h1 id="park-title" data-i18n="videos.parkTitle">Parc</h1>
+        <img id="park-logo" class="park-logo" src="" alt="" loading="lazy" hidden>
+      </div>
+      <aside class="park-map-card" id="park-map-card" hidden>
+        <iframe id="park-map" title="Google Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </aside>
+    </section>
 
     <div id="content"></div>
   </div>
@@ -486,23 +579,23 @@
     const uiTranslations = {
       fr: {
         nav: { home: 'Accueil', stats: 'Statistiques', about: 'À propos', partners: 'Partenariats', highlights: 'Highlights', videos: 'Mes vidéos', contact: 'Contact' },
-        videos: { back: "Retour à l'accueil", parkTitle: 'Parc', parkLead: 'Toutes les vidéos et performances disponibles pour ce parc.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube' }
+        videos: { back: "Retour à l'accueil", parkTitle: 'Parc', parkLead: 'Toutes les vidéos et performances disponibles pour ce parc.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Stats sur le parc', totalVideos: 'vidéos', totalViews: 'vues', totalLikes: 'likes', totalComments: 'commentaires', noVideos: 'Aucune vidéo enregistrée pour le moment.', noHashtag: 'Aucun hashtag détecté', linkUnavailable: 'Lien indisponible', loading: 'Chargement des statistiques...', noParkSelected: 'Aucun parc sélectionné.', comingSoon: 'Les détails vidéos pour ce parc arrivent bientôt.', mapCta: 'Voir sur Google Maps', viewsUnit: 'vues', likesUnit: 'likes', commentsUnit: 'commentaires' }
       },
       en: {
         nav: { home: 'Home', stats: 'Analytics', about: 'About', partners: 'Partnerships', highlights: 'Highlights', videos: 'My Videos', contact: 'Contact' },
-        videos: { back: 'Back to home', parkTitle: 'Park', parkLead: 'All available videos and performance for this park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube' }
+        videos: { back: 'Back to home', parkTitle: 'Park', parkLead: 'All available videos and performance for this park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Total stats', totalVideos: 'videos', totalViews: 'views', totalLikes: 'likes', totalComments: 'comments', noVideos: 'No videos available yet.', noHashtag: 'No hashtag detected', linkUnavailable: 'Link unavailable', loading: 'Loading statistics...', noParkSelected: 'No park selected.', comingSoon: 'Video details for this park are coming soon.', mapCta: 'Open in Google Maps', viewsUnit: 'views', likesUnit: 'likes', commentsUnit: 'comments' }
       },
       es: {
         nav: { home: 'Inicio', stats: 'Estadísticas', about: 'Acerca de', partners: 'Colaboraciones', highlights: 'Highlights', videos: 'Mis videos', contact: 'Contacto' },
-        videos: { back: 'Volver al inicio', parkTitle: 'Parque', parkLead: 'Todos los videos y resultados disponibles para este parque.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube' }
+        videos: { back: 'Volver al inicio', parkTitle: 'Parque', parkLead: 'Todos los videos y resultados disponibles para este parque.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Estadísticas totales', totalVideos: 'videos', totalViews: 'vistas', totalLikes: 'me gusta', totalComments: 'comentarios', noVideos: 'No hay videos disponibles por ahora.', noHashtag: 'No se detectó hashtag', linkUnavailable: 'Enlace no disponible', loading: 'Cargando estadísticas...', noParkSelected: 'Ningún parque seleccionado.', comingSoon: 'Los detalles de videos para este parque llegarán pronto.', mapCta: 'Abrir en Google Maps', viewsUnit: 'vistas', likesUnit: 'me gusta', commentsUnit: 'comentarios' }
       },
       de: {
         nav: { home: 'Start', stats: 'Statistiken', about: 'Über mich', partners: 'Partnerschaften', highlights: 'Highlights', videos: 'Meine Videos', contact: 'Kontakt' },
-        videos: { back: 'Zurück zur Startseite', parkTitle: 'Park', parkLead: 'Alle verfügbaren Videos und Leistungen für diesen Park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube' }
+        videos: { back: 'Zurück zur Startseite', parkTitle: 'Park', parkLead: 'Alle verfügbaren Videos und Leistungen für diesen Park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Gesamtstatistiken', totalVideos: 'Videos', totalViews: 'Aufrufe', totalLikes: 'Likes', totalComments: 'Kommentare', noVideos: 'Derzeit keine Videos verfügbar.', noHashtag: 'Kein Hashtag erkannt', linkUnavailable: 'Link nicht verfügbar', loading: 'Statistiken werden geladen...', noParkSelected: 'Kein Park ausgewählt.', comingSoon: 'Video-Details für diesen Park kommen bald.', mapCta: 'In Google Maps öffnen', viewsUnit: 'Aufrufe', likesUnit: 'Likes', commentsUnit: 'Kommentare' }
       },
       nl: {
         nav: { home: 'Home', stats: 'Statistieken', about: 'Over mij', partners: 'Partnerschappen', highlights: 'Highlights', videos: "Mijn video's", contact: 'Contact' },
-        videos: { back: 'Terug naar home', parkTitle: 'Park', parkLead: 'Alle beschikbare video\'s en prestaties voor dit park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube' }
+        videos: { back: 'Terug naar home', parkTitle: 'Park', parkLead: 'Alle beschikbare video\'s en prestaties voor dit park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Totale statistieken', totalVideos: 'video\'s', totalViews: 'weergaven', totalLikes: 'likes', totalComments: 'reacties', noVideos: 'Nog geen video\'s beschikbaar.', noHashtag: 'Geen hashtag gedetecteerd', linkUnavailable: 'Link niet beschikbaar', loading: 'Statistieken laden...', noParkSelected: 'Geen park geselecteerd.', comingSoon: 'Videodetails voor dit park komen binnenkort.', mapCta: 'Openen in Google Maps', viewsUnit: 'weergaven', likesUnit: 'likes', commentsUnit: 'reacties' }
       }
     };
 
@@ -519,6 +612,17 @@
 
     function getValueByPath(obj, path) {
       return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : null), obj);
+    }
+
+    function getCurrentUiLanguage() {
+      const saved = localStorage.getItem('siteLanguage');
+      return uiTranslations[saved] ? saved : 'fr';
+    }
+
+    function t(path, fallback) {
+      const lang = getCurrentUiLanguage();
+      const value = getValueByPath(uiTranslations[lang], path);
+      return value !== null ? value : fallback;
     }
 
     function updateLanguageUi(selected) {
@@ -556,6 +660,12 @@
 
       updateLanguageUi(selected);
       localStorage.setItem('siteLanguage', selected);
+
+      if (currentParkData) {
+        const park = new URLSearchParams(window.location.search).get("park") || "";
+        renderContent(currentParkData);
+        updateParkOverview(park, currentParkData.name);
+      }
     }
 
     function initLanguageSwitcher() {
@@ -686,11 +796,53 @@
       "disneyworld": "Disney World"
     };
 
+    const parkAssets = {
+      "europapark": { logo: "img/logos/LOGO_ep.png", mapQuery: "Europa-Park Rust Germany" },
+      "efteling": { logo: "img/logos/LOGO_efteling.png", mapQuery: "Efteling Kaatsheuvel Netherlands" },
+      "bobbejaanland": { logo: "img/logos/LOGO_bob.png", mapQuery: "Bobbejaanland Lichtaart Belgium" },
+      "bobejaanland": { logo: "img/logos/LOGO_bob.png", mapQuery: "Bobbejaanland Lichtaart Belgium" },
+      "toverland": { logo: "img/logos/LOGO_toverland.png", mapQuery: "Toverland Sevenum Netherlands" },
+      "phantasialand": { logo: "img/logos/LOGO_phanta.png", mapQuery: "Phantasialand Bruehl Germany" },
+      "nigloland": { logo: "img/logos/LOGO_niglo.png", mapQuery: "Nigloland Dolancourt France" },
+      "rulantica": { logo: "img/logos/LOGO_rulantica.png", mapQuery: "Rulantica Rust Germany" },
+      "energylandia": { logo: "img/logos/LOGO_en.png", mapQuery: "Energylandia Zator Poland" },
+      "parc-asterix": { logo: "img/logos/LOGO_asterix.png", mapQuery: "Parc Asterix Plailly France" },
+      "traumatica": { logo: "img/logos/LOGO_traumatica.png", mapQuery: "Traumatica Rust Germany" },
+      "seaworld": { logo: "img/logos/LOGO_seaworld.svg", mapQuery: "SeaWorld Orlando Florida" },
+      "universal": { logo: "img/logos/LOGO_epic.png", mapQuery: "Universal Orlando Resort Florida" },
+      "disneyworld": { logo: "img/logos/LOGO_disneyworld.png", mapQuery: "Walt Disney World Resort Orlando Florida" }
+    };
+
     const forcedVideoUrlsByPark = {
       "seaworld": ["https://www.tiktok.com/@clip2ep.fan/video/7616407866504711446?is_from_webapp=1&sender_device=pc&web_id=7499489214192043542"],
       "universal": ["https://www.tiktok.com/@clip2ep.fan/video/7616407866504711446?is_from_webapp=1&sender_device=pc&web_id=7499489214192043542"],
       "disneyworld": ["https://www.tiktok.com/@clip2ep.fan/video/7616407866504711446?is_from_webapp=1&sender_device=pc&web_id=7499489214192043542"]
     };
+
+    function updateParkOverview(parkKey, parkName) {
+      const logo = document.getElementById("park-logo");
+      const mapCard = document.getElementById("park-map-card");
+      const mapFrame = document.getElementById("park-map");
+      const asset = parkAssets[parkKey];
+
+      if (!logo || !mapCard || !mapFrame || !asset) {
+        if (logo) {
+          logo.hidden = true;
+        }
+        if (mapCard) {
+          mapCard.hidden = true;
+        }
+        return;
+      }
+
+      logo.src = asset.logo;
+      logo.alt = `${parkName} logo`;
+      logo.hidden = false;
+
+      const query = encodeURIComponent(asset.mapQuery);
+      mapFrame.src = `https://www.google.com/maps?q=${query}&output=embed`;
+      mapCard.hidden = false;
+    }
 
     const fallbackData = {
       efteling: {
@@ -979,21 +1131,23 @@
     }
 
     function fmt(n) {
-      return new Intl.NumberFormat("fr-FR").format(n);
+      const lang = getCurrentUiLanguage();
+      const locale = lang === "en" ? "en-US" : lang === "es" ? "es-ES" : lang === "de" ? "de-DE" : lang === "nl" ? "nl-NL" : "fr-FR";
+      return new Intl.NumberFormat(locale).format(n);
     }
 
     function renderList(items) {
       if (!items || items.length === 0) {
-        return '<div class="empty">Aucune video enregistree pour le moment.</div>';
+        return `<div class="empty">${t("videos.noVideos", "Aucune vidéo enregistrée pour le moment.")}</div>`;
       }
       return `<ul>${items.map(v => `
         <li>
           <div class="title">${v.title}</div>
-          <div class="meta">${fmt(v.views)} vues · ${fmt(v.likes)} likes · ${fmt(v.comments)} commentaires</div>
-          <div class="hashtags">${v.hashtags.length ? v.hashtags.join(" ") : "Aucun hashtag detecte"}</div>
+          <div class="meta">${fmt(v.views)} ${t("videos.viewsUnit", "vues")} · ${fmt(v.likes)} ${t("videos.likesUnit", "likes")} · ${fmt(v.comments)} ${t("videos.commentsUnit", "commentaires")}</div>
+          <div class="hashtags">${v.hashtags.length ? v.hashtags.join(" ") : t("videos.noHashtag", "Aucun hashtag détecté")}</div>
           ${/^https?:\/\//i.test(v.url || "")
             ? `<a class="link" href="${v.url}" target="_blank" rel="noopener noreferrer">${v.url}</a>`
-            : '<span class="link">Lien indisponible</span>'}
+            : `<span class="link">${t("videos.linkUnavailable", "Lien indisponible")}</span>`}
         </li>
       `).join("")}</ul>`;
     }
@@ -1041,49 +1195,60 @@
       const v = computeViewData(data, currentViewMode);
 
       content.innerHTML = `
+        <h2 class="stats-title">${t("videos.totalsTitle", "Stats sur le parc")}</h2>
         <div class="stats">
-          <div class="stat"><strong>${fmt(v.totalVideos)}</strong><span>videos total</span></div>
-          <div class="stat"><strong>${fmt(v.totalViews)}</strong><span>vues total</span></div>
-          <div class="stat"><strong>${fmt(v.totalLikes)}</strong><span>likes total</span></div>
-          <div class="stat"><strong>${fmt(v.totalComments)}</strong><span>commentaires total</span></div>
+          <div class="stat"><div class="stat-top"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm2 0v12h12V6H6zm3 2 7 4-7 4V8z"/></svg><strong>${fmt(v.totalVideos)}</strong></div><span>${t("videos.totalVideos", "vidéos")}</span></div>
+          <div class="stat"><div class="stat-top"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 17l4-4 3 3 7-7 4 4v6H3v-2zm0-8h4v4H3V9zm6-4h4v8H9V5zm6 2h4v6h-4V7z"/></svg><strong>${fmt(v.totalViews)}</strong></div><span>${t("videos.totalViews", "vues")}</span></div>
+          <div class="stat"><div class="stat-top"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.1 21.35l-1.1-1C5.14 15.24 2 12.39 2 8.99 2 6.24 4.24 4 6.99 4c1.7 0 3.33.79 4.41 2.05A5.76 5.76 0 0 1 15.81 4C18.56 4 20.8 6.24 20.8 8.99c0 3.4-3.14 6.25-8.9 11.36l-.8 1z"/></svg><strong>${fmt(v.totalLikes)}</strong></div><span>${t("videos.totalLikes", "likes")}</span></div>
+          <div class="stat"><div class="stat-top"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg><strong>${fmt(v.totalComments)}</strong></div><span>${t("videos.totalComments", "commentaires")}</span></div>
         </div>
+        ${renderViewFilter()}
         ${v.showTikTok ? `
         <section class="platform" id="tiktok-section">
-          <h2>TikTok (${data.tiktok.length})</h2>
+          <h2><svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"/></svg>${t("videos.viewTikTok", "TikTok")} (${data.tiktok.length})</h2>
           ${renderList(data.tiktok)}
         </section>` : ""}
         ${v.showYouTube ? `
         <section class="platform" id="youtube-section">
-          <h2>YouTube (${data.youtube.length})</h2>
+          <h2><svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.8 8.06a2.9 2.9 0 0 0-2.03-2.04C17.98 5.5 12 5.5 12 5.5s-5.98 0-7.77.52A2.9 2.9 0 0 0 2.2 8.06C1.7 9.86 1.7 12 1.7 12s0 2.14.5 3.94a2.9 2.9 0 0 0 2.03 2.04c1.79.52 7.77.52 7.77.52s5.98 0 7.77-.52a2.9 2.9 0 0 0 2.03-2.04c.5-1.8.5-3.94.5-3.94s0-2.14-.5-3.94zM10.1 15.3V8.7L15.8 12l-5.7 3.3z"/></svg>${t("videos.viewYouTube", "YouTube")} (${data.youtube.length})</h2>
           ${renderList(data.youtube)}
         </section>` : ""}
       `;
+
+      bindViewFilterEvents(content);
     }
 
-    function initViewFilter() {
-      const chips = Array.from(document.querySelectorAll(".view-chip"));
-      if (chips.length === 0) {
-        return;
-      }
+    function renderViewFilter() {
+      return `
+        <div class="view-filter" aria-label="Filtrer la vue vidéos">
+          <button class="view-chip ${currentViewMode === "both" ? "active" : ""}" type="button" data-view="both">
+            <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"/></svg>
+            <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.8 8.06a2.9 2.9 0 0 0-2.03-2.04C17.98 5.5 12 5.5 12 5.5s-5.98 0-7.77.52A2.9 2.9 0 0 0 2.2 8.06C1.7 9.86 1.7 12 1.7 12s0 2.14.5 3.94a2.9 2.9 0 0 0 2.03 2.04c1.79.52 7.77.52 7.77.52s5.98 0 7.77-.52a2.9 2.9 0 0 0 2.03-2.04c.5-1.8.5-3.94.5-3.94s0-2.14-.5-3.94zM10.1 15.3V8.7L15.8 12l-5.7 3.3z"/></svg>
+            <span>${t("videos.viewBoth", "TikTok + YouTube")}</span>
+          </button>
+          <button class="view-chip ${currentViewMode === "tiktok" ? "active" : ""}" type="button" data-view="tiktok">
+            <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"/></svg>
+            <span>${t("videos.viewTikTok", "TikTok")}</span>
+          </button>
+          <button class="view-chip ${currentViewMode === "youtube" ? "active" : ""}" type="button" data-view="youtube">
+            <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.8 8.06a2.9 2.9 0 0 0-2.03-2.04C17.98 5.5 12 5.5 12 5.5s-5.98 0-7.77.52A2.9 2.9 0 0 0 2.2 8.06C1.7 9.86 1.7 12 1.7 12s0 2.14.5 3.94a2.9 2.9 0 0 0 2.03 2.04c1.79.52 7.77.52 7.77.52s5.98 0 7.77-.52a2.9 2.9 0 0 0 2.03-2.04c.5-1.8.5-3.94.5-3.94s0-2.14-.5-3.94zM10.1 15.3V8.7L15.8 12l-5.7 3.3z"/></svg>
+            <span>${t("videos.viewYouTube", "YouTube")}</span>
+          </button>
+        </div>
+      `;
+    }
 
-      const setActive = (view) => {
-        chips.forEach((chip) => {
-          chip.classList.toggle("active", chip.dataset.view === view);
-        });
-      };
-
+    function bindViewFilterEvents(root) {
+      const chips = Array.from((root || document).querySelectorAll(".view-chip"));
       chips.forEach((chip) => {
         chip.addEventListener("click", () => {
           const nextView = chip.dataset.view || "both";
           currentViewMode = nextView;
-          setActive(nextView);
           if (currentParkData) {
             renderContent(currentParkData);
           }
         });
       });
-
-      setActive(currentViewMode);
     }
 
     async function renderPage() {
@@ -1092,26 +1257,28 @@
       const title = document.getElementById("park-title");
 
       if (!park) {
-        title.textContent = "Videos parc";
-        content.innerHTML = '<div class="empty">Aucun parc selectionne.</div>';
+        title.textContent = t("videos.parkTitle", "Parc");
+        content.innerHTML = `<div class="empty">${t("videos.noParkSelected", "Aucun parc sélectionné.")}</div>`;
+        updateParkOverview("", "");
         return;
       }
 
-      content.innerHTML = '<div class="empty">Chargement des statistiques...</div>';
+      content.innerHTML = `<div class="empty">${t("videos.loading", "Chargement des statistiques...")}</div>`;
       const d = await loadParkData(park);
 
       if (!d) {
-        title.textContent = "Videos parc";
-        content.innerHTML = '<div class="empty">Les details videos pour ce parc arrivent bientot.</div>';
+        title.textContent = t("videos.parkTitle", "Parc");
+        content.innerHTML = `<div class="empty">${t("videos.comingSoon", "Les détails vidéos pour ce parc arrivent bientôt.")}</div>`;
+        updateParkOverview("", "");
         return;
       }
 
       title.textContent = d.name;
+      updateParkOverview(park, d.name);
       currentParkData = d;
       renderContent(d);
     }
 
-    initViewFilter();
     renderPage();
   </script>
 </body>

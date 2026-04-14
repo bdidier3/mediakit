@@ -218,8 +218,8 @@
     },
     home: {
       videoAria: 'Theme park background video',
-      title: 'French content creator focused on theme parks',
-      lead: "+150,000 followers on TikTok, a highly passionate audience, and high-engagement content around Europe's biggest theme parks."
+      title: 'One of the largest French theme park content creators',
+      lead: "+150,000 followers on TikTok and +20,000 on YouTube, high-engagement content around the world's biggest theme parks!"
     },
     about: {
       heading: 'About',
@@ -342,8 +342,8 @@
     },
     home: {
       videoAria: 'Video de fondo de parque temático',
-      title: 'Creador de contenido francés dedicado a los parques temáticos',
-      lead: '+150 000 seguidores en TikTok, una audiencia apasionada y contenido de alto rendimiento sobre los parques temáticos más grandes de Europa.'
+      title: 'Uno de los mayores creadores franceses de contenido sobre parques temáticos',
+      lead: '+150 000 seguidores en TikTok y +20 000 en YouTube, contenido de alto engagement sobre los parques temáticos más grandes del mundo.'
     },
     about: {
       heading: 'Acerca de',
@@ -466,8 +466,8 @@
     },
     home: {
       videoAria: 'Freizeitpark-Hintergrundvideo',
-      title: 'Franzosischer Content Creator mit Fokus auf Freizeitparks',
-      lead: '+150.000 Follower auf TikTok, eine sehr begeisterte Community und stark performender Content uber die grossten Freizeitparks Europas.'
+      title: 'Einer der groessten franzoesischen Content Creator fuer Freizeitparks',
+      lead: '+150.000 Follower auf TikTok und +20.000 auf YouTube, stark performender Content rund um die groessten Freizeitparks der Welt!'
     },
     about: {
       heading: 'Über mich',
@@ -590,8 +590,8 @@
     },
     home: {
       videoAria: 'Pretpark achtergrondvideo',
-      title: 'Franse content creator gespecialiseerd in pretparken',
-      lead: '+150.000 volgers op TikTok, een zeer betrokken community en sterke content over de grootste Europese pretparken.'
+      title: 'Een van de grootste Franse content creators voor pretparken',
+      lead: '+150.000 volgers op TikTok en +20.000 op YouTube, sterk presterende content rond de grootste pretparken ter wereld!'
     },
     about: {
       heading: 'Over mij',
