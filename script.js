@@ -836,7 +836,7 @@ async function initCaseStatsFromJson() {
     'traumatica': ['#traumatica'],
     'seaworld': ['#seaworld', '#seaworldorlando'],
     'universal': ['#universalorlando', '#epicuniverse', '#islandsofadventure', '#islandofadventure', '#universalstudiosorlando'],
-    'disneyworld': ['#disneyworld', '#waltdisneyworld', '#wdw', '#magickingdom', '#epcot', '#animalkingdom', '#hollywoodstudios', '#disneyparks']
+    'disneyworld': ['#disneyworld', '#waltdisneyworld', '#disney', '#disneyland', '#wdw', '#magickingdom', '#epcot', '#animalkingdom', '#hollywoodstudios', '#disneyparks', '#waltdisney', '#disneytrip', '#disneyfan']
   };
 
   const parkKeywordsMap = {
@@ -853,7 +853,7 @@ async function initCaseStatsFromJson() {
     'traumatica': ['traumatica'],
     'seaworld': ['seaworld', 'sea world', 'seaworld orlando'],
     'universal': ['universal orlando', 'universalorlando', 'epic universe', 'epicuniverse', 'islands of adventure', 'islandsofadventure'],
-    'disneyworld': ['disney world', 'disneyworld', 'walt disney world', 'waltdisneyworld', 'magic kingdom', 'epcot', 'animal kingdom', 'hollywood studios', 'wdw']
+    'disneyworld': ['disney world', 'disneyworld', 'walt disney world', 'waltdisneyworld', 'magic kingdom', 'epcot', 'animal kingdom', 'hollywood studios', 'wdw', 'disneyland']
   };
 
   const forcedVideoUrlsByPark = {
@@ -869,21 +869,45 @@ async function initCaseStatsFromJson() {
     return merged.match(/#[^\s#]+/g) || [];
   };
 
-  const normalizeVideo = (video) => ({
-    platform: (video.platform || '').toLowerCase(),
-    id: video.id || '',
-    url: video.url || '',
-    title: video.title || '',
-    description: video.description || '',
-    views: Number(video.views || 0),
-    hashtags: extractHashtags(video.title || '', video.description || '').map((tag) => tag.toLowerCase())
-  });
+  const normalizeVideo = (video) => {
+    const platform = (video.platform || '').toLowerCase();
+    const id = video.id || '';
+    const rawUrl = (video.url || '').trim();
+    let resolvedUrl = rawUrl;
+
+    if (!resolvedUrl && id) {
+      if (platform === 'tiktok') {
+        resolvedUrl = `https://www.tiktok.com/@clip2ep.fan/video/${id}`;
+      } else if (platform === 'youtube') {
+        resolvedUrl = `https://www.youtube.com/watch?v=${id}`;
+      }
+    }
+
+    return {
+      platform,
+      id,
+      url: resolvedUrl,
+      title: video.title || '',
+      description: video.description || '',
+      views: Number(video.views || 0),
+      hashtags: extractHashtags(video.title || '', video.description || '').map((tag) => tag.toLowerCase())
+    };
+  };
 
   const extractVideosFromRaw = (raw) => {
     const out = [];
 
     if (Array.isArray(raw?.videos)) {
-      out.push(...raw.videos);
+      for (const item of raw.videos) {
+        out.push({
+          id: item.id,
+          title: item.title || item.description || '',
+          description: item.description || '',
+          views: item.views || 0,
+          url: item.url || '',
+          platform: item.platform || 'tiktok'
+        });
+      }
     }
 
     if (raw?.sources?.tiktok?.videos) {
@@ -891,10 +915,12 @@ async function initCaseStatsFromJson() {
         const flat = item.entry_flat || item;
         const full = item.full_info || {};
         out.push({
+          id: flat.id,
           url: item.video_url || flat.url || '',
           views: flat.view_count || 0,
           title: flat.title || flat.description || '',
-          description: flat.description || full.description || ''
+          description: flat.description || full.description || '',
+          platform: 'tiktok'
         });
       }
     }
@@ -904,20 +930,26 @@ async function initCaseStatsFromJson() {
         const flat = item.entry_flat || item;
         const full = item.full_info || {};
         out.push({
+          id: flat.id,
           url: item.video_url || flat.url || '',
           views: flat.view_count || flat.views || 0,
           title: flat.title || full.title || flat.description || '',
-          description: flat.description || full.description || ''
+          description: flat.description || full.description || '',
+          platform: 'youtube'
         });
       }
     }
 
     if (raw?.plateformes?.tiktok?.videos) {
-      out.push(...raw.plateformes.tiktok.videos);
+      for (const item of raw.plateformes.tiktok.videos) {
+        out.push({ ...item, platform: 'tiktok' });
+      }
     }
 
     if (raw?.plateformes?.youtube?.videos) {
-      out.push(...raw.plateformes.youtube.videos);
+      for (const item of raw.plateformes.youtube.videos) {
+        out.push({ ...item, platform: 'youtube' });
+      }
     }
 
     return out;

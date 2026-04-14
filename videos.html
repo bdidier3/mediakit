@@ -649,7 +649,7 @@
       "traumatica": ["#traumatica"],
       "seaworld": ["#seaworld", "#seaworldorlando"],
       "universal": ["#universalorlando", "#epicuniverse", "#islandsofadventure", "#islandofadventure", "#universalstudiosorlando"],
-      "disneyworld": ["#disneyworld", "#waltdisneyworld", "#wdw", "#magickingdom", "#epcot", "#animalkingdom", "#hollywoodstudios", "#disneyparks"]
+      "disneyworld": ["#disneyworld", "#waltdisneyworld", "#disney", "#disneyland", "#wdw", "#magickingdom", "#epcot", "#animalkingdom", "#hollywoodstudios", "#disneyparks", "#waltdisney", "#disneytrip", "#disneyfan"]
     };
 
     const parkKeywordsMap = {
@@ -666,7 +666,7 @@
       "traumatica": ["traumatica"],
       "seaworld": ["seaworld", "sea world", "seaworld orlando"],
       "universal": ["universal orlando", "universalorlando", "epic universe", "epicuniverse", "islands of adventure", "islandsofadventure"],
-      "disneyworld": ["disney world", "disneyworld", "walt disney world", "waltdisneyworld", "magic kingdom", "epcot", "animal kingdom", "hollywood studios", "wdw"]
+      "disneyworld": ["disney world", "disneyworld", "walt disney world", "waltdisneyworld", "magic kingdom", "epcot", "animal kingdom", "hollywood studios", "wdw", "disneyland"]
     };
 
     const parkDisplayName = {
@@ -736,6 +736,17 @@
     function normalizeVideo(v, platform) {
       const title = v.title || v.description || "Video";
       const description = v.description || "";
+      const rawUrl = (v.url || "").trim();
+      let resolvedUrl = rawUrl;
+
+      if (!resolvedUrl && v.id) {
+        if (platform === "tiktok") {
+          resolvedUrl = `https://www.tiktok.com/@clip2ep.fan/video/${v.id}`;
+        } else if (platform === "youtube") {
+          resolvedUrl = `https://www.youtube.com/watch?v=${v.id}`;
+        }
+      }
+
       return {
         id: v.id || "",
         title,
@@ -745,7 +756,7 @@
         likes: Number(v.likes || 0),
         comments: Number(v.comments || 0),
         platform,
-        url: v.url || "#"
+        url: resolvedUrl
       };
     }
 
@@ -938,7 +949,7 @@
               id: extractTikTokId(forcedUrl),
               title: "Video ajoutee manuellement",
               description: "",
-              hashtags: ["#etatsunis🇺🇸"],
+              hashtags: parkKey === "disneyworld" ? ["#disneyworld"] : ["#etatsunis🇺🇸"],
               views: 0,
               likes: 0,
               comments: 0,
@@ -950,7 +961,7 @@
       }
 
       if (uniqueVideos.length > 0) {
-        const usParks = new Set(["seaworld", "universal", "disneyworld"]);
+        const usParks = new Set(["seaworld", "universal"]);
         const normalized = usParks.has(parkKey)
           ? uniqueVideos.map((v) => {
               const hasUsTag = (v.hashtags || []).some((tag) => tag.toLowerCase() === "#etatsunis🇺🇸");
@@ -980,7 +991,9 @@
           <div class="title">${v.title}</div>
           <div class="meta">${fmt(v.views)} vues · ${fmt(v.likes)} likes · ${fmt(v.comments)} commentaires</div>
           <div class="hashtags">${v.hashtags.length ? v.hashtags.join(" ") : "Aucun hashtag detecte"}</div>
-          <a class="link" href="${v.url}" target="_blank" rel="noopener noreferrer">${v.url}</a>
+          ${/^https?:\/\//i.test(v.url || "")
+            ? `<a class="link" href="${v.url}" target="_blank" rel="noopener noreferrer">${v.url}</a>`
+            : '<span class="link">Lien indisponible</span>'}
         </li>
       `).join("")}</ul>`;
     }
