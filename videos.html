@@ -231,6 +231,21 @@
       gap: 8px;
       flex-wrap: wrap;
     }
+    .list-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .layout-filter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
     .view-chip {
       border: 1px solid rgba(15, 71, 119, 0.22);
       background: #ffffff;
@@ -256,6 +271,35 @@
       border-color: rgba(15, 71, 119, 0.38);
     }
     .view-chip.active {
+      background: #0f4777;
+      color: #ffffff;
+      border-color: #0f4777;
+    }
+    .layout-chip {
+      border: 1px solid rgba(15, 71, 119, 0.22);
+      background: #ffffff;
+      color: #111;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 10px;
+      min-width: 40px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      font-family: "Plus Jakarta Sans", Arial, sans-serif;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    .layout-chip .chip-icon {
+      width: 15px;
+      height: 15px;
+    }
+    .layout-chip:hover {
+      background: #eef8ff;
+      border-color: rgba(15, 71, 119, 0.38);
+    }
+    .layout-chip.active {
       background: #0f4777;
       color: #ffffff;
       border-color: #0f4777;
@@ -397,6 +441,63 @@
       display: grid;
       gap: 10px;
     }
+    .video-list.layout-stack {
+      grid-template-columns: 1fr;
+    }
+    .video-list.layout-duo {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .video-list.layout-duo li {
+      padding: 10px;
+      border-radius: 12px;
+    }
+    .video-list.layout-duo .video-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .video-list.layout-duo .video-thumb {
+      width: min(100%, 126px);
+      margin: 0 auto;
+    }
+    .video-list.layout-duo .title {
+      font-size: 0.94rem;
+      margin-bottom: 4px;
+    }
+    .video-list.layout-duo .meta {
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+    .video-list.layout-duo .hashtags {
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+    .video-list.layout-compact {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .video-list.layout-compact li {
+      padding: 10px;
+    }
+    .video-list.layout-compact .video-row {
+      grid-template-columns: 84px minmax(0, 1fr);
+      gap: 10px;
+    }
+    .video-list.layout-compact .video-thumb {
+      width: 84px;
+    }
+    .video-list.layout-compact .title {
+      font-size: 0.93rem;
+      margin-bottom: 4px;
+    }
+    .video-list.layout-compact .meta {
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+    .video-list.layout-compact .hashtags {
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
     li {
       border: 1px solid rgba(74, 151, 203, 0.2);
       border-radius: 14px;
@@ -526,6 +627,12 @@
         align-items: flex-start;
         top: 66px;
       }
+      .list-controls {
+        align-items: flex-start;
+      }
+      .layout-filter {
+        justify-content: flex-start;
+      }
       .park-overview {
         grid-template-columns: 1fr;
       }
@@ -552,12 +659,18 @@
       .meta {
         font-size: 0.84rem;
       }
-      .video-row {
+      .video-list.layout-stack .video-row {
         grid-template-columns: 1fr;
       }
-      .video-thumb {
+      .video-list.layout-stack .video-thumb {
         width: min(52vw, 190px);
         aspect-ratio: 9 / 16;
+      }
+      .video-list.layout-duo {
+        grid-template-columns: 1fr;
+      }
+      .video-list.layout-duo .video-thumb {
+        width: min(48vw, 168px);
       }
     }
   </style>
@@ -616,27 +729,28 @@
     const uiTranslations = {
       fr: {
         nav: { home: 'Accueil', stats: 'Statistiques', about: 'À propos', partners: 'Partenariats', highlights: 'Highlights', videos: 'Mes vidéos', contact: 'Contact' },
-        videos: { back: "Retour à l'accueil", parkTitle: 'Parc', parkLead: 'Toutes les vidéos et performances disponibles pour ce parc.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Stats sur le parc', totalVideos: 'vidéos', totalViews: 'vues', totalLikes: 'likes', totalComments: 'commentaires', noVideos: 'Aucune vidéo enregistrée pour le moment.', noHashtag: 'Aucun hashtag détecté', linkUnavailable: 'Lien indisponible', loading: 'Chargement des statistiques...', noParkSelected: 'Aucun parc sélectionné.', comingSoon: 'Les détails vidéos pour ce parc arrivent bientôt.', mapCta: 'Voir sur Google Maps', viewsUnit: 'vues', likesUnit: 'likes', commentsUnit: 'commentaires' }
+        videos: { back: "Retour à l'accueil", parkTitle: 'Parc', parkLead: 'Toutes les vidéos et performances disponibles pour ce parc.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', layoutStack: 'Liste', layoutDuo: 'Côte à côte', layoutCompact: 'Compact', totalsTitle: 'Stats sur le parc', totalVideos: 'vidéos', totalViews: 'vues', totalLikes: 'likes', totalComments: 'commentaires', noVideos: 'Aucune vidéo enregistrée pour le moment.', noHashtag: 'Aucun hashtag détecté', linkUnavailable: 'Lien indisponible', loading: 'Chargement des statistiques...', noParkSelected: 'Aucun parc sélectionné.', comingSoon: 'Les détails vidéos pour ce parc arrivent bientôt.', mapCta: 'Voir sur Google Maps', viewsUnit: 'vues', likesUnit: 'likes', commentsUnit: 'commentaires' }
       },
       en: {
         nav: { home: 'Home', stats: 'Analytics', about: 'About', partners: 'Partnerships', highlights: 'Highlights', videos: 'My Videos', contact: 'Contact' },
-        videos: { back: 'Back to home', parkTitle: 'Park', parkLead: 'All available videos and performance for this park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Total stats', totalVideos: 'videos', totalViews: 'views', totalLikes: 'likes', totalComments: 'comments', noVideos: 'No videos available yet.', noHashtag: 'No hashtag detected', linkUnavailable: 'Link unavailable', loading: 'Loading statistics...', noParkSelected: 'No park selected.', comingSoon: 'Video details for this park are coming soon.', mapCta: 'Open in Google Maps', viewsUnit: 'views', likesUnit: 'likes', commentsUnit: 'comments' }
+        videos: { back: 'Back to home', parkTitle: 'Park', parkLead: 'All available videos and performance for this park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', layoutStack: 'List', layoutDuo: 'Side by side', layoutCompact: 'Compact', totalsTitle: 'Total stats', totalVideos: 'videos', totalViews: 'views', totalLikes: 'likes', totalComments: 'comments', noVideos: 'No videos available yet.', noHashtag: 'No hashtag detected', linkUnavailable: 'Link unavailable', loading: 'Loading statistics...', noParkSelected: 'No park selected.', comingSoon: 'Video details for this park are coming soon.', mapCta: 'Open in Google Maps', viewsUnit: 'views', likesUnit: 'likes', commentsUnit: 'comments' }
       },
       es: {
         nav: { home: 'Inicio', stats: 'Estadísticas', about: 'Acerca de', partners: 'Colaboraciones', highlights: 'Highlights', videos: 'Mis videos', contact: 'Contacto' },
-        videos: { back: 'Volver al inicio', parkTitle: 'Parque', parkLead: 'Todos los videos y resultados disponibles para este parque.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Estadísticas totales', totalVideos: 'videos', totalViews: 'vistas', totalLikes: 'me gusta', totalComments: 'comentarios', noVideos: 'No hay videos disponibles por ahora.', noHashtag: 'No se detectó hashtag', linkUnavailable: 'Enlace no disponible', loading: 'Cargando estadísticas...', noParkSelected: 'Ningún parque seleccionado.', comingSoon: 'Los detalles de videos para este parque llegarán pronto.', mapCta: 'Abrir en Google Maps', viewsUnit: 'vistas', likesUnit: 'me gusta', commentsUnit: 'comentarios' }
+        videos: { back: 'Volver al inicio', parkTitle: 'Parque', parkLead: 'Todos los videos y resultados disponibles para este parque.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', layoutStack: 'Lista', layoutDuo: 'Lado a lado', layoutCompact: 'Compacto', totalsTitle: 'Estadísticas totales', totalVideos: 'videos', totalViews: 'vistas', totalLikes: 'me gusta', totalComments: 'comentarios', noVideos: 'No hay videos disponibles por ahora.', noHashtag: 'No se detectó hashtag', linkUnavailable: 'Enlace no disponible', loading: 'Cargando estadísticas...', noParkSelected: 'Ningún parque seleccionado.', comingSoon: 'Los detalles de videos para este parque llegarán pronto.', mapCta: 'Abrir en Google Maps', viewsUnit: 'vistas', likesUnit: 'me gusta', commentsUnit: 'comentarios' }
       },
       de: {
         nav: { home: 'Start', stats: 'Statistiken', about: 'Über mich', partners: 'Partnerschaften', highlights: 'Highlights', videos: 'Meine Videos', contact: 'Kontakt' },
-        videos: { back: 'Zurück zur Startseite', parkTitle: 'Park', parkLead: 'Alle verfügbaren Videos und Leistungen für diesen Park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Gesamtstatistiken', totalVideos: 'Videos', totalViews: 'Aufrufe', totalLikes: 'Likes', totalComments: 'Kommentare', noVideos: 'Derzeit keine Videos verfügbar.', noHashtag: 'Kein Hashtag erkannt', linkUnavailable: 'Link nicht verfügbar', loading: 'Statistiken werden geladen...', noParkSelected: 'Kein Park ausgewählt.', comingSoon: 'Video-Details für diesen Park kommen bald.', mapCta: 'In Google Maps öffnen', viewsUnit: 'Aufrufe', likesUnit: 'Likes', commentsUnit: 'Kommentare' }
+        videos: { back: 'Zurück zur Startseite', parkTitle: 'Park', parkLead: 'Alle verfügbaren Videos und Leistungen für diesen Park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', layoutStack: 'Liste', layoutDuo: 'Nebeneinander', layoutCompact: 'Kompakt', totalsTitle: 'Gesamtstatistiken', totalVideos: 'Videos', totalViews: 'Aufrufe', totalLikes: 'Likes', totalComments: 'Kommentare', noVideos: 'Derzeit keine Videos verfügbar.', noHashtag: 'Kein Hashtag erkannt', linkUnavailable: 'Link nicht verfügbar', loading: 'Statistiken werden geladen...', noParkSelected: 'Kein Park ausgewählt.', comingSoon: 'Video-Details für diesen Park kommen bald.', mapCta: 'In Google Maps öffnen', viewsUnit: 'Aufrufe', likesUnit: 'Likes', commentsUnit: 'Kommentare' }
       },
       nl: {
         nav: { home: 'Home', stats: 'Statistieken', about: 'Over mij', partners: 'Partnerschappen', highlights: 'Highlights', videos: "Mijn video's", contact: 'Contact' },
-        videos: { back: 'Terug naar home', parkTitle: 'Park', parkLead: 'Alle beschikbare video\'s en prestaties voor dit park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', totalsTitle: 'Totale statistieken', totalVideos: 'video\'s', totalViews: 'weergaven', totalLikes: 'likes', totalComments: 'reacties', noVideos: 'Nog geen video\'s beschikbaar.', noHashtag: 'Geen hashtag gedetecteerd', linkUnavailable: 'Link niet beschikbaar', loading: 'Statistieken laden...', noParkSelected: 'Geen park geselecteerd.', comingSoon: 'Videodetails voor dit park komen binnenkort.', mapCta: 'Openen in Google Maps', viewsUnit: 'weergaven', likesUnit: 'likes', commentsUnit: 'reacties' }
+        videos: { back: 'Terug naar home', parkTitle: 'Park', parkLead: 'Alle beschikbare video\'s en prestaties voor dit park.', viewBoth: 'TikTok + YouTube', viewTikTok: 'TikTok', viewYouTube: 'YouTube', layoutStack: 'Lijst', layoutDuo: 'Naast elkaar', layoutCompact: 'Compact', totalsTitle: 'Totale statistieken', totalVideos: 'video\'s', totalViews: 'weergaven', totalLikes: 'likes', totalComments: 'reacties', noVideos: 'Nog geen video\'s beschikbaar.', noHashtag: 'Geen hashtag gedetecteerd', linkUnavailable: 'Link niet beschikbaar', loading: 'Statistieken laden...', noParkSelected: 'Geen park geselecteerd.', comingSoon: 'Videodetails voor dit park komen binnenkort.', mapCta: 'Openen in Google Maps', viewsUnit: 'weergaven', likesUnit: 'likes', commentsUnit: 'reacties' }
       }
     };
 
     let currentViewMode = "both";
+    let currentLayoutMode = "stack";
     let currentParkData = null;
     const thumbnailCache = new Map();
     const lazyListControllers = new Map();
@@ -1357,7 +1471,7 @@
         return `<div class="empty">${t("videos.noVideos", "Aucune vidéo enregistrée pour le moment.")}</div>`;
       }
       return `
-        <ul data-list-key="${key}"></ul>
+        <ul class="video-list layout-${currentLayoutMode}" data-list-key="${key}"></ul>
         <div class="list-sentinel" data-list-sentinel="${key}" aria-hidden="true"></div>
       `;
     }
@@ -1412,7 +1526,7 @@
           <div class="stat"><div class="stat-top"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.1 21.35l-1.1-1C5.14 15.24 2 12.39 2 8.99 2 6.24 4.24 4 6.99 4c1.7 0 3.33.79 4.41 2.05A5.76 5.76 0 0 1 15.81 4C18.56 4 20.8 6.24 20.8 8.99c0 3.4-3.14 6.25-8.9 11.36l-.8 1z"/></svg><strong>${fmt(v.totalLikes)}</strong></div><span>${t("videos.totalLikes", "likes")}</span></div>
           <div class="stat"><div class="stat-top"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg><strong>${fmt(v.totalComments)}</strong></div><span>${t("videos.totalComments", "commentaires")}</span></div>
         </div>
-        ${renderViewFilter()}
+        ${renderListControls()}
         ${v.showTikTok ? `
         <section class="platform" id="tiktok-section">
           <h2><svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"/></svg>${t("videos.viewTikTok", "TikTok")} (${data.tiktok.length})</h2>
@@ -1433,6 +1547,7 @@
         setupLazyList("youtube", data.youtube);
       }
       bindViewFilterEvents(content);
+      bindLayoutFilterEvents(content);
     }
 
     function renderViewFilter() {
@@ -1455,12 +1570,50 @@
       `;
     }
 
+    function renderLayoutFilter() {
+      return `
+        <div class="layout-filter" aria-label="Affichage des vidéos">
+          <button class="layout-chip ${currentLayoutMode === "stack" ? "active" : ""}" type="button" data-layout="stack" aria-label="${t("videos.layoutStack", "Liste")}" title="${t("videos.layoutStack", "Liste")}">
+            <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 6h16v3H4V6zm0 5h16v3H4v-3zm0 5h16v3H4v-3z"/></svg>
+          </button>
+          <button class="layout-chip ${currentLayoutMode === "duo" ? "active" : ""}" type="button" data-layout="duo" aria-label="${t("videos.layoutDuo", "Côte à côte")}" title="${t("videos.layoutDuo", "Côte à côte")}">
+            <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 5h8v14H3V5zm10 0h8v14h-8V5z"/></svg>
+          </button>
+          <button class="layout-chip ${currentLayoutMode === "compact" ? "active" : ""}" type="button" data-layout="compact" aria-label="${t("videos.layoutCompact", "Compact")}" title="${t("videos.layoutCompact", "Compact")}">
+            <svg class="chip-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 6h6v12H4V6zm8 0h8v2h-8V6zm0 4h8v2h-8v-2zm0 4h8v2h-8v-2z"/></svg>
+          </button>
+        </div>
+      `;
+    }
+
+    function renderListControls() {
+      return `
+        <div class="list-controls">
+          ${renderViewFilter()}
+          ${renderLayoutFilter()}
+        </div>
+      `;
+    }
+
     function bindViewFilterEvents(root) {
       const chips = Array.from((root || document).querySelectorAll(".view-chip"));
       chips.forEach((chip) => {
         chip.addEventListener("click", () => {
           const nextView = chip.dataset.view || "both";
           currentViewMode = nextView;
+          if (currentParkData) {
+            renderContent(currentParkData);
+          }
+        });
+      });
+    }
+
+    function bindLayoutFilterEvents(root) {
+      const chips = Array.from((root || document).querySelectorAll(".layout-chip"));
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const nextLayout = chip.dataset.layout || "stack";
+          currentLayoutMode = ["stack", "duo", "compact"].includes(nextLayout) ? nextLayout : "stack";
           if (currentParkData) {
             renderContent(currentParkData);
           }
