@@ -770,6 +770,21 @@ function initMobileNav() {
   });
 }
 
+function initNavbarScroll() {
+  const navbar = document.querySelector('.navbar');
+
+  if (!navbar) {
+    return;
+  }
+
+  const updateNavbarState = () => {
+    navbar.classList.toggle('is-scrolled', window.scrollY > 0);
+  };
+
+  updateNavbarState();
+  window.addEventListener('scroll', updateNavbarState, { passive: true });
+}
+
 function initCasesCarousel() {
   const carousel = document.getElementById('cases-carousel');
   const prev = document.getElementById('cases-prev');
@@ -1110,6 +1125,7 @@ function initHeroBackgroundVideo() {
 
 initLanguageSwitcher();
 initMobileNav();
+initNavbarScroll();
 initCasesCarousel();
 initCaseStatsFromJson();
 initHeroBackgroundVideo();

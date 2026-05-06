@@ -31,8 +31,14 @@
       left: 0;
       width: 100%;
       z-index: 50;
-      background: var(--yellow);
+      background: transparent;
       color: #111;
+      transition: background-color 0.25s ease, box-shadow 0.25s ease, backdrop-filter 0.25s ease;
+    }
+    .navbar.is-scrolled {
+      background: rgba(125, 211, 252, 0.94);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 28px rgba(13, 13, 13, 0.12);
     }
     .nav-inner {
       max-width: 1200px;
@@ -894,8 +900,24 @@
       });
     }
 
+    function initNavbarScroll() {
+      const navbar = document.querySelector('.navbar');
+
+      if (!navbar) {
+        return;
+      }
+
+      const updateNavbarState = () => {
+        navbar.classList.toggle('is-scrolled', window.scrollY > 0);
+      };
+
+      updateNavbarState();
+      window.addEventListener('scroll', updateNavbarState, { passive: true });
+    }
+
     initLanguageSwitcher();
     initMobileNav();
+    initNavbarScroll();
 
     const allStatsFiles = ["stats_compact.json", "stats.json"];
     const statsBaseCandidates = ["stats/", "./stats/", "../stats/", "MediaKit/stats/", "/MediaKit/stats/", "/stats/"];
