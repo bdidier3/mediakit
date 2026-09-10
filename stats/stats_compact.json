@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T07:20:53.094398+00:00",
+  "generated_at": "2026-09-10T07:16:27.397942+00:00",
   "videos": [
     {
       "platform": "tiktok",
@@ -28,8 +28,8 @@
       "title": "#parcaquatique #toboggan #fou #dangereux #sensations",
       "description": "#parcaquatique #toboggan #fou #dangereux #sensations",
       "views": 4200000,
-      "likes": 493700,
-      "comments": 1916
+      "likes": 500700,
+      "comments": 1928
     },
     {
       "platform": "youtube",
@@ -42,6 +42,16 @@
       "comments": 387
     },
     {
+      "platform": "youtube",
+      "id": "rnSGtmxF768",
+      "url": "https://www.youtube.com/watch?v=rnSGtmxF768",
+      "title": "pov : tu as eu l'idée de faire des raftings mais ça ne se passe pas comme prévu...",
+      "description": "#seaworld #pov #rafting #eau #parcdattraction #drole #trend #humour #mouille",
+      "views": 3816207,
+      "likes": 73482,
+      "comments": 229
+    },
+    {
       "platform": "tiktok",
       "id": "7420451974686068001",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7420451974686068001",
@@ -50,16 +60,6 @@
       "views": 3800000,
       "likes": 624300,
       "comments": 2327
-    },
-    {
-      "platform": "youtube",
-      "id": "rnSGtmxF768",
-      "url": "https://www.youtube.com/watch?v=rnSGtmxF768",
-      "title": "pov : tu as eu l'idée de faire des raftings mais ça ne se passe pas comme prévu...",
-      "description": "#seaworld #pov #rafting #eau #parcdattraction #drole #trend #humour #mouille",
-      "views": 3791593,
-      "likes": 73261,
-      "comments": 229
     },
     {
       "platform": "youtube",
@@ -77,9 +77,9 @@
       "url": "https://www.youtube.com/watch?v=6sS-nBio4so",
       "title": "Pov : ils ont oublié d'attacher ma ceinture au Parc Astérix",
       "description": "#parcasterix #pourtoi #peur #danger #manege #danger #accident #incidient #bobsleigh #attraction",
-      "views": 3655448,
-      "likes": 55710,
-      "comments": 652
+      "views": 3667589,
+      "likes": 55849,
+      "comments": 654
     },
     {
       "platform": "tiktok",
@@ -278,7 +278,7 @@
       "title": "#seaworldorlando #attraction #peur #coucher #extreme",
       "description": "#seaworldorlando #attraction #peur #coucher #extreme",
       "views": 2600000,
-      "likes": 351200,
+      "likes": 352000,
       "comments": 1130
     },
     {
@@ -547,8 +547,8 @@
       "url": "https://www.youtube.com/watch?v=FQTGMOHwkrY",
       "title": "Pov : tu fais la boule à Europa-Park et les lumières s'allument pendant l'attraction",
       "description": "#europapark #eurosat #boule #lumiere #coaster",
-      "views": 1749912,
-      "likes": 18302,
+      "views": 1752924,
+      "likes": 18318,
       "comments": 104
     },
     {
@@ -638,7 +638,7 @@
       "title": "#europapark #duo #parcdattraction #drole #trend",
       "description": "#europapark #duo #parcdattraction #drole #trend",
       "views": 1600000,
-      "likes": 220700,
+      "likes": 220800,
       "comments": 379
     },
     {
@@ -787,9 +787,9 @@
       "url": "https://www.youtube.com/watch?v=oyCdkJzvieQ",
       "title": "T'es enfin dans l'attraction après 45 minutes à attendre et tu espères faire la descente en avant",
       "description": "#europapark #euromir #parcdattraction #peur #song #parc #attraction #été #musique #sens #crier",
-      "views": 1318458,
-      "likes": 29695,
-      "comments": 180
+      "views": 1321613,
+      "likes": 29745,
+      "comments": 182
     },
     {
       "platform": "tiktok",
@@ -967,7 +967,7 @@
       "url": "https://www.youtube.com/watch?v=c5fd6nsIzYs",
       "title": "Pov : tu vas dans un parc d'attractions et tu croises Neymar toute la journée",
       "description": "#universalorlando #parcdattraction #neymar #football #coupedumonde",
-      "views": 1136491,
+      "views": 1136561,
       "likes": 20525,
       "comments": 240
     },
@@ -1058,7 +1058,7 @@
       "title": "#parcasterix #drole #englishorspanish #attraction #tonnerre2zeus",
       "description": "#parcasterix #drole #englishorspanish #attraction #tonnerre2zeus",
       "views": 1100000,
-      "likes": 101400,
+      "likes": 101700,
       "comments": 205
     },
     {
@@ -1228,7 +1228,7 @@
       "title": "#parcasterix #eau #mouille #grandsplash #parcdattraction",
       "description": "#parcasterix #eau #mouille #grandsplash #parcdattraction",
       "views": 1000000,
-      "likes": 78400,
+      "likes": 78500,
       "comments": 330
     },
     {
@@ -1317,7 +1317,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7552099915493838102",
       "title": "#energylandia #extreme #peur #rollercoaster #parcdattraction",
       "description": "#energylandia #extreme #peur #rollercoaster #parcdattraction",
-      "views": 937600,
+      "views": 937700,
       "likes": 26600,
       "comments": 1149
     },
@@ -1327,7 +1327,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7656345992161250593",
       "title": "#rulantica #toboggan #pote #parcaquatique #piscine",
       "description": "#rulantica #toboggan #pote #parcaquatique #piscine",
-      "views": 932900,
+      "views": 933000,
       "likes": 73800,
       "comments": 597
     },
@@ -1348,7 +1348,7 @@
       "title": "#europapark #silverstar #descente #parking #parcdattraction",
       "description": "#europapark #silverstar #descente #parking #parcdattraction",
       "views": 923300,
-      "likes": 138500,
+      "likes": 138600,
       "comments": 278
     },
     {
@@ -1387,7 +1387,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7336234594297072928",
       "title": "Europa-Park, Rust. Germany 🇩🇪 in Summer ☀️ #europapark #rulantica #su...",
       "description": "Europa-Park, Rust. Germany 🇩🇪 in Summer ☀️ #europapark #rulantica #summer #freiburg #strasbourg #europaparkrust #sun #summer #été #allemagne #germany #coaster #themepark #park",
-      "views": 904500,
+      "views": 904600,
       "likes": 113300,
       "comments": 806
     },
@@ -1397,9 +1397,9 @@
       "url": "https://www.youtube.com/watch?v=5tr0NC0_lnU",
       "title": "Pov : je suis tombé de 50m de haut au parc astérix car ils m'ont pas attacher",
       "description": "#parcasterix #pourtoi #danger #manege #peur",
-      "views": 888636,
-      "likes": 17797,
-      "comments": 526
+      "views": 900908,
+      "likes": 18030,
+      "comments": 530
     },
     {
       "platform": "tiktok",
@@ -1417,7 +1417,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7357623723115007264",
       "title": "#europapark #wodan #attraction #coaster #bois #assumer #été #strasbou...",
       "description": "#europapark #wodan #attraction #coaster #bois #assumer #été #strasbourg #mulhouse #allemagne #parc #trend #alsace #toboggan",
-      "views": 883800,
+      "views": 883900,
       "likes": 118700,
       "comments": 480
     },
@@ -1437,7 +1437,7 @@
       "url": "https://www.youtube.com/watch?v=dTykLUE28HA",
       "title": "Pov : tu fais les toboggans aquatiques les plus rapide d'Allemagne",
       "description": "#rulantica #toboggan #peur #accident #extreme",
-      "views": 844417,
+      "views": 844422,
       "likes": 19094,
       "comments": 316
     },
@@ -1457,7 +1457,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7437799146662186272",
       "title": "#europapark #euromir #soundtrack #song #attraction #coaster #germany ...",
       "description": "#europapark #euromir #soundtrack #song #attraction #coaster #germany #strasbourg #themepark #park #rollercoaster #freiburg #adrenaline #trend #music #parcdattraction",
-      "views": 820900,
+      "views": 821100,
       "likes": 71900,
       "comments": 552
     },
@@ -1467,7 +1467,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7523877461558381846",
       "title": "#rollercoaster #coaster #phantasialand #europapark #extrem #scary #th...",
       "description": "#rollercoaster #coaster #phantasialand #europapark #extrem #scary #themepark #amusementpark #hard #extremcoaster #attraction #germany #sensation",
-      "views": 819000,
+      "views": 819300,
       "likes": 50700,
       "comments": 1954
     },
@@ -1507,7 +1507,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7413777708376739104",
       "title": "#europapark #euromir #musique #song #coaster #allemagne #strasbourg #...",
       "description": "#europapark #euromir #musique #song #coaster #allemagne #strasbourg #allemagne #freiburg #sensation #manege #adrenaline #rollercoaster #amusementpark #parcdattraction #coaster",
-      "views": 792500,
+      "views": 792600,
       "likes": 55500,
       "comments": 351
     },
@@ -1537,7 +1537,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7352926934294154528",
       "title": "Bon j’avoue le prix est un peu abusé 🤣🤣 #europapark #hotel #suite #jo...",
       "description": "Bon j’avoue le prix est un peu abusé 🤣🤣 #europapark #hotel #suite #johnfkennedy #park #themepark #parc #bellrock #allemagne #strasbourg",
-      "views": 787100,
+      "views": 787200,
       "likes": 74300,
       "comments": 267
     },
@@ -1637,7 +1637,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7420821703980322081",
       "title": "#europapark #voletarium #cinema #sortiescolaire #attraction #manege #...",
       "description": "#europapark #voletarium #cinema #sortiescolaire #attraction #manege #attraction #allemagne #strasbourg #parcasterix #sensation #amusementpark #freiburg #trend",
-      "views": 741100,
+      "views": 741500,
       "likes": 46800,
       "comments": 295
     },
@@ -1647,7 +1647,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7627156774801411350",
       "title": "#europapark #parcdattraction #sortiescolaire #délégué #lycée",
       "description": "#europapark #parcdattraction #sortiescolaire #délégué #lycée",
-      "views": 704600,
+      "views": 704700,
       "likes": 85500,
       "comments": 672
     },
@@ -1667,8 +1667,8 @@
       "url": "https://www.youtube.com/watch?v=CxpWB4QKHVs",
       "title": "Faire semblant de pas se connaître entre nous pour passer plus vite en single rider",
       "description": "#europapark #filedattente #singlerider #technique #parcdattraction",
-      "views": 702863,
-      "likes": 16873,
+      "views": 703073,
+      "likes": 16880,
       "comments": 88
     },
     {
@@ -1687,7 +1687,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7412183238984092960",
       "title": "#europapark #voltron #vibration #attraction #parcdattraction #allemag...",
       "description": "#europapark #voltron #vibration #attraction #parcdattraction #allemagne #strasbourg #coaster #themepark #manege #adrenaline #vibre #attente #freiburg #amusementpark",
-      "views": 693200,
+      "views": 693400,
       "likes": 37200,
       "comments": 173
     },
@@ -1712,6 +1712,16 @@
       "comments": 144
     },
     {
+      "platform": "youtube",
+      "id": "TpRtaBMc-V4",
+      "url": "https://www.youtube.com/watch?v=TpRtaBMc-V4",
+      "title": "Ma mère tombe dans les pommes à Phantasialand dans une attraction",
+      "description": "#mamère #phantasialand #attraction #taron #parcdattractions #reaction #sensation",
+      "views": 678139,
+      "likes": 16556,
+      "comments": 169
+    },
+    {
       "platform": "tiktok",
       "id": "7541045991818939670",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7541045991818939670",
@@ -1723,13 +1733,13 @@
     },
     {
       "platform": "youtube",
-      "id": "TpRtaBMc-V4",
-      "url": "https://www.youtube.com/watch?v=TpRtaBMc-V4",
-      "title": "Ma mère tombe dans les pommes à Phantasialand dans une attraction",
-      "description": "#mamère #phantasialand #attraction #taron #parcdattractions #reaction #sensation",
-      "views": 676680,
-      "likes": 16520,
-      "comments": 169
+      "id": "LGeiy-KN9Po",
+      "url": "https://www.youtube.com/watch?v=LGeiy-KN9Po",
+      "title": "Quelle plateforme est en mouvement ?",
+      "description": "#parcasterix #enigme #plateforme #attraction #manege #défis",
+      "views": 676070,
+      "likes": 11068,
+      "comments": 3415
     },
     {
       "platform": "tiktok",
@@ -1740,16 +1750,6 @@
       "views": 676000,
       "likes": 79500,
       "comments": 214
-    },
-    {
-      "platform": "youtube",
-      "id": "LGeiy-KN9Po",
-      "url": "https://www.youtube.com/watch?v=LGeiy-KN9Po",
-      "title": "Quelle plateforme est en mouvement ?",
-      "description": "#parcasterix #enigme #plateforme #attraction #manege #défis",
-      "views": 675905,
-      "likes": 11068,
-      "comments": 3415
     },
     {
       "platform": "youtube",
@@ -1777,7 +1777,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7373681065061338400",
       "title": "#rulantica #europapark #park #themepark #germany #waterpark #trend #t...",
       "description": "#rulantica #europapark #park #themepark #germany #waterpark #trend #together #strasbourg #sensation #alsace",
-      "views": 642900,
+      "views": 643000,
       "likes": 59900,
       "comments": 481
     },
@@ -1977,7 +1977,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7402529362907548960",
       "title": "#europapark #parcdattraction #poseidon #watercoaster #rollercoaster #...",
       "description": "#europapark #parcdattraction #poseidon #watercoaster #rollercoaster #coaster #attraction #allemagne #strasbourg #eau #adrenaline #alsace #été #sensation",
-      "views": 571000,
+      "views": 571100,
       "likes": 49800,
       "comments": 282
     },
@@ -1987,9 +1987,19 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7672320383298571552",
       "title": "#energylandia #cheveux #peur #manege #parcdattraction",
       "description": "#energylandia #cheveux #peur #manege #parcdattraction",
-      "views": 568800,
-      "likes": 38600,
+      "views": 569800,
+      "likes": 38700,
       "comments": 580
+    },
+    {
+      "platform": "youtube",
+      "id": "Qwvtkh3few8",
+      "url": "https://www.youtube.com/watch?v=Qwvtkh3few8",
+      "title": "Tout ceux qui se sont déjà mis tout devant à droitedans ce manège on se sait",
+      "description": "#parcasterix #grandsplash #attraction #manege #eau",
+      "views": 566766,
+      "likes": 13134,
+      "comments": 192
     },
     {
       "platform": "youtube",
@@ -2010,16 +2020,6 @@
       "views": 561200,
       "likes": 96900,
       "comments": 571
-    },
-    {
-      "platform": "youtube",
-      "id": "Qwvtkh3few8",
-      "url": "https://www.youtube.com/watch?v=Qwvtkh3few8",
-      "title": "Tout ceux qui se sont déjà mis tout devant à droitedans ce manège on se sait",
-      "description": "#parcasterix #grandsplash #attraction #manege #eau",
-      "views": 560528,
-      "likes": 13001,
-      "comments": 192
     },
     {
       "platform": "youtube",
@@ -2063,6 +2063,16 @@
     },
     {
       "platform": "youtube",
+      "id": "tkDuy09xNHA",
+      "url": "https://www.youtube.com/watch?v=tkDuy09xNHA",
+      "title": "Pov : je vole la chaussure d'un inconnu dans oziris",
+      "description": "#attraction #manege #drole #chaussures #vole #oziris #parcasterix #rollercoaster #sensation #ete",
+      "views": 550982,
+      "likes": 10449,
+      "comments": 133
+    },
+    {
+      "platform": "youtube",
       "id": "fV0v_s2bo5c",
       "url": "https://www.youtube.com/watch?v=fV0v_s2bo5c",
       "title": "Pov : tu vas à un spectacle où les chiens sont maltraités à Europa-Park",
@@ -2090,16 +2100,6 @@
       "views": 549500,
       "likes": 31400,
       "comments": 156
-    },
-    {
-      "platform": "youtube",
-      "id": "tkDuy09xNHA",
-      "url": "https://www.youtube.com/watch?v=tkDuy09xNHA",
-      "title": "Pov : je vole la chaussure d'un inconnu dans oziris",
-      "description": "#attraction #manege #drole #chaussures #vole #oziris #parcasterix #rollercoaster #sensation #ete",
-      "views": 548318,
-      "likes": 10413,
-      "comments": 133
     },
     {
       "platform": "youtube",
@@ -2157,8 +2157,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7513483388888616214",
       "title": "#europapark #voltron #day #night #themepark #onride #germany #strasbo...",
       "description": "#europapark #voltron #day #night #themepark #onride #germany #strasbourg #freiburg #looping #coaster #rollercoaster #amusementpark #attraction #allemagne",
-      "views": 532200,
-      "likes": 40700,
+      "views": 532400,
+      "likes": 40800,
       "comments": 182
     },
     {
@@ -2187,7 +2187,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7486907476177161494",
       "title": "#europapark #peur #rassurer #allemagne #strasbourg #parcdattraction #...",
       "description": "#europapark #peur #rassurer #allemagne #strasbourg #parcdattraction #parc #descente #attraction #alsace #coaster #sensation #suisse #manege #themepark #rollercoaster #wodan #trend",
-      "views": 528000,
+      "views": 528100,
       "likes": 47000,
       "comments": 313
     },
@@ -2197,8 +2197,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7650517214868688160",
       "title": "#universalorlando #etatsunis🇺🇸 #parcdattraction #pote #duo",
       "description": "#universalorlando #etatsunis🇺🇸 #parcdattraction #pote #duo",
-      "views": 525700,
-      "likes": 71400,
+      "views": 526100,
+      "likes": 71500,
       "comments": 230
     },
     {
@@ -2277,7 +2277,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7589948040631389462",
       "title": "*Publicité - Collaboration avec @Efteling  Encore merci à Efteling de...",
       "description": "*Publicité - Collaboration avec @Efteling  Encore merci à Efteling de m’avoir invité, nous avons passés deux jours incroyables dans ce parc ✨ #efteling #parcdattraction #paysbas #sensation #decouverte",
-      "views": 508400,
+      "views": 508600,
       "likes": 34100,
       "comments": 189
     },
@@ -2297,8 +2297,8 @@
       "url": "https://www.youtube.com/watch?v=m0bY7JChwwM",
       "title": "Genre il y a des gens qui ont peur de faire les toboggans à trappes ???",
       "description": "#rulantica #europapark #toboggan #piscine #parcaquatique #parcdattractions",
-      "views": 507497,
-      "likes": 9073,
+      "views": 507646,
+      "likes": 9074,
       "comments": 198
     },
     {
@@ -2447,7 +2447,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7617409063072189718",
       "title": "#europapark #astuces #ouverture #parcdattraction #technique",
       "description": "#europapark #astuces #ouverture #parcdattraction #technique",
-      "views": 475500,
+      "views": 475900,
       "likes": 32400,
       "comments": 189
     },
@@ -2457,8 +2457,8 @@
       "url": "https://www.youtube.com/watch?v=rACw-rF0_xY",
       "title": "Maintenant les attractions se font coucher comme si ça faisait pas déjà assez peur",
       "description": "#seaworldorlando #attraction #peur #coucher #extreme",
-      "views": 474633,
-      "likes": 14768,
+      "views": 474725,
+      "likes": 14770,
       "comments": 129
     },
     {
@@ -2477,7 +2477,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7562196155556171010",
       "title": "#europapark #course #ouverture #hotel #parcdattraction",
       "description": "#europapark #course #ouverture #hotel #parcdattraction",
-      "views": 473500,
+      "views": 473600,
       "likes": 16800,
       "comments": 73
     },
@@ -2487,7 +2487,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7304400192239881504",
       "title": "Les seuls 8h-18h qu’on fait sans râler ! 😀 #europapark #europaparkrus...",
       "description": "Les seuls 8h-18h qu’on fait sans râler ! 😀 #europapark #europaparkrust #park #themepark #euromir #trend #ski #coaster #allemagne🇩🇪 #allemagne #strasbourg #pourtoi",
-      "views": 469200,
+      "views": 469300,
       "likes": 84400,
       "comments": 175
     },
@@ -2507,7 +2507,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7379523119930789153",
       "title": "#europapark #new #attraction #darkride #information #2025 #parcdattra...",
       "description": "#europapark #new #attraction #darkride #information #2025 #parcdattraction #rollercoaster #strasbourg #freiburg #achterbahn #germany #mackrides @Mack Rides",
-      "views": 462100,
+      "views": 462200,
       "likes": 17000,
       "comments": 146
     },
@@ -2527,7 +2527,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7658301138223041825",
       "title": "#universalorlando #harrypotter #filedattente #attraction #amis",
       "description": "#universalorlando #harrypotter #filedattente #attraction #amis",
-      "views": 461300,
+      "views": 461400,
       "likes": 51600,
       "comments": 875
     },
@@ -2567,9 +2567,19 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7381861296620195105",
       "title": "#europapark #energylandia #germany #poland #themepark #coaster #rolle...",
       "description": "#europapark #energylandia #germany #poland #themepark #coaster #rollercoaster #strasbourg #freiburg #france #silverstar #hyperion #parcdattraction #parcasterix",
-      "views": 456600,
+      "views": 456700,
       "likes": 12900,
       "comments": 396
+    },
+    {
+      "platform": "tiktok",
+      "id": "7663774099931434272",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7663774099931434272",
+      "title": "#seaworldorlando #extreme #parcdattraction #coaster #peur",
+      "description": "#seaworldorlando #extreme #parcdattraction #coaster #peur",
+      "views": 454200,
+      "likes": 41300,
+      "comments": 639
     },
     {
       "platform": "tiktok",
@@ -2590,16 +2600,6 @@
       "views": 454000,
       "likes": 0,
       "comments": 0
-    },
-    {
-      "platform": "tiktok",
-      "id": "7663774099931434272",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7663774099931434272",
-      "title": "#seaworldorlando #extreme #parcdattraction #coaster #peur",
-      "description": "#seaworldorlando #extreme #parcdattraction #coaster #peur",
-      "views": 453100,
-      "likes": 41200,
-      "comments": 639
     },
     {
       "platform": "tiktok",
@@ -2657,7 +2657,7 @@
       "url": "https://www.youtube.com/watch?v=QhS0vfBWs-g",
       "title": "Imaginez les cheveux ils s'accrochent sur les barres au dessus pendant le manège",
       "description": "#energylandia #cheveux #peur #manege #parcdattraction",
-      "views": 448441,
+      "views": 448615,
       "likes": 11174,
       "comments": 329
     },
@@ -2737,7 +2737,7 @@
       "url": "https://www.youtube.com/watch?v=j2janyoqyYM",
       "title": "Comment ramener sa classe en sortie scolaire à Europa-Park ?",
       "description": "#europapark #sortiescolaire #delegue #parcdattraction #tuto",
-      "views": 435233,
+      "views": 435238,
       "likes": 15394,
       "comments": 158
     },
@@ -2867,7 +2867,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7357026488803265825",
       "title": "#europapark #matterhorn #blitz #park #themepark #allemagne #parc #tre...",
       "description": "#europapark #matterhorn #blitz #park #themepark #allemagne #parc #trend #strasbourg #mulhouse #mulhouse68🇫🇷",
-      "views": 417000,
+      "views": 417100,
       "likes": 33000,
       "comments": 189
     },
@@ -2887,7 +2887,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7628631028948618518",
       "title": "#universalorlando #mcdo #parcdattraction #mariogalaxy #etatsunis🇺🇸",
       "description": "#universalorlando #mcdo #parcdattraction #mariogalaxy #etatsunis🇺🇸",
-      "views": 414000,
+      "views": 414100,
       "likes": 58200,
       "comments": 379
     },
@@ -2957,7 +2957,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7637158393446173974",
       "title": "#europapark #bobsleigh #rail #trend #parcdattraction",
       "description": "#europapark #bobsleigh #rail #trend #parcdattraction",
-      "views": 399400,
+      "views": 399500,
       "likes": 17500,
       "comments": 225
     },
@@ -2967,8 +2967,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7592599686851120406",
       "title": "#rollercoaster #coaster #europapark #energylandia #themepark",
       "description": "#rollercoaster #coaster #europapark #energylandia #themepark",
-      "views": 398500,
-      "likes": 8108,
+      "views": 398900,
+      "likes": 8118,
       "comments": 260
     },
     {
@@ -3003,6 +3003,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7674915108887219489",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7674915108887219489",
+      "title": "#parcasterix #parcdattraction #sortie #pote #attraction",
+      "description": "#parcasterix #parcdattraction #sortie #pote #attraction",
+      "views": 395100,
+      "likes": 48200,
+      "comments": 313
+    },
+    {
+      "platform": "tiktok",
       "id": "7394366376036617505",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7394366376036617505",
       "title": "#europapark #euromir #son #song #banger #trend #attraction #spinningc...",
@@ -3010,16 +3020,6 @@
       "views": 394300,
       "likes": 43300,
       "comments": 176
-    },
-    {
-      "platform": "tiktok",
-      "id": "7674915108887219489",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7674915108887219489",
-      "title": "#parcasterix #parcdattraction #sortie #pote #attraction",
-      "description": "#parcasterix #parcdattraction #sortie #pote #attraction",
-      "views": 394000,
-      "likes": 48100,
-      "comments": 312
     },
     {
       "platform": "tiktok",
@@ -3047,8 +3047,8 @@
       "url": "https://www.youtube.com/watch?v=cA0dGj1wVoc",
       "title": "Pourquoi ya qu'à moi que ce genre de chose ça arrive dans un parc ???",
       "description": "#parcdattraction #rafting #accident #couler #manege",
-      "views": 382408,
-      "likes": 5092,
+      "views": 382766,
+      "likes": 5100,
       "comments": 49
     },
     {
@@ -3067,7 +3067,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7645334887406243105",
       "title": "#europapark #reaction #peur #attraction #drole",
       "description": "#europapark #reaction #peur #attraction #drole",
-      "views": 379400,
+      "views": 379500,
       "likes": 30100,
       "comments": 567
     },
@@ -3227,7 +3227,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7654229149141175585",
       "title": "#traumatica #parcdattraction #halloween #europapark #bientot",
       "description": "#traumatica #parcdattraction #halloween #europapark #bientot",
-      "views": 353900,
+      "views": 354000,
       "likes": 45700,
       "comments": 176
     },
@@ -3267,7 +3267,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7657931607222881568",
       "title": "#europapark #canicule #silverstar #attraction #ventilateur",
       "description": "#europapark #canicule #silverstar #attraction #ventilateur",
-      "views": 351000,
+      "views": 351100,
       "likes": 49300,
       "comments": 229
     },
@@ -3277,7 +3277,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7591906942801562902",
       "title": "#sensation #parcdattraction #europe #adrenaline #coaster",
       "description": "#sensation #parcdattraction #europe #adrenaline #coaster",
-      "views": 348800,
+      "views": 348900,
       "likes": 28000,
       "comments": 263
     },
@@ -3347,7 +3347,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7494928786803199254",
       "title": "#europapark #attraction #minimum #trend #poseidon #sensation #themepa...",
       "description": "#europapark #attraction #minimum #trend #poseidon #sensation #themepark #parcdattraction #manege #strasbourg #alsace #coaster #amusementpark",
-      "views": 335200,
+      "views": 335300,
       "likes": 45800,
       "comments": 375
     },
@@ -3387,7 +3387,7 @@
       "url": "https://www.youtube.com/watch?v=Q-_P3ybBerY",
       "title": "Pov : tu vas à Europa-Park et tu fais la course pour être le premier à Voltron",
       "description": "#europapark #course #attraction #ouverture #monde #fou #drole #parcdattraction #strasbourg #allemagne #manege #coaster",
-      "views": 329844,
+      "views": 329846,
       "likes": 6911,
       "comments": 158
     },
@@ -3507,7 +3507,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7453156647230278934",
       "title": "#europapark #rafting #attraction #potes #humour #eau #eclaboussure #t...",
       "description": "#europapark #rafting #attraction #potes #humour #eau #eclaboussure #trend #adrenaline #sensation #allemagne #allemagne🇩🇪 #themepark #coaster #parc #été #bouée",
-      "views": 317400,
+      "views": 317500,
       "likes": 29800,
       "comments": 38
     },
@@ -3557,7 +3557,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7624808096010915094",
       "title": "#europapark #euromir #son #demolition #parcdattraction",
       "description": "#europapark #euromir #son #demolition #parcdattraction",
-      "views": 312800,
+      "views": 313100,
       "likes": 19200,
       "comments": 249
     },
@@ -3567,8 +3567,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7654915697700637985",
       "title": "#europapark #attente #vide #coupdumonde #canicule",
       "description": "#europapark #attente #vide #coupdumonde #canicule",
-      "views": 312400,
-      "likes": 42400,
+      "views": 312500,
+      "likes": 42500,
       "comments": 205
     },
     {
@@ -3667,7 +3667,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7500125505656540438",
       "title": "#europapark #peur #pov #drole #parc #parcdattraction #manege #bobslei...",
       "description": "#europapark #peur #pov #drole #parc #parcdattraction #manege #bobsleigh #sensation #coaster #themepark #amusementpark #pote #strasbourg #alsace #allemagne #stress #trend",
-      "views": 304000,
+      "views": 304100,
       "likes": 43000,
       "comments": 224
     },
@@ -3677,7 +3677,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7389921352846937377",
       "title": "#europapark #park #parc #parcdattraction #rollback #allemagne #strasb...",
       "description": "#europapark #park #parc #parcdattraction #rollback #allemagne #strasbourg #alsace #rulantica #freiburg #bluefire #rollercoaster #themepark #coaster #rollercoaster",
-      "views": 303800,
+      "views": 303900,
       "likes": 20200,
       "comments": 63
     },
@@ -3697,8 +3697,8 @@
       "url": "https://www.youtube.com/watch?v=yBpLT8iaq8c",
       "title": "\"Mon fils sera absent pour raison médical\"",
       "description": "#europapark #trend #raison #college #lycee #parcdattraction #attraction",
-      "views": 298506,
-      "likes": 10662,
+      "views": 298637,
+      "likes": 10663,
       "comments": 160
     },
     {
@@ -3717,7 +3717,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7579662975867374870",
       "title": "#rulantica #europapark #parcaquatique #hiver #toboggan",
       "description": "#rulantica #europapark #parcaquatique #hiver #toboggan",
-      "views": 297500,
+      "views": 297600,
       "likes": 10300,
       "comments": 64
     },
@@ -3727,7 +3727,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7650889603255143713",
       "title": "#europapark #euromir #son #destruction #attraction",
       "description": "#europapark #euromir #son #destruction #attraction",
-      "views": 296300,
+      "views": 296400,
       "likes": 18700,
       "comments": 283
     },
@@ -3747,7 +3747,7 @@
       "url": "https://www.youtube.com/watch?v=RUIeBsN8JH8",
       "title": "Quand le \"Viens on va au Parc Astérix\" se réalise enfin !",
       "description": "#parcasterix #sortie #parcdattraction #été #trend",
-      "views": 292521,
+      "views": 292539,
       "likes": 5402,
       "comments": 63
     },
@@ -3777,7 +3777,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7432978901556596001",
       "title": "#europapark #euromir #song #feeling #sensation #allemagne #freiburg #...",
       "description": "#europapark #euromir #song #feeling #sensation #allemagne #freiburg #strasbourg #alsace #themepark #attraction #parcdattraction #manege #feteforaine",
-      "views": 291700,
+      "views": 291900,
       "likes": 34500,
       "comments": 179
     },
@@ -3790,6 +3790,16 @@
       "views": 290000,
       "likes": 0,
       "comments": 0
+    },
+    {
+      "platform": "youtube",
+      "id": "WwoVViNI28U",
+      "url": "https://www.youtube.com/watch?v=WwoVViNI28U",
+      "title": "Pov : ya pas de rails il s'évanouit dans l'attraction",
+      "description": "#parcasterix #attraction #drole #parcasterix #france #manege",
+      "views": 289442,
+      "likes": 5897,
+      "comments": 251
     },
     {
       "platform": "tiktok",
@@ -3817,7 +3827,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7604410454554791190",
       "title": "#phantasialand #virer #banni #pov #parcdattraction",
       "description": "#phantasialand #virer #banni #pov #parcdattraction",
-      "views": 284700,
+      "views": 284800,
       "likes": 11800,
       "comments": 102
     },
@@ -3827,7 +3837,7 @@
       "url": "https://www.youtube.com/watch?v=oefylC0yjag",
       "title": "\"Bien serré le manège madame\" Seuls les vrais ont cette ref",
       "description": "#europapark #voltron #macflycarlito #parcdattraction #manege",
-      "views": 282407,
+      "views": 282417,
       "likes": 6801,
       "comments": 21
     },
@@ -3877,9 +3887,19 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7351463939898707233",
       "title": "#europapark #volodavinci #summer #parc #strasbourg #park #themepark #...",
       "description": "#europapark #volodavinci #summer #parc #strasbourg #park #themepark #allemagne #freiburg #adventure #masterclass",
-      "views": 281200,
+      "views": 281300,
       "likes": 31400,
       "comments": 42
+    },
+    {
+      "platform": "tiktok",
+      "id": "7597824398262799638",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7597824398262799638",
+      "title": "#parcasterix #parcdattraction #trend #2026 #manege",
+      "description": "#parcasterix #parcdattraction #trend #2026 #manege",
+      "views": 280800,
+      "likes": 20000,
+      "comments": 135
     },
     {
       "platform": "tiktok",
@@ -3893,13 +3913,13 @@
     },
     {
       "platform": "tiktok",
-      "id": "7597824398262799638",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7597824398262799638",
-      "title": "#parcasterix #parcdattraction #trend #2026 #manege",
-      "description": "#parcasterix #parcdattraction #trend #2026 #manege",
-      "views": 280700,
-      "likes": 20000,
-      "comments": 135
+      "id": "7570270815485185302",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7570270815485185302",
+      "title": "#toverland #parcdattraction #extreme #peur #coaster",
+      "description": "#toverland #parcdattraction #extreme #peur #coaster",
+      "views": 279800,
+      "likes": 10400,
+      "comments": 432
     },
     {
       "platform": "tiktok",
@@ -3910,16 +3930,6 @@
       "views": 279700,
       "likes": 40300,
       "comments": 295
-    },
-    {
-      "platform": "tiktok",
-      "id": "7570270815485185302",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7570270815485185302",
-      "title": "#toverland #parcdattraction #extreme #peur #coaster",
-      "description": "#toverland #parcdattraction #extreme #peur #coaster",
-      "views": 279700,
-      "likes": 10400,
-      "comments": 432
     },
     {
       "platform": "youtube",
@@ -3977,8 +3987,8 @@
       "url": "https://www.youtube.com/watch?v=0a3aAeys8wI",
       "title": "Avoir choisis allemand au lieu d'espagnol pour la sortie Europa-Park en fin d'année",
       "description": "#europapark #parcdattraction #themepark #attraction #manege #sortie  #lycée #college #sortiescolaire #humour",
-      "views": 272507,
-      "likes": 8294,
+      "views": 272540,
+      "likes": 8295,
       "comments": 64
     },
     {
@@ -4037,7 +4047,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7666753230277250336",
       "title": "#parcdattraction #pascher #decouverte #bonsplans #manege",
       "description": "#parcdattraction #pascher #decouverte #bonsplans #manege",
-      "views": 269200,
+      "views": 269500,
       "likes": 23100,
       "comments": 136
     },
@@ -4060,16 +4070,6 @@
       "views": 268500,
       "likes": 23900,
       "comments": 59
-    },
-    {
-      "platform": "youtube",
-      "id": "WwoVViNI28U",
-      "url": "https://www.youtube.com/watch?v=WwoVViNI28U",
-      "title": "Pov : ya pas de rails il s'évanouit dans l'attraction",
-      "description": "#parcasterix #attraction #drole #parcasterix #france #manege",
-      "views": 266276,
-      "likes": 5605,
-      "comments": 235
     },
     {
       "platform": "youtube",
@@ -4107,7 +4107,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7636057505180765462",
       "title": "#parcasterix #goudurix #sacs #tomber #looping",
       "description": "#parcasterix #goudurix #sacs #tomber #looping",
-      "views": 264400,
+      "views": 264500,
       "likes": 21900,
       "comments": 176
     },
@@ -4177,7 +4177,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7603008445792406806",
       "title": "#energylandia #pologne #polonais #parc #attraction",
       "description": "#energylandia #pologne #polonais #parc #attraction",
-      "views": 258400,
+      "views": 258500,
       "likes": 31400,
       "comments": 150
     },
@@ -4262,6 +4262,16 @@
       "comments": 64
     },
     {
+      "platform": "youtube",
+      "id": "CU7aN0mspJk",
+      "url": "https://www.youtube.com/watch?v=CU7aN0mspJk",
+      "title": "Genre là y'en a vous avez encore confiance après avoir vu ça ???",
+      "description": "#universalorlando #attraction #confiance #peur #accident",
+      "views": 252416,
+      "likes": 5863,
+      "comments": 90
+    },
+    {
       "platform": "tiktok",
       "id": "7436423086636928289",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7436423086636928289",
@@ -4283,16 +4293,6 @@
     },
     {
       "platform": "youtube",
-      "id": "CU7aN0mspJk",
-      "url": "https://www.youtube.com/watch?v=CU7aN0mspJk",
-      "title": "Genre là y'en a vous avez encore confiance après avoir vu ça ???",
-      "description": "#universalorlando #attraction #confiance #peur #accident",
-      "views": 252366,
-      "likes": 5862,
-      "comments": 90
-    },
-    {
-      "platform": "youtube",
       "id": "8EARBHAGPQ4",
       "url": "https://www.youtube.com/shorts/8EARBHAGPQ4",
       "title": "Les personnes qui mettent l'ambiance dans les manèges",
@@ -4307,7 +4307,7 @@
       "url": "https://www.youtube.com/watch?v=JIegsqZnGWs",
       "title": "Pov : tu fais la première attraction à sensation du monde debout...",
       "description": "#seaworldorlando #extreme #parcdattraction #coaster #peur",
-      "views": 251561,
+      "views": 251607,
       "likes": 7185,
       "comments": 371
     },
@@ -4327,9 +4327,19 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7638653612410834199",
       "title": "#parcasterix #poubelle #connu #france #parcdattraction",
       "description": "#parcasterix #poubelle #connu #france #parcdattraction",
-      "views": 249200,
+      "views": 249300,
       "likes": 22100,
       "comments": 253
+    },
+    {
+      "platform": "youtube",
+      "id": "fMnco-xDlz0",
+      "url": "https://www.youtube.com/watch?v=fMnco-xDlz0",
+      "title": "Pourquoi il y a des attractions de fou dans tout les Disneyland sauf en France ???",
+      "description": "#disneyland #disney #parcdattraction #attraction #manege",
+      "views": 249128,
+      "likes": 6674,
+      "comments": 71
     },
     {
       "platform": "youtube",
@@ -4340,16 +4350,6 @@
       "views": 249000,
       "likes": 0,
       "comments": 0
-    },
-    {
-      "platform": "youtube",
-      "id": "fMnco-xDlz0",
-      "url": "https://www.youtube.com/watch?v=fMnco-xDlz0",
-      "title": "Pourquoi il y a des attractions de fou dans tout les Disneyland sauf en France ???",
-      "description": "#disneyland #disney #parcdattraction #attraction #manege",
-      "views": 248997,
-      "likes": 6673,
-      "comments": 71
     },
     {
       "platform": "tiktok",
@@ -4367,7 +4367,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7481345776380284182",
       "title": "#europapark #phantasialand #trend #allemagne #sensationforte #manege ...",
       "description": "#europapark #phantasialand #trend #allemagne #sensationforte #manege #strasbourg #freiburg #peur #attraction #sensation #amusementpark #themepark #parc",
-      "views": 247200,
+      "views": 247300,
       "likes": 23600,
       "comments": 1469
     },
@@ -4437,7 +4437,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7623755783540395286",
       "title": "#europapark #atlantica #descente #sensation #attraction",
       "description": "#europapark #atlantica #descente #sensation #attraction",
-      "views": 241600,
+      "views": 241900,
       "likes": 12300,
       "comments": 226
     },
@@ -4497,7 +4497,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7624549376106564886",
       "title": "#seaworld #extreme #defi #coaster #fou",
       "description": "#seaworld #extreme #defi #coaster #fou",
-      "views": 237000,
+      "views": 237100,
       "likes": 9675,
       "comments": 890
     },
@@ -4527,7 +4527,7 @@
       "url": "https://www.youtube.com/watch?v=oAhIwpx14Gk",
       "title": "Dites vous ils ont fait 1h d'attente juste pour faire cette vidéo",
       "description": "#europapark #duo #parcdattraction #drole #trend",
-      "views": 233090,
+      "views": 233098,
       "likes": 6857,
       "comments": 33
     },
@@ -4572,6 +4572,16 @@
       "comments": 0
     },
     {
+      "platform": "tiktok",
+      "id": "7667489142913158432",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7667489142913158432",
+      "title": "#europapark #filedattente #queue #parcdattraction #voletarium",
+      "description": "#europapark #filedattente #queue #parcdattraction #voletarium",
+      "views": 230500,
+      "likes": 10300,
+      "comments": 179
+    },
+    {
       "platform": "youtube",
       "id": "6NaSLzvp3AU",
       "url": "https://www.youtube.com/shorts/6NaSLzvp3AU",
@@ -4593,16 +4603,6 @@
     },
     {
       "platform": "tiktok",
-      "id": "7667489142913158432",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7667489142913158432",
-      "title": "#europapark #filedattente #queue #parcdattraction #voletarium",
-      "description": "#europapark #filedattente #queue #parcdattraction #voletarium",
-      "views": 229900,
-      "likes": 10300,
-      "comments": 179
-    },
-    {
-      "platform": "tiktok",
       "id": "7365902471488900384",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7365902471488900384",
       "title": "Ça serait incroyable vraiment ! #europapark #toutatis #voltron #allem...",
@@ -4617,7 +4617,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7393345922450607392",
       "title": "#europapark #park #themepark #parcdattraction #silverstar #allemagne ...",
       "description": "#europapark #park #themepark #parcdattraction #silverstar #allemagne #alsace #strasbourg #adrenaline #mercedes #formule1 #rulantica #coaster #rollercoaster",
-      "views": 228800,
+      "views": 228900,
       "likes": 30300,
       "comments": 217
     },
@@ -4707,7 +4707,7 @@
       "url": "https://www.youtube.com/watch?v=1oVnOEjn7Tw",
       "title": "Pourquoi ya des attractions de fou dans tout les Disney sauf en France ???",
       "description": "#disneyland #disney #parcdattraction #attraction #manege",
-      "views": 223252,
+      "views": 223256,
       "likes": 4931,
       "comments": 79
     },
@@ -4747,8 +4747,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7340578116072492320",
       "title": "Bests tips for Europa-Park ! Idea :@EP Fan 🎢 | @Europa-Park Resort #e...",
       "description": "Bests tips for Europa-Park ! Idea :@EP Fan 🎢 | @Europa-Park Resort #europapark #tips #themepark #park #germany #technique #astuces #mack #coaster #new #bluefire #silverstar #wodan #strasbourg #voltron",
-      "views": 219400,
-      "likes": 5069,
+      "views": 219900,
+      "likes": 5070,
       "comments": 51
     },
     {
@@ -4827,9 +4827,19 @@
       "url": "https://www.youtube.com/watch?v=teeauHLQFbQ",
       "title": "Merci à celui qui à fait tomber ça au Parc Astérix",
       "description": "#parcasterix #france #dinguerie #drole #billet #chance #fou #parcdattractions",
-      "views": 212673,
-      "likes": 4523,
+      "views": 213597,
+      "likes": 4542,
       "comments": 89
+    },
+    {
+      "platform": "tiktok",
+      "id": "7620848006358928662",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7620848006358928662",
+      "title": "#europapark #euromir #nouveaute #parcdattraction #nouveau",
+      "description": "#europapark #euromir #nouveaute #parcdattraction #nouveau",
+      "views": 211800,
+      "likes": 13000,
+      "comments": 190
     },
     {
       "platform": "youtube",
@@ -4842,23 +4852,13 @@
       "comments": 26
     },
     {
-      "platform": "tiktok",
-      "id": "7620848006358928662",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7620848006358928662",
-      "title": "#europapark #euromir #nouveaute #parcdattraction #nouveau",
-      "description": "#europapark #euromir #nouveaute #parcdattraction #nouveau",
-      "views": 211700,
-      "likes": 13000,
-      "comments": 190
-    },
-    {
       "platform": "youtube",
       "id": "XcZbOsXuSac",
       "url": "https://www.youtube.com/watch?v=XcZbOsXuSac",
       "title": "Europa-Park ils ont même pas fait un peu semblant de copier sur Disney enfaite",
       "description": "#disneyworldorlando #epcot #europapark #boule #copie",
-      "views": 211237,
-      "likes": 4582,
+      "views": 211511,
+      "likes": 4587,
       "comments": 90
     },
     {
@@ -5003,6 +5003,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7665315219576491297",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7665315219576491297",
+      "title": "@Byilhan #europapark #byilhann #filedattente #drole #attraction",
+      "description": "@Byilhan #europapark #byilhann #filedattente #drole #attraction",
+      "views": 199200,
+      "likes": 37500,
+      "comments": 310
+    },
+    {
+      "platform": "tiktok",
       "id": "7568046829846252822",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7568046829846252822",
       "title": "#rulantica #extreme #peur #toboggan #parcdattraction",
@@ -5010,16 +5020,6 @@
       "views": 199100,
       "likes": 4360,
       "comments": 106
-    },
-    {
-      "platform": "tiktok",
-      "id": "7665315219576491297",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7665315219576491297",
-      "title": "@Byilhan #europapark #byilhann #filedattente #drole #attraction",
-      "description": "@Byilhan #europapark #byilhann #filedattente #drole #attraction",
-      "views": 199000,
-      "likes": 37500,
-      "comments": 310
     },
     {
       "platform": "tiktok",
@@ -5133,6 +5133,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7683171096903896352",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7683171096903896352",
+      "title": "#universalorlando #volcanobay #parcaquatique #piscine #toboggan",
+      "description": "#universalorlando #volcanobay #parcaquatique #piscine #toboggan",
+      "views": 192600,
+      "likes": 26600,
+      "comments": 58
+    },
+    {
+      "platform": "tiktok",
       "id": "7479732883620400407",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7479732883620400407",
       "title": "#europapark #parcdattraction #matterhornblitz #attraction #sensation ...",
@@ -5147,9 +5157,19 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7628267622047436054",
       "title": "#disneyland #disney #parcdattraction #attraction #manege",
       "description": "#disneyland #disney #parcdattraction #attraction #manege",
-      "views": 192000,
+      "views": 192100,
       "likes": 22700,
       "comments": 141
+    },
+    {
+      "platform": "tiktok",
+      "id": "7677882806147517729",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7677882806147517729",
+      "title": "#energylandia #parcdattraction #decouverte #rollercoaster #sensation ...",
+      "description": "#energylandia #parcdattraction #decouverte #rollercoaster #sensation  Merci pour l’invitation @Energylandia ! Nous avons passé 2 jours exceptionnels 🙌",
+      "views": 191100,
+      "likes": 17600,
+      "comments": 54
     },
     {
       "platform": "tiktok",
@@ -5172,22 +5192,12 @@
       "comments": 116
     },
     {
-      "platform": "tiktok",
-      "id": "7677882806147517729",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7677882806147517729",
-      "title": "#energylandia #parcdattraction #decouverte #rollercoaster #sensation ...",
-      "description": "#energylandia #parcdattraction #decouverte #rollercoaster #sensation  Merci pour l’invitation @Energylandia ! Nous avons passé 2 jours exceptionnels 🙌",
-      "views": 190900,
-      "likes": 17600,
-      "comments": 54
-    },
-    {
       "platform": "youtube",
       "id": "2cta_4vEB88",
       "url": "https://www.youtube.com/watch?v=2cta_4vEB88",
       "title": "Dites vous on garde nos sacs dans cette attraction et ça choque personne",
       "description": "#parcasterix #goudurix #sacs #tomber #looping",
-      "views": 190086,
+      "views": 190088,
       "likes": 4796,
       "comments": 133
     },
@@ -5207,8 +5217,8 @@
       "url": "https://www.youtube.com/watch?v=HbmKo82Csdc",
       "title": "Il s'est mis dans cette position comme si ça faisait pas déjà assez peur",
       "description": "#parcaquatique #toboggan #fou #dangereux #sensations",
-      "views": 189027,
-      "likes": 4832,
+      "views": 189130,
+      "likes": 4833,
       "comments": 61
     },
     {
@@ -5227,7 +5237,7 @@
       "url": "https://www.youtube.com/watch?v=NpN5MrkbL3k",
       "title": "Choisir allemand au lieu d'espagnol en cours juste pour la sortie Europa-Park",
       "description": "#europapark #lycée #cours #allemand #sortiescolaire",
-      "views": 187721,
+      "views": 187768,
       "likes": 4715,
       "comments": 73
     },
@@ -5283,6 +5293,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7612206769795861782",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7612206769795861782",
+      "title": "#europapark #parcasterix #parcdattraction #trend #8h18h",
+      "description": "#europapark #parcasterix #parcdattraction #trend #8h18h",
+      "views": 185900,
+      "likes": 24700,
+      "comments": 56
+    },
+    {
+      "platform": "tiktok",
       "id": "7467983615977213206",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7467983615977213206",
       "title": "#europapark #attraction #strasbourg #alsace #freiburg #trend #sensati...",
@@ -5290,16 +5310,6 @@
       "views": 185900,
       "likes": 21600,
       "comments": 122
-    },
-    {
-      "platform": "tiktok",
-      "id": "7612206769795861782",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7612206769795861782",
-      "title": "#europapark #parcasterix #parcdattraction #trend #8h18h",
-      "description": "#europapark #parcasterix #parcdattraction #trend #8h18h",
-      "views": 185800,
-      "likes": 24700,
-      "comments": 56
     },
     {
       "platform": "tiktok",
@@ -5533,6 +5543,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7661176518604819744",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7661176518604819744",
+      "title": "#toverland #extreme #parcdattraction #peur #paysbas",
+      "description": "#toverland #extreme #parcdattraction #peur #paysbas",
+      "views": 175400,
+      "likes": 6841,
+      "comments": 353
+    },
+    {
+      "platform": "tiktok",
       "id": "7548837980958493974",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7548837980958493974",
       "title": "#parcasterix #tonnerre2zeus #bois #manege #attraction",
@@ -5547,19 +5567,9 @@
       "url": "https://www.youtube.com/watch?v=-J0kToFC5tA",
       "title": "Cette attraction qu'on fait juste parce que ya trop d'attente dans les autres",
       "description": "#europapark #pegasus #trend #attraction #attente",
-      "views": 175239,
+      "views": 175277,
       "likes": 4777,
       "comments": 28
-    },
-    {
-      "platform": "tiktok",
-      "id": "7661176518604819744",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7661176518604819744",
-      "title": "#toverland #extreme #parcdattraction #peur #paysbas",
-      "description": "#toverland #extreme #parcdattraction #peur #paysbas",
-      "views": 175200,
-      "likes": 6837,
-      "comments": 353
     },
     {
       "platform": "tiktok",
@@ -5597,8 +5607,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7585862530690534678",
       "title": "#europapark #pov #extreme #rollercoaster #vitesse",
       "description": "#europapark #pov #extreme #rollercoaster #vitesse",
-      "views": 174800,
-      "likes": 8211,
+      "views": 174900,
+      "likes": 8212,
       "comments": 221
     },
     {
@@ -5748,7 +5758,7 @@
       "title": "#asterix #trend #obelix #parcasterix #surnom",
       "description": "#asterix #trend #obelix #parcasterix #surnom",
       "views": 165100,
-      "likes": 8661,
+      "likes": 8662,
       "comments": 3694
     },
     {
@@ -5757,7 +5767,7 @@
       "url": "https://www.youtube.com/watch?v=fn3xDD8hkfc",
       "title": "Pov : tu fais l'attraction la plus futuriste du monde à Disney",
       "description": "#disneyland #coaster #attraction #extreme #peur",
-      "views": 164996,
+      "views": 164997,
       "likes": 4491,
       "comments": 50
     },
@@ -5777,7 +5787,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7446463952923626754",
       "title": "#europapark #manege #attente #trend #meme #animatronic #matterhornbli...",
       "description": "#europapark #manege #attente #trend #meme #animatronic #matterhornblitz #parc #strasbourg #colmar #manegeasensation #themepark #sensation #allemagne #freiburg #rust",
-      "views": 162500,
+      "views": 162700,
       "likes": 16200,
       "comments": 83
     },
@@ -5787,7 +5797,7 @@
       "url": "https://www.youtube.com/watch?v=yLBxDeEtx6k",
       "title": "Comment la vie va sonner si on gagne la pièce rouge dans un menu McDo",
       "description": "#universalorlando #mcdo #parcdattraction #mariogalaxy #etatsunis🇺🇸",
-      "views": 162138,
+      "views": 162144,
       "likes": 5282,
       "comments": 77
     },
@@ -5907,7 +5917,7 @@
       "url": "https://www.youtube.com/watch?v=dy8gIowdp_k",
       "title": "Pour 1000€ tu le fais en ENTIER ??? (Fénix Toverland)",
       "description": "#toverland #extreme #parcdattraction #peur #paysbas",
-      "views": 158251,
+      "views": 158280,
       "likes": 3261,
       "comments": 241
     },
@@ -6137,8 +6147,8 @@
       "url": "https://www.youtube.com/watch?v=gPvS0yinVBs",
       "title": "Pov : tu fais un manège mais la personne juste à côté de toi n'est pas rassurée...",
       "description": "#europapark #reaction #peur #attraction #drole",
-      "views": 150507,
-      "likes": 4713,
+      "views": 150586,
+      "likes": 4715,
       "comments": 185
     },
     {
@@ -6232,6 +6242,16 @@
       "comments": 0
     },
     {
+      "platform": "tiktok",
+      "id": "7662661882393742625",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7662661882393742625",
+      "title": "#europapark #rondpoint #arrive #attraction #parcdattraction",
+      "description": "#europapark #rondpoint #arrive #attraction #parcdattraction",
+      "views": 146500,
+      "likes": 22500,
+      "comments": 120
+    },
+    {
       "platform": "youtube",
       "id": "a7HqAJYryew",
       "url": "https://www.youtube.com/watch?v=a7HqAJYryew",
@@ -6240,16 +6260,6 @@
       "views": 146433,
       "likes": 3192,
       "comments": 58
-    },
-    {
-      "platform": "tiktok",
-      "id": "7662661882393742625",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7662661882393742625",
-      "title": "#europapark #rondpoint #arrive #attraction #parcdattraction",
-      "description": "#europapark #rondpoint #arrive #attraction #parcdattraction",
-      "views": 146200,
-      "likes": 22400,
-      "comments": 120
     },
     {
       "platform": "tiktok",
@@ -6297,8 +6307,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7653749972357172513",
       "title": "#europapark #arthuretlesminimoys #secret #parcdattraction #astuce",
       "description": "#europapark #arthuretlesminimoys #secret #parcdattraction #astuce",
-      "views": 145100,
-      "likes": 9282,
+      "views": 145200,
+      "likes": 9291,
       "comments": 65
     },
     {
@@ -6337,7 +6347,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7445965200651586838",
       "title": "#europapark #parcdattraction #allemagne #strasbourg #sensation #alsac...",
       "description": "#europapark #parcdattraction #allemagne #strasbourg #sensation #alsace #manegeasensation #eau #atlantica #trend #amusementpark #attraction #manege #parc #descente #arriere",
-      "views": 144200,
+      "views": 144300,
       "likes": 18100,
       "comments": 182
     },
@@ -6387,9 +6397,9 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7678616166478204192",
       "title": "#energylandia #parcdattraction #pologne #manege #sensation",
       "description": "#energylandia #parcdattraction #pologne #manege #sensation",
-      "views": 143000,
-      "likes": 15800,
-      "comments": 50
+      "views": 143500,
+      "likes": 15900,
+      "comments": 51
     },
     {
       "platform": "youtube",
@@ -6462,6 +6472,16 @@
       "comments": 111
     },
     {
+      "platform": "youtube",
+      "id": "GwgIF5Mwjko",
+      "url": "https://www.youtube.com/watch?v=GwgIF5Mwjko",
+      "title": "Imaginez juste si c'était un téléphone qui était arrivé à cette vitesse",
+      "description": "#parcdattraction #chaussure #coaster #grandhuit #peur",
+      "views": 140974,
+      "likes": 3168,
+      "comments": 42
+    },
+    {
       "platform": "tiktok",
       "id": "7637428535656762627",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7637428535656762627",
@@ -6482,22 +6502,12 @@
       "comments": 32
     },
     {
-      "platform": "youtube",
-      "id": "GwgIF5Mwjko",
-      "url": "https://www.youtube.com/watch?v=GwgIF5Mwjko",
-      "title": "Imaginez juste si c'était un téléphone qui était arrivé à cette vitesse",
-      "description": "#parcdattraction #chaussure #coaster #grandhuit #peur",
-      "views": 140589,
-      "likes": 3160,
-      "comments": 42
-    },
-    {
       "platform": "tiktok",
       "id": "7538450583007743254",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7538450583007743254",
       "title": "#europapark #parcdattraction #alsace #strasbourg #manege",
       "description": "#europapark #parcdattraction #alsace #strasbourg #manege",
-      "views": 138200,
+      "views": 138300,
       "likes": 17200,
       "comments": 402
     },
@@ -6517,8 +6527,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7653385136930704673",
       "title": "#phantasialand #extreme #peur #interdit #rollercoaster",
       "description": "#phantasialand #extreme #peur #interdit #rollercoaster",
-      "views": 137300,
-      "likes": 7466,
+      "views": 137500,
+      "likes": 7469,
       "comments": 158
     },
     {
@@ -6617,8 +6627,8 @@
       "url": "https://www.youtube.com/watch?v=84aVY2ljoZY",
       "title": "Les attractions tranquilles quand y'a trop d'attentes dans les grand huit",
       "description": "#europapark #volodavinci #summer #parc #strasbourg #park #themepark",
-      "views": 134202,
-      "likes": 3859,
+      "views": 134212,
+      "likes": 3860,
       "comments": 15
     },
     {
@@ -6667,8 +6677,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7623063677666692374",
       "title": "#europapark #picolomondo #parcdattraction #attraction #fan",
       "description": "#europapark #picolomondo #parcdattraction #attraction #fan",
-      "views": 132600,
-      "likes": 8273,
+      "views": 132700,
+      "likes": 8275,
       "comments": 57
     },
     {
@@ -6708,7 +6718,7 @@
       "title": "Mack Rides 🔛🔝 #europapark #silverstar #bluefire #park #themepark #rol...",
       "description": "Mack Rides 🔛🔝 #europapark #silverstar #bluefire #park #themepark #rollercoaster #coaster #strasbourg #freiburg #wodan #germany",
       "views": 131900,
-      "likes": 7289,
+      "likes": 7290,
       "comments": 134
     },
     {
@@ -6737,9 +6747,29 @@
       "url": "https://www.youtube.com/watch?v=7gcFK_4cRXQ",
       "title": "\"Je pars jusqu'en Pologne juste pour voir la culture du pays\"",
       "description": "#energylandia #culture #pologne #parcdattraction #attraction",
-      "views": 130019,
-      "likes": 3561,
+      "views": 130228,
+      "likes": 3565,
       "comments": 28
+    },
+    {
+      "platform": "tiktok",
+      "id": "7630008506162203907",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7630008506162203907",
+      "title": "#disneyland #coaster #attraction #extreme #peur",
+      "description": "#disneyland #coaster #attraction #extreme #peur",
+      "views": 129900,
+      "likes": 5965,
+      "comments": 60
+    },
+    {
+      "platform": "youtube",
+      "id": "MOhy6LsiYww",
+      "url": "https://www.youtube.com/watch?v=MOhy6LsiYww",
+      "title": "La première attraction au monde que tu peux faire debout !",
+      "description": "#seaworldorlando #extreme #unique #attraction #debout",
+      "views": 129803,
+      "likes": 2667,
+      "comments": 30
     },
     {
       "platform": "tiktok",
@@ -6758,28 +6788,8 @@
       "title": "#disneyworld #disneylandparis #starwars #décors #parcdattraction",
       "description": "#disneyworld #disneylandparis #starwars #décors #parcdattraction",
       "views": 129800,
-      "likes": 11400,
+      "likes": 11500,
       "comments": 74
-    },
-    {
-      "platform": "tiktok",
-      "id": "7630008506162203907",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7630008506162203907",
-      "title": "#disneyland #coaster #attraction #extreme #peur",
-      "description": "#disneyland #coaster #attraction #extreme #peur",
-      "views": 129800,
-      "likes": 5963,
-      "comments": 60
-    },
-    {
-      "platform": "youtube",
-      "id": "MOhy6LsiYww",
-      "url": "https://www.youtube.com/watch?v=MOhy6LsiYww",
-      "title": "La première attraction au monde que tu peux faire debout !",
-      "description": "#seaworldorlando #extreme #unique #attraction #debout",
-      "views": 129793,
-      "likes": 2667,
-      "comments": 30
     },
     {
       "platform": "tiktok",
@@ -6827,7 +6837,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7675643199402020128",
       "title": "#parcasterix #grandsplash #attraction #manege #eau",
       "description": "#parcasterix #grandsplash #attraction #manege #eau",
-      "views": 127100,
+      "views": 127400,
       "likes": 10500,
       "comments": 108
     },
@@ -6847,7 +6857,7 @@
       "url": "https://www.youtube.com/watch?v=0QjLaCboeN4",
       "title": "S'amuser à arroser les gens dans les raftings à Europa-Park",
       "description": "#europapark #eau #themepark #raftings #attraction #parcdattraction #drole #parcdattraction #arrosage",
-      "views": 126679,
+      "views": 126691,
       "likes": 2718,
       "comments": 7
     },
@@ -6867,8 +6877,8 @@
       "url": "https://www.youtube.com/watch?v=UDwpDUMleE4",
       "title": "Juste pour te rappeler qu'on doit aller ensemble au Parc Astérix",
       "description": "#parcasterix #parcdattraction #sortie #pote #attraction",
-      "views": 126139,
-      "likes": 4831,
+      "views": 126449,
+      "likes": 4840,
       "comments": 48
     },
     {
@@ -6937,7 +6947,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7457955588815850774",
       "title": "#europapark #phantasialand #parcdattraction #allemagne #strasbourg #a...",
       "description": "#europapark #phantasialand #parcdattraction #allemagne #strasbourg #alsace #sensation #attraction #adrenaline #amusementpark #trend #parc #manege #themepark",
-      "views": 122800,
+      "views": 122900,
       "likes": 15500,
       "comments": 974
     },
@@ -6947,7 +6957,7 @@
       "url": "https://www.youtube.com/watch?v=zHU22AQ1OBI",
       "title": "Pov : tu fais un manège mais la personne à côté de toi n'est pas rassurée...",
       "description": "#europapark #reaction #peur #attraction #drole",
-      "views": 122339,
+      "views": 122344,
       "likes": 3906,
       "comments": 124
     },
@@ -6977,7 +6987,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7671937632040996129",
       "title": "#parcasterix #trend #été #attente #parcdattraction",
       "description": "#parcasterix #trend #été #attente #parcdattraction",
-      "views": 121700,
+      "views": 121900,
       "likes": 11000,
       "comments": 161
     },
@@ -7017,7 +7027,7 @@
       "url": "https://www.youtube.com/watch?v=icRk-Iwb2UA",
       "title": "Il y a que à Europa-Park où tu peux voir ton repas arriver sur des rails",
       "description": "#europapark #parcdattraction #attraction #adrenaline #sensation #allemagne",
-      "views": 120954,
+      "views": 120971,
       "likes": 2595,
       "comments": 61
     },
@@ -7067,7 +7077,7 @@
       "url": "https://www.youtube.com/watch?v=hhH84YTzzgs",
       "title": "Pour 1000€ tu fais fly en ENTIER ???",
       "description": "#phantasialand #extreme #peur #parcdattraction #attraction #manegeasensation",
-      "views": 118669,
+      "views": 118670,
       "likes": 3109,
       "comments": 133
     },
@@ -7080,6 +7090,16 @@
       "views": 118600,
       "likes": 6375,
       "comments": 119
+    },
+    {
+      "platform": "tiktok",
+      "id": "7673792201880571169",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7673792201880571169",
+      "title": "#parcdattraction #chaussure #coaster #grandhuit #peur",
+      "description": "#parcdattraction #chaussure #coaster #grandhuit #peur",
+      "views": 118200,
+      "likes": 5601,
+      "comments": 22
     },
     {
       "platform": "tiktok",
@@ -7133,13 +7153,13 @@
     },
     {
       "platform": "tiktok",
-      "id": "7673792201880571169",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7673792201880571169",
-      "title": "#parcdattraction #chaussure #coaster #grandhuit #peur",
-      "description": "#parcdattraction #chaussure #coaster #grandhuit #peur",
+      "id": "7651632275804654881",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7651632275804654881",
+      "title": "#europapark #drole #atlantica #eau #mouille",
+      "description": "#europapark #drole #atlantica #eau #mouille",
       "views": 117300,
-      "likes": 5541,
-      "comments": 22
+      "likes": 15900,
+      "comments": 37
     },
     {
       "platform": "youtube",
@@ -7152,23 +7172,13 @@
       "comments": 57
     },
     {
-      "platform": "tiktok",
-      "id": "7651632275804654881",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7651632275804654881",
-      "title": "#europapark #drole #atlantica #eau #mouille",
-      "description": "#europapark #drole #atlantica #eau #mouille",
-      "views": 117200,
-      "likes": 15900,
-      "comments": 37
-    },
-    {
       "platform": "youtube",
       "id": "7Fe16OSGMpk",
       "url": "https://www.youtube.com/watch?v=7Fe16OSGMpk",
       "title": "Le retour de l'été et des sorties parc d'attractions entre potes",
       "description": "#europapark #été #sortie #pote #parcdattraction",
-      "views": 116368,
-      "likes": 4168,
+      "views": 116407,
+      "likes": 4169,
       "comments": 22
     },
     {
@@ -7197,7 +7207,7 @@
       "url": "https://www.youtube.com/watch?v=WYMFSobxDkc",
       "title": "Quand c'est LE moment de faire la course pour faire l'attraction en premier",
       "description": "#europapark #course #ouverture #moment #parcdattraction #coaster #allemagne",
-      "views": 114831,
+      "views": 114850,
       "likes": 3953,
       "comments": 29
     },
@@ -7212,6 +7222,16 @@
       "comments": 97
     },
     {
+      "platform": "youtube",
+      "id": "c4_r7NNhv54",
+      "url": "https://www.youtube.com/watch?v=c4_r7NNhv54",
+      "title": "Cette descente en arrière qui fait plus de sensations que la grande",
+      "description": "#europapark #atlantica #descente #arriere #strasbourg",
+      "views": 114540,
+      "likes": 3281,
+      "comments": 36
+    },
+    {
       "platform": "tiktok",
       "id": "7523250629964303618",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7523250629964303618",
@@ -7220,16 +7240,6 @@
       "views": 114500,
       "likes": 14800,
       "comments": 103
-    },
-    {
-      "platform": "youtube",
-      "id": "c4_r7NNhv54",
-      "url": "https://www.youtube.com/watch?v=c4_r7NNhv54",
-      "title": "Cette descente en arrière qui fait plus de sensations que la grande",
-      "description": "#europapark #atlantica #descente #arriere #strasbourg",
-      "views": 114488,
-      "likes": 3281,
-      "comments": 36
     },
     {
       "platform": "tiktok",
@@ -7287,8 +7297,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7660434457999985952",
       "title": "#europapark #lycée #cours #allemand #sortiescolaire",
       "description": "#europapark #lycée #cours #allemand #sortiescolaire",
-      "views": 112500,
-      "likes": 8576,
+      "views": 112600,
+      "likes": 8581,
       "comments": 126
     },
     {
@@ -7323,6 +7333,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7655717080787914017",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7655717080787914017",
+      "title": "#parcasterix #goudurix #sac #tombe #looping",
+      "description": "#parcasterix #goudurix #sac #tombe #looping",
+      "views": 110400,
+      "likes": 5968,
+      "comments": 67
+    },
+    {
+      "platform": "tiktok",
       "id": "7417008570631277857",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7417008570631277857",
       "title": "#europapark #attraction #euromir #musique #song #adrenaline #rollerco...",
@@ -7330,16 +7350,6 @@
       "views": 110300,
       "likes": 8978,
       "comments": 69
-    },
-    {
-      "platform": "tiktok",
-      "id": "7655717080787914017",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7655717080787914017",
-      "title": "#parcasterix #goudurix #sac #tombe #looping",
-      "description": "#parcasterix #goudurix #sac #tombe #looping",
-      "views": 110300,
-      "likes": 5963,
-      "comments": 67
     },
     {
       "platform": "youtube",
@@ -7458,7 +7468,7 @@
       "title": "#europapark #feeling #vacations #themepark #coaster",
       "description": "#europapark #feeling #vacations #themepark #coaster",
       "views": 107300,
-      "likes": 8826,
+      "likes": 8827,
       "comments": 67
     },
     {
@@ -7478,8 +7488,18 @@
       "title": "#parcasterix #toutatis #photo #peur #attraction",
       "description": "#parcasterix #toutatis #photo #peur #attraction",
       "views": 107100,
-      "likes": 6459,
+      "likes": 6460,
       "comments": 48
+    },
+    {
+      "platform": "tiktok",
+      "id": "7643732718680902944",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7643732718680902944",
+      "title": "#traumatica #halloween #evenement #strasbourg #europapark",
+      "description": "#traumatica #halloween #evenement #strasbourg #europapark",
+      "views": 107000,
+      "likes": 6662,
+      "comments": 65
     },
     {
       "platform": "tiktok",
@@ -7487,7 +7507,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7488374857772666134",
       "title": "#europapark #strasbourg #republication #parcdattraction #coaster #man...",
       "description": "#europapark #strasbourg #republication #parcdattraction #coaster #manege #attraction #trend #allemagne #parc #silverstar #rollercoaster #themepark",
-      "views": 106700,
+      "views": 106800,
       "likes": 11700,
       "comments": 123
     },
@@ -7503,13 +7523,13 @@
     },
     {
       "platform": "tiktok",
-      "id": "7643732718680902944",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7643732718680902944",
-      "title": "#traumatica #halloween #evenement #strasbourg #europapark",
-      "description": "#traumatica #halloween #evenement #strasbourg #europapark",
-      "views": 106700,
-      "likes": 6658,
-      "comments": 65
+      "id": "7682802436615998753",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7682802436615998753",
+      "title": "#europapark #septembre #personne #attente #parcdattraction",
+      "description": "#europapark #septembre #personne #attente #parcdattraction",
+      "views": 106300,
+      "likes": 9999,
+      "comments": 84
     },
     {
       "platform": "tiktok",
@@ -7597,7 +7617,7 @@
       "url": "https://www.youtube.com/watch?v=5YKqxHT4M1M",
       "title": "Tu n'as plus de batterie sur ton téléphone quand tu es à Europa-Park ?",
       "description": "#europapark #parc #parcdattraction #themepark #astuce #batterie #alsace #tips #attraction #manege #telephone",
-      "views": 103258,
+      "views": 103261,
       "likes": 1890,
       "comments": 16
     },
@@ -7668,7 +7688,7 @@
       "title": "#europapark #incendie #alpenexpress #incident #parcdattraction #nosta...",
       "description": "#europapark #incendie #alpenexpress #incident #parcdattraction #nostalgie #attraction #manege #feu #buche #allemagne #strasbourg #alsace #coaster #attraction #themepark",
       "views": 101900,
-      "likes": 4407,
+      "likes": 4408,
       "comments": 61
     },
     {
@@ -7680,6 +7700,16 @@
       "views": 101000,
       "likes": 13400,
       "comments": 101
+    },
+    {
+      "platform": "tiktok",
+      "id": "7679769626338757921",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7679769626338757921",
+      "title": "#energylandia #pologne #europapark #realite #parcdattraction",
+      "description": "#energylandia #pologne #europapark #realite #parcdattraction",
+      "views": 100400,
+      "likes": 7133,
+      "comments": 125
     },
     {
       "platform": "youtube",
@@ -7703,16 +7733,6 @@
     },
     {
       "platform": "tiktok",
-      "id": "7679769626338757921",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7679769626338757921",
-      "title": "#energylandia #pologne #europapark #realite #parcdattraction",
-      "description": "#energylandia #pologne #europapark #realite #parcdattraction",
-      "views": 99100,
-      "likes": 7057,
-      "comments": 125
-    },
-    {
-      "platform": "tiktok",
       "id": "7634574686235479318",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7634574686235479318",
       "title": "#europapark #filedattente #son #voltron #attraction",
@@ -7730,16 +7750,6 @@
       "views": 98800,
       "likes": 8912,
       "comments": 51
-    },
-    {
-      "platform": "tiktok",
-      "id": "7682802436615998753",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7682802436615998753",
-      "title": "#europapark #septembre #personne #attente #parcdattraction",
-      "description": "#europapark #septembre #personne #attente #parcdattraction",
-      "views": 98700,
-      "likes": 9291,
-      "comments": 82
     },
     {
       "platform": "youtube",
@@ -7777,7 +7787,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7401050047326047521",
       "title": "#phantasialand #parcasterix #europapark #taron #tootatis #voltron #ad...",
       "description": "#phantasialand #parcasterix #europapark #taron #tootatis #voltron #adrenaline #rollercoaster #coaster #allemagne #alsace #strasbourg #metz #themepark #park #parcdattraction #attraction",
-      "views": 97100,
+      "views": 97200,
       "likes": 8208,
       "comments": 206
     },
@@ -7808,8 +7818,18 @@
       "title": "#disneylandparis #europapark #billets #prix #parcdattraction",
       "description": "#disneylandparis #europapark #billets #prix #parcdattraction",
       "views": 96000,
-      "likes": 7111,
+      "likes": 7112,
       "comments": 67
+    },
+    {
+      "platform": "tiktok",
+      "id": "7673420938733538592",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7673420938733538592",
+      "title": "#parcdattraction #rafting #accident #couler #manege",
+      "description": "#parcdattraction #rafting #accident #couler #manege",
+      "views": 96000,
+      "likes": 2716,
+      "comments": 34
     },
     {
       "platform": "youtube",
@@ -7850,16 +7870,6 @@
       "views": 95500,
       "likes": 15800,
       "comments": 46
-    },
-    {
-      "platform": "tiktok",
-      "id": "7673420938733538592",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7673420938733538592",
-      "title": "#parcdattraction #rafting #accident #couler #manege",
-      "description": "#parcdattraction #rafting #accident #couler #manege",
-      "views": 95500,
-      "likes": 2697,
-      "comments": 34
     },
     {
       "platform": "tiktok",
@@ -7957,8 +7967,8 @@
       "url": "https://www.youtube.com/watch?v=CvhEFcpBuAA",
       "title": "Fais tes valises, direction Europa-Park avec ton duo en Août",
       "description": "#europapark #duo #trend #parcdattraction #strasbourg",
-      "views": 92782,
-      "likes": 2492,
+      "views": 92880,
+      "likes": 2494,
       "comments": 18
     },
     {
@@ -7972,24 +7982,24 @@
       "comments": 69
     },
     {
-      "platform": "youtube",
-      "id": "J4p6Ep6OdUE",
-      "url": "https://www.youtube.com/watch?v=J4p6Ep6OdUE",
-      "title": "Pourquoi ya Byilhan à Europa-Park dans une file d'attente ???",
-      "description": "#europapark #byilhann #filedattente #drole #attraction",
-      "views": 92117,
-      "likes": 2416,
-      "comments": 40
-    },
-    {
       "platform": "tiktok",
       "id": "7671570290320641312",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7671570290320641312",
       "title": "#efteling #rollercoaster #extreme #défis #fou",
       "description": "#efteling #rollercoaster #extreme #défis #fou",
-      "views": 92000,
-      "likes": 4807,
-      "comments": 354
+      "views": 92300,
+      "likes": 4822,
+      "comments": 355
+    },
+    {
+      "platform": "youtube",
+      "id": "J4p6Ep6OdUE",
+      "url": "https://www.youtube.com/watch?v=J4p6Ep6OdUE",
+      "title": "Pourquoi ya Byilhan à Europa-Park dans une file d'attente ???",
+      "description": "#europapark #byilhann #filedattente #drole #attraction",
+      "views": 92192,
+      "likes": 2418,
+      "comments": 40
     },
     {
       "platform": "tiktok",
@@ -8029,7 +8039,7 @@
       "description": "#europapark #parcdattraction #trend #drole #manege #sensation #vomi #peur #gmf #strasbourg #alsace #allemagne #coaster #rollercoaster #voltron",
       "views": 91200,
       "likes": 8860,
-      "comments": 82
+      "comments": 83
     },
     {
       "platform": "tiktok",
@@ -8038,7 +8048,7 @@
       "title": "#europapark #parcdattraction #silverstar #pov #descente",
       "description": "#europapark #parcdattraction #silverstar #pov #descente",
       "views": 90800,
-      "likes": 6007,
+      "likes": 6008,
       "comments": 61
     },
     {
@@ -8233,6 +8243,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7665684079362297121",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7665684079362297121",
+      "title": "#europapark #monaco #mercedes #silverstar #nouveau",
+      "description": "#europapark #monaco #mercedes #silverstar #nouveau",
+      "views": 87500,
+      "likes": 9992,
+      "comments": 85
+    },
+    {
+      "platform": "tiktok",
       "id": "7537716023173090582",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7537716023173090582",
       "title": "#europapark #parcasterix #parcdattraction #coaster #rollercoaster",
@@ -8240,16 +8260,6 @@
       "views": 87400,
       "likes": 3333,
       "comments": 167
-    },
-    {
-      "platform": "tiktok",
-      "id": "7665684079362297121",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7665684079362297121",
-      "title": "#europapark #monaco #mercedes #silverstar #nouveau",
-      "description": "#europapark #monaco #mercedes #silverstar #nouveau",
-      "views": 87300,
-      "likes": 9960,
-      "comments": 85
     },
     {
       "platform": "tiktok",
@@ -8318,7 +8328,7 @@
       "title": "#energylandia #attraction #pov #extreme #coaster",
       "description": "#energylandia #attraction #pov #extreme #coaster",
       "views": 86800,
-      "likes": 5547,
+      "likes": 5548,
       "comments": 118
     },
     {
@@ -8348,7 +8358,7 @@
       "title": "#europapark #looping #park #themepark #peur #rollercoaster #coaster #...",
       "description": "#europapark #looping #park #themepark #peur #rollercoaster #coaster #parcdattraction #attraction #allemagne #strasbourg #alsace #mulhouse",
       "views": 86500,
-      "likes": 9227,
+      "likes": 9228,
       "comments": 140
     },
     {
@@ -8467,8 +8477,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7660806415652572449",
       "title": "#europapark #atlantica #descente #arriere #strasbourg",
       "description": "#europapark #atlantica #descente #arriere #strasbourg",
-      "views": 84100,
-      "likes": 7005,
+      "views": 84200,
+      "likes": 7017,
       "comments": 62
     },
     {
@@ -8517,8 +8527,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7661547595898080544",
       "title": "#europapark #bobsleigh #casquette #rail #parcdattraction",
       "description": "#europapark #bobsleigh #casquette #rail #parcdattraction",
-      "views": 83100,
-      "likes": 3643,
+      "views": 83200,
+      "likes": 3648,
       "comments": 77
     },
     {
@@ -8732,12 +8742,22 @@
       "comments": 31
     },
     {
+      "platform": "tiktok",
+      "id": "7669709154994457888",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7669709154994457888",
+      "title": "#europapark #flammes #parcdattraction #trend #attraction",
+      "description": "#europapark #flammes #parcdattraction #trend #attraction",
+      "views": 80400,
+      "likes": 5069,
+      "comments": 11
+    },
+    {
       "platform": "youtube",
       "id": "FGqcxNoDffI",
       "url": "https://www.youtube.com/watch?v=FGqcxNoDffI",
       "title": "Pour combien d'euros tu fais les 2 en ENTIER ??? (SeaWorld Orlando)",
       "description": "#seaworld #extreme #rollercoaster #parcdattraction #defi",
-      "views": 80277,
+      "views": 80281,
       "likes": 2975,
       "comments": 170
     },
@@ -8760,16 +8780,6 @@
       "views": 79200,
       "likes": 6607,
       "comments": 185
-    },
-    {
-      "platform": "tiktok",
-      "id": "7669709154994457888",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7669709154994457888",
-      "title": "#europapark #flammes #parcdattraction #trend #attraction",
-      "description": "#europapark #flammes #parcdattraction #trend #attraction",
-      "views": 79200,
-      "likes": 5010,
-      "comments": 11
     },
     {
       "platform": "youtube",
@@ -8798,7 +8808,7 @@
       "title": "#parcdattraction #sortie #pote #été #attraction",
       "description": "#parcdattraction #sortie #pote #été #attraction",
       "views": 78700,
-      "likes": 7700,
+      "likes": 7706,
       "comments": 41
     },
     {
@@ -8892,6 +8902,16 @@
       "comments": 50
     },
     {
+      "platform": "youtube",
+      "id": "zuXHQEW3-dw",
+      "url": "https://www.youtube.com/watch?v=zuXHQEW3-dw",
+      "title": "Cette sortie parc d'attractions qui arrive à grand pas",
+      "description": "#parcdattraction #sortie #pote #été #attraction",
+      "views": 76891,
+      "likes": 2439,
+      "comments": 35
+    },
+    {
       "platform": "tiktok",
       "id": "7418243005666037024",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7418243005666037024",
@@ -8900,16 +8920,6 @@
       "views": 76800,
       "likes": 10600,
       "comments": 187
-    },
-    {
-      "platform": "youtube",
-      "id": "zuXHQEW3-dw",
-      "url": "https://www.youtube.com/watch?v=zuXHQEW3-dw",
-      "title": "Cette sortie parc d'attractions qui arrive à grand pas",
-      "description": "#parcdattraction #sortie #pote #été #attraction",
-      "views": 76768,
-      "likes": 2438,
-      "comments": 35
     },
     {
       "platform": "tiktok",
@@ -8988,8 +8998,18 @@
       "title": "#europapark #parcdattraction #bluefire #wodan #été #strasbourg #freib...",
       "description": "#europapark #parcdattraction #bluefire #wodan #été #strasbourg #freiburg #rollercoaster #trend #allemagne #manege #attraction #themepark",
       "views": 75000,
-      "likes": 7902,
+      "likes": 7903,
       "comments": 76
+    },
+    {
+      "platform": "tiktok",
+      "id": "7667116066513947936",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7667116066513947936",
+      "title": "#europapark #duo #trend #parcdattraction #strasbourg",
+      "description": "#europapark #duo #trend #parcdattraction #strasbourg",
+      "views": 75000,
+      "likes": 6769,
+      "comments": 114
     },
     {
       "platform": "tiktok",
@@ -9000,16 +9020,6 @@
       "views": 75000,
       "likes": 6372,
       "comments": 229
-    },
-    {
-      "platform": "tiktok",
-      "id": "7667116066513947936",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7667116066513947936",
-      "title": "#europapark #duo #trend #parcdattraction #strasbourg",
-      "description": "#europapark #duo #trend #parcdattraction #strasbourg",
-      "views": 74900,
-      "likes": 6759,
-      "comments": 114
     },
     {
       "platform": "tiktok",
@@ -9057,7 +9067,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7419601866847276320",
       "title": "#europapark #parcdattraction #allemagne #manege #attraction #sensatio...",
       "description": "#europapark #parcdattraction #allemagne #manege #attraction #sensation #voltron #themepark #amusementpark #strasbourg #freiburg #colmar #mulhouse #attente #queue #parcasterix",
-      "views": 74600,
+      "views": 74700,
       "likes": 5892,
       "comments": 64
     },
@@ -9213,16 +9223,6 @@
     },
     {
       "platform": "tiktok",
-      "id": "7683171096903896352",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7683171096903896352",
-      "title": "#universalorlando #volcanobay #parcaquatique #piscine #toboggan",
-      "description": "#universalorlando #volcanobay #parcaquatique #piscine #toboggan",
-      "views": 71500,
-      "likes": 7896,
-      "comments": 15
-    },
-    {
-      "platform": "tiktok",
       "id": "7591166501227384086",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7591166501227384086",
       "title": "*Publicité - Collaboration avec @Efteling #efteling #hotels #parcdatt...",
@@ -9262,6 +9262,16 @@
       "comments": 18
     },
     {
+      "platform": "youtube",
+      "id": "JhxeuJSphM0",
+      "url": "https://www.youtube.com/watch?v=JhxeuJSphM0",
+      "title": "Pour 1000€ tu le fais en ENTIER ??? (Hyperion)",
+      "description": "#energylandia #extreme #peur #rollercoaster #parcdattraction",
+      "views": 70423,
+      "likes": 1854,
+      "comments": 155
+    },
+    {
       "platform": "tiktok",
       "id": "7349191492801514784",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7349191492801514784",
@@ -9270,16 +9280,6 @@
       "views": 70400,
       "likes": 5661,
       "comments": 24
-    },
-    {
-      "platform": "youtube",
-      "id": "JhxeuJSphM0",
-      "url": "https://www.youtube.com/watch?v=JhxeuJSphM0",
-      "title": "Pour 1000€ tu le fais en ENTIER ??? (Hyperion)",
-      "description": "#energylandia #extreme #peur #rollercoaster #parcdattraction",
-      "views": 70230,
-      "likes": 1849,
-      "comments": 154
     },
     {
       "platform": "tiktok",
@@ -9318,7 +9318,7 @@
       "title": "#europapark #allemagne #strasbourg #sensation #manege #trend #adrenal...",
       "description": "#europapark #allemagne #strasbourg #sensation #manege #trend #adrenaline #amusementpark #themepark #parcdattraction #alsace #wodan #pov #attraction",
       "views": 69400,
-      "likes": 8528,
+      "likes": 8530,
       "comments": 163
     },
     {
@@ -9352,6 +9352,16 @@
       "comments": 105
     },
     {
+      "platform": "youtube",
+      "id": "uKbtCdqPOa4",
+      "url": "https://www.youtube.com/watch?v=uKbtCdqPOa4",
+      "title": "Branchez vous parc d'attractions en Pologne ils ont peur de rien là bas",
+      "description": "#energylandia #parcdattraction #pologne #manege #sensation",
+      "views": 68701,
+      "likes": 1693,
+      "comments": 52
+    },
+    {
       "platform": "tiktok",
       "id": "7365918238946970913",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7365918238946970913",
@@ -9368,18 +9378,8 @@
       "title": "#europapark #panne #peur #parcdattraction #manege",
       "description": "#europapark #panne #peur #parcdattraction #manege",
       "views": 68700,
-      "likes": 4567,
+      "likes": 4568,
       "comments": 24
-    },
-    {
-      "platform": "youtube",
-      "id": "uKbtCdqPOa4",
-      "url": "https://www.youtube.com/watch?v=uKbtCdqPOa4",
-      "title": "Branchez vous parc d'attractions en Pologne ils ont peur de rien là bas",
-      "description": "#energylandia #parcdattraction #pologne #manege #sensation",
-      "views": 68434,
-      "likes": 1688,
-      "comments": 52
     },
     {
       "platform": "youtube",
@@ -9387,7 +9387,7 @@
       "url": "https://www.youtube.com/watch?v=63VComCfs3M",
       "title": "Juste pour te rappeler qu'on doit faire ce voyage une fois dans notre vie",
       "description": "#universalorlando #etatsunis🇺🇸 #parcdattraction #pote #duo",
-      "views": 68319,
+      "views": 68340,
       "likes": 2984,
       "comments": 55
     },
@@ -9427,8 +9427,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7677508333112151328",
       "title": "#energylandia #culture #pologne #parcdattraction #attraction",
       "description": "#energylandia #culture #pologne #parcdattraction #attraction",
-      "views": 67900,
-      "likes": 6309,
+      "views": 68000,
+      "likes": 6317,
       "comments": 38
     },
     {
@@ -9437,7 +9437,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7599324282547735831",
       "title": "#parcdattraction #trend #peur #sensation #attraction",
       "description": "#parcdattraction #trend #peur #sensation #attraction",
-      "views": 67900,
+      "views": 68000,
       "likes": 5754,
       "comments": 40
     },
@@ -9637,9 +9637,19 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7543646472513047830",
       "title": "#europapark #manege #trend #parcdattraction #energylandia",
       "description": "#europapark #manege #trend #parcdattraction #energylandia",
-      "views": 65500,
-      "likes": 7821,
+      "views": 65600,
+      "likes": 7822,
       "comments": 22
+    },
+    {
+      "platform": "youtube",
+      "id": "1ZhUsThUdNE",
+      "url": "https://www.youtube.com/watch?v=1ZhUsThUdNE",
+      "title": "Tellement qu'il y a du monde, la queue elle est en dehors de la file",
+      "description": "#europapark #filedattente #queue #parcdattraction #voletarium",
+      "views": 65416,
+      "likes": 1271,
+      "comments": 15
     },
     {
       "platform": "tiktok",
@@ -9660,16 +9670,6 @@
       "views": 65400,
       "likes": 3121,
       "comments": 27
-    },
-    {
-      "platform": "youtube",
-      "id": "1ZhUsThUdNE",
-      "url": "https://www.youtube.com/watch?v=1ZhUsThUdNE",
-      "title": "Tellement qu'il y a du monde, la queue elle est en dehors de la file",
-      "description": "#europapark #filedattente #queue #parcdattraction #voletarium",
-      "views": 65354,
-      "likes": 1270,
-      "comments": 15
     },
     {
       "platform": "tiktok",
@@ -9807,7 +9807,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7581890704457256214",
       "title": "#europapark #themepark #winter #amusementpark #christmas",
       "description": "#europapark #themepark #winter #amusementpark #christmas",
-      "views": 63800,
+      "views": 63900,
       "likes": 5686,
       "comments": 66
     },
@@ -9857,9 +9857,19 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7666060085323517216",
       "title": "#rulantica #toboggan #peur #piscine #parcaquatique",
       "description": "#rulantica #toboggan #peur #piscine #parcaquatique",
-      "views": 62600,
-      "likes": 2192,
+      "views": 62800,
+      "likes": 2201,
       "comments": 51
+    },
+    {
+      "platform": "youtube",
+      "id": "zcNOD-pBPE0",
+      "url": "https://www.youtube.com/watch?v=zcNOD-pBPE0",
+      "title": "Pourquoi ils ont mis une licorne dans la maison hantée d'Europa-Park ???",
+      "description": "#europapark #parcdattraction #licorne #drole #strasbourg",
+      "views": 62354,
+      "likes": 1559,
+      "comments": 21
     },
     {
       "platform": "tiktok",
@@ -9870,16 +9880,6 @@
       "views": 62300,
       "likes": 6531,
       "comments": 50
-    },
-    {
-      "platform": "youtube",
-      "id": "zcNOD-pBPE0",
-      "url": "https://www.youtube.com/watch?v=zcNOD-pBPE0",
-      "title": "Pourquoi ils ont mis une licorne dans la maison hantée d'Europa-Park ???",
-      "description": "#europapark #parcdattraction #licorne #drole #strasbourg",
-      "views": 62287,
-      "likes": 1558,
-      "comments": 21
     },
     {
       "platform": "tiktok",
@@ -9947,7 +9947,7 @@
       "url": "https://www.youtube.com/watch?v=B-YW-cJow0c",
       "title": "Faire les attractions pour enfants quand il y a trop d'attente",
       "description": "#universalorlando #attraction #manege #enfant #attente",
-      "views": 61144,
+      "views": 61145,
       "likes": 1808,
       "comments": 22
     },
@@ -10108,7 +10108,7 @@
       "title": "#universalorlando #parcdattraction #neymar #football #coupedumonde",
       "description": "#universalorlando #parcdattraction #neymar #football #coupedumonde",
       "views": 59100,
-      "likes": 5464,
+      "likes": 5471,
       "comments": 23
     },
     {
@@ -10120,6 +10120,16 @@
       "views": 59100,
       "likes": 4523,
       "comments": 42
+    },
+    {
+      "platform": "tiktok",
+      "id": "7669341353242873121",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7669341353242873121",
+      "title": "#europapark #attraction #eau #personne #allemagne",
+      "description": "#europapark #attraction #eau #personne #allemagne",
+      "views": 58700,
+      "likes": 3298,
+      "comments": 45
     },
     {
       "platform": "tiktok",
@@ -10150,16 +10160,6 @@
       "views": 58600,
       "likes": 7026,
       "comments": 139
-    },
-    {
-      "platform": "tiktok",
-      "id": "7669341353242873121",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7669341353242873121",
-      "title": "#europapark #attraction #eau #personne #allemagne",
-      "description": "#europapark #attraction #eau #personne #allemagne",
-      "views": 58400,
-      "likes": 3270,
-      "comments": 44
     },
     {
       "platform": "youtube",
@@ -10280,6 +10280,16 @@
       "views": 57400,
       "likes": 5070,
       "comments": 57
+    },
+    {
+      "platform": "tiktok",
+      "id": "7681958411495279905",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7681958411495279905",
+      "title": "#energylandia #pologne #parcdattraction #trend #rollercoaster",
+      "description": "#energylandia #pologne #parcdattraction #trend #rollercoaster",
+      "views": 57300,
+      "likes": 5405,
+      "comments": 32
     },
     {
       "platform": "tiktok",
@@ -10417,19 +10427,9 @@
       "url": "https://www.youtube.com/watch?v=-Qj3ymPxry8",
       "title": "Genre là dedans on garde nos sacs et pour vous c'est normal que ya rien qui tombe ???",
       "description": "#parcasterix #goudurix #sac #tombe #looping",
-      "views": 56416,
+      "views": 56460,
       "likes": 1942,
       "comments": 54
-    },
-    {
-      "platform": "tiktok",
-      "id": "7681958411495279905",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7681958411495279905",
-      "title": "#energylandia #pologne #parcdattraction #trend #rollercoaster",
-      "description": "#energylandia #pologne #parcdattraction #trend #rollercoaster",
-      "views": 56100,
-      "likes": 5307,
-      "comments": 31
     },
     {
       "platform": "tiktok",
@@ -10463,6 +10463,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7670471924140543265",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7670471924140543265",
+      "title": "#europapark #pont #voiture #attraction #arriver",
+      "description": "#europapark #pont #voiture #attraction #arriver",
+      "views": 55600,
+      "likes": 7018,
+      "comments": 170
+    },
+    {
+      "platform": "tiktok",
       "id": "7464994978737982742",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7464994978737982742",
       "title": "#rulantica #trend #identifie #mention #parcaquatique #pote #toboggan ...",
@@ -10470,16 +10480,6 @@
       "views": 55500,
       "likes": 5246,
       "comments": 407
-    },
-    {
-      "platform": "tiktok",
-      "id": "7670471924140543265",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7670471924140543265",
-      "title": "#europapark #pont #voiture #attraction #arriver",
-      "description": "#europapark #pont #voiture #attraction #arriver",
-      "views": 55400,
-      "likes": 6998,
-      "comments": 169
     },
     {
       "platform": "tiktok",
@@ -10527,9 +10527,19 @@
       "url": "https://www.youtube.com/watch?v=1ixto-MBXwk",
       "title": "Pov : tu vas à Europa-Park pour découvrir le nouveau Silver Star",
       "description": "#europapark #silverstar #nouveaute #decouverte #parcdattraction",
-      "views": 54535,
+      "views": 54550,
       "likes": 1654,
       "comments": 29
+    },
+    {
+      "platform": "youtube",
+      "id": "EAaV836RO8c",
+      "url": "https://www.youtube.com/watch?v=EAaV836RO8c",
+      "title": "Je sors de l'attraction je vois que ça enlève des wagons, c'est normal ???",
+      "description": "#europapark #euromir #musique #song #coaster #allemagne #strasbourg #son #attraction",
+      "views": 54475,
+      "likes": 1566,
+      "comments": 35
     },
     {
       "platform": "youtube",
@@ -10543,16 +10553,6 @@
     },
     {
       "platform": "youtube",
-      "id": "EAaV836RO8c",
-      "url": "https://www.youtube.com/watch?v=EAaV836RO8c",
-      "title": "Je sors de l'attraction je vois que ça enlève des wagons, c'est normal ???",
-      "description": "#europapark #euromir #musique #song #coaster #allemagne #strasbourg #son #attraction",
-      "views": 54261,
-      "likes": 1564,
-      "comments": 35
-    },
-    {
-      "platform": "youtube",
       "id": "xq_ndsCX3xQ",
       "url": "https://www.youtube.com/watch?v=xq_ndsCX3xQ",
       "title": "Seuls les vrais cherchent leur voiture garée depuis cette montée",
@@ -10562,12 +10562,22 @@
       "comments": 35
     },
     {
+      "platform": "tiktok",
+      "id": "7670087697821666592",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7670087697821666592",
+      "title": "#europapark #wodan #queue #lumiere #filedattente",
+      "description": "#europapark #wodan #queue #lumiere #filedattente",
+      "views": 54200,
+      "likes": 3319,
+      "comments": 37
+    },
+    {
       "platform": "youtube",
       "id": "kXF7LIAdwgc",
       "url": "https://www.youtube.com/watch?v=kXF7LIAdwgc",
       "title": "Pov : on s'est fait bannir du parc d'attractions juste après ce TikTok",
       "description": "#europapark #banni #attraction #eau #canicule",
-      "views": 54178,
+      "views": 54185,
       "likes": 1270,
       "comments": 12
     },
@@ -10590,16 +10600,6 @@
       "views": 54108,
       "likes": 2307,
       "comments": 20
-    },
-    {
-      "platform": "tiktok",
-      "id": "7670087697821666592",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7670087697821666592",
-      "title": "#europapark #wodan #queue #lumiere #filedattente",
-      "description": "#europapark #wodan #queue #lumiere #filedattente",
-      "views": 54000,
-      "likes": 3307,
-      "comments": 37
     },
     {
       "platform": "youtube",
@@ -10737,9 +10737,19 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7661918249386364193",
       "title": "#toverland #vide #peur #manege #parcdattraction",
       "description": "#toverland #vide #peur #manege #parcdattraction",
-      "views": 53100,
-      "likes": 2489,
+      "views": 53200,
+      "likes": 2494,
       "comments": 40
+    },
+    {
+      "platform": "youtube",
+      "id": "0NdK_iUZmiE",
+      "url": "https://www.youtube.com/watch?v=0NdK_iUZmiE",
+      "title": "Mon frère fait son premier roller coaster",
+      "description": "#europapark #silverstar #frère #drôle #parcdattraction #strasbourg #rollercoaster",
+      "views": 53100,
+      "likes": 1822,
+      "comments": 26
     },
     {
       "platform": "tiktok",
@@ -10748,7 +10758,7 @@
       "title": "#bobbejaanland #belgique #parcdattraction #attraction #manege",
       "description": "#bobbejaanland #belgique #parcdattraction #attraction #manege",
       "views": 53000,
-      "likes": 2522,
+      "likes": 2523,
       "comments": 36
     },
     {
@@ -10852,6 +10862,16 @@
       "comments": 60
     },
     {
+      "platform": "youtube",
+      "id": "3wvxlvVzJ48",
+      "url": "https://www.youtube.com/watch?v=3wvxlvVzJ48",
+      "title": "Les pirates qui font six Seven au Parc Astérix",
+      "description": "#parcasterix #asterix #67 #sixseven #parcdattraction #drôle",
+      "views": 52188,
+      "likes": 1264,
+      "comments": 12
+    },
+    {
       "platform": "tiktok",
       "id": "7425659937793051937",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7425659937793051937",
@@ -10928,7 +10948,7 @@
       "title": "#europapark #parcdattraction #halloween #vacances #attraction",
       "description": "#europapark #parcdattraction #halloween #vacances #attraction",
       "views": 51900,
-      "likes": 4493,
+      "likes": 4495,
       "comments": 35
     },
     {
@@ -10950,16 +10970,6 @@
       "views": 51800,
       "likes": 6485,
       "comments": 87
-    },
-    {
-      "platform": "youtube",
-      "id": "0NdK_iUZmiE",
-      "url": "https://www.youtube.com/watch?v=0NdK_iUZmiE",
-      "title": "Mon frère fait son premier roller coaster",
-      "description": "#europapark #silverstar #frère #drôle #parcdattraction #strasbourg #rollercoaster",
-      "views": 51753,
-      "likes": 1779,
-      "comments": 24
     },
     {
       "platform": "tiktok",
@@ -11188,7 +11198,7 @@
       "title": "#phantasialand #parcdattraction #dinguerie #allemagne #attraction",
       "description": "#phantasialand #parcdattraction #dinguerie #allemagne #attraction",
       "views": 48800,
-      "likes": 4393,
+      "likes": 4401,
       "comments": 56
     },
     {
@@ -11258,7 +11268,7 @@
       "title": "#parcasterix #retour #trend #parcdattraction #asterix",
       "description": "#parcasterix #retour #trend #parcdattraction #asterix",
       "views": 47900,
-      "likes": 4501,
+      "likes": 4502,
       "comments": 16
     },
     {
@@ -11303,6 +11313,16 @@
     },
     {
       "platform": "youtube",
+      "id": "Q-mo5mcF2tg",
+      "url": "https://www.youtube.com/watch?v=Q-mo5mcF2tg",
+      "title": "Identifie CE pote qui DOIT monter dans le Silver Star avec toi !",
+      "description": "#europapark #parc #themepark #parctheme #parcdattraction #allemagne #manege #silverstar #pote  #duo #trend",
+      "views": 47514,
+      "likes": 1603,
+      "comments": 36
+    },
+    {
+      "platform": "youtube",
       "id": "E5QCTNmbdZA",
       "url": "https://www.youtube.com/watch?v=E5QCTNmbdZA",
       "title": "#traumatica #europapark #halloween #horrornight #parcdattraction",
@@ -11310,16 +11330,6 @@
       "views": 47512,
       "likes": 1263,
       "comments": 18
-    },
-    {
-      "platform": "youtube",
-      "id": "Q-mo5mcF2tg",
-      "url": "https://www.youtube.com/watch?v=Q-mo5mcF2tg",
-      "title": "Identifie CE pote qui DOIT monter dans le Silver Star avec toi !",
-      "description": "#europapark #parc #themepark #parctheme #parcdattraction #allemagne #manege #silverstar #pote  #duo #trend",
-      "views": 47502,
-      "likes": 1603,
-      "comments": 36
     },
     {
       "platform": "tiktok",
@@ -11417,7 +11427,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7413419956995378464",
       "title": "#europapark #parcdattraction #strasbourg #allemagne #privatiser #humo...",
       "description": "#europapark #parcdattraction #strasbourg #allemagne #privatiser #humour #adrenaline #manege #freiburg #amusementpark #coaster #sensation",
-      "views": 46800,
+      "views": 46900,
       "likes": 5189,
       "comments": 26
     },
@@ -11498,7 +11508,7 @@
       "title": "#nigloland #parcdattraction #photos #trend #manege",
       "description": "#nigloland #parcdattraction #photos #trend #manege",
       "views": 46200,
-      "likes": 1737,
+      "likes": 1738,
       "comments": 546
     },
     {
@@ -11507,7 +11517,7 @@
       "url": "https://www.youtube.com/watch?v=4xiDdN_YmRM",
       "title": "Quand tu vas à Europa-Park et que le Blue Fire se bloque dans un virage",
       "description": "#europapark #bluefire #incident #accident #allemagne #strasbourg",
-      "views": 46096,
+      "views": 46117,
       "likes": 1614,
       "comments": 13
     },
@@ -11572,12 +11582,22 @@
       "comments": 16
     },
     {
+      "platform": "tiktok",
+      "id": "7679359200039832865",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7679359200039832865",
+      "title": "#energylandia #extreme #pov #parcdattraction #rollercoaster",
+      "description": "#energylandia #extreme #pov #parcdattraction #rollercoaster",
+      "views": 45800,
+      "likes": 3082,
+      "comments": 83
+    },
+    {
       "platform": "youtube",
       "id": "xguZlbP4AB0",
       "url": "https://www.youtube.com/watch?v=xguZlbP4AB0",
       "title": "Seuls les vrais savent où se situe la poubelle la plus connue de France",
       "description": "#parcasterix #poubelle #connu #france #parcdattraction",
-      "views": 45748,
+      "views": 45751,
       "likes": 1203,
       "comments": 40
     },
@@ -11642,16 +11662,6 @@
       "comments": 6
     },
     {
-      "platform": "tiktok",
-      "id": "7679359200039832865",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7679359200039832865",
-      "title": "#energylandia #extreme #pov #parcdattraction #rollercoaster",
-      "description": "#energylandia #extreme #pov #parcdattraction #rollercoaster",
-      "views": 45400,
-      "likes": 3058,
-      "comments": 83
-    },
-    {
       "platform": "youtube",
       "id": "QLgCQEDPj00",
       "url": "https://www.youtube.com/watch?v=QLgCQEDPj00",
@@ -11660,6 +11670,16 @@
       "views": 45389,
       "likes": 1425,
       "comments": 23
+    },
+    {
+      "platform": "youtube",
+      "id": "IN90AnaWa0Y",
+      "url": "https://www.youtube.com/watch?v=IN90AnaWa0Y",
+      "title": "Pov : tu rentabilises ton hôtel à Europa-Park",
+      "description": "#europapark #course #ouverture #hotel #parcdattraction #ouverture #attraction #manège",
+      "views": 45356,
+      "likes": 1426,
+      "comments": 9
     },
     {
       "platform": "tiktok",
@@ -11677,7 +11697,7 @@
       "url": "https://www.youtube.com/watch?v=tQczNaVnF4Q",
       "title": "La journée parc Astérix s'est réalisé, l'été peut enfin commencer",
       "description": "#parcasterix #été #trend #parcdattraction #sortie",
-      "views": 45164,
+      "views": 45183,
       "likes": 1535,
       "comments": 8
     },
@@ -11687,7 +11707,7 @@
       "url": "https://www.youtube.com/watch?v=p2gd7fnLGSY",
       "title": "J'espère que les examens sont simples parce que nos révisions ressemblent à ça",
       "description": "#europapark #parcdattraction #attraction #revision #exam",
-      "views": 45141,
+      "views": 45146,
       "likes": 2630,
       "comments": 16
     },
@@ -11753,23 +11773,23 @@
     },
     {
       "platform": "youtube",
-      "id": "KFC_xA24Q1A",
-      "url": "https://www.youtube.com/watch?v=KFC_xA24Q1A",
-      "title": "t'es là, ça fait 1h que t'es dans la file et t'as ce son qui te casse les oreilles",
-      "description": "#europapark #filedattente #son #voltron #attraction",
-      "views": 44521,
-      "likes": 1175,
-      "comments": 25
-    },
-    {
-      "platform": "youtube",
       "id": "y2yEALK5A8U",
       "url": "https://www.youtube.com/watch?v=y2yEALK5A8U",
       "title": "Les gens font le manège les pieds dans le vide et ça choque personne ???",
       "description": "#toverland #vide #peur #manege #parcdattraction",
-      "views": 44516,
-      "likes": 1286,
+      "views": 44589,
+      "likes": 1287,
       "comments": 38
+    },
+    {
+      "platform": "youtube",
+      "id": "KFC_xA24Q1A",
+      "url": "https://www.youtube.com/watch?v=KFC_xA24Q1A",
+      "title": "t'es là, ça fait 1h que t'es dans la file et t'as ce son qui te casse les oreilles",
+      "description": "#europapark #filedattente #son #voltron #attraction",
+      "views": 44522,
+      "likes": 1175,
+      "comments": 25
     },
     {
       "platform": "youtube",
@@ -11782,16 +11802,6 @@
       "comments": 15
     },
     {
-      "platform": "youtube",
-      "id": "IN90AnaWa0Y",
-      "url": "https://www.youtube.com/watch?v=IN90AnaWa0Y",
-      "title": "Pov : tu rentabilises ton hôtel à Europa-Park",
-      "description": "#europapark #course #ouverture #hotel #parcdattraction #ouverture #attraction #manège",
-      "views": 44409,
-      "likes": 1409,
-      "comments": 9
-    },
-    {
       "platform": "tiktok",
       "id": "7439775516011384096",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7439775516011384096",
@@ -11799,7 +11809,7 @@
       "description": "#europapark #parcdattraction #attraction #allemagne #strasbourg #adrenaline #manege #sensation #themepark #bluefire #trend",
       "views": 44400,
       "likes": 4532,
-      "comments": 75
+      "comments": 76
     },
     {
       "platform": "tiktok",
@@ -11937,9 +11947,19 @@
       "url": "https://www.youtube.com/watch?v=4WIzWVf3JPA",
       "title": "Cette dame qui a changé de coupe mais qui épluche toujours les patates",
       "description": "#europapark #matterhornblitz #attraction #filedattente #drole",
-      "views": 43187,
-      "likes": 822,
+      "views": 43263,
+      "likes": 824,
       "comments": 8
+    },
+    {
+      "platform": "tiktok",
+      "id": "7640002516763020577",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7640002516763020577",
+      "title": "#europapark #astuces #gratuit #parcdattraction #secret",
+      "description": "#europapark #astuces #gratuit #parcdattraction #secret",
+      "views": 43200,
+      "likes": 3271,
+      "comments": 35
     },
     {
       "platform": "youtube",
@@ -11950,16 +11970,6 @@
       "views": 43146,
       "likes": 1058,
       "comments": 13
-    },
-    {
-      "platform": "tiktok",
-      "id": "7640002516763020577",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7640002516763020577",
-      "title": "#europapark #astuces #gratuit #parcdattraction #secret",
-      "description": "#europapark #astuces #gratuit #parcdattraction #secret",
-      "views": 43100,
-      "likes": 3269,
-      "comments": 35
     },
     {
       "platform": "tiktok",
@@ -11977,7 +11987,7 @@
       "url": "https://www.youtube.com/watch?v=jJWdpucUegE",
       "title": "Faire des manèges avec des gens ont peur c'est vraiment trop drôle",
       "description": "#europapark #manege #peur #pote #drole",
-      "views": 43044,
+      "views": 43051,
       "likes": 1509,
       "comments": 8
     },
@@ -12157,7 +12167,7 @@
       "url": "https://www.youtube.com/watch?v=3E8d__SgN_0",
       "title": "Pov : tu fais l'une des attractions les plus haute et rapide de Floride",
       "description": "#seaworld #parcdattraction #montagnerusse #extreme #peur",
-      "views": 42270,
+      "views": 42271,
       "likes": 1387,
       "comments": 28
     },
@@ -12170,6 +12180,16 @@
       "views": 42200,
       "likes": 3356,
       "comments": 37
+    },
+    {
+      "platform": "tiktok",
+      "id": "7664578710690958625",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7664578710690958625",
+      "title": "#europapark #matterhornblitz #attraction #filedattente #drole",
+      "description": "#europapark #matterhornblitz #attraction #filedattente #drole",
+      "views": 42200,
+      "likes": 2726,
+      "comments": 12
     },
     {
       "platform": "youtube",
@@ -12190,16 +12210,6 @@
       "views": 42100,
       "likes": 4369,
       "comments": 27
-    },
-    {
-      "platform": "tiktok",
-      "id": "7664578710690958625",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7664578710690958625",
-      "title": "#europapark #matterhornblitz #attraction #filedattente #drole",
-      "description": "#europapark #matterhornblitz #attraction #filedattente #drole",
-      "views": 42100,
-      "likes": 2717,
-      "comments": 12
     },
     {
       "platform": "tiktok",
@@ -12338,7 +12348,7 @@
       "title": "#europapark #été #sortie #pote #parcdattraction",
       "description": "#europapark #été #sortie #pote #parcdattraction",
       "views": 41500,
-      "likes": 2873,
+      "likes": 2876,
       "comments": 18
     },
     {
@@ -12378,7 +12388,7 @@
       "title": "#europapark #trend #soucis #parcdattraction #attraction #alsace #alle...",
       "description": "#europapark #trend #soucis #parcdattraction #attraction #alsace #allemagne #manege #coaster #sensation #themepark #europaparkrust #pote",
       "views": 41200,
-      "likes": 4866,
+      "likes": 4867,
       "comments": 32
     },
     {
@@ -12567,7 +12577,7 @@
       "url": "https://www.youtube.com/watch?v=_f8Pk6sOWsk",
       "title": "Pov : tu es bloqué dans les raftings à Europa-Park",
       "description": "#europapark #parc #bloque #rafting #intamin #coaster #eau #water #attraction #fou #accident #incident #parcdattraction",
-      "views": 39913,
+      "views": 39921,
       "likes": 1203,
       "comments": 17
     },
@@ -12587,7 +12597,7 @@
       "url": "https://www.youtube.com/watch?v=NNUHucsk8m8",
       "title": "Banalisez le fait d'aller dans un pays juste pour faire un parc d'attractions svp",
       "description": "#energylandia #pologne #pays #parcdattraction #europapark",
-      "views": 39843,
+      "views": 39849,
       "likes": 1529,
       "comments": 8
     },
@@ -12672,6 +12682,16 @@
       "comments": 14
     },
     {
+      "platform": "youtube",
+      "id": "t4rSPvuxox0",
+      "url": "https://www.youtube.com/watch?v=t4rSPvuxox0",
+      "title": "Délégué capable ramène sa classe en sortie scolaire dans les parcs d'attractions",
+      "description": "#europapark #sortiescolaire #parcdattraction #delegue #attraction #lycée #college #parc #manège",
+      "views": 39313,
+      "likes": 1449,
+      "comments": 24
+    },
+    {
       "platform": "tiktok",
       "id": "7448562666127346966",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7448562666127346966",
@@ -12692,16 +12712,6 @@
       "comments": 9
     },
     {
-      "platform": "youtube",
-      "id": "t4rSPvuxox0",
-      "url": "https://www.youtube.com/watch?v=t4rSPvuxox0",
-      "title": "Délégué capable ramène sa classe en sortie scolaire dans les parcs d'attractions",
-      "description": "#europapark #sortiescolaire #parcdattraction #delegue #attraction #lycée #college #parc #manège",
-      "views": 39264,
-      "likes": 1447,
-      "comments": 24
-    },
-    {
       "platform": "tiktok",
       "id": "7321781816929635616",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7321781816929635616",
@@ -12717,7 +12727,7 @@
       "url": "https://www.youtube.com/watch?v=sqbmJ5QDml8",
       "title": "Je suis seul, j'ai jamais compris pourquoi le train il partait du rail ???",
       "description": "#europapark #bobsleigh #rail #trend #parcdattraction",
-      "views": 39122,
+      "views": 39126,
       "likes": 1003,
       "comments": 29
     },
@@ -12957,9 +12967,9 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7668241195939728673",
       "title": "#europapark #parcdattraction #licorne #drole #strasbourg",
       "description": "#europapark #parcdattraction #licorne #drole #strasbourg",
-      "views": 37500,
-      "likes": 2974,
-      "comments": 33
+      "views": 37700,
+      "likes": 2991,
+      "comments": 35
     },
     {
       "platform": "tiktok",
@@ -13077,8 +13087,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7676062042742213921",
       "title": "#europapark #matterhornblitz #attente #filedattente #decor",
       "description": "#europapark #matterhornblitz #attente #filedattente #decor",
-      "views": 36700,
-      "likes": 2884,
+      "views": 36800,
+      "likes": 2890,
       "comments": 38
     },
     {
@@ -13287,7 +13297,7 @@
       "url": "https://www.youtube.com/watch?v=1NCtrUeeTEE",
       "title": "\"T'as peur pour rien frérot\", Le genre de manège que bro veut que je fasse avec lui",
       "description": "#parcdattraction #fou #extreme #trend #looping",
-      "views": 35441,
+      "views": 35444,
       "likes": 1156,
       "comments": 25
     },
@@ -13318,7 +13328,7 @@
       "title": "#europapark #alsace #parcdattraction #sortie #strasbourg",
       "description": "#europapark #alsace #parcdattraction #sortie #strasbourg",
       "views": 35200,
-      "likes": 2866,
+      "likes": 2867,
       "comments": 59
     },
     {
@@ -13478,7 +13488,7 @@
       "title": "#europapark #silverstar #themepark #germany #sunset #coaster #rollerc...",
       "description": "#europapark #silverstar #themepark #germany #sunset #coaster #rollercoaster",
       "views": 33700,
-      "likes": 4049,
+      "likes": 4050,
       "comments": 20
     },
     {
@@ -13557,7 +13567,7 @@
       "url": "https://www.youtube.com/watch?v=DFKDPSvbNlE",
       "title": "Cette attraction avec ce son qui reste dans la tête toute la journée",
       "description": "#europapark #matterhornblitz #son #musique #parcdattraction",
-      "views": 33030,
+      "views": 33034,
       "likes": 1015,
       "comments": 16
     },
@@ -13648,7 +13658,7 @@
       "title": "#europapark #arthuretlesminimoys #petit #drole #parcdattraction",
       "description": "#europapark #arthuretlesminimoys #petit #drole #parcdattraction",
       "views": 32500,
-      "likes": 2730,
+      "likes": 2739,
       "comments": 17
     },
     {
@@ -13657,9 +13667,19 @@
       "url": "https://www.youtube.com/watch?v=MrB0gfBQOk8",
       "title": "Mentionne la personne avec qui tu pourrais attendre 2h dans cette file",
       "description": "#universalorlando #harrypotter #filedattente #attraction #amis",
-      "views": 32470,
+      "views": 32494,
       "likes": 1722,
       "comments": 38
+    },
+    {
+      "platform": "youtube",
+      "id": "ZQj5vlDfGSg",
+      "url": "https://www.youtube.com/watch?v=ZQj5vlDfGSg",
+      "title": "Pov : tu décides d'aller au Parc Astérix en juin quand il y a personne",
+      "description": "#parcasterix #attentesvsrealite #personne #vide #parcdattraction",
+      "views": 32404,
+      "likes": 1662,
+      "comments": 19
     },
     {
       "platform": "tiktok",
@@ -13680,16 +13700,6 @@
       "views": 32400,
       "likes": 3131,
       "comments": 42
-    },
-    {
-      "platform": "youtube",
-      "id": "ZQj5vlDfGSg",
-      "url": "https://www.youtube.com/watch?v=ZQj5vlDfGSg",
-      "title": "Pov : tu décides d'aller au Parc Astérix en juin quand il y a personne",
-      "description": "#parcasterix #attentesvsrealite #personne #vide #parcdattraction",
-      "views": 32393,
-      "likes": 1661,
-      "comments": 19
     },
     {
       "platform": "youtube",
@@ -13727,8 +13737,8 @@
       "url": "https://www.youtube.com/watch?v=SyN3BCxCfRM",
       "title": "Monaco c'est bien mais ça restera à jamais l'attraction Mercedes",
       "description": "#europapark #monaco #mercedes #silverstar #nouveau",
-      "views": 32003,
-      "likes": 904,
+      "views": 32068,
+      "likes": 905,
       "comments": 12
     },
     {
@@ -13917,7 +13927,7 @@
       "url": "https://www.youtube.com/watch?v=r4hoVjCQzvA",
       "title": "Pov : tu vas pendant un jour férié faire Voltron à Europa-Park",
       "description": "#europapark #voltron #parc #parcdattraction #attente #manege #jourferie #monde #foule #ouverture",
-      "views": 31391,
+      "views": 31392,
       "likes": 913,
       "comments": 11
     },
@@ -14057,7 +14067,7 @@
       "url": "https://www.youtube.com/watch?v=OLLLDbiarNk",
       "title": "Pov : tu as réussi à filmer dans cette attraction alors que c'est interdit",
       "description": "#phantasialand #extreme #peur #interdit #rollercoaster",
-      "views": 30541,
+      "views": 30553,
       "likes": 1368,
       "comments": 20
     },
@@ -14337,7 +14347,7 @@
       "url": "https://www.youtube.com/watch?v=ff4kB_GrYQg",
       "title": "Pov : tu vas à Europa-Park et le train ne marche plus donc tu te fais évacuer",
       "description": "#europapark #park #themepark #allemagne #evacuation #train #incident #peur #panne #manege",
-      "views": 29070,
+      "views": 29086,
       "likes": 1042,
       "comments": 7
     },
@@ -14532,6 +14542,16 @@
       "comments": 21
     },
     {
+      "platform": "youtube",
+      "id": "cGiPz7vUXMg",
+      "url": "https://www.youtube.com/watch?v=cGiPz7vUXMg",
+      "title": "Pov : tu vas dans le parc d'attractions avec le plus de rollercoaster au monde",
+      "description": "#energylandia #parcdattraction #decouverte #rollercoaster #sensation\n\nMerci pour l’invitation @Energylandia ! Nous avons passé 2 jours exceptionnels 🙌",
+      "views": 28088,
+      "likes": 853,
+      "comments": 20
+    },
+    {
       "platform": "tiktok",
       "id": "7295058777013783841",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7295058777013783841",
@@ -14590,16 +14610,6 @@
       "views": 28000,
       "likes": 0,
       "comments": 0
-    },
-    {
-      "platform": "youtube",
-      "id": "cGiPz7vUXMg",
-      "url": "https://www.youtube.com/watch?v=cGiPz7vUXMg",
-      "title": "Pov : tu vas dans le parc d'attractions avec le plus de rollercoaster au monde",
-      "description": "#energylandia #parcdattraction #decouverte #rollercoaster #sensation\n\nMerci pour l’invitation @Energylandia ! Nous avons passé 2 jours exceptionnels 🙌",
-      "views": 27880,
-      "likes": 849,
-      "comments": 20
     },
     {
       "platform": "youtube",
@@ -15117,7 +15127,7 @@
       "url": "https://www.youtube.com/watch?v=xaE8YwiiaS0",
       "title": "Aller dans un parc d'attractions cet été avec mon duo",
       "description": "#europapark #trend #allemagne #coaster #duo #pote #été #manege",
-      "views": 24954,
+      "views": 24970,
       "likes": 1423,
       "comments": 15
     },
@@ -15157,7 +15167,7 @@
       "url": "https://www.youtube.com/watch?v=yxYOhjhCs_M",
       "title": "Personne ne connaît ces techniques pour pas payer cher Europa-Park",
       "description": "#europapark #astuces #gratuit #parcdattraction #secret",
-      "views": 24789,
+      "views": 24796,
       "likes": 1289,
       "comments": 6
     },
@@ -15240,6 +15250,16 @@
       "views": 24200,
       "likes": 1627,
       "comments": 15
+    },
+    {
+      "platform": "tiktok",
+      "id": "7680104641203309856",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7680104641203309856",
+      "title": "#parcasterix #attraction #attente #monde #enfant",
+      "description": "#parcasterix #attraction #attente #monde #enfant",
+      "views": 24100,
+      "likes": 2053,
+      "comments": 33
     },
     {
       "platform": "tiktok",
@@ -15333,16 +15353,6 @@
     },
     {
       "platform": "tiktok",
-      "id": "7680104641203309856",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7680104641203309856",
-      "title": "#parcasterix #attraction #attente #monde #enfant",
-      "description": "#parcasterix #attraction #attente #monde #enfant",
-      "views": 23900,
-      "likes": 2047,
-      "comments": 33
-    },
-    {
-      "platform": "tiktok",
       "id": "7342866139480935713",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7342866139480935713",
       "title": "Blue Fire 🔥 #europapark #bluefire #onride #fyp",
@@ -15350,6 +15360,16 @@
       "views": 23800,
       "likes": 2470,
       "comments": 17
+    },
+    {
+      "platform": "tiktok",
+      "id": "7682328256204295457",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7682328256204295457",
+      "title": "#parcasterix #halloween #peur #parcdattraction #drole",
+      "description": "#parcasterix #halloween #peur #parcdattraction #drole",
+      "views": 23800,
+      "likes": 1389,
+      "comments": 4
     },
     {
       "platform": "tiktok",
@@ -15452,16 +15472,6 @@
       "comments": 57
     },
     {
-      "platform": "tiktok",
-      "id": "7682328256204295457",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7682328256204295457",
-      "title": "#parcasterix #halloween #peur #parcdattraction #drole",
-      "description": "#parcasterix #halloween #peur #parcdattraction #drole",
-      "views": 23000,
-      "likes": 1337,
-      "comments": 4
-    },
-    {
       "platform": "youtube",
       "id": "atYiRkA8yHA",
       "url": "https://www.youtube.com/shorts/atYiRkA8yHA",
@@ -15537,7 +15547,7 @@
       "url": "https://www.youtube.com/watch?v=zC0sOngqjWY",
       "title": "Embarque avec moi dans l'attraction de Donkey Kong",
       "description": "#universalorlando #attraction #donkeykong #sensation #parcdattraction",
-      "views": 22857,
+      "views": 22860,
       "likes": 1048,
       "comments": 11
     },
@@ -15577,8 +15587,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7676768312679730464",
       "title": "#europapark #nuit #attraction #manege #sensation",
       "description": "#europapark #nuit #attraction #manege #sensation",
-      "views": 22300,
-      "likes": 3006,
+      "views": 22400,
+      "likes": 3010,
       "comments": 3
     },
     {
@@ -15587,8 +15597,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7668599208018021664",
       "title": "#europapark #parcdattraction #manege #interdit #drole",
       "description": "#europapark #parcdattraction #manege #interdit #drole",
-      "views": 22200,
-      "likes": 1380,
+      "views": 22300,
+      "likes": 1385,
       "comments": 18
     },
     {
@@ -15703,6 +15713,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7667861388802444577",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7667861388802444577",
+      "title": "#europapark #soir #nuit #attraction #sensations",
+      "description": "#europapark #soir #nuit #attraction #sensations",
+      "views": 21300,
+      "likes": 3322,
+      "comments": 25
+    },
+    {
+      "platform": "tiktok",
       "id": "7621186444937301250",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7621186444937301250",
       "title": "#harrypotter #parcdattraction #parc #universalorlando #signe",
@@ -15712,14 +15732,14 @@
       "comments": 6
     },
     {
-      "platform": "tiktok",
-      "id": "7667861388802444577",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7667861388802444577",
-      "title": "#europapark #soir #nuit #attraction #sensations",
-      "description": "#europapark #soir #nuit #attraction #sensations",
-      "views": 21200,
-      "likes": 3309,
-      "comments": 25
+      "platform": "youtube",
+      "id": "ZigBeSuIPmE",
+      "url": "https://www.youtube.com/watch?v=ZigBeSuIPmE",
+      "title": "Aller à Astérix pendant la rentrée, c'est ne pas faire la queue !",
+      "description": "#asterix #rentree #attraction #parcdattraction #attente #queue",
+      "views": 21156,
+      "likes": 1286,
+      "comments": 7
     },
     {
       "platform": "youtube",
@@ -15783,6 +15803,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7683542290048093473",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7683542290048093473",
+      "title": "#europapark #attraction #hauteur #parcdattraction #premierefois",
+      "description": "#europapark #attraction #hauteur #parcdattraction #premierefois",
+      "views": 20800,
+      "likes": 2414,
+      "comments": 48
+    },
+    {
+      "platform": "tiktok",
       "id": "7349853175081389344",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7349853175081389344",
       "title": "#europapark #park #themepark #trend #4etoiles #nul #coaster #allemagn...",
@@ -15803,6 +15833,16 @@
     },
     {
       "platform": "tiktok",
+      "id": "7680944692044860705",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7680944692044860705",
+      "title": "#energylandia #parcdattraction #offre #bonplans #manege",
+      "description": "#energylandia #parcdattraction #offre #bonplans #manege",
+      "views": 20600,
+      "likes": 528,
+      "comments": 2
+    },
+    {
+      "platform": "tiktok",
       "id": "7342128890002853152",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7342128890002853152",
       "title": "Maquette Voltron Neverra #europapark #maquette #voltron #parc #strasb...",
@@ -15813,16 +15853,6 @@
     },
     {
       "platform": "youtube",
-      "id": "ZigBeSuIPmE",
-      "url": "https://www.youtube.com/watch?v=ZigBeSuIPmE",
-      "title": "Aller à Astérix pendant la rentrée, c'est ne pas faire la queue !",
-      "description": "#asterix #rentree #attraction #parcdattraction #attente #queue",
-      "views": 20370,
-      "likes": 1258,
-      "comments": 6
-    },
-    {
-      "platform": "youtube",
       "id": "lADgYhY7bHY",
       "url": "https://www.youtube.com/watch?v=lADgYhY7bHY",
       "title": "19 ans, pas d'avenir, mais tranquille je suis sur mon yoshi rose à Orlando",
@@ -15830,16 +15860,6 @@
       "views": 20241,
       "likes": 1047,
       "comments": 15
-    },
-    {
-      "platform": "tiktok",
-      "id": "7680944692044860705",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7680944692044860705",
-      "title": "#energylandia #parcdattraction #offre #bonplans #manege",
-      "description": "#energylandia #parcdattraction #offre #bonplans #manege",
-      "views": 20100,
-      "likes": 515,
-      "comments": 2
     },
     {
       "platform": "youtube",
@@ -16187,8 +16207,8 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7663403466454207776",
       "title": "#universalorlando #harrypotter #attraction #fou #dinguerie",
       "description": "#universalorlando #harrypotter #attraction #fou #dinguerie",
-      "views": 17100,
-      "likes": 1429,
+      "views": 17200,
+      "likes": 1432,
       "comments": 15
     },
     {
@@ -16322,16 +16342,6 @@
       "comments": 13
     },
     {
-      "platform": "youtube",
-      "id": "3wvxlvVzJ48",
-      "url": "https://www.youtube.com/watch?v=3wvxlvVzJ48",
-      "title": "Les pirates qui font six Seven au Parc Astérix",
-      "description": "#parcasterix #asterix #67 #sixseven #parcdattraction #drôle",
-      "views": 15218,
-      "likes": 606,
-      "comments": 7
-    },
-    {
       "platform": "tiktok",
       "id": "7289738207569136929",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7289738207569136929",
@@ -16373,6 +16383,16 @@
     },
     {
       "platform": "youtube",
+      "id": "mKaHpHRO14E",
+      "url": "https://www.youtube.com/watch?v=mKaHpHRO14E",
+      "title": "BON PLAN ASTERIX 0€",
+      "description": "#asterix #bonsplanspourvous #bonplan #astuces #parcdattractions #gratuit #parcastérix",
+      "views": 14724,
+      "likes": 805,
+      "comments": 16
+    },
+    {
+      "platform": "youtube",
       "id": "LerNLVhdO3Q",
       "url": "https://www.youtube.com/shorts/LerNLVhdO3Q",
       "title": "Hyperion (Energylandia 🇵🇱)  vs SilverStar (Europa-Park 🇩🇪)",
@@ -16393,12 +16413,22 @@
     },
     {
       "platform": "tiktok",
+      "id": "7681688423677168929",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7681688423677168929",
+      "title": "#europapark #delegue #sortiescolaire #college #lycée",
+      "description": "#europapark #delegue #sortiescolaire #college #lycée",
+      "views": 13600,
+      "likes": 1348,
+      "comments": 11
+    },
+    {
+      "platform": "tiktok",
       "id": "7678243897130093857",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7678243897130093857",
       "title": "#energylandia #hotel #parcdattraction #decouverte #pologne  Merci @we...",
       "description": "#energylandia #hotel #parcdattraction #decouverte #pologne  Merci @western_camp_resort pour l’invitation ! Nous avons passés 2 nuits incroyables 😀",
-      "views": 13500,
-      "likes": 950,
+      "views": 13600,
+      "likes": 952,
       "comments": 15
     },
     {
@@ -16420,16 +16450,6 @@
       "views": 13400,
       "likes": 1463,
       "comments": 9
-    },
-    {
-      "platform": "tiktok",
-      "id": "7681688423677168929",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7681688423677168929",
-      "title": "#europapark #delegue #sortiescolaire #college #lycée",
-      "description": "#europapark #delegue #sortiescolaire #college #lycée",
-      "views": 13000,
-      "likes": 1252,
-      "comments": 10
     },
     {
       "platform": "youtube",
@@ -16487,9 +16507,19 @@
       "url": "https://www.youtube.com/watch?v=4sXECNoJiSE",
       "title": "Presque personne ne connaît ce secret dans l'attraction Arthur à Europa-Park !",
       "description": "#europapark #secret #arthuretlesminimoys #attraction #parcdattraction",
-      "views": 11317,
+      "views": 11325,
       "likes": 634,
       "comments": 0
+    },
+    {
+      "platform": "youtube",
+      "id": "akn1EZQ2XNM",
+      "url": "https://www.youtube.com/watch?v=akn1EZQ2XNM",
+      "title": "Pov : tu vas dans le meilleur hôtel de parc d'attractions en Pologne",
+      "description": "#energylandia #hotel #parcdattraction #decouverte #pologne\n\nMerci @western_camp_resort pour l’invitation ! Nous avons passés 2 nuits incroyables 😀",
+      "views": 10641,
+      "likes": 492,
+      "comments": 9
     },
     {
       "platform": "tiktok",
@@ -16510,16 +16540,6 @@
       "views": 10600,
       "likes": 490,
       "comments": 14
-    },
-    {
-      "platform": "youtube",
-      "id": "akn1EZQ2XNM",
-      "url": "https://www.youtube.com/watch?v=akn1EZQ2XNM",
-      "title": "Pov : tu vas dans le meilleur hôtel de parc d'attractions en Pologne",
-      "description": "#energylandia #hotel #parcdattraction #decouverte #pologne\n\nMerci @western_camp_resort pour l’invitation ! Nous avons passés 2 nuits incroyables 😀",
-      "views": 10505,
-      "likes": 491,
-      "comments": 9
     },
     {
       "platform": "tiktok",
@@ -16587,7 +16607,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7306231563312696609",
       "title": "Tibo Inshape à Europa-Park ! @Europa-Park @Tibo InShape #europapark #...",
       "description": "Tibo Inshape à Europa-Park ! @Europa-Park @Tibo InShape #europapark #tiboinshape #vlog #jujufitcats #pourtoi #allemagne #reportage #tf1 #youtube #youtubeurs #park #themepark #strasbourg #halloween #winter #europaparkrust",
-      "views": 8892,
+      "views": 8900,
       "likes": 341,
       "comments": 7
     },
@@ -16627,7 +16647,7 @@
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7303624585709227296",
       "title": "Reportage @RMC Découverte - Au coeur d’Europa-Park | Partie 1 #europa...",
       "description": "Reportage @RMC Découverte - Au coeur d’Europa-Park | Partie 1 #europapark #park #reportage #themepark #fun #coaster #decouverte #rollercoaster #fyp #pourtoi",
-      "views": 7978,
+      "views": 7979,
       "likes": 407,
       "comments": 3
     },
@@ -16662,12 +16682,22 @@
       "comments": 5
     },
     {
+      "platform": "youtube",
+      "id": "kaBOMAkA3k4",
+      "url": "https://www.youtube.com/watch?v=kaBOMAkA3k4",
+      "title": "J'ai jamais rien compris à ce qu'il se passait dans cette attraction",
+      "description": "#europapark #allemagne #mack #kassandra #parc #strasbourg #trend",
+      "views": 6794,
+      "likes": 535,
+      "comments": 8
+    },
+    {
       "platform": "tiktok",
       "id": "7302525057597771040",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7302525057597771040",
       "title": "Europa-Park Traumatica, 2023. #europapark #traumatica #fof #festivalo...",
       "description": "Europa-Park Traumatica, 2023. #europapark #traumatica #fof #festivaloffear #themepark #park #halloween #horror #night #horrornights",
-      "views": 6638,
+      "views": 6639,
       "likes": 560,
       "comments": 1
     },
@@ -16680,6 +16710,16 @@
       "views": 6500,
       "likes": 152,
       "comments": 4
+    },
+    {
+      "platform": "tiktok",
+      "id": "7681312125507177760",
+      "url": "https://www.tiktok.com/@clip2ep.fan/video/7681312125507177760",
+      "title": "#parcdattraction #telephone #attraction #manege #drole",
+      "description": "#parcdattraction #telephone #attraction #manege #drole",
+      "views": 6484,
+      "likes": 505,
+      "comments": 15
     },
     {
       "platform": "tiktok",
@@ -16733,16 +16773,6 @@
     },
     {
       "platform": "tiktok",
-      "id": "7681312125507177760",
-      "url": "https://www.tiktok.com/@clip2ep.fan/video/7681312125507177760",
-      "title": "#parcdattraction #telephone #attraction #manege #drole",
-      "description": "#parcdattraction #telephone #attraction #manege #drole",
-      "views": 6225,
-      "likes": 476,
-      "comments": 15
-    },
-    {
-      "platform": "tiktok",
       "id": "7307285951418600736",
       "url": "https://www.tiktok.com/@clip2ep.fan/video/7307285951418600736",
       "title": "4k, Europa-Park. #europapark #edit #4k #pourtoi #fyp #furdich",
@@ -16770,16 +16800,6 @@
       "views": 5611,
       "likes": 474,
       "comments": 5
-    },
-    {
-      "platform": "youtube",
-      "id": "kaBOMAkA3k4",
-      "url": "https://www.youtube.com/watch?v=kaBOMAkA3k4",
-      "title": "J'ai jamais rien compris à ce qu'il se passait dans cette attraction",
-      "description": "#europapark #allemagne #mack #kassandra #parc #strasbourg #trend",
-      "views": 5481,
-      "likes": 452,
-      "comments": 7
     },
     {
       "platform": "tiktok",
@@ -16967,8 +16987,8 @@
       "url": "https://www.youtube.com/watch?v=ckowX6KXqDk",
       "title": "L'attraction la plus FOLLE qu'il existe en Europe",
       "description": "Vidéo embarquée en 4K sur F.L.Y., le premier Flying Launch Coaster au monde, construit par Vekoma et situé à Phantasialand, en Allemagne.\n\n📹 Vidéo filmée avec une Insta360 X3 fixée à l'aide d'un harnais poitrine.\n\nRetrouvez encore plus de contenus sur les parcs d'attractions :\nTikTok : https://www.tiktok.com/@clip2ep.fan\n\nN'hésitez pas à vous abonner pour découvrir de nouvelles vidéos embarquées, des vlogs et des attractions des meilleurs parcs d'attractions.\n\n#FLY #Phantasialand #Onride #RollerCoaster #Coaster #ThemePark #Vekoma #Rookburgh #Insta360 #Attractions #ParcAttractions #manege #attraction",
-      "views": 1414,
-      "likes": 24,
+      "views": 1435,
+      "likes": 25,
       "comments": 3
     }
   ]
