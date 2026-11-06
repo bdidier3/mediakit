@@ -8,9 +8,15 @@ on:
 permissions:
   contents: write
 
+# Une seule mise à jour à la fois : un lancement manuel ne se télescope pas avec celui de la nuit.
+concurrency:
+  group: update-stats
+  cancel-in-progress: false
+
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
@@ -24,23 +30,35 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yt-dlp
+          pip install --upgrade "yt-dlp[default,curl-cffi]"
 
-      - name: Generate stats files
+      - name: Generate stats file
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scripts/update_stats.py
+
+      - name: Check stats file
+        run: |
+          python - <<'PY'
+          import json
+          data = json.load(open("stats/stats_compact.json", encoding="utf-8"))
+          videos = data.get("videos") or []
+          assert len(videos) > 100, f"seulement {len(videos)} vidéos : fichier suspect, pas de commit"
+          print(f"{len(videos)} vidéos, comptes : {data.get('channels')}")
+          PY
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet -- stats/stats_compact.json stats/stats.json; then
+          if git diff --quiet -- stats/stats_compact.json; then
             echo "No stats changes to commit"
             exit 0
           fi
 
-          git add stats/stats_compact.json stats/stats.json
+          git add stats/stats_compact.json
           git commit -m "chore(stats): daily refresh"
+          # Si quelqu'un a poussé entre-temps, on se replace par-dessus avant d'envoyer.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push

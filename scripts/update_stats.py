@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -14,9 +15,14 @@ from yt_dlp import YoutubeDL
 ROOT = Path(__file__).resolve().parents[1]
 STATS_DIR = ROOT / "stats"
 OUTPUT_COMPACT = STATS_DIR / "stats_compact.json"
-OUTPUT_FULL = STATS_DIR / "stats.json"
 
 YOUTUBE_CHANNEL_ID = "UCMxkVdDL3CkI9tog4m_Nf4g"
+TIKTOK_PROFILE_URL = "https://www.tiktok.com/@clip2ep.fan"
+YOUTUBE_SHORTS_URL = "https://www.youtube.com/@clip2ep-fan/shorts"
+BROWSER_UA = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/130.0 Safari/537.36"
+)
 
 SOURCES = [
     {
@@ -129,14 +135,79 @@ def _extract_youtube_via_api(api_key: str, channel_id: str) -> list[dict[str, An
     return videos
 
 
+def _youtube_channel_stats(api_key: str) -> dict[str, int]:
+    """Abonnés et vues totales de la chaîne : exacts via l'API, sinon abonnés arrondis via yt-dlp."""
+    if api_key:
+        payload = _http_get_json(
+            "https://www.googleapis.com/youtube/v3/channels",
+            {"key": api_key, "part": "statistics", "id": YOUTUBE_CHANNEL_ID},
+        )
+        stats = ((payload.get("items") or [{}])[0] or {}).get("statistics") or {}
+        result = {"subscribers": _to_int(stats.get("subscriberCount")), "views": _to_int(stats.get("viewCount"))}
+        return {key: value for key, value in result.items() if value > 0}
+
+    with YoutubeDL({"quiet": True, "skip_download": True, "extract_flat": "in_playlist", "playlistend": 1}) as ydl:
+        data = ydl.extract_info(YOUTUBE_SHORTS_URL, download=False) or {}
+    subscribers = _to_int(data.get("channel_follower_count"))
+    return {"subscribers": subscribers} if subscribers > 0 else {}
+
+
+def _tiktok_profile_stats() -> dict[str, int]:
+    """Abonnés et likes du profil, lus dans les données publiques de la page TikTok."""
+    request = urllib.request.Request(TIKTOK_PROFILE_URL, headers={"User-Agent": BROWSER_UA, "Accept-Language": "fr-FR,fr;q=0.9"})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        html = response.read().decode("utf-8", errors="replace")
+    match = re.search(r'"stats":\{[^{}]*"followerCount":(\d+)[^{}]*\}', html)
+    if not match:
+        return {}
+    block = match.group(0)
+    likes = re.search(r'"heartCount":(\d+)', block)
+    result = {"followers": int(match.group(1)), "likes": int(likes.group(1)) if likes else 0}
+    return {key: value for key, value in result.items() if value > 0}
+
+
+def _load_previous_channels() -> dict[str, Any]:
+    if not OUTPUT_COMPACT.exists():
+        return {}
+    try:
+        data = json.loads(OUTPUT_COMPACT.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    channels = data.get("channels") if isinstance(data, dict) else None
+    return channels if isinstance(channels, dict) else {}
+
+
+def _collect_channels(api_key: str) -> dict[str, Any]:
+    """Chiffres des comptes ; en cas d'échec, on garde la dernière valeur connue."""
+    channels = _load_previous_channels()
+    now = datetime.now(timezone.utc).isoformat()
+    for platform, fetch in (("youtube", lambda: _youtube_channel_stats(api_key)), ("tiktok", _tiktok_profile_stats)):
+        try:
+            fresh = fetch()
+        except Exception as exc:
+            print(f"[warn] {platform} channel stats failed, keeping previous values: {exc}")
+            continue
+        if not fresh:
+            print(f"[warn] {platform} channel stats empty, keeping previous values")
+            continue
+        channels[platform] = {**(channels.get(platform) or {}), **fresh, "updated_at": now}
+        print(f"[ok] {platform} channel stats: {fresh}")
+    return channels
+
+
 def _entry_to_video(entry: dict[str, Any], platform: str) -> dict[str, Any]:
     video_id = _clean_text(entry.get("id"))
     webpage_url = _clean_text(entry.get("webpage_url"))
     if not webpage_url:
         webpage_url = _clean_text(entry.get("url"))
+    # yt-dlp renvoie /shorts/ID alors que l'API renvoie watch?v=ID : même vidéo, une seule URL.
+    if platform == "youtube" and video_id:
+        webpage_url = f"https://www.youtube.com/watch?v={video_id}"
 
     title = _clean_text(entry.get("title") or entry.get("description") or "Video")
-    description = _clean_text(entry.get("description") or title)
+    # Pas de repli sur le titre : une description vide laisse la fusion garder
+    # l'ancienne (et ses hashtags, qui rattachent la vidéo à un parc).
+    description = _clean_text(entry.get("description"))
 
     return {
         "platform": platform,
@@ -194,7 +265,7 @@ def _dedupe(videos: list[dict[str, Any]]) -> list[dict[str, Any]]:
     by_key: dict[str, dict[str, Any]] = {}
 
     for video in videos:
-        key = video.get("url") or f"{video.get('platform')}:{video.get('id')}"
+        key = _video_key(video)
         if not key:
             continue
 
@@ -206,10 +277,13 @@ def _dedupe(videos: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _video_key(video: dict[str, Any]) -> str:
-    url = _clean_text(video.get("url"))
-    if url:
-        return url
-    return f"{_clean_text(video.get('platform'))}:{_clean_text(video.get('id'))}"
+    # Clé par plateforme + identifiant : une vidéo n'est comptée qu'une fois,
+    # quelle que soit la forme de son URL (watch, shorts, paramètres de partage).
+    platform = _clean_text(video.get("platform"))
+    video_id = _clean_text(video.get("id"))
+    if video_id:
+        return f"{platform}:{video_id}"
+    return _clean_text(video.get("url"))
 
 
 def _merge_with_previous(
@@ -218,9 +292,7 @@ def _merge_with_previous(
 ) -> list[dict[str, Any]]:
     by_key: dict[str, dict[str, Any]] = {}
 
-    for old in previous:
-        if not isinstance(old, dict):
-            continue
+    for old in _dedupe([v for v in previous if isinstance(v, dict)]):
         key = _video_key(old)
         if key:
             by_key[key] = old
@@ -315,12 +387,13 @@ def main() -> None:
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "channels": _collect_channels(youtube_api_key),
         "videos": extracted,
     }
 
-    text = json.dumps(payload, ensure_ascii=False, indent=2)
+    # Sans indentation : environ 20 % plus léger à télécharger pour le site.
+    text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
     OUTPUT_COMPACT.write_text(text + "\n", encoding="utf-8")
-    OUTPUT_FULL.write_text(text + "\n", encoding="utf-8")
 
     print(f"[ok] wrote {len(extracted)} videos to {OUTPUT_COMPACT}")
 

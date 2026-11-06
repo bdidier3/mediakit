@@ -1,480 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clip2ep</title>
-  <meta id="meta-description" name="description" content="Official Clip2ep site - theme park content creator on TikTok and YouTube.">
-  <link rel="icon" type="image/x-icon" href="img/ico/clip2ep.ico">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clip2EP</title>
+  <meta name="description" content="Site officiel de Clip2EP - créateur de contenu sur les parcs d'attractions sur TikTok et YouTube.">
+  <meta name="theme-color" content="#13233a">
+  <meta property="og:title" content="Clip2EP">
+  <meta property="og:description" content="Créateur de contenu sur les parcs d'attractions, sur TikTok et YouTube.">
+  <meta property="og:image" content="img/video/hero-poster.jpg">
+  <link rel="icon" href="img/ico/clip2ep.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Bungee&family=Fredoka:wght@500..700&display=swap">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" crossorigin>
+  <link rel="modulepreload" href="assets/js/park3d.js">
+  <link rel="modulepreload" href="assets/js/park-layout.js">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/home.js"></script>
 </head>
 <body data-page="home">
-  <header class="navbar">
-    <div class="nav-inner">
-      <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
-        <span class="nav-toggle-line" aria-hidden="true"></span>
-        <span class="nav-toggle-line" aria-hidden="true"></span>
-        <span class="nav-toggle-line" aria-hidden="true"></span>
+  <a class="skip-link" href="#about" data-i18n="common.skip">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="lang">
+      <button class="lang-button" type="button" aria-haspopup="true" aria-expanded="false" data-i18n-attr="aria-label:nav.language">
+        <img class="flag" src="img/flags/fr.svg" alt="" width="20" height="14">
+        <span class="lang-code">FR</span>
+        <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
       </button>
-      <nav id="main-nav" class="nav-links" aria-label="Main navigation">
-        <a href="#top" data-i18n="nav.home">Accueil</a>
-        <a href="#stats" data-i18n="nav.stats">Statistiques</a>
-        <a href="#about" data-i18n="nav.about">À propos</a>
-        <a href="#partners" data-i18n="nav.partners">Partenariats</a>
-        <a href="#videos" data-i18n="nav.videos">Mes vidéos</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
-      </nav>
-      <div class="lang-switcher">
-        <button id="lang-toggle" class="lang-toggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language switcher">
-          <span id="lang-flag" class="lang-flag flag-icon flag-en" aria-hidden="true"></span>
-          <span class="lang-caret" aria-hidden="true">▾</span>
-        </button>
-        <ul id="lang-menu" class="lang-menu" role="listbox" aria-label="Language options">
-          <li><button class="lang-option" type="button" data-lang="fr"><span class="left"><span class="flag-icon flag-fr" aria-hidden="true"></span><span>Français</span></span></button></li>
-          <li><button class="lang-option" type="button" data-lang="en"><span class="left"><span class="flag-icon flag-en" aria-hidden="true"></span><span>English</span></span></button></li>
-          <li><button class="lang-option" type="button" data-lang="es"><span class="left"><span class="flag-icon flag-es" aria-hidden="true"></span><span>Español</span></span></button></li>
-          <li><button class="lang-option" type="button" data-lang="de"><span class="left"><span class="flag-icon flag-de" aria-hidden="true"></span><span>Deutsch</span></span></button></li>
-          <li><button class="lang-option" type="button" data-lang="nl"><span class="left"><span class="flag-icon flag-nl" aria-hidden="true"></span><span>Nederlands</span></span></button></li>
-        </ul>
-      </div>
+      <ul class="lang-menu"></ul>
     </div>
   </header>
 
-  <main class="hero" id="top">
-    <video id="hero-video" class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" disablepictureinpicture data-i18n-aria-label="home.videoAria" aria-label="Theme park background video">
-      <source src="img/video/video_mediakit.mp4?v=20260403" type="video/mp4">
-    </video>
+  <main>
+    <!-- Station 1 : l'entrée du parc, avec le plan 3D interactif -->
+    <section class="hero" id="top">
+      <div class="park3d" id="park3d">
+        <div class="park3d-labels" id="park3d-labels"></div>
+        <div class="park3d-controls">
+          <button class="round-button" type="button" data-rotate="-1" data-i18n-attr="aria-label:park.rotateLeft;title:park.rotateLeft">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4.5h4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="round-button" type="button" data-rotate="1" data-i18n-attr="aria-label:park.rotateRight;title:park.rotateRight">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="park3d-fallback" data-park-map data-here="top"></div>
+        <div class="park3d-loader" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <path class="loader-stand" d="M60 58L36 112M60 58l24 54M28 112h64"/>
+            <g class="loader-wheel">
+              <circle cx="60" cy="58" r="40"/>
+              <path d="M60 18v80M20 58h80M31.7 29.7l56.6 56.6M88.3 29.7L31.7 86.3"/>
+              <circle class="loader-hub" cx="60" cy="58" r="6"/>
+              <g class="loader-cabins">
+                <circle cx="60" cy="18" r="6"/><circle cx="100" cy="58" r="6"/><circle cx="60" cy="98" r="6"/><circle cx="20" cy="58" r="6"/>
+                <circle cx="88.3" cy="29.7" r="6"/><circle cx="88.3" cy="86.3" r="6"/><circle cx="31.7" cy="86.3" r="6"/><circle cx="31.7" cy="29.7" r="6"/>
+              </g>
+            </g>
+          </svg>
+          <p data-i18n="park.loading">Ouverture du parc…</p>
+        </div>
+      </div>
+      <h1 class="hero-sign"><span data-i18n="park.welcome">Bienvenue dans le parc</span> <a href="https://www.tiktok.com/@clip2ep.fan" target="_blank" rel="noopener noreferrer">Clip2EP</a><span data-i18n="park.welcomeAfter"></span></h1>
+      <div class="visually-hidden">
+        <p data-i18n="home.title">L'un des plus gros créateurs de contenu français dédiés aux parcs d'attractions</p>
+        <p data-i18n="home.lead">+150 000 abonnés sur TikTok et +50 000 sur YouTube, contenus à fort engagement autour des plus grands parcs d'attractions du monde !</p>
+      </div>
+      <p class="park3d-hint" data-i18n="park.mapHint">Clique sur une attraction pour visiter sa zone. Glisse pour faire tourner le parc.</p>
+    </section>
 
-    <section class="hero-content">
-      <h1 data-i18n="home.title">L'un des plus gros créateur de contenu français dédié aux parcs d'attractions</h1>
-      <p data-i18n="home.lead">
-        +150 000 abonnés sur TikTok et +20 000 sur YouTube, contenus à fort engagement autour des plus grands parcs d'attractions du monde !
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://tiktok.com/@clip2ep.fan" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"/></svg>
-          <span data-i18n="platform.tiktok">TikTok</span>
-        </a>
-        <a class="btn btn-secondary" href="https://www.youtube.com/@clip2ep-fan" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.8 8.06a2.9 2.9 0 0 0-2.03-2.04C17.98 5.5 12 5.5 12 5.5s-5.98 0-7.77.52A2.9 2.9 0 0 0 2.2 8.06C1.7 9.86 1.7 12 1.7 12s0 2.14.5 3.94a2.9 2.9 0 0 0 2.03 2.04c1.79.52 7.77.52 7.77.52s5.98 0 7.77-.52a2.9 2.9 0 0 0 2.03-2.04c.5-1.8.5-3.94.5-3.94s0-2.14-.5-3.94zM10.1 15.3V8.7L15.8 12l-5.7 3.3z"/></svg>
-          <span data-i18n="platform.youtube">YouTube</span>
-        </a>
+    <!-- Station 2 : le badge -->
+    <section class="section section--paper has-rail" id="about">
+      <div class="container about">
+        <div class="badge-stage">
+          <div class="lanyard" aria-hidden="true"></div>
+          <figure class="badge" id="badge">
+            <span class="badge-clip" aria-hidden="true"></span>
+            <p class="badge-park" aria-hidden="true">Clip2EP</p>
+            <img src="img/about/IMG_Baptiste.webp" alt="Baptiste dans un parc d'attractions" width="549" height="439" loading="lazy" decoding="async" data-i18n-attr="alt:aboutme.photoAlt">
+            <figcaption>
+              <strong>Baptiste</strong>
+              <span data-i18n="park.badgeRole">Créateur de contenu</span>
+            </figcaption>
+            <span class="badge-code" aria-hidden="true"></span>
+          </figure>
+        </div>
+        <div class="about-copy">
+          <p class="station-chip"><span>2</span><span data-i18n="park.station">Station</span></p>
+          <h2 class="section-title" data-i18n="aboutme.kicker">À propos de moi</h2>
+          <p class="about-lead" data-i18n="aboutme.title">Créateur de contenu parcs d'attractions</p>
+          <div class="prose">
+            <p data-i18n-html="aboutme.p1"></p>
+            <p data-i18n-html="aboutme.p2"></p>
+            <p data-i18n-html="aboutme.p3"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 3 : le tableau des temps d'attente -->
+    <section class="section section--night has-rail" id="stats">
+      <div class="container">
+        <header class="section-head">
+          <p class="station-chip"><span>3</span><span data-i18n="park.station">Station</span></p>
+          <h2 class="section-title" data-i18n="stats.heading">Statistiques d'audience</h2>
+          <p class="section-sub" data-i18n="stats.subheading">Aperçu mis à jour de vos derniers insights.</p>
+        </header>
+
+        <div class="boards">
+          <article class="board board--tiktok">
+            <header class="board-head">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.28V2h-3.23v12.4a2.9 2.9 0 1 1-2-2.76V8.37a6.13 6.13 0 1 0 5.95 6.13V8.21a8.1 8.1 0 0 0 4.74 1.53V6.69h-1.69z"/></svg>
+              <h3>TikTok</h3>
+              <p data-i18n="stats.tiktok.since">Depuis 2023</p>
+            </header>
+            <div class="kpis">
+              <div><p class="flap" data-flap="100M">100M</p><p class="kpi-label" data-i18n="stats.tiktok.kpiViews">Vues par an</p></div>
+              <div><p class="flap" data-flap="174.4K" data-live="tiktok.followers">174.4K</p><p class="kpi-label" data-i18n="stats.tiktok.kpiFollowers">Abonnés</p></div>
+            </div>
+            <section class="breakdown">
+              <h4 data-i18n="stats.gender">Répartition par genre</h4>
+              <ul class="bars">
+                <li><span data-i18n="stats.genderLabels.men">Homme</span><span class="bar"><span style="--w: 43%"></span></span><span class="bar-value">43%</span></li>
+                <li><span data-i18n="stats.genderLabels.women">Femme</span><span class="bar"><span style="--w: 55%"></span></span><span class="bar-value">55%</span></li>
+                <li><span data-i18n="stats.genderLabels.other">Autre</span><span class="bar"><span style="--w: 2%"></span></span><span class="bar-value">2%</span></li>
+              </ul>
+            </section>
+            <section class="breakdown">
+              <h4 data-i18n="stats.age">Tranches d'âge</h4>
+              <ul class="toise" style="--max: 40">
+                <li style="--v: 37.2"><span class="toise-value">37.2%</span><span class="toise-bar"></span><span class="toise-label">18-24</span></li>
+                <li style="--v: 33.1"><span class="toise-value">33.1%</span><span class="toise-bar"></span><span class="toise-label">25-34</span></li>
+                <li style="--v: 17.8"><span class="toise-value">17.8%</span><span class="toise-bar"></span><span class="toise-label">35-44</span></li>
+                <li style="--v: 8.5"><span class="toise-value">8.5%</span><span class="toise-bar"></span><span class="toise-label">45-54</span></li>
+                <li style="--v: 3.4"><span class="toise-value">3.4%</span><span class="toise-bar"></span><span class="toise-label">55+</span></li>
+              </ul>
+            </section>
+            <section class="breakdown">
+              <h4 data-i18n="stats.regions">Top régions</h4>
+              <ul class="bars">
+                <li><span data-i18n="stats.region.france">France</span><span class="bar"><span style="--w: 56.3%"></span></span><span class="bar-value">56.3%</span></li>
+                <li><span data-i18n="stats.region.germany">Allemagne</span><span class="bar"><span style="--w: 4.6%"></span></span><span class="bar-value">4.6%</span></li>
+                <li><span data-i18n="stats.region.belgium">Belgique</span><span class="bar"><span style="--w: 3.8%"></span></span><span class="bar-value">3.8%</span></li>
+                <li><span data-i18n="stats.region.switzerland">Suisse</span><span class="bar"><span style="--w: 3.8%"></span></span><span class="bar-value">3.8%</span></li>
+                <li><span data-i18n="stats.region.usa">États-Unis</span><span class="bar"><span style="--w: 1.3%"></span></span><span class="bar-value">1.3%</span></li>
+              </ul>
+            </section>
+          </article>
+
+          <article class="board board--youtube">
+            <header class="board-head">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 7.2a3.02 3.02 0 0 0-2.12-2.14C19.5 4.5 12 4.5 12 4.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 7.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 4.8 3.02 3.02 0 0 0 2.12 2.14c1.88.56 9.38.56 9.38.56s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-4.8zM9.6 15.02V8.98L15.8 12 9.6 15.02z"/></svg>
+              <h3>YouTube</h3>
+              <p data-i18n="stats.youtube.since">Depuis le 25 sept. 2025</p>
+            </header>
+            <div class="kpis">
+              <div><p class="flap" data-flap="143.1M" data-live="youtube.views">143.1M</p><p class="kpi-label" data-i18n="stats.youtube.kpiViews">Vues totales</p></div>
+              <div><p class="flap" data-flap="52.1K" data-live="youtube.subscribers">52.1K</p><p class="kpi-label" data-i18n="stats.youtube.kpiFollowers">Abonnés</p></div>
+            </div>
+            <section class="breakdown">
+              <h4 data-i18n="stats.gender">Répartition par genre</h4>
+              <ul class="bars">
+                <li><span data-i18n="stats.genderLabels.women">Femme</span><span class="bar"><span style="--w: 53.3%"></span></span><span class="bar-value">53.3%</span></li>
+                <li><span data-i18n="stats.genderLabels.men">Homme</span><span class="bar"><span style="--w: 46.5%"></span></span><span class="bar-value">46.5%</span></li>
+                <li><span data-i18n="stats.genderLabels.userSpecified">Spécifié par l'utilisateur</span><span class="bar"><span style="--w: 0.2%"></span></span><span class="bar-value">0.2%</span></li>
+              </ul>
+            </section>
+            <section class="breakdown">
+              <h4 data-i18n="stats.age">Tranches d'âge</h4>
+              <ul class="toise" style="--max: 30">
+                <li style="--v: 19.6"><span class="toise-value">19.6%</span><span class="toise-bar"></span><span class="toise-label">13-17</span></li>
+                <li style="--v: 10.6"><span class="toise-value">10.6%</span><span class="toise-bar"></span><span class="toise-label">18-24</span></li>
+                <li style="--v: 20.3"><span class="toise-value">20.3%</span><span class="toise-bar"></span><span class="toise-label">25-34</span></li>
+                <li style="--v: 27.6"><span class="toise-value">27.6%</span><span class="toise-bar"></span><span class="toise-label">35-44</span></li>
+                <li style="--v: 15.7"><span class="toise-value">15.7%</span><span class="toise-bar"></span><span class="toise-label">45-54</span></li>
+                <li style="--v: 3.5"><span class="toise-value">3.5%</span><span class="toise-bar"></span><span class="toise-label">55-64</span></li>
+                <li style="--v: 2.8"><span class="toise-value">2.8%</span><span class="toise-bar"></span><span class="toise-label">65+</span></li>
+              </ul>
+            </section>
+            <section class="breakdown">
+              <h4 data-i18n="stats.regions">Top régions</h4>
+              <ul class="bars">
+                <li><span data-i18n="stats.region.france">France</span><span class="bar"><span style="--w: 85.7%"></span></span><span class="bar-value">85.7%</span></li>
+                <li><span data-i18n="stats.region.belgium">Belgique</span><span class="bar"><span style="--w: 4.8%"></span></span><span class="bar-value">4.8%</span></li>
+                <li><span data-i18n="stats.region.switzerland">Suisse</span><span class="bar"><span style="--w: 2%"></span></span><span class="bar-value">2.0%</span></li>
+                <li><span data-i18n="stats.region.canada">Canada</span><span class="bar"><span style="--w: 2.1%"></span></span><span class="bar-value">2.1%</span></li>
+                <li><span data-i18n="stats.region.reunion">La Réunion</span><span class="bar"><span style="--w: 0.7%"></span></span><span class="bar-value">0.7%</span></li>
+              </ul>
+            </section>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 4 : le passeport des parcs -->
+    <section class="section section--sky has-rail" id="partners">
+      <div class="container">
+        <header class="section-head">
+          <p class="station-chip"><span>4</span><span data-i18n="park.station">Station</span></p>
+          <h2 class="section-title" data-i18n="nav.partners">Partenariats</h2>
+        </header>
+        <div class="passport">
+          <div class="passport-page">
+            <h3 data-i18n="partners.title">Parcs en partenariat officiel</h3>
+            <p data-i18n="partners.subtitle">Collaborations confirmées avec des parcs européens reconnus.</p>
+            <ul class="stamps stamps--partner" id="partner-logos"></ul>
+          </div>
+          <div class="passport-page">
+            <h3 data-i18n="nonPartners.title">Parcs visités sans partenariat</h3>
+            <p data-i18n="nonPartners.subtitle">Mis en avant dans mes vidéos sans partenariat officiel.</p>
+            <ul class="stamps stamps--visited" id="filmed-logos"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 5 : les photos souvenirs -->
+    <section class="section section--paper has-rail" id="videos">
+      <div class="container">
+        <div class="reel-head">
+          <div>
+            <p class="station-chip"><span>5</span><span data-i18n="park.station">Station</span></p>
+            <h2 class="section-title" data-i18n="myVideos.title">Mes vidéos</h2>
+          </div>
+          <div class="reel-controls">
+            <button class="round-button" id="reel-prev" type="button" data-i18n-attr="aria-label:cases.previous">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+            </button>
+            <button class="round-button" id="reel-next" type="button" data-i18n-attr="aria-label:cases.next">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+            </button>
+          </div>
+        </div>
+        <ul class="reel" id="reel"></ul>
+
+
+        <div class="videos-copy">
+          <figure class="info-panel info-panel--screen">
+            <figcaption class="info-panel-head"><span data-i18n="park.screen">En direct de l'attraction</span></figcaption>
+            <div class="info-panel-body">
+              <video id="pov-video" muted loop playsinline preload="none" poster="img/video/hero-poster.jpg"
+                     disablepictureinpicture data-i18n-attr="aria-label:home.videoAria">
+                <source src="img/video/hero.mp4" type="video/mp4">
+              </video>
+            </div>
+          </figure>
+          <div class="info-panel info-panel--gear">
+            <h3 class="info-panel-head"><span data-i18n="park.gearSign">Équipement autorisé à bord</span></h3>
+            <div class="info-panel-body">
+              <ul class="gear-list" data-i18n-attr="aria-label:myVideos.gearTitle">
+                <li><figure><img src="img/cam/harnaistorse.webp" alt="" width="500" height="500" loading="lazy" decoding="async"><figcaption data-i18n="gear.harness">Harnais torse</figcaption></figure></li>
+                <li><figure><img src="img/cam/insta360-x4.webp" alt="" width="500" height="500" loading="lazy" decoding="async"><figcaption>Insta360 X4</figcaption></figure></li>
+                <li><figure><img src="img/cam/iphone16pro.webp" alt="" width="340" height="340" loading="lazy" decoding="async"><figcaption>iPhone 16 Pro</figcaption></figure></li>
+                <li><figure><img src="img/cam/perche.webp" alt="" width="500" height="500" loading="lazy" decoding="async"><figcaption data-i18n="gear.pole">Perche</figcaption></figure></li>
+                <li><figure><img src="img/cam/raybanmeta.webp" alt="" width="500" height="281" loading="lazy" decoding="async"><figcaption>Ray-Ban Meta</figcaption></figure></li>
+              </ul>
+              <p class="gear-note" data-i18n="myVideos.gearNote">Je réalise l'ensemble de mes contenus avec cet équipement, qui constitue mon matériel principal de tournage au quotidien.</p>
+            </div>
+          </div>
+          <div class="info-panel info-panel--text">
+            <h3 class="info-panel-head"><span data-i18n="park.editorial">Ma ligne éditoriale</span></h3>
+            <div class="info-panel-body prose">
+              <p data-i18n-html="myVideos.p1"></p>
+              <p data-i18n-html="myVideos.p2"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Station 6 : le point info -->
+    <section class="section section--night contact has-rail" id="contact">
+      <div class="container">
+        <div class="booth">
+          <div class="awning" aria-hidden="true"></div>
+          <div class="booth-body">
+            <header>
+              <p class="station-chip"><span>6</span><span data-i18n="park.station">Station</span></p>
+              <p class="booth-sign" data-i18n="park.booth">Point info</p>
+              <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+              <p class="section-sub" data-i18n="contact.subtitle">Pour les partenariats vous pouvez me contacter via ces différentes adresses</p>
+              <p class="contact-note" data-i18n="contact.reachOut">Vous pouvez me contacter via TikTok, mail, numéro et Instagram.</p>
+            </header>
+            <ul class="contact-tickets">
+              <li><a class="contact-ticket" href="mailto:clip2ep@proton.me">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <span><small>Email</small><strong>clip2ep@proton.me</strong></span>
+              </a></li>
+              <li><a class="contact-ticket" href="tel:+33602564363">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.8.62 2.64a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6.27 6.27l1.26-1.28a2 2 0 0 1 2.11-.45c.84.29 1.74.5 2.64.62A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span><small data-i18n="contact.phoneLabel">Téléphone</small><strong>+33 6 02 56 43 63</strong></span>
+              </a></li>
+              <li><a class="contact-ticket" href="https://www.tiktok.com/@clip2ep.fan" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"/></svg></span>
+                <span><small>TikTok</small><strong>@clip2ep.fan</strong></span>
+              </a></li>
+              <li><a class="contact-ticket" href="https://www.youtube.com/@clip2ep-fan" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8.06a2.9 2.9 0 0 0-2.03-2.04C17.98 5.5 12 5.5 12 5.5s-5.98 0-7.77.52A2.9 2.9 0 0 0 2.2 8.06C1.7 9.86 1.7 12 1.7 12s0 2.14.5 3.94a2.9 2.9 0 0 0 2.03 2.04c1.79.52 7.77.52 7.77.52s5.98 0 7.77-.52a2.9 2.9 0 0 0 2.03-2.04c.5-1.8.5-3.94.5-3.94s0-2.14-.5-3.94zM10.1 15.3V8.7L15.8 12l-5.7 3.3z"/></svg></span>
+                <span><small>YouTube</small><strong>@clip2ep-fan</strong></span>
+              </a></li>
+              <li><a class="contact-ticket" href="https://www.instagram.com/baptiste.ddr_/" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1"/></svg></span>
+                <span><small>Instagram</small><strong>@baptiste.ddr_</strong></span>
+              </a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <section class="analytics-section" id="stats">
-    <div class="container">
-      <h2 class="section-title" data-i18n="stats.heading">Audience Analytics</h2>
-      <p class="section-subtitle" data-i18n="stats.subheading">Updated snapshot from your latest platform insights.</p>
-
-      <div class="analytics-grid">
-        <article class="platform-analytics tiktok">
-          <header class="platform-head">
-            <div>
-              <h3 class="platform-title">
-                <span class="platform-icon tiktok" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.28V2h-3.23v12.4a2.9 2.9 0 1 1-2-2.76V8.37a6.13 6.13 0 1 0 5.95 6.13V8.21a8.1 8.1 0 0 0 4.74 1.53V6.69h-1.69z"></path>
-                  </svg>
-                </span>
-                <span data-i18n="stats.tiktok.title">TikTok</span>
-              </h3>
-              <p class="platform-since" data-i18n="stats.tiktok.since">Since 2023</p>
-            </div>
-          </header>
-
-          <div class="kpi-grid">
-            <div class="kpi-card">
-              <p class="value">100M</p>
-              <p class="label" data-i18n="stats.tiktok.kpiViews">Views per year</p>
-            </div>
-            <div class="kpi-card">
-              <p class="value">159K</p>
-              <p class="label" data-i18n="stats.tiktok.kpiFollowers">Followers</p>
-            </div>
+  <footer class="site-footer">
+    <div class="skyline" aria-hidden="true">
+      <svg viewBox="0 0 1200 140" preserveAspectRatio="xMidYMax slice">
+        <g class="skyline-shapes">
+          <path d="M0 140V112h60l20-18 20 18h40v28z"/>
+          <circle cx="210" cy="70" r="56" class="skyline-wheel"/>
+          <path d="M210 70l-34 70h68z"/>
+          <path d="M300 140v-30c40-80 80-80 120 0s80 80 120-10 80-70 100 40v0z" class="skyline-coaster"/>
+          <path d="M700 140V40h16v100zM690 40h36l-18-22z"/>
+          <path d="M760 140V96h30V70l20-26 20 26v26h30v44z"/>
+          <path d="M900 140v-50l40-28 40 28v50z"/>
+          <circle cx="1040" cy="82" r="40" class="skyline-wheel"/>
+          <path d="M1040 82l-26 58h52z"/>
+          <path d="M1100 140v-24h100v24z"/>
+        </g>
+        <g class="skyline-lights">
+          <circle cx="210" cy="14" r="3"/><circle cx="266" cy="70" r="3"/><circle cx="154" cy="70" r="3"/>
+          <circle cx="708" cy="20" r="3"/><circle cx="810" cy="46" r="3"/><circle cx="940" cy="64" r="3"/>
+          <circle cx="1040" cy="42" r="3"/><circle cx="1080" cy="82" r="3"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="exit-sign">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="13.5" cy="3.8" r="2.2" fill="currentColor"/><path d="M10 8.5l-3 3.2M10 8.5l4 1 2.5 3.5M10 8.5l-1.2 6 3.6 2.6-1 5M8.8 14.5L5.5 21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 9v6m0-6l-2 2m2-2l2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong data-i18n="park.exit">Sortie</strong>
+            <span data-i18n="park.bye">À bientôt !</span>
           </div>
-
-          <section class="chart-block">
-            <h4 data-i18n="stats.gender">Gender split</h4>
-            <div class="bar-list">
-              <div>
-                <div class="bar-meta"><span class="name" data-i18n="stats.genderLabels.men">Men</span><span class="percent">43%</span></div>
-                <div class="bar-track" style="--w: 43%;"><span></span></div>
-              </div>
-              <div>
-                <div class="bar-meta"><span class="name" data-i18n="stats.genderLabels.women">Women</span><span class="percent">55%</span></div>
-                <div class="bar-track" style="--w: 55%;"><span></span></div>
-              </div>
-              <div>
-                <div class="bar-meta"><span class="name" data-i18n="stats.genderLabels.other">Other</span><span class="percent">2%</span></div>
-                <div class="bar-track" style="--w: 2%;"><span></span></div>
-              </div>
-            </div>
-          </section>
-
-          <section class="chart-block">
-            <h4 data-i18n="stats.age">Age groups</h4>
-            <div class="bar-list">
-              <div><div class="bar-meta"><span class="name">18-24</span><span class="percent">37.2%</span></div><div class="bar-track" style="--w: 37.2%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">25-34</span><span class="percent">33.1%</span></div><div class="bar-track" style="--w: 33.1%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">35-44</span><span class="percent">17.8%</span></div><div class="bar-track" style="--w: 17.8%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">45-54</span><span class="percent">8.5%</span></div><div class="bar-track" style="--w: 8.5%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">55+</span><span class="percent">3.4%</span></div><div class="bar-track" style="--w: 3.4%;"><span></span></div></div>
-            </div>
-          </section>
-
-          <section class="chart-block">
-            <h4 data-i18n="stats.regions">Top regions</h4>
-            <div class="bar-list">
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.france">France</span><span class="percent">56.3%</span></div><div class="bar-track" style="--w: 56.3%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.germany">Germany</span><span class="percent">4.6%</span></div><div class="bar-track" style="--w: 4.6%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.belgium">Belgium</span><span class="percent">3.8%</span></div><div class="bar-track" style="--w: 3.8%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.switzerland">Switzerland</span><span class="percent">3.8%</span></div><div class="bar-track" style="--w: 3.8%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.usa">United States</span><span class="percent">1.3%</span></div><div class="bar-track" style="--w: 1.3%;"><span></span></div></div>
-            </div>
-          </section>
-        </article>
-
-        <article class="platform-analytics youtube">
-          <header class="platform-head">
-            <div>
-              <h3 class="platform-title">
-                <span class="platform-icon youtube" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                    <path d="M23.5 7.2a3.02 3.02 0 0 0-2.12-2.14C19.5 4.5 12 4.5 12 4.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 7.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 4.8 3.02 3.02 0 0 0 2.12 2.14c1.88.56 9.38.56 9.38.56s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-4.8zM9.6 15.02V8.98L15.8 12 9.6 15.02z"></path>
-                  </svg>
-                </span>
-                <span data-i18n="stats.youtube.title">YouTube</span>
-              </h3>
-              <p class="platform-since" data-i18n="stats.youtube.since">Since Sep 25, 2025</p>
-            </div>
-          </header>
-
-          <div class="kpi-grid">
-            <div class="kpi-card">
-              <p class="value">52.2M</p>
-              <p class="label" data-i18n="stats.youtube.kpiViews">Total views</p>
-            </div>
-            <div class="kpi-card">
-              <p class="value">22K</p>
-              <p class="label" data-i18n="stats.youtube.kpiFollowers">Subscribers</p>
-            </div>
-          </div>
-
-          <section class="chart-block">
-            <h4 data-i18n="stats.gender">Gender split</h4>
-            <div class="bar-list">
-              <div>
-                <div class="bar-meta"><span class="name" data-i18n="stats.genderLabels.women">Women</span><span class="percent">52.3%</span></div>
-                <div class="bar-track" style="--w: 52.3%;"><span></span></div>
-              </div>
-              <div>
-                <div class="bar-meta"><span class="name" data-i18n="stats.genderLabels.men">Men</span><span class="percent">47.5%</span></div>
-                <div class="bar-track" style="--w: 47.5%;"><span></span></div>
-              </div>
-              <div>
-                <div class="bar-meta"><span class="name" data-i18n="stats.genderLabels.userSpecified">User specified</span><span class="percent">0.2%</span></div>
-                <div class="bar-track" style="--w: 0.2%;"><span></span></div>
-              </div>
-            </div>
-          </section>
-
-          <section class="chart-block">
-            <h4 data-i18n="stats.age">Age groups</h4>
-            <div class="bar-list">
-              <div><div class="bar-meta"><span class="name">13-17</span><span class="percent">19.0%</span></div><div class="bar-track" style="--w: 19%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">18-24</span><span class="percent">13.1%</span></div><div class="bar-track" style="--w: 13.1%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">25-34</span><span class="percent">20.9%</span></div><div class="bar-track" style="--w: 20.9%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">35-44</span><span class="percent">26.4%</span></div><div class="bar-track" style="--w: 26.4%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">45-54</span><span class="percent">14.8%</span></div><div class="bar-track" style="--w: 14.8%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name">55-64</span><span class="percent">3.2%</span></div><div class="bar-track" style="--w: 3.2%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.age65">65 and above</span><span class="percent">2.6%</span></div><div class="bar-track" style="--w: 2.6%;"><span></span></div></div>
-            </div>
-          </section>
-
-          <section class="chart-block">
-            <h4 data-i18n="stats.regions">Top regions</h4>
-            <div class="bar-list">
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.france">France</span><span class="percent">85.3%</span></div><div class="bar-track" style="--w: 85.3%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.belgium">Belgium</span><span class="percent">5.1%</span></div><div class="bar-track" style="--w: 5.1%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.switzerland">Switzerland</span><span class="percent">2.4%</span></div><div class="bar-track" style="--w: 2.4%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.canada">Canada</span><span class="percent">2.1%</span></div><div class="bar-track" style="--w: 2.1%;"><span></span></div></div>
-              <div><div class="bar-meta"><span class="name" data-i18n="stats.region.reunion">La Réunion</span><span class="percent">0.7%</span></div><div class="bar-track" style="--w: 0.7%;"><span></span></div></div>
-            </div>
-          </section>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="aboutme-section" id="about">
-    <div class="container aboutme-layout">
-      <div class="aboutme-copy">
-        <p class="aboutme-kicker" data-i18n="aboutme.kicker">About Me</p>
-        <h2 data-i18n="aboutme.title">From French theme park content to European collaborations.</h2>
-        <p data-i18n="aboutme.p1" data-i18n-html="true">I am Baptiste, a French creator focused on theme parks with a highly engaged audience. I create short, energetic and story-driven videos designed to make people want to visit parks in real life.</p>
-        <p data-i18n="aboutme.p2" data-i18n-html="true">My strongest community is on TikTok, with content initially centered on Europa-Park and now expanded to major European destinations. I have already produced videos in parks such as Energylandia, Efteling, Toverland and Universal Orlando.</p>
-        <p data-i18n="aboutme.p3" data-i18n-html="true">My goal is simple: deliver modern, authentic, high-performing content that highlights your park experience for a passionate French audience.</p>
-      </div>
-
-      <div class="aboutme-visual">
-        <span class="ring ring-large" aria-hidden="true"></span>
-        <span class="ring ring-small" aria-hidden="true"></span>
-        <figure class="aboutme-photo-wrap">
-          <img src="img/about/IMG_Baptiste.png" alt="Baptiste in a theme park" class="aboutme-photo" />
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="partners-section" id="partners">
-    <div class="container partners-layout">
-      <h2 class="partners-title" data-i18n="partners.title">Official Park Partnerships</h2>
-      <p class="partners-subtitle" data-i18n="partners.subtitle">Trusted collaborations with leading European parks.</p>
-
-      <div class="logo-wall" aria-label="Official partner parks">
-        <a class="park-link" href="https://www.toverland.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Toverland official website">
-          <img class="park-logo" src="img/logos/LOGO_toverland.png" alt="Toverland logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.efteling.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Efteling official website">
-          <img class="park-logo" src="img/logos/LOGO_efteling.png" alt="Efteling logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.bobejaanland.be" target="_blank" rel="noopener noreferrer" aria-label="Visit Bobejaanland official website">
-          <img class="park-logo" src="img/logos/LOGO_bob.png" alt="Bobejaanland logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://energylandia.pl" target="_blank" rel="noopener noreferrer" aria-label="Visit Energylandia official website">
-          <img class="park-logo" src="img/logos/LOGO_en.png" alt="Energylandia logo" loading="lazy" />
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="partners-section partners-section-lite">
-    <div class="container partners-layout">
-      <h2 class="partners-title" data-i18n="nonPartners.title">Parks Where I Filmed (No Partnership)</h2>
-      <p class="partners-subtitle" data-i18n="nonPartners.subtitle">Featured in my videos without official partnership.</p>
-
-      <div class="logo-wall logo-wall-many" aria-label="Parks featured without partnership">
-        <a class="park-link" href="https://www.europapark.de" target="_blank" rel="noopener noreferrer" aria-label="Visit Europa-Park official website">
-          <img class="park-logo" src="img/logos/LOGO_ep.png" alt="Europa-Park logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://seaworld.com" target="_blank" rel="noopener noreferrer" aria-label="Visit SeaWorld official website">
-          <img class="park-logo" src="img/logos/LOGO_seaworld.svg" alt="SeaWorld logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.phantasialand.de" target="_blank" rel="noopener noreferrer" aria-label="Visit Phantasialand official website">
-          <img class="park-logo" src="img/logos/LOGO_phanta.png" alt="Phantasialand logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.nigloland.fr" target="_blank" rel="noopener noreferrer" aria-label="Visit Nigloland official website">
-          <img class="park-logo" src="img/logos/LOGO_niglo.png" alt="Nigloland logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.universalorlando.com/web/en/us/theme-parks/epic-universe" target="_blank" rel="noopener noreferrer" aria-label="Visit Universal Epic Universe official website">
-          <img class="park-logo" src="img/logos/LOGO_epic.png" alt="Universal Epic Universe logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.universalorlando.com/web/en/us/theme-parks/islands-of-adventure" target="_blank" rel="noopener noreferrer" aria-label="Visit Islands of Adventure official website">
-          <img class="park-logo" src="img/logos/LOGO_islandoadv.avif" alt="Islands of Adventure logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://disneyworld.disney.go.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Disney World official website">
-          <img class="park-logo" src="img/logos/LOGO_disneyworld.png" alt="Disney World logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.rulantica.de" target="_blank" rel="noopener noreferrer" aria-label="Visit Rulantica official website">
-          <img class="park-logo" src="img/logos/LOGO_rulantica.png" alt="Rulantica logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.parcasterix.fr" target="_blank" rel="noopener noreferrer" aria-label="Visit Parc Asterix official website">
-          <img class="park-logo" src="img/logos/LOGO_asterix.png" alt="Parc Asterix logo" loading="lazy" />
-        </a>
-        <a class="park-link" href="https://www.traumatica.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Traumatica official website">
-          <img class="park-logo" src="img/logos/LOGO_traumatica.png" alt="Traumatica logo" loading="lazy" />
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="cases-section" id="videos">
-    <div class="container cases-layout">
-      <div class="cases-head">
-        <div>
-          <h2 class="partners-title" data-i18n="myVideos.title">Mes vidéos</h2>
         </div>
-        <div class="cases-controls" aria-label="Carousel controls">
-          <button class="cases-btn" id="cases-prev" type="button" aria-label="Previous">&#10094;</button>
-          <button class="cases-btn" id="cases-next" type="button" aria-label="Next">&#10095;</button>
-        </div>
+        <p class="footer-thanks" data-i18n="park.footerThanks">Merci pour la visite du parc Clip2EP ! Pour une collaboration, le point info est ouvert toute l'année.</p>
+        <p class="footer-heading" data-i18n="park.follow">Suivre Clip2EP</p>
+        <ul class="footer-socials">
+          <li><a href="https://www.tiktok.com/@clip2ep.fan" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"/></svg></a></li>
+          <li><a href="https://www.youtube.com/@clip2ep-fan" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8.06a2.9 2.9 0 0 0-2.03-2.04C17.98 5.5 12 5.5 12 5.5s-5.98 0-7.77.52A2.9 2.9 0 0 0 2.2 8.06C1.7 9.86 1.7 12 1.7 12s0 2.14.5 3.94a2.9 2.9 0 0 0 2.03 2.04c1.79.52 7.77.52 7.77.52s5.98 0 7.77-.52a2.9 2.9 0 0 0 2.03-2.04c.5-1.8.5-3.94.5-3.94s0-2.14-.5-3.94zM10.1 15.3V8.7L15.8 12l-5.7 3.3z"/></svg></a></li>
+          <li><a href="https://www.instagram.com/baptiste.ddr_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1"/></svg></a></li>
+          <li><a href="mailto:clip2ep@proton.me" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+        </ul>
       </div>
-
-      <div class="cases-carousel" id="cases-carousel">
-        <article class="case-slide" data-park="europapark">
-          <img src="img/card/EP_card.png" alt="Europa-Park card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Europa-Park</h3>
-            <p>41.3M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="efteling">
-          <img src="img/card/EF_card.JPG" alt="Efteling card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Efteling</h3>
-            <p>1.38M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="bobbejaanland">
-          <img src="img/card/BOB_card.png" alt="Bobejaanland card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Bobbejaanland</h3>
-            <p>18.7M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="toverland">
-          <img src="img/card/toverland_card.png" alt="Toverland card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Toverland</h3>
-            <p>22.4M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="phantasialand">
-          <img src="img/card/PHANTA_card.png" alt="Phantasialand card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Phantasialand</h3>
-            <p>26.1M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="nigloland">
-          <img src="img/card/NIGLO_card.png" alt="Nigloland card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Nigloland</h3>
-            <p>17.2M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="rulantica">
-          <img src="img/card/Rulantica_card.png" alt="Rulantica card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Rulantica</h3>
-            <p>24.6M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="energylandia">
-          <img src="img/card/EN_card.png" alt="Energylandia card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Energylandia</h3>
-            <p>29.9M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="parc-asterix">
-          <img src="img/card/ASTERIX_card.png" alt="Parc Asterix card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Parc Asterix</h3>
-            <p>27.5M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="traumatica">
-          <img src="img/card/TRAUMATICA_card.png" alt="Traumatica card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Traumatica</h3>
-            <p>14.8M <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="seaworld">
-          <img src="img/card/SEAWORLD_card.png" alt="SeaWorld card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>SeaWorld</h3>
-            <p>0 <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="universal">
-          <img src="img/card/UNIVERSAL_card.png" alt="Universal card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Universal</h3>
-            <p>0 <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-        <article class="case-slide" data-park="disneyworld">
-          <img src="img/card/DISNEYWORLD_card.png" alt="Disney World card" class="case-image" loading="lazy" />
-          <div class="case-overlay">
-            <h3>Disney World</h3>
-            <p>0 <span data-i18n="cases.viewsLabel">total views</span></p>
-          </div>
-        </article>
-      </div>
-
-      <div class="cases-copy">
-        <p data-i18n="myVideos.p1" data-i18n-html="true">
-          Je publie en moyenne une vidéo par jour, consacrée à un parc ou à une attraction, en m'appuyant sur les tendances du moment
-          sur les réseaux sociaux. Mes formats incluent notamment des POV d'attractions, des contenus réaction et des séquences immersives
-          pensées pour capter l'attention dès les premières secondes.
-        </p>
-        <p data-i18n="myVideos.p2" data-i18n-html="true">
-          Ma ligne éditoriale repose sur des accroches qui favorisent l'interaction : souvenirs liés aux parcs, identification d'amis pour
-          une prochaine visite, observations sur les comportements des visiteurs, astuces pratiques et comparatifs d'attractions entre
-          différents parcs.
-        </p>
-
-        <div class="gear-section" aria-label="Mon matériel vidéo">
-          <div class="gear-grid">
-            <figure class="gear-card">
-              <figcaption>Harnais torse</figcaption>
-              <img src="img/cam/harnaistorse.jpg" alt="Harnais torse" loading="lazy" />
-            </figure>
-            <figure class="gear-card">
-              <figcaption>Insta360 X4</figcaption>
-              <img src="img/cam/insta360-x4.jpg" alt="Insta360 X4" loading="lazy" />
-            </figure>
-            <figure class="gear-card">
-              <figcaption>iPhone 16 Pro</figcaption>
-              <img src="img/cam/iphone16pro.jpg" alt="iPhone 16 Pro" loading="lazy" />
-            </figure>
-            <figure class="gear-card">
-              <figcaption>Perche</figcaption>
-              <img src="img/cam/perche.jpg" alt="Perche" loading="lazy" />
-            </figure>
-            <figure class="gear-card">
-              <figcaption>Ray-Ban Meta</figcaption>
-              <img class="gear-glasses" src="img/cam/raybanmeta.jpg" alt="Ray-Ban Meta" loading="lazy" />
-            </figure>
-          </div>
-          <p class="gear-note"><em data-i18n="myVideos.gearNote">Je réalise l'ensemble de mes contenus avec cet équipement, qui constitue mon matériel principal de tournage au quotidien.</em></p>
-        </div>
-      </div>
+      <nav class="footer-stations" data-i18n-attr="aria-label:park.stationsTitle">
+        <p class="footer-heading" data-i18n="park.stationsTitle">Les stations</p>
+        <ol>
+          <li><a href="#top"><b>1</b><span data-i18n="nav.home">Accueil</span></a></li>
+          <li><a href="#about"><b>2</b><span data-i18n="nav.about">À propos</span></a></li>
+          <li><a href="#stats"><b>3</b><span data-i18n="nav.stats">Statistiques</span></a></li>
+          <li><a href="#partners"><b>4</b><span data-i18n="nav.partners">Partenariats</span></a></li>
+          <li><a href="#videos"><b>5</b><span data-i18n="nav.videos">Mes vidéos</span></a></li>
+          <li><a href="#contact"><b>6</b><span data-i18n="nav.contact">Contact</span></a></li>
+        </ol>
+      </nav>
+      <nav class="footer-map" data-i18n-attr="aria-label:park.map">
+        <p class="footer-heading" data-i18n="park.map">Plan du parc</p>
+        <div data-park-map data-here="contact"></div>
+      </nav>
     </div>
-  </section>
-
-  <section class="contact-section" id="contact">
-    <div class="container contact-layout">
-      <h2 class="partners-title" data-i18n="contact.title">Contact</h2>
-      <p class="partners-subtitle" data-i18n="contact.subtitle">Pour les partenariats vous pouvez me contacter via ces différentes adresses</p>
-
-      <div class="contact-shell">
-        <p class="contact-intro" data-i18n="contact.reachOut">Vous pouvez me contacter via TikTok, mail, numéro et Instagram.</p>
-        <div class="contact-actions">
-          <a class="contact-action" href="https://www.tiktok.com/@clip2ep.fan" target="_blank" rel="noopener noreferrer" aria-label="TikTok Clip2ep">
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"></path></svg>
-            </span>
-            <span class="contact-meta"><strong>TikTok</strong><small>@clip2ep.fan</small></span>
-          </a>
-          <a class="contact-action" href="mailto:clip2ep@proton.me" aria-label="Envoyer un email">
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
-            </span>
-            <span class="contact-meta"><strong>Email</strong><small>clip2ep@proton.me</small></span>
-          </a>
-          <a class="contact-action" href="tel:+33602564363" aria-label="Appeler le numéro">
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.8.62 2.64a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6.27 6.27l1.26-1.28a2 2 0 0 1 2.11-.45c.84.29 1.74.5 2.64.62A2 2 0 0 1 22 16.92z"></path></svg>
-            </span>
-            <span class="contact-meta"><strong data-i18n="contact.phoneLabel">Téléphone:</strong><small>+33 6 02 56 43 63</small></span>
-          </a>
-          <a class="contact-action" href="https://www.instagram.com/baptiste.ddr_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram baptiste.ddr_">
-            <span class="contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg>
-            </span>
-            <span class="contact-meta"><strong>Instagram</strong><small>@baptiste.ddr_</small></span>
-          </a>
-        </div>
-      </div>
+    <div class="container footer-bottom">
+      <p data-i18n="common.footerMain">© Clip2EP - 2026</p>
+      <a class="ride-button ride-button--small" href="#top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="park.backTop">Retour à l'entrée</span>
+      </a>
     </div>
-  </section>
-
-  <footer class="footer" data-i18n="common.footerMain">© Clip2ep - 2026</footer>
-  <script src="script.js"></script>
+  </footer>
 </body>
 </html>
