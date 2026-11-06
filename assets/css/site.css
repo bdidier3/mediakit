@@ -600,7 +600,7 @@ ol {
   color: var(--night);
 }
 
-.park-map svg {
+.park-map > svg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1311,20 +1311,9 @@ ol {
   height: 1.3em;
   padding: 0 0.06em;
   border-radius: 6px;
-  background: linear-gradient(#1d3150 0 50%, #172943 50% 100%);
+  background: #1b2e4b;
   box-shadow: inset 0 0 0 1px #2b4466;
   font-variant-numeric: tabular-nums;
-}
-
-.flap-char::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 2px;
-  margin-top: -1px;
-  background: #07111d;
 }
 
 .flap-char.is-flipping {
@@ -2211,15 +2200,15 @@ ol {
 
 /* Silhouette du parc au coucher du soleil, avec ses lumières. */
 .skyline {
-  height: clamp(90px, 12vw, 140px);
   background: linear-gradient(to bottom, var(--night), #1d2f4d);
-  overflow: hidden;
 }
 
 .skyline svg {
   display: block;
   width: 100%;
-  height: 100%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .skyline-shapes {
@@ -2385,7 +2374,7 @@ ol {
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 16px;
   padding-top: 22px;
