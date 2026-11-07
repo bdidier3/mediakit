@@ -443,7 +443,8 @@ export async function initPark3d(root, { onSelect } = {}) {
     label.className = zone.link ? `park3d-label park3d-label--${zone.link.icon}` : 'park3d-label';
     label.dataset.zone = zone.id;
     label.style.setProperty('--i', index);
-    if (zone.link) {
+    // Avec `onSelect`, même l'Entrée et la Boutique passent par le jeu (confirmation avant de partir).
+    if (zone.link && !onSelect) {
       label.href = zone.link.href;
       label.target = '_blank';
       label.rel = 'noopener noreferrer';
@@ -561,13 +562,13 @@ export async function initPark3d(root, { onSelect } = {}) {
   };
 
   const goTo = (id) => {
+    if (onSelect) {
+      onSelect(id);
+      return;
+    }
     const zone = zones.find((z) => z.id === id);
     if (zone?.link) {
       window.open(zone.link.href, '_blank', 'noopener');
-      return;
-    }
-    if (onSelect) {
-      onSelect(id);
       return;
     }
     document.getElementById(id)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });

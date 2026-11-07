@@ -69,12 +69,48 @@
       <div class="game-panel-sheet">
         <header class="game-panel-head">
           <p class="game-panel-ride"><b id="game-panel-station">2</b><span><strong id="game-panel-title">La Grande Roue</strong><small id="game-panel-section">À propos</small></span></p>
-          <button class="ride-button ride-button--small game-panel-close" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span data-i18n="park.close">Retour au parc</span>
+          <button class="game-panel-close" type="button" data-i18n-attr="aria-label:park.close;title:park.close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
           </button>
         </header>
+        <div class="game-panel-main">
         <div class="game-panel-body" tabindex="-1">
+          <!-- tiktok : on demande avant de quitter le parc -->
+          <section hidden class="section section--night redirect" id="entrance">
+            <div class="container redirect-card">
+              <div class="redirect-logo redirect-logo--tiktok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82a4.83 4.83 0 0 0 2.82 1v3.05a7.8 7.8 0 0 1-2.8-.54v5.86a6.12 6.12 0 1 1-6.13-6.12c.23 0 .46.01.68.04v3.12a3.04 3.04 0 1 0 2.37 2.96V2.5h3.06c.02 1.14.46 2.2 1.2 3.32z"/></svg></div>
+              <p class="redirect-handle">@clip2ep.fan</p>
+              <dl class="redirect-stats">
+                <div><dt data-i18n="stats.tiktok.kpiFollowers">Abonnés</dt><dd data-live-text="tiktok.followers">174.4K</dd></div>
+                <div><dt data-i18n="stats.tiktok.kpiViews">Vues</dt><dd>100M</dd></div>
+              </dl>
+              <p class="redirect-text" data-i18n="park.redirectText">Tu t'apprêtes à quitter le parc pour rejoindre mon compte. Il s'ouvrira dans un nouvel onglet : le parc reste ouvert ici.</p>
+              <p class="redirect-question" data-i18n="park.redirectQuestion">Veux-tu être redirigé ?</p>
+              <div class="redirect-actions">
+                <a class="redirect-go" href="https://www.tiktok.com/@clip2ep.fan" target="_blank" rel="noopener noreferrer" data-i18n="park.redirectGo">Oui, y aller</a>
+                <button class="redirect-stay" type="button" data-i18n="park.redirectStay">Non, rester dans le parc</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- youtube : on demande avant de quitter le parc -->
+          <section hidden class="section section--night redirect" id="shop">
+            <div class="container redirect-card">
+              <div class="redirect-logo redirect-logo--youtube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 8.06a2.9 2.9 0 0 0-2.03-2.04C17.98 5.5 12 5.5 12 5.5s-5.98 0-7.77.52A2.9 2.9 0 0 0 2.2 8.06C1.7 9.86 1.7 12 1.7 12s0 2.14.5 3.94a2.9 2.9 0 0 0 2.03 2.04c1.79.52 7.77.52 7.77.52s5.98 0 7.77-.52a2.9 2.9 0 0 0 2.03-2.04c.5-1.8.5-3.94.5-3.94s0-2.14-.5-3.94zM10.1 15.3V8.7L15.8 12l-5.7 3.3z"/></svg></div>
+              <p class="redirect-handle">@clip2ep-fan</p>
+              <dl class="redirect-stats">
+                <div><dt data-i18n="stats.youtube.kpiFollowers">Abonnés</dt><dd data-live-text="youtube.subscribers">52.1K</dd></div>
+                <div><dt data-i18n="stats.youtube.kpiViews">Vues</dt><dd>143.1M</dd></div>
+              </dl>
+              <p class="redirect-text" data-i18n="park.redirectText">Tu t'apprêtes à quitter le parc pour rejoindre mon compte. Il s'ouvrira dans un nouvel onglet : le parc reste ouvert ici.</p>
+              <p class="redirect-question" data-i18n="park.redirectQuestion">Veux-tu être redirigé ?</p>
+              <div class="redirect-actions">
+                <a class="redirect-go" href="https://www.youtube.com/@clip2ep-fan" target="_blank" rel="noopener noreferrer" data-i18n="park.redirectGo">Oui, y aller</a>
+                <button class="redirect-stay" type="button" data-i18n="park.redirectStay">Non, rester dans le parc</button>
+              </div>
+            </div>
+          </section>
+
           <!-- Station 2 : le badge -->
           <section hidden class="section section--paper" id="about">
             <div class="container about">
@@ -314,6 +350,8 @@
               </div>
             </div>
           </section>
+        </div>
+        <div class="panel-rail" aria-hidden="true"><span class="panel-rail-car"></span></div>
         </div>
       </div>
     </div>

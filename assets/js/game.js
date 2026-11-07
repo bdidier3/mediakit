@@ -1,12 +1,68 @@
 // Mode jeu : tout se passe sur le plan 3D. Entrer dans une attraction zoome
 // dessus et ouvre son panneau (le contenu de la section correspondante).
+// L'Entrée (TikTok) et la Boutique (YouTube) demandent avant de quitter le parc.
 // L'adresse suit l'attraction ouverte (#about, #stats…) : liens directs et
 // bouton « précédent » du navigateur fonctionnent.
 
 import { onLanguageChange, t } from './i18n.js';
-import { STATIONS, prefersReducedMotion } from './ui.js';
+import { ZONE_LAYOUT } from './park-layout.js';
+import { CAR_SVG } from './ride.js';
+import { ICONS, prefersReducedMotion } from './ui.js';
 
-const ZONES = ['about', 'stats', 'partners', 'videos', 'contact'];
+const ZONES = ZONE_LAYOUT.map(({ id }) => id);
+
+// Barre de défilement du panneau : un rail vertical sur lequel le wagon
+// descend avec la lecture. Clic ou glisser sur le rail pour se déplacer.
+function initPanelRail(body, rail) {
+  const car = rail.querySelector('.panel-rail-car');
+  car.innerHTML = CAR_SVG;
+  let lastTop = 0;
+  let dragging = false;
+
+  const update = () => {
+    const max = body.scrollHeight - body.clientHeight;
+    rail.hidden = max <= 4;
+    if (max <= 4) {
+      return;
+    }
+    const progress = body.scrollTop / max;
+    const travel = rail.clientHeight - car.offsetHeight;
+    // Le wagon pointe dans le sens de la lecture : vers le bas, ou vers le haut en remontant.
+    if (body.scrollTop !== lastTop) {
+      car.classList.toggle('is-up', body.scrollTop < lastTop);
+      lastTop = body.scrollTop;
+    }
+    car.style.transform = `translateY(${(progress * travel).toFixed(1)}px)`;
+  };
+
+  const scrollToPointer = (event, behavior) => {
+    const rect = rail.getBoundingClientRect();
+    const ratio = Math.min(1, Math.max(0, (event.clientY - rect.top) / rect.height));
+    body.scrollTo({ top: ratio * (body.scrollHeight - body.clientHeight), behavior });
+  };
+
+  rail.addEventListener('pointerdown', (event) => {
+    event.preventDefault();
+    dragging = true;
+    rail.setPointerCapture(event.pointerId);
+    scrollToPointer(event, prefersReducedMotion() ? 'auto' : 'smooth');
+  });
+  rail.addEventListener('pointermove', (event) => {
+    if (dragging) {
+      scrollToPointer(event, 'auto');
+    }
+  });
+  const stop = () => { dragging = false; };
+  rail.addEventListener('pointerup', stop);
+  rail.addEventListener('pointercancel', stop);
+
+  body.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(update).observe(body);
+  }
+  return update;
+}
 
 export function initGame(getPark) {
   const panel = document.getElementById('game-panel');
@@ -19,6 +75,7 @@ export function initGame(getPark) {
   const section = document.getElementById('game-panel-section');
   const station = document.getElementById('game-panel-station');
   const sections = ZONES.map((id) => document.getElementById(id)).filter(Boolean);
+  const updateRail = initPanelRail(body, panel.querySelector('.panel-rail'));
   const reduced = prefersReducedMotion();
   let current = null;
   let timer = 0;
@@ -27,9 +84,11 @@ export function initGame(getPark) {
     if (!current) {
       return;
     }
+    const zone = ZONE_LAYOUT.find(({ id }) => id === current);
     title.textContent = t(`park.zone.${current}`);
-    section.textContent = t(`nav.${current}`);
-    station.textContent = String(STATIONS.findIndex(({ id }) => id === current) + 1);
+    section.textContent = zone.link ? zone.link.label : t(`nav.${current}`);
+    station.innerHTML = zone.link ? ICONS[zone.link.icon] : String(zone.station);
+    station.classList.toggle('is-tiktok', zone.link?.icon === 'tiktok');
   };
 
   const open = (id) => {
@@ -41,10 +100,12 @@ export function initGame(getPark) {
     getPark()?.focusZone(id);
     panel.hidden = false;
     body.scrollTop = 0;
+    requestAnimationFrame(updateRail);
     // Le panneau arrive pendant que la caméra zoome sur l'attraction.
     timer = setTimeout(() => {
       panel.classList.add('is-open');
       body.focus({ preventScroll: true });
+      updateRail();
     }, reduced || switching ? 0 : 380);
   };
 
@@ -79,6 +140,10 @@ export function initGame(getPark) {
   };
 
   closeButton.addEventListener('click', leave);
+  // Confirmation TikTok / YouTube : « Non » ramène au parc, « Oui » ouvre le compte puis y ramène aussi.
+  panel.querySelectorAll('.redirect-stay, .redirect-go').forEach((button) => {
+    button.addEventListener('click', () => setTimeout(leave, 0));
+  });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && current && !document.querySelector('.lang-menu.is-open')) {
       leave();

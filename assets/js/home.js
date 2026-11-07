@@ -144,6 +144,14 @@ async function loadLiveCounters() {
   } catch {
     return;
   }
+  // Panneaux TikTok / YouTube du jeu : mêmes chiffres, en texte simple.
+  document.querySelectorAll('[data-live-text]').forEach((node) => {
+    const [platform, field] = node.dataset.liveText.split('.');
+    const value = Number(channels?.[platform]?.[field]);
+    if (value) {
+      node.textContent = formatCompact(value);
+    }
+  });
   document.querySelectorAll('#stats [data-live]').forEach((flap) => {
     const [platform, field] = flap.dataset.live.split('.');
     const value = Number(channels?.[platform]?.[field]);

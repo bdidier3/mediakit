@@ -3138,18 +3138,19 @@ a.video-title:hover {
   top: 72px;
   right: 16px;
   bottom: 16px;
-  width: min(680px, calc(100vw - 32px));
+  width: min(820px, calc(100vw - 32px), 58vw);
+  min-width: min(560px, calc(100vw - 32px));
   pointer-events: none;
 }
 
 .game-panel-sheet {
-  --rivet: #b5c0cc;
   display: flex;
   flex-direction: column;
   height: 100%;
   border-radius: 20px;
-  background: var(--rivets), var(--paper);
-  box-shadow: 0 0 0 3px var(--night), 0 10px 0 var(--night), 0 24px 60px rgba(7, 17, 29, 0.5);
+  background: var(--night);
+  color: var(--white);
+  box-shadow: 0 0 0 3px #22385a, 0 10px 0 #07111d, 0 24px 60px rgba(7, 17, 29, 0.55);
   overflow: hidden;
   opacity: 0;
   transform: translateX(calc(100% + 40px));
@@ -3165,11 +3166,10 @@ a.video-title:hover {
 /* Bandeau rayé de l'attraction, comme les panneaux du site. */
 .game-panel-head {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 14px 18px;
+  padding: 12px 14px;
   background: repeating-linear-gradient(-45deg, var(--ticket) 0 14px, var(--night) 14px 28px);
 }
 
@@ -3177,29 +3177,38 @@ a.video-title:hover {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
   padding: 6px 14px 6px 6px;
   border-radius: 12px;
   background: var(--night);
-  color: var(--white);
 }
 
 .game-panel-ride b {
   display: grid;
   place-items: center;
   flex: none;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: var(--rail);
   font-family: var(--font-fun);
   font-weight: 600;
 }
 
+.game-panel-ride b.is-tiktok {
+  background: #000;
+}
+
+.game-panel-ride b svg {
+  width: 15px;
+  height: 15px;
+}
+
 .game-panel-ride strong {
   display: block;
   font-family: var(--font-sign);
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.1;
   color: var(--ticket);
 }
@@ -3208,63 +3217,549 @@ a.video-title:hover {
   display: block;
   font-family: var(--font-fun);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--sky);
+}
+
+/* Fermeture : une simple croix dans un rond, sans couleur vive. */
+.game-panel-close {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: var(--night);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease-out);
+}
+
+.game-panel-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.game-panel-close:hover {
+  background: #22385a;
+  border-color: var(--white);
+  transform: rotate(90deg);
+}
+
+.game-panel-main {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
 }
 
 .game-panel-body {
   flex: 1;
   overflow-y: auto;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+
+.game-panel-body::-webkit-scrollbar {
+  display: none;
 }
 
 .game-panel-body:focus {
   outline: none;
 }
 
-/* Les sections, dans le panneau : une colonne, marges resserrées. */
+/* Barre de défilement : rail du grand huit et son wagon. */
+.panel-rail {
+  position: relative;
+  flex: none;
+  width: 30px;
+  margin: 12px 8px 12px 0;
+  cursor: pointer;
+  touch-action: none;
+  background:
+    linear-gradient(var(--rail), var(--rail)) 7px 0 / 3px 100% no-repeat,
+    linear-gradient(var(--rail), var(--rail)) 20px 0 / 3px 100% no-repeat,
+    repeating-linear-gradient(to bottom, var(--wood) 0 3px, transparent 3px 12px) 4px 0 / 22px 100% no-repeat;
+}
+
+.panel-rail[hidden] {
+  display: none;
+}
+
+.panel-rail-car {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 34px;
+  height: 48px;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.panel-rail-car svg {
+  position: absolute;
+  top: 7px;
+  left: -7px;
+  width: 48px;
+  height: 34px;
+  transform: rotate(90deg);
+  transition: transform 0.3s var(--ease-out);
+  filter: drop-shadow(0 2px 3px rgba(7, 17, 29, 0.5));
+}
+
+.panel-rail-car.is-up svg {
+  transform: rotate(-90deg) scaleY(-1);
+}
+
+/* ---- Contenu des attractions : fond bleu, tailles resserrées ---- */
+
 .game-panel .section {
-  padding: 28px 0 40px;
+  padding: 22px 0 30px;
+  background: var(--night);
+  color: var(--white);
+  font-size: 0.95rem;
 }
 
 .game-panel .container {
-  padding: 0 22px;
+  padding: 0 18px;
 }
 
 .game-panel .station-chip {
   display: none;
 }
 
+.game-panel .section-head {
+  margin-bottom: 20px;
+}
+
 .game-panel .section-title {
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  color: var(--white);
 }
 
-.game-panel .boards,
-.game-panel .about,
-.game-panel .passport,
-.game-panel .videos-copy,
-.game-panel .booth-body {
-  grid-template-columns: 1fr;
+.game-panel .section-sub {
+  margin-top: 6px;
+  font-size: 0.98rem;
+  color: var(--sky);
 }
 
+.game-panel .prose p {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.game-panel .prose strong {
+  color: var(--ticket);
+}
+
+/* À propos : badge à gauche, texte à droite. */
 .game-panel .about {
-  gap: 28px;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.game-panel .lanyard {
+  width: 80px;
+  height: 50px;
 }
 
 .game-panel .badge {
-  width: min(100%, 260px);
+  width: 100%;
+  padding: 12px 12px 14px;
+  color: var(--night);
+}
+
+.game-panel .badge strong {
+  font-size: 1.25rem;
+}
+
+.game-panel .badge-code {
+  height: 18px;
+}
+
+.game-panel .about-lead {
+  margin: 6px 0 14px;
+  font-size: 1.15rem;
+  color: var(--sky);
+}
+
+/* Statistiques : deux tableaux côte à côte, plus compacts. */
+.game-panel .boards {
+  gap: 14px;
+}
+
+.game-panel .board {
+  padding: 16px;
+}
+
+.game-panel .board-head h3 {
+  font-size: 1.15rem;
+}
+
+.game-panel .board-head p {
+  font-size: 0.78rem;
+}
+
+.game-panel .kpis {
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.game-panel .flap {
+  font-size: 1.35rem;
+  gap: 2px;
+}
+
+.game-panel .kpi-label {
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+
+.game-panel .breakdown + .breakdown {
+  margin-top: 16px;
+}
+
+.game-panel .breakdown h4 {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.game-panel .bars li {
+  grid-template-columns: minmax(70px, 6.5rem) 1fr 2.8rem;
+  gap: 8px;
+  padding: 2px 0;
+  font-size: 0.78rem;
+}
+
+.game-panel .bar {
+  height: 8px;
+}
+
+.game-panel .toise {
+  --h: 90px;
+  gap: 4px;
+  padding-left: 22px;
+}
+
+.game-panel .toise-value,
+.game-panel .toise-label {
+  font-size: 0.66rem;
+}
+
+/* Partenariats : passeport sur fond bleu, tampons plus petits. */
+.game-panel .passport {
+  grid-template-columns: 1fr;
+  padding: 8px;
+  background: #0c1828;
+  box-shadow: 0 6px 0 #07111d;
+}
+
+.game-panel .passport-page {
+  padding: 18px;
+  background: #1b2e4b;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.game-panel .passport-page + .passport-page {
+  margin-top: 8px;
+}
+
+.game-panel .passport-page h3 {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.game-panel .passport-page > p {
+  font-size: 0.85rem;
+  color: var(--sky);
+}
+
+.game-panel .stamps {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.game-panel .stamps--visited {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.game-panel .stamp {
+  padding: 10px 6px 6px;
+  gap: 4px;
+}
+
+.game-panel .stamp img,
+.game-panel .stamps--partner .stamp img {
+  height: 44px;
+}
+
+.game-panel .stamps .stamp img.stamp-flag {
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: 11px;
+}
+
+.game-panel .stamp span {
+  padding: 1px 6px;
+  font-size: 0.58rem;
+}
+
+/* Mes vidéos : billets plus petits, panneaux sur deux colonnes. */
+.game-panel .reel-head {
+  margin-bottom: 8px;
+}
+
+.game-panel .round-button {
+  width: 40px;
+  height: 40px;
 }
 
 .game-panel .reel {
-  margin: 0 -22px;
-  padding-inline: 22px;
-  scroll-padding-inline: 22px;
+  grid-auto-columns: 150px;
+  gap: 14px;
+  margin: 0 -18px;
+  padding: 12px 18px 20px;
+  scroll-padding-inline: 18px;
+}
+
+.game-panel .ticket h3 {
+  font-size: 0.85rem;
+}
+
+.game-panel .ticket p {
+  font-size: 0.74rem;
+}
+
+.game-panel .ticket-logo {
+  top: -24px;
+  height: 32px;
+  padding: 4px 6px;
 }
 
 .game-panel .ticket::before,
 .game-panel .ticket::after {
-  background: var(--paper);
+  background: var(--night);
+}
+
+.game-panel .videos-copy {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.game-panel .info-panel {
+  background: #1b2e4b;
+  box-shadow: 0 0 0 2px #2b4466, 0 6px 0 #07111d;
+}
+
+.game-panel .info-panel--text {
+  grid-column: 1 / -1;
+}
+
+.game-panel .info-panel-head {
+  min-height: 52px;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+}
+
+.game-panel .info-panel-body {
+  padding: 14px;
+}
+
+.game-panel .info-panel--screen video {
+  min-height: 160px;
+}
+
+.game-panel .gear-list {
+  gap: 10px 8px;
+}
+
+.game-panel .gear-list figcaption {
+  font-size: 0.72rem;
+  color: var(--white);
+}
+
+.game-panel .gear-note {
+  font-size: 0.8rem;
+  color: var(--sky);
+}
+
+/* Contact : guichet plus compact. */
+.game-panel .booth {
+  padding-top: 40px;
+}
+
+.game-panel .awning {
+  height: 60px;
+}
+
+.game-panel .booth-body {
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 44px 18px 20px;
+}
+
+.game-panel .booth-body .section-title {
+  font-size: 1.5rem;
+}
+
+.game-panel .contact-tickets {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.game-panel .contact-ticket {
+  grid-template-columns: 36px 1fr;
+  gap: 10px;
+  padding: 10px 12px 10px 16px;
+}
+
+.game-panel .contact-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.game-panel .contact-ticket strong {
+  font-size: 0.85rem;
+}
+
+/* TikTok / YouTube : on demande avant de quitter le parc. */
+.redirect-card {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  text-align: center;
+}
+
+.redirect-logo {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 24px;
+  color: var(--white);
+  box-shadow: 0 6px 0 #07111d;
+}
+
+.redirect-logo svg {
+  width: 42px;
+  height: 42px;
+}
+
+.redirect-logo--tiktok {
+  background: #000;
+  box-shadow: 0 0 0 3px var(--ticket-dark), 0 6px 0 #07111d;
+}
+
+.redirect-logo--youtube {
+  background: #ff0000;
+}
+
+.redirect-handle {
+  font-family: var(--font-sign);
+  font-size: 1.3rem;
+  color: var(--ticket);
+}
+
+.redirect-stats {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+}
+
+.redirect-stats div {
+  min-width: 130px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #1b2e4b;
+  box-shadow: inset 0 0 0 2px #2b4466;
+}
+
+.redirect-stats dt {
+  font-family: var(--font-fun);
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: var(--sky);
+}
+
+.redirect-stats dd {
+  margin: 2px 0 0;
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 1.6rem;
+  font-variation-settings: "wdth" 75;
+  color: var(--white);
+}
+
+.redirect-text {
+  max-width: 44ch;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+}
+
+.redirect-question {
+  font-family: var(--font-fun);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.redirect-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.redirect-go,
+.redirect-stay {
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-family: var(--font-fun);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.redirect-go {
+  border: 0;
+  background: var(--ticket);
+  color: var(--night);
+  box-shadow: 0 4px 0 var(--ticket-dark);
+}
+
+.redirect-go:hover {
+  background: #ffd766;
+}
+
+.redirect-stay {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: var(--white);
+}
+
+.redirect-stay:hover {
+  border-color: var(--white);
+}
+
+/* Panneau étroit : une colonne. */
+@media (max-width: 1100px) {
+  .game-panel .boards,
+  .game-panel .videos-copy,
+  .game-panel .contact-tickets {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Téléphone : le panneau monte du bas de l'écran, l'attraction reste visible au-dessus. */
@@ -3275,6 +3770,7 @@ a.video-title:hover {
     right: 0;
     bottom: 0;
     width: auto;
+    min-width: 0;
     height: 74dvh;
   }
 
@@ -3290,6 +3786,27 @@ a.video-title:hover {
   .game-panel-ride strong {
     font-size: 0.9rem;
   }
+}
+
+@media (max-width: 560px) {
+  .game-panel .about {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .game-panel .badge-stage {
+    width: 200px;
+  }
+
+  .game-panel .stamps,
+  .game-panel .stamps--visited {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .redirect-stats div {
+    min-width: 0;
+  }
+}
 
 /* Arabe : chaque paragraphe prend le sens de lecture de son texte (droite à gauche),
    sans retourner la mise en page du parc. */

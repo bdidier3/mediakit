@@ -11,7 +11,7 @@ const CENTER = 40;
 const AMPLITUDE = 14;
 const SEGMENT = 190;
 
-const CAR_SVG = `
+export const CAR_SVG = `
 <svg viewBox="0 0 48 34" aria-hidden="true">
   <circle cx="11" cy="4" r="3.6" class="ride-wheel"/>
   <circle cx="35" cy="4" r="3.6" class="ride-wheel"/>
