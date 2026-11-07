@@ -338,6 +338,7 @@ function buildLamps(scene) {
   }
   poles.castShadow = true;
   scene.add(poles, bulbs);
+  return bulbs.material;
 }
 
 function buildTrees(scene) {
@@ -374,7 +375,7 @@ function buildTrees(scene) {
 /* ---------- Scène ---------- */
 
 // `onSelect(id)` : appelé au clic sur une attraction (sinon, la page défile jusqu'à la section).
-export async function initPark3d(root, { onSelect } = {}) {
+export async function initPark3d(root, { onSelect, theme = 'night' } = {}) {
   if (!root) {
     throw new Error('Conteneur du plan introuvable');
   }
@@ -400,7 +401,8 @@ export async function initPark3d(root, { onSelect } = {}) {
   scene.fog = new THREE.Fog(0x13233a, 70, 140);
   const camera = new THREE.PerspectiveCamera(32, 1, 1, 220);
 
-  scene.add(new THREE.HemisphereLight(0x9db8e6, 0x1c2b22, 1.25));
+  const hemi = new THREE.HemisphereLight(0x9db8e6, 0x1c2b22, 1.25);
+  scene.add(hemi);
   // Clair de lune (côté de la lune dessinée dans le ciel) + lumière chaude des allées.
   const sun = new THREE.DirectionalLight(0xcfe0ff, 1.9);
   sun.position.set(20, 30, -12);
@@ -418,7 +420,7 @@ export async function initPark3d(root, { onSelect } = {}) {
   scene.add(world);
   const jet = buildGround(world);
   buildTrees(world);
-  buildLamps(world);
+  const bulbMaterial = buildLamps(world);
 
   // Attractions + zones cliquables (un cylindre invisible facilite la visée).
   const hitMaterial = new THREE.MeshBasicMaterial({ visible: false });
@@ -830,5 +832,21 @@ export async function initPark3d(root, { onSelect } = {}) {
   root.classList.add('is-ready');
   requestRender();
 
-  return { relabel, focusZone, clearFocus };
+  // Jour : grand soleil, lampadaires éteints. Nuit : clair de lune, lampadaires allumés.
+  const setTheme = (mode) => {
+    const day = mode === 'day';
+    scene.fog.color.setHex(day ? 0xcfe9f8 : 0x13233a);
+    hemi.color.setHex(day ? 0xeaf6ff : 0x9db8e6);
+    hemi.groundColor.setHex(day ? 0x5c8a4a : 0x1c2b22);
+    hemi.intensity = day ? 1.6 : 1.25;
+    sun.color.setHex(day ? 0xfff2d6 : 0xcfe0ff);
+    sun.intensity = day ? 2.4 : 1.9;
+    sun.position.set(day ? 18 : 20, 30, day ? 14 : -12);
+    parkGlow.intensity = day ? 0 : 0.7;
+    bulbMaterial.color.setHex(day ? 0xd9dee5 : 0xffe08a);
+    requestRender();
+  };
+  setTheme(theme);
+
+  return { relabel, focusZone, clearFocus, setTheme };
 }

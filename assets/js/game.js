@@ -8,6 +8,7 @@ import { onLanguageChange, t } from './i18n.js';
 import { ZONE_LAYOUT } from './park-layout.js';
 import { CAR_SVG } from './ride.js';
 import { ICONS, prefersReducedMotion } from './ui.js';
+import { createParkView } from './park-view.js';
 
 const ZONES = ZONE_LAYOUT.map(({ id }) => id);
 
@@ -154,6 +155,10 @@ export function initGame(getPark) {
   const section = document.getElementById('game-panel-section');
   const station = document.getElementById('game-panel-station');
   const sections = ZONES.map((id) => document.getElementById(id)).filter(Boolean);
+  // Fiche d'un parc : remplace « Mes vidéos » dans le panneau (#videos/<parc>).
+  const detail = document.getElementById('park-detail');
+  const parkView = detail ? createParkView(detail.querySelector('[data-park-view]')) : null;
+  let parkName = null;
   const smooth = initSmoothScroll(body);
   const updateRail = initPanelRail(body, panel.querySelector('.panel-rail'), smooth);
   const reduced = prefersReducedMotion();
@@ -166,18 +171,26 @@ export function initGame(getPark) {
     }
     const zone = ZONE_LAYOUT.find(({ id }) => id === current);
     title.textContent = t(`park.zone.${current}`);
-    section.textContent = zone.link ? zone.link.label : t(`nav.${current}`);
+    section.textContent = parkName || (zone.link ? zone.link.label : t(`nav.${current}`));
     station.innerHTML = zone.link ? ICONS[zone.link.icon] : String(zone.station);
     station.classList.toggle('is-tiktok', zone.link?.icon === 'tiktok');
   };
 
-  const open = (id) => {
+  const open = (id, sub = '') => {
     clearTimeout(timer);
     const switching = current !== null;
+    const sameZone = current === id;
     current = id;
-    sections.forEach((el) => { el.hidden = el.id !== id; });
+    const showDetail = id === 'videos' && sub && parkView;
+    parkName = showDetail ? parkView.show(sub) : null;
+    sections.forEach((el) => { el.hidden = showDetail || el.id !== id; });
+    if (detail) {
+      detail.hidden = !showDetail;
+    }
     relabel();
-    getPark()?.focusZone(id);
+    if (!sameZone) {
+      getPark()?.focusZone(id);
+    }
     panel.hidden = false;
     smooth.stop();
     body.scrollTop = 0;
@@ -202,14 +215,17 @@ export function initGame(getPark) {
     timer = setTimeout(() => {
       panel.hidden = true;
       sections.forEach((el) => { el.hidden = true; });
+      if (detail) {
+        detail.hidden = true;
+      }
     }, reduced ? 0 : 450);
     document.querySelector(`.park3d-label[data-zone="${previous}"]`)?.focus({ preventScroll: true });
   };
 
   const route = () => {
-    const id = decodeURIComponent(window.location.hash.slice(1));
+    const [id, sub = ''] = decodeURIComponent(window.location.hash.slice(1)).split('/');
     if (ZONES.includes(id)) {
-      open(id);
+      open(id, sub);
     } else {
       close();
     }

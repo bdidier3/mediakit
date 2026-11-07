@@ -23,7 +23,7 @@ export const translations = {
     meta: { home: "Site officiel de Clip2EP - créateur de contenu sur les parcs d'attractions sur TikTok et YouTube." },
     nav: { label: 'Navigation principale', open: 'Ouvrir le menu', language: 'Choisir la langue', home: 'Accueil', stats: 'Statistiques', about: 'À propos', partners: 'Partenariats', videos: 'Mes vidéos', contact: 'Contact' },
     common: { footerMain: '© Clip2EP - 2026', skip: 'Aller au contenu' },
-    park: { station: 'Station', welcome: 'Bienvenue dans le parc', welcomeAfter: '', editorial: 'Ma ligne éditoriale', badgeRole: 'Créateur de contenu', stampPartner: 'Partenaire officiel', stampVisited: 'Visité', ticket: 'Billet n°', gearSign: 'Équipement autorisé à bord', booth: 'Point info', exit: 'Sortie', bye: 'À bientôt\u00a0!', map: 'Plan du parc', here: 'Vous êtes ici', zone: { entrance: "L'Entrée", shop: 'La Boutique', stats: 'La Tour des records', about: 'La Grande Roue', partners: 'Le Château des partenaires', videos: 'Le Grand Huit', contact: 'Le Kiosque info' }, mapHint: 'Clique sur une attraction pour la visiter. Glisse pour faire tourner et incliner le parc.', mapAria: 'Plan 3D interactif du parc Clip2EP', rotateLeft: 'Tourner le parc à gauche', rotateRight: 'Tourner le parc à droite', screen: "En direct de l'attraction", footerThanks: 'Merci pour la visite du parc Clip2EP ! Pour une collaboration, le point info est ouvert toute l\'année.', stationsTitle: 'Les stations', follow: 'Suivre Clip2EP', backTop: 'Retour à l\'entrée', loading: 'Ouverture du parc…', close: 'Retour au parc', gameHint: 'Clique sur une attraction pour y entrer. Glisse pour faire tourner le parc.', redirectText: "Tu t'apprêtes à quitter le parc pour rejoindre mon compte. Il s'ouvrira dans un nouvel onglet : le parc reste ouvert ici.", redirectQuestion: "Veux-tu être redirigé ?", redirectGo: "Oui, y aller", redirectStay: "Non, rester dans le parc" },
+    park: { station: 'Station', welcome: 'Bienvenue dans le parc', welcomeAfter: '', editorial: 'Ma ligne éditoriale', badgeRole: 'Créateur de contenu', stampPartner: 'Partenaire officiel', stampVisited: 'Visité', ticket: 'Billet n°', gearSign: 'Équipement autorisé à bord', booth: 'Point info', exit: 'Sortie', bye: 'À bientôt\u00a0!', map: 'Plan du parc', here: 'Vous êtes ici', zone: { entrance: "L'Entrée", shop: 'La Boutique', stats: 'La Tour des records', about: 'La Grande Roue', partners: 'Le Château des partenaires', videos: 'Le Grand Huit', contact: 'Le Kiosque info' }, mapHint: 'Clique sur une attraction pour la visiter. Glisse pour faire tourner et incliner le parc.', mapAria: 'Plan 3D interactif du parc Clip2EP', rotateLeft: 'Tourner le parc à gauche', rotateRight: 'Tourner le parc à droite', screen: "En direct de l'attraction", footerThanks: 'Merci pour la visite du parc Clip2EP ! Pour une collaboration, le point info est ouvert toute l\'année.', stationsTitle: 'Les stations', follow: 'Suivre Clip2EP', backTop: 'Retour à l\'entrée', loading: 'Ouverture du parc…', close: 'Retour au parc', gameHint: 'Clique sur une attraction pour y entrer. Glisse pour faire tourner le parc.', redirectText: "Tu t'apprêtes à quitter le parc pour rejoindre mon compte. Il s'ouvrira dans un nouvel onglet : le parc reste ouvert ici.", redirectQuestion: "Veux-tu être redirigé ?", redirectGo: "Oui, y aller", redirectStay: "Non, rester dans le parc", themeDay: "Passer en mode jour", themeNight: "Passer en mode nuit" },
     home: {
       videoAria: "Vidéo de fond d'un parc d'attractions",
       title: "L'un des plus gros créateurs de contenu français dédiés aux parcs d'attractions",
@@ -83,7 +83,7 @@ export const translations = {
     meta: { home: 'Official Clip2EP site - theme park content creator on TikTok and YouTube.' },
     nav: { label: 'Main navigation', open: 'Open menu', language: 'Choose language', home: 'Home', stats: 'Analytics', about: 'About', partners: 'Partnerships', videos: 'My Videos', contact: 'Contact' },
     common: { footerMain: '© Clip2EP - 2026', skip: 'Skip to content' },
-    park: { station: 'Station', welcome: 'Welcome to the', welcomeAfter: ' park', editorial: 'My editorial line', badgeRole: 'Content creator', stampPartner: 'Official partner', stampVisited: 'Visited', ticket: 'Ticket no.', gearSign: 'Equipment allowed on board', booth: 'Guest info', exit: 'Exit', bye: 'See you soon!', map: 'Park map', here: 'You are here', zone: { entrance: 'The Entrance', shop: 'The Shop', stats: 'Record Tower', about: 'The Big Wheel', partners: "Partners' Castle", videos: 'The Coaster', contact: 'Info Kiosk' }, mapHint: 'Click a ride to visit it. Drag to turn and tilt the park.', mapAria: 'Interactive 3D map of the Clip2EP park', rotateLeft: 'Turn the park left', rotateRight: 'Turn the park right', screen: 'Live from the ride', footerThanks: 'Thanks for visiting the Clip2EP park! For a collaboration, the info point is open all year round.', stationsTitle: 'Stations', follow: 'Follow Clip2EP', backTop: 'Back to the entrance', loading: 'Opening the park…', close: 'Back to the park', gameHint: 'Click a ride to step inside. Drag to turn the park.', redirectText: "You're about to leave the park to visit my account. It will open in a new tab, and the park stays open here.", redirectQuestion: "Do you want to be redirected?", redirectGo: "Yes, take me there", redirectStay: "No, stay in the park" },
+    park: { station: 'Station', welcome: 'Welcome to the', welcomeAfter: ' park', editorial: 'My editorial line', badgeRole: 'Content creator', stampPartner: 'Official partner', stampVisited: 'Visited', ticket: 'Ticket no.', gearSign: 'Equipment allowed on board', booth: 'Guest info', exit: 'Exit', bye: 'See you soon!', map: 'Park map', here: 'You are here', zone: { entrance: 'The Entrance', shop: 'The Shop', stats: 'Record Tower', about: 'The Big Wheel', partners: "Partners' Castle", videos: 'The Coaster', contact: 'Info Kiosk' }, mapHint: 'Click a ride to visit it. Drag to turn and tilt the park.', mapAria: 'Interactive 3D map of the Clip2EP park', rotateLeft: 'Turn the park left', rotateRight: 'Turn the park right', screen: 'Live from the ride', footerThanks: 'Thanks for visiting the Clip2EP park! For a collaboration, the info point is open all year round.', stationsTitle: 'Stations', follow: 'Follow Clip2EP', backTop: 'Back to the entrance', loading: 'Opening the park…', close: 'Back to the park', gameHint: 'Click a ride to step inside. Drag to turn the park.', redirectText: "You're about to leave the park to visit my account. It will open in a new tab, and the park stays open here.", redirectQuestion: "Do you want to be redirected?", redirectGo: "Yes, take me there", redirectStay: "No, stay in the park", themeDay: "Switch to day mode", themeNight: "Switch to night mode" },
     home: {
       videoAria: 'Theme park background video',
       title: 'One of the largest French theme park content creators',
@@ -143,7 +143,7 @@ export const translations = {
     meta: { home: 'Sitio oficial de Clip2EP - creador de contenido de parques temáticos en TikTok y YouTube.' },
     nav: { label: 'Navegación principal', open: 'Abrir el menú', language: 'Elegir idioma', home: 'Inicio', stats: 'Estadísticas', about: 'Acerca de', partners: 'Colaboraciones', videos: 'Mis videos', contact: 'Contacto' },
     common: { footerMain: '© Clip2EP - 2026', skip: 'Ir al contenido' },
-    park: { station: 'Estación', welcome: 'Bienvenido al parque', welcomeAfter: '', editorial: 'Mi línea editorial', badgeRole: 'Creador de contenido', stampPartner: 'Socio oficial', stampVisited: 'Visitado', ticket: 'Billete n.º', gearSign: 'Equipo permitido a bordo', booth: 'Punto de información', exit: 'Salida', bye: '¡Hasta pronto!', map: 'Mapa del parque', here: 'Estás aquí', zone: { entrance: 'La Entrada', shop: 'La Tienda', stats: 'La Torre de récords', about: 'La Noria', partners: 'El Castillo de socios', videos: 'La Montaña rusa', contact: 'El Quiosco de información' }, mapHint: 'Haz clic en una atracción para visitarla. Arrastra para girar e inclinar el parque.', mapAria: 'Mapa 3D interactivo del parque Clip2EP', rotateLeft: 'Girar el parque a la izquierda', rotateRight: 'Girar el parque a la derecha', screen: 'En directo desde la atracción', footerThanks: '¡Gracias por visitar el parque Clip2EP! Para una colaboración, el punto de información está abierto todo el año.', stationsTitle: 'Las estaciones', follow: 'Seguir a Clip2EP', backTop: 'Volver a la entrada', loading: 'Abriendo el parque…', close: 'Volver al parque', gameHint: 'Haz clic en una atracción para entrar. Arrastra para girar el parque.', redirectText: "Estás a punto de salir del parque para ir a mi cuenta. Se abrirá en una pestaña nueva y el parque seguirá abierto aquí.", redirectQuestion: "¿Quieres que te redirijamos?", redirectGo: "Sí, ir allí", redirectStay: "No, quedarme en el parque" },
+    park: { station: 'Estación', welcome: 'Bienvenido al parque', welcomeAfter: '', editorial: 'Mi línea editorial', badgeRole: 'Creador de contenido', stampPartner: 'Socio oficial', stampVisited: 'Visitado', ticket: 'Billete n.º', gearSign: 'Equipo permitido a bordo', booth: 'Punto de información', exit: 'Salida', bye: '¡Hasta pronto!', map: 'Mapa del parque', here: 'Estás aquí', zone: { entrance: 'La Entrada', shop: 'La Tienda', stats: 'La Torre de récords', about: 'La Noria', partners: 'El Castillo de socios', videos: 'La Montaña rusa', contact: 'El Quiosco de información' }, mapHint: 'Haz clic en una atracción para visitarla. Arrastra para girar e inclinar el parque.', mapAria: 'Mapa 3D interactivo del parque Clip2EP', rotateLeft: 'Girar el parque a la izquierda', rotateRight: 'Girar el parque a la derecha', screen: 'En directo desde la atracción', footerThanks: '¡Gracias por visitar el parque Clip2EP! Para una colaboración, el punto de información está abierto todo el año.', stationsTitle: 'Las estaciones', follow: 'Seguir a Clip2EP', backTop: 'Volver a la entrada', loading: 'Abriendo el parque…', close: 'Volver al parque', gameHint: 'Haz clic en una atracción para entrar. Arrastra para girar el parque.', redirectText: "Estás a punto de salir del parque para ir a mi cuenta. Se abrirá en una pestaña nueva y el parque seguirá abierto aquí.", redirectQuestion: "¿Quieres que te redirijamos?", redirectGo: "Sí, ir allí", redirectStay: "No, quedarme en el parque", themeDay: "Cambiar al modo día", themeNight: "Cambiar al modo noche" },
     home: {
       videoAria: 'Video de fondo de parque temático',
       title: 'Uno de los mayores creadores franceses de contenido sobre parques temáticos',
@@ -203,7 +203,7 @@ export const translations = {
     meta: { home: 'Offizielle Clip2EP-Seite - Freizeitpark-Content auf TikTok und YouTube.' },
     nav: { label: 'Hauptnavigation', open: 'Menü öffnen', language: 'Sprache wählen', home: 'Start', stats: 'Statistiken', about: 'Über mich', partners: 'Partnerschaften', videos: 'Meine Videos', contact: 'Kontakt' },
     common: { footerMain: '© Clip2EP - 2026', skip: 'Zum Inhalt springen' },
-    park: { station: 'Station', welcome: 'Willkommen im', welcomeAfter: '-Park', editorial: 'Meine redaktionelle Linie', badgeRole: 'Content Creator', stampPartner: 'Offizieller Partner', stampVisited: 'Besucht', ticket: 'Ticket Nr.', gearSign: 'An Bord erlaubte Ausrüstung', booth: 'Info-Point', exit: 'Ausgang', bye: 'Bis bald!', map: 'Parkplan', here: 'Sie sind hier', zone: { entrance: 'Eingang', shop: 'Shop', stats: 'Rekordturm', about: 'Riesenrad', partners: 'Partnerschloss', videos: 'Achterbahn', contact: 'Info-Kiosk' }, mapHint: 'Klicke auf eine Attraktion, um sie zu besuchen. Ziehe, um den Park zu drehen und zu neigen.', mapAria: 'Interaktiver 3D-Plan des Clip2EP-Parks', rotateLeft: 'Park nach links drehen', rotateRight: 'Park nach rechts drehen', screen: 'Live aus dem Fahrgeschäft', footerThanks: 'Danke für deinen Besuch im Clip2EP-Park! Für eine Zusammenarbeit ist der Info-Point das ganze Jahr geöffnet.', stationsTitle: 'Die Stationen', follow: 'Clip2EP folgen', backTop: 'Zurück zum Eingang', loading: 'Der Park öffnet…', close: 'Zurück zum Park', gameHint: 'Klicke auf eine Attraktion, um sie zu betreten. Ziehe, um den Park zu drehen.', redirectText: "Du verlässt gleich den Park, um meinen Account zu besuchen. Er öffnet sich in einem neuen Tab, der Park bleibt hier geöffnet.", redirectQuestion: "Möchtest du weitergeleitet werden?", redirectGo: "Ja, hin da", redirectStay: "Nein, im Park bleiben" },
+    park: { station: 'Station', welcome: 'Willkommen im', welcomeAfter: '-Park', editorial: 'Meine redaktionelle Linie', badgeRole: 'Content Creator', stampPartner: 'Offizieller Partner', stampVisited: 'Besucht', ticket: 'Ticket Nr.', gearSign: 'An Bord erlaubte Ausrüstung', booth: 'Info-Point', exit: 'Ausgang', bye: 'Bis bald!', map: 'Parkplan', here: 'Sie sind hier', zone: { entrance: 'Eingang', shop: 'Shop', stats: 'Rekordturm', about: 'Riesenrad', partners: 'Partnerschloss', videos: 'Achterbahn', contact: 'Info-Kiosk' }, mapHint: 'Klicke auf eine Attraktion, um sie zu besuchen. Ziehe, um den Park zu drehen und zu neigen.', mapAria: 'Interaktiver 3D-Plan des Clip2EP-Parks', rotateLeft: 'Park nach links drehen', rotateRight: 'Park nach rechts drehen', screen: 'Live aus dem Fahrgeschäft', footerThanks: 'Danke für deinen Besuch im Clip2EP-Park! Für eine Zusammenarbeit ist der Info-Point das ganze Jahr geöffnet.', stationsTitle: 'Die Stationen', follow: 'Clip2EP folgen', backTop: 'Zurück zum Eingang', loading: 'Der Park öffnet…', close: 'Zurück zum Park', gameHint: 'Klicke auf eine Attraktion, um sie zu betreten. Ziehe, um den Park zu drehen.', redirectText: "Du verlässt gleich den Park, um meinen Account zu besuchen. Er öffnet sich in einem neuen Tab, der Park bleibt hier geöffnet.", redirectQuestion: "Möchtest du weitergeleitet werden?", redirectGo: "Ja, hin da", redirectStay: "Nein, im Park bleiben", themeDay: "Zum Tagmodus wechseln", themeNight: "Zum Nachtmodus wechseln" },
     home: {
       videoAria: 'Freizeitpark-Hintergrundvideo',
       title: 'Einer der größten französischen Content Creator für Freizeitparks',
@@ -263,7 +263,7 @@ export const translations = {
     meta: { home: 'Officiële Clip2EP-site - pretparkcontent creator op TikTok en YouTube.' },
     nav: { label: 'Hoofdnavigatie', open: 'Menu openen', language: 'Taal kiezen', home: 'Home', stats: 'Statistieken', about: 'Over mij', partners: 'Partnerschappen', videos: "Mijn video's", contact: 'Contact' },
     common: { footerMain: '© Clip2EP - 2026', skip: 'Naar de inhoud' },
-    park: { station: 'Station', welcome: 'Welkom in het', welcomeAfter: '-park', editorial: 'Mijn redactionele lijn', badgeRole: 'Contentcreator', stampPartner: 'Officiële partner', stampVisited: 'Bezocht', ticket: 'Ticket nr.', gearSign: 'Toegestane uitrusting aan boord', booth: 'Infopunt', exit: 'Uitgang', bye: 'Tot snel!', map: 'Plattegrond', here: 'U bent hier', zone: { entrance: 'De Ingang', shop: 'De Winkel', stats: 'Recordtoren', about: 'Reuzenrad', partners: 'Partnerkasteel', videos: 'Achtbaan', contact: 'Infokiosk' }, mapHint: 'Klik op een attractie om ze te bezoeken. Sleep om het park te draaien en te kantelen.', mapAria: 'Interactieve 3D-plattegrond van het Clip2EP-park', rotateLeft: 'Park naar links draaien', rotateRight: 'Park naar rechts draaien', screen: 'Live vanuit de attractie', footerThanks: 'Bedankt voor je bezoek aan het Clip2EP-park! Voor een samenwerking is het infopunt het hele jaar open.', stationsTitle: 'De stations', follow: 'Volg Clip2EP', backTop: 'Terug naar de ingang', loading: 'Het park gaat open…', close: 'Terug naar het park', gameHint: 'Klik op een attractie om naar binnen te gaan. Sleep om het park te draaien.', redirectText: "Je staat op het punt het park te verlaten om mijn account te bezoeken. Het opent in een nieuw tabblad; het park blijft hier open.", redirectQuestion: "Wil je worden doorgestuurd?", redirectGo: "Ja, ga erheen", redirectStay: "Nee, in het park blijven" },
+    park: { station: 'Station', welcome: 'Welkom in het', welcomeAfter: '-park', editorial: 'Mijn redactionele lijn', badgeRole: 'Contentcreator', stampPartner: 'Officiële partner', stampVisited: 'Bezocht', ticket: 'Ticket nr.', gearSign: 'Toegestane uitrusting aan boord', booth: 'Infopunt', exit: 'Uitgang', bye: 'Tot snel!', map: 'Plattegrond', here: 'U bent hier', zone: { entrance: 'De Ingang', shop: 'De Winkel', stats: 'Recordtoren', about: 'Reuzenrad', partners: 'Partnerkasteel', videos: 'Achtbaan', contact: 'Infokiosk' }, mapHint: 'Klik op een attractie om ze te bezoeken. Sleep om het park te draaien en te kantelen.', mapAria: 'Interactieve 3D-plattegrond van het Clip2EP-park', rotateLeft: 'Park naar links draaien', rotateRight: 'Park naar rechts draaien', screen: 'Live vanuit de attractie', footerThanks: 'Bedankt voor je bezoek aan het Clip2EP-park! Voor een samenwerking is het infopunt het hele jaar open.', stationsTitle: 'De stations', follow: 'Volg Clip2EP', backTop: 'Terug naar de ingang', loading: 'Het park gaat open…', close: 'Terug naar het park', gameHint: 'Klik op een attractie om naar binnen te gaan. Sleep om het park te draaien.', redirectText: "Je staat op het punt het park te verlaten om mijn account te bezoeken. Het opent in een nieuw tabblad; het park blijft hier open.", redirectQuestion: "Wil je worden doorgestuurd?", redirectGo: "Ja, ga erheen", redirectStay: "Nee, in het park blijven", themeDay: "Naar dagmodus", themeNight: "Naar nachtmodus" },
     home: {
       videoAria: 'Pretpark achtergrondvideo',
       title: 'Een van de grootste Franse content creators voor pretparken',
@@ -380,7 +380,9 @@ export const translations = {
       "redirectText": "Za chwilę opuścisz park, aby przejść na moje konto. Otworzy się w nowej karcie, a park zostanie tu otwarty.",
       "redirectQuestion": "Czy chcesz zostać przekierowany?",
       "redirectGo": "Tak, przejdź",
-      "redirectStay": "Nie, zostań w parku"
+      "redirectStay": "Nie, zostań w parku",
+      "themeDay": "Przełącz na tryb dzienny",
+      "themeNight": "Przełącz na tryb nocny"
     },
     "home": {
       "videoAria": "Film w tle z parku rozrywki",
@@ -552,7 +554,9 @@ export const translations = {
       "redirectText": "Stai per lasciare il parco per visitare il mio account. Si aprirà in una nuova scheda e il parco resterà aperto qui.",
       "redirectQuestion": "Vuoi essere reindirizzato?",
       "redirectGo": "Sì, andiamo",
-      "redirectStay": "No, resto nel parco"
+      "redirectStay": "No, resto nel parco",
+      "themeDay": "Passa alla modalità giorno",
+      "themeNight": "Passa alla modalità notte"
     },
     "home": {
       "videoAria": "Video di sfondo di un parco divertimenti",
@@ -724,7 +728,9 @@ export const translations = {
       "redirectText": "Du är på väg att lämna parken för att besöka mitt konto. Det öppnas i en ny flik och parken förblir öppen här.",
       "redirectQuestion": "Vill du bli omdirigerad?",
       "redirectGo": "Ja, ta mig dit",
-      "redirectStay": "Nej, stanna i parken"
+      "redirectStay": "Nej, stanna i parken",
+      "themeDay": "Byt till dagläge",
+      "themeNight": "Byt till nattläge"
     },
     "home": {
       "videoAria": "Bakgrundsvideo från en nöjespark",
@@ -896,7 +902,9 @@ export const translations = {
       "redirectText": "أنت على وشك مغادرة المنتزه لزيارة حسابي. سيفتح في علامة تبويب جديدة ويبقى المنتزه مفتوحًا هنا.",
       "redirectQuestion": "هل تريد الانتقال؟",
       "redirectGo": "نعم، لنذهب",
-      "redirectStay": "لا، سأبقى في المنتزه"
+      "redirectStay": "لا، سأبقى في المنتزه",
+      "themeDay": "التبديل إلى الوضع النهاري",
+      "themeNight": "التبديل إلى الوضع الليلي"
     },
     "home": {
       "videoAria": "فيديو خلفية لمدينة ملاهٍ",
@@ -1068,7 +1076,9 @@ export const translations = {
       "redirectText": "你即将离开乐园前往我的账号。它会在新标签页中打开，乐园仍在这里开放。",
       "redirectQuestion": "要跳转过去吗？",
       "redirectGo": "好的，前往",
-      "redirectStay": "不了，留在乐园"
+      "redirectStay": "不了，留在乐园",
+      "themeDay": "切换到白天模式",
+      "themeNight": "切换到夜间模式"
     },
     "home": {
       "videoAria": "主题乐园背景视频",
@@ -1240,7 +1250,9 @@ export const translations = {
       "redirectText": "パークを出て私のアカウントへ移動しようとしています。新しいタブで開き、パークはここで開いたままです。",
       "redirectQuestion": "移動しますか？",
       "redirectGo": "はい、移動する",
-      "redirectStay": "いいえ、パークに残る"
+      "redirectStay": "いいえ、パークに残る",
+      "themeDay": "昼モードに切り替え",
+      "themeNight": "夜モードに切り替え"
     },
     "home": {
       "videoAria": "テーマパークの背景動画",

@@ -907,7 +907,7 @@ ol {
     left: var(--gutter);
     right: auto;
     top: 16px;
-    max-width: calc(100% - 2 * var(--gutter) - 112px);
+    max-width: calc(100% - 2 * var(--gutter) - 160px);
     margin: 0;
     white-space: normal;
     text-align: left;
@@ -978,7 +978,7 @@ ol {
     left: var(--gutter);
     right: auto;
     top: 16px;
-    max-width: calc(100% - 2 * var(--gutter) - 112px);
+    max-width: calc(100% - 2 * var(--gutter) - 160px);
     margin: 0;
     white-space: normal;
     text-align: left;
@@ -3639,6 +3639,147 @@ a.video-title:hover {
   font-size: 0.85rem;
 }
 
+/* Fiche d'un parc dans le panneau : mêmes blocs que l'ancienne page, sur fond bleu. */
+.game-panel .park-view-back {
+  color: var(--sky);
+}
+
+.game-panel .park-view-back:hover {
+  color: var(--white);
+}
+
+.game-panel .park-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 280px);
+  gap: 18px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.game-panel .park-logo {
+  height: 44px;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--white);
+  box-sizing: content-box;
+}
+
+.game-panel .park-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--white);
+}
+
+.game-panel .park-lead {
+  margin-top: 6px;
+  font-size: 0.92rem;
+  color: var(--sky);
+}
+
+.game-panel .park-map-frame {
+  padding: 8px;
+  background: #1b2e4b;
+  box-shadow: 0 0 0 2px #2b4466;
+}
+
+.game-panel .park-map-frame iframe {
+  aspect-ratio: 16 / 10;
+}
+
+.game-panel .park-map-frame a {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--sky);
+}
+
+.game-panel .totals-board {
+  margin-top: 20px;
+  padding: 16px;
+}
+
+.game-panel .totals .flap {
+  font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+}
+
+.game-panel .list-controls {
+  margin: 20px 0 4px;
+}
+
+.game-panel .segmented button {
+  height: 34px;
+  padding: 0 12px;
+  font-size: 0.85rem;
+}
+
+.game-panel .segmented--icons button {
+  width: 38px;
+  padding: 0;
+}
+
+.game-panel .video-section {
+  margin-top: 24px;
+}
+
+.game-panel .video-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-family: var(--font-sign);
+  font-weight: 400;
+  font-size: 1.15rem;
+}
+
+.game-panel .video-section h3 svg {
+  width: 20px;
+  height: 20px;
+}
+
+.game-panel .video-section .count {
+  color: var(--sky);
+  font-family: var(--font-fun);
+}
+
+.game-panel .video-item {
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.game-panel .video-item::before {
+  background:
+    radial-gradient(circle, var(--sky) 0 4px, transparent 4.5px) 0 50% / 12px 12px no-repeat,
+    radial-gradient(circle, var(--sky) 0 4px, transparent 4.5px) 100% 50% / 12px 12px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q60 13 120 4' fill='none' stroke='%23d7362b' stroke-width='2.5'/%3E%3C/svg%3E") 6px 0 / calc(100% - 12px) 100% no-repeat;
+}
+
+.game-panel .video-title {
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.game-panel .video-meta {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.game-panel .video-meta b {
+  color: var(--white);
+}
+
+.game-panel .video-tags {
+  font-size: 0.76rem;
+  color: var(--sky);
+}
+
+.game-panel .state-message {
+  color: var(--sky);
+}
+
+@media (max-width: 760px) {
+  .game-panel .park-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* TikTok / YouTube : on demande avant de quitter le parc. */
 .redirect-card {
   display: grid;
@@ -3816,6 +3957,109 @@ a.video-title:hover {
   .redirect-stats div {
     min-width: 0;
   }
+}
+
+/* ---------- Mode jour / nuit ---------- */
+
+.page-game .site-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 2px solid var(--ticket);
+  border-radius: 50%;
+  background: var(--night);
+  color: var(--ticket);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.4s var(--ease-back);
+}
+
+.theme-toggle:hover {
+  transform: rotate(-20deg);
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Le bouton montre le mode vers lequel on bascule. */
+.theme-icon--moon,
+html[data-theme="day"] .theme-icon--sun {
+  display: none;
+}
+
+html[data-theme="day"] .theme-icon--moon {
+  display: block;
+}
+
+.site-header.over-hero .theme-toggle {
+  background: transparent;
+  border-color: transparent;
+}
+
+/* Jour : ciel bleu clair, soleil et nuages à la place de la lune et des étoiles. */
+html[data-theme="day"] .hero {
+  background: linear-gradient(to bottom, #7fc3ec 0%, #bfe2f6 55%, #e4f3fc 100%);
+}
+
+html[data-theme="day"] .night-sky {
+  background:
+    radial-gradient(ellipse 90px 26px at 14% 18%, rgba(255, 255, 255, 0.9) 98%, transparent),
+    radial-gradient(ellipse 60px 22px at 18% 15%, rgba(255, 255, 255, 0.9) 98%, transparent),
+    radial-gradient(ellipse 110px 28px at 58% 9%, rgba(255, 255, 255, 0.8) 98%, transparent),
+    radial-gradient(ellipse 70px 22px at 62% 6%, rgba(255, 255, 255, 0.8) 98%, transparent),
+    radial-gradient(ellipse 80px 24px at 88% 30%, rgba(255, 255, 255, 0.75) 98%, transparent);
+}
+
+html[data-theme="day"] .night-sky::before {
+  display: none;
+}
+
+html[data-theme="day"] .moon {
+  background: radial-gradient(circle at 40% 40%, #fff6c8, #ffd54a 55%, #ffb627);
+  box-shadow: 0 0 40px 14px rgba(255, 210, 80, 0.55), 0 0 120px 50px rgba(255, 230, 150, 0.35);
+}
+
+html[data-theme="day"] .hero-sign {
+  color: var(--rail);
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.85);
+}
+
+html[data-theme="day"] .hero-sign span {
+  color: var(--night);
+}
+
+html[data-theme="day"] .site-header.over-hero .lang-button,
+html[data-theme="day"] .site-header.over-hero .theme-toggle {
+  color: var(--night);
+}
+
+html[data-theme="day"] .loader-stand {
+  stroke: var(--night);
+}
+
+/* Jour : panneaux d'attraction dans un bleu plus clair (jamais de blanc). */
+html[data-theme="day"] .game-panel-sheet,
+html[data-theme="day"] .game-panel .section {
+  background: #1c4a74;
+}
+
+html[data-theme="day"] .game-panel-head {
+  background: #153a5c;
+}
+
+html[data-theme="day"] .game-panel .ticket::before,
+html[data-theme="day"] .game-panel .ticket::after {
+  background: #1c4a74;
 }
 
 /* Arabe : chaque paragraphe prend le sens de lecture de son texte (droite à gauche),

@@ -3,6 +3,7 @@ import { FILMED_LOGOS, PARKS, PARTNER_LOGOS } from './parks.js';
 import { loadStats, loadVideos, sumStats, videosForPark } from './stats.js';
 import { renderFlap, revealOnView } from './effects.js';
 import { initGame } from './game.js';
+import { currentTheme, initThemeToggle, onThemeChange } from './theme.js';
 import { escapeHtml, initPage, prefersReducedMotion } from './ui.js';
 
 // Le plan 3D est la première chose vue : son module part avant tout le reste.
@@ -56,7 +57,7 @@ function renderReel() {
       const views = viewsByPark.has(park.key) ? formatCompact(viewsByPark.get(park.key)) : '…';
       const number = String(index + 1).padStart(3, '0');
       return `
-        <li><a class="ticket" href="videos.html?park=${encodeURIComponent(park.key)}" style="--r:${tilt(index, 2)}deg">
+        <li><a class="ticket" href="#videos/${encodeURIComponent(park.key)}" style="--r:${tilt(index, 2)}deg">
           <div class="ticket-photo">
             <img src="${escapeHtml(park.card)}" alt="" loading="lazy" decoding="async">
             <span class="ticket-no">${escapeHtml(t('park.ticket'))} ${number}</span>
@@ -219,8 +220,9 @@ async function initParkMap() {
   try {
     const { initPark3d } = await park3dModule;
     // Entrer dans une attraction = changer l'adresse (#about…) ; le jeu ouvre le panneau.
-    park = await initPark3d(root, { onSelect: (id) => { window.location.hash = id; } });
+    park = await initPark3d(root, { onSelect: (id) => { window.location.hash = id; }, theme: currentTheme() });
     onLanguageChange(park.relabel);
+    onThemeChange(park.setTheme);
     game.refocus();
   } catch (error) {
     console.warn('Plan 3D indisponible, affichage du plan 2D :', error);
@@ -260,6 +262,7 @@ initPovVideo();
 // Tout se passe sur le ciel de nuit du plan : le bouton de langue reste sans cadre.
 document.querySelector('.site-header')?.classList.add('over-hero');
 const game = initGame(() => park);
+initThemeToggle();
 
 // Le fichier de stats (plusieurs centaines de Ko) attend que le parc soit ouvert,
 // pour ne pas ralentir son chargement sur mobile.

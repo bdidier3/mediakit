@@ -17,12 +17,24 @@
   <link rel="modulepreload" href="assets/js/park3d.js">
   <link rel="modulepreload" href="assets/js/park-layout.js">
   <link rel="stylesheet" href="assets/css/site.css">
+  <!-- Thème posé avant l'affichage : nuit à la première visite, puis le dernier choix. -->
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('siteTheme') === 'day' ? 'day' : 'night';
+    } catch (error) {
+      document.documentElement.dataset.theme = 'night';
+    }
+  </script>
   <script type="module" src="assets/js/home.js"></script>
 </head>
 <body data-page="home" class="page-game">
   <a class="skip-link" href="#park3d-labels" data-i18n="common.skip">Aller au contenu</a>
 
   <header class="site-header">
+    <button class="theme-toggle" type="button">
+      <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+    </button>
     <div class="lang">
       <button class="lang-button" type="button" aria-haspopup="true" aria-expanded="false" data-i18n-attr="aria-label:nav.language">
         <img class="flag" src="img/flags/fr.svg" alt="" width="20" height="14">
@@ -309,6 +321,11 @@
                 </div>
               </div>
             </div>
+          </section>
+
+          <!-- Fiche d'un parc, ouverte depuis un billet de « Mes vidéos » -->
+          <section hidden class="section section--night park-detail" id="park-detail">
+            <div class="container" data-park-view></div>
           </section>
 
           <!-- Station 6 : le point info -->
