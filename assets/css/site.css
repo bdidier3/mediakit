@@ -3107,3 +3107,187 @@ a.video-title:hover {
     transition-delay: 0s !important;
   }
 }
+
+/* ---------- Mode jeu : tout se passe sur le plan 3D ---------- */
+
+.page-game {
+  overflow: hidden;
+}
+
+/* Pas de rail vertical en mode jeu : le bouton de langue revient dans le coin. */
+.page-game .site-header {
+  right: 16px;
+}
+
+.page-game .hero {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* En entrant dans une attraction, le plan s'efface derrière son panneau. */
+.park3d.is-focused .park3d-label,
+.page-game:has(.game-panel.is-open) .park3d-hint {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.game-panel {
+  position: fixed;
+  z-index: 45;
+  top: 72px;
+  right: 16px;
+  bottom: 16px;
+  width: min(680px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.game-panel-sheet {
+  --rivet: #b5c0cc;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 20px;
+  background: var(--rivets), var(--paper);
+  box-shadow: 0 0 0 3px var(--night), 0 10px 0 var(--night), 0 24px 60px rgba(7, 17, 29, 0.5);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(calc(100% + 40px));
+  transition: transform 0.5s var(--ease-out), opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.game-panel.is-open .game-panel-sheet {
+  opacity: 1;
+  transform: none;
+}
+
+/* Bandeau rayé de l'attraction, comme les panneaux du site. */
+.game-panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: repeating-linear-gradient(-45deg, var(--ticket) 0 14px, var(--night) 14px 28px);
+}
+
+.game-panel-ride {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 12px;
+  background: var(--night);
+  color: var(--white);
+}
+
+.game-panel-ride b {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--rail);
+  font-family: var(--font-fun);
+  font-weight: 600;
+}
+
+.game-panel-ride strong {
+  display: block;
+  font-family: var(--font-sign);
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.1;
+  color: var(--ticket);
+}
+
+.game-panel-ride small {
+  display: block;
+  font-family: var(--font-fun);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--sky);
+}
+
+.game-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.game-panel-body:focus {
+  outline: none;
+}
+
+/* Les sections, dans le panneau : une colonne, marges resserrées. */
+.game-panel .section {
+  padding: 28px 0 40px;
+}
+
+.game-panel .container {
+  padding: 0 22px;
+}
+
+.game-panel .station-chip {
+  display: none;
+}
+
+.game-panel .section-title {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.game-panel .boards,
+.game-panel .about,
+.game-panel .passport,
+.game-panel .videos-copy,
+.game-panel .booth-body {
+  grid-template-columns: 1fr;
+}
+
+.game-panel .about {
+  gap: 28px;
+}
+
+.game-panel .badge {
+  width: min(100%, 260px);
+}
+
+.game-panel .reel {
+  margin: 0 -22px;
+  padding-inline: 22px;
+  scroll-padding-inline: 22px;
+}
+
+.game-panel .ticket::before,
+.game-panel .ticket::after {
+  background: var(--paper);
+}
+
+/* Téléphone : le panneau monte du bas de l'écran, l'attraction reste visible au-dessus. */
+@media (max-width: 899px) {
+  .game-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: 74dvh;
+  }
+
+  .game-panel-sheet {
+    border-radius: 20px 20px 0 0;
+    transform: translateY(calc(100% + 20px));
+  }
+
+  .game-panel-head {
+    padding: 10px 12px;
+  }
+
+  .game-panel-ride strong {
+    font-size: 0.9rem;
+  }
+}

@@ -2,9 +2,8 @@ import { formatCompact, onLanguageChange, t, translateDom } from './i18n.js';
 import { FILMED_LOGOS, PARKS, PARTNER_LOGOS } from './parks.js';
 import { loadStats, loadVideos, sumStats, videosForPark } from './stats.js';
 import { renderFlap, revealOnView } from './effects.js';
-import { initMonorails } from './monorail.js';
-import { initRide } from './ride.js';
-import { STATIONS, escapeHtml, initPage, prefersReducedMotion } from './ui.js';
+import { initGame } from './game.js';
+import { escapeHtml, initPage, prefersReducedMotion } from './ui.js';
 
 // Le plan 3D est la première chose vue : son module part avant tout le reste.
 const park3dModule = import('./park3d.js');
@@ -198,6 +197,8 @@ function initBadgeSwing() {
 
 /* ---------- Station 1 : plan 3D (Three.js chargé à la demande, plan 2D sinon) ---------- */
 
+let park = null;
+
 async function initParkMap() {
   const root = document.getElementById('park3d');
   if (!root) {
@@ -205,26 +206,14 @@ async function initParkMap() {
   }
   try {
     const { initPark3d } = await park3dModule;
-    const park = await initPark3d(root);
+    // Entrer dans une attraction = changer l'adresse (#about…) ; le jeu ouvre le panneau.
+    park = await initPark3d(root, { onSelect: (id) => { window.location.hash = id; } });
     onLanguageChange(park.relabel);
+    game.refocus();
   } catch (error) {
     console.warn('Plan 3D indisponible, affichage du plan 2D :', error);
     root.classList.add('is-fallback');
   }
-}
-
-/* ---------- Bouton de langue sans cadre tant qu'il est sur le ciel de l'accueil ---------- */
-
-function initHeaderOverHero() {
-  const header = document.querySelector('.site-header');
-  const hero = document.getElementById('top');
-  if (!header || !hero) {
-    return;
-  }
-  const update = () => header.classList.toggle('over-hero', window.scrollY < hero.offsetHeight - 60);
-  update();
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update, { passive: true });
 }
 
 /* ---------- Station 5 : l'écran POV ne tourne que lorsqu'il est visible ---------- */
@@ -256,8 +245,9 @@ initBoards();
 initBadgeSwing();
 initStamps();
 initPovVideo();
-initHeaderOverHero();
-initMonorails(document.querySelectorAll('.has-rail'));
+// Tout se passe sur le ciel de nuit du plan : le bouton de langue reste sans cadre.
+document.querySelector('.site-header')?.classList.add('over-hero');
+const game = initGame(() => park);
 
 // Le fichier de stats (plusieurs centaines de Ko) attend que le parc soit ouvert,
 // pour ne pas ralentir son chargement sur mobile.
@@ -266,5 +256,3 @@ initParkMap().finally(() => {
   loadLiveCounters();
 });
 
-const ride = initRide({ stations: STATIONS });
-onLanguageChange(ride.relabel);

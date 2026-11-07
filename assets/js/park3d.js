@@ -373,7 +373,8 @@ function buildTrees(scene) {
 
 /* ---------- Scène ---------- */
 
-export async function initPark3d(root) {
+// `onSelect(id)` : appelé au clic sur une attraction (sinon, la page défile jusqu'à la section).
+export async function initPark3d(root, { onSelect } = {}) {
   if (!root) {
     throw new Error('Conteneur du plan introuvable');
   }
@@ -476,7 +477,11 @@ export async function initPark3d(root) {
   let shift = 0;
   let width = 1;
   let height = 1;
+  let halfH = 1;
+  let halfV = 1;
   const center = new THREE.Vector3(0, 1.5, 1);
+  // Zoom sur une attraction : `amount` glisse de 0 (vue d'ensemble) à 1 (attraction cadrée).
+  const focus = { amount: 0, goal: 0, target: new THREE.Vector3() };
 
   const resize = () => {
     width = root.clientWidth;
@@ -493,6 +498,8 @@ export async function initPark3d(root) {
     // Demi-largeur de parc à faire tenir : un peu plus de marge sur les écrans presque carrés.
     const fit = camera.aspect < 0.75 ? 24 : camera.aspect < 1.4 ? 31 : 29;
     radius = Math.max(fit / Math.tan(hfov / 2), 24 / Math.tan(vfov / 2));
+    halfH = Math.tan(hfov / 2);
+    halfV = Math.tan(vfov / 2);
     shift = 0;
     camera.far = radius * 3;
     camera.updateProjectionMatrix();
@@ -504,17 +511,28 @@ export async function initPark3d(root) {
 
   const right = new THREE.Vector3();
   const look = new THREE.Vector3();
+  const pivot = new THREE.Vector3();
   const placeCamera = () => {
     const az = view.azimuth + view.px * 0.12;
     const polar = view.polar + view.py * 0.05;
+    const f = focus.amount;
+    const r = radius * (1 - 0.45 * f);
+    // Pendant le zoom, l'attraction se cale à gauche (panneau à droite) sur grand écran,
+    // en haut (panneau en bas) sur téléphone.
+    const wide = width >= 900;
+    const lateral = wide ? -f * r * halfH * 0.42 : 0;
+    const vertical = wide ? 0 : -f * r * halfV * 0.48;
+    pivot.lerpVectors(center, focus.target, f);
     camera.position.set(
-      Math.sin(az) * Math.sin(polar) * radius,
-      Math.cos(polar) * radius,
-      Math.cos(az) * Math.sin(polar) * radius
+      pivot.x + Math.sin(az) * Math.sin(polar) * r,
+      pivot.y + Math.cos(polar) * r,
+      pivot.z + Math.cos(az) * Math.sin(polar) * r
     );
     right.set(Math.cos(az), 0, -Math.sin(az));
-    look.copy(center).addScaledVector(right, -shift);
-    camera.position.addScaledVector(right, -shift);
+    look.copy(pivot).addScaledVector(right, -shift - lateral);
+    look.y += vertical;
+    camera.position.addScaledVector(right, -shift - lateral);
+    camera.position.y += vertical;
     camera.lookAt(look);
   };
 
@@ -548,7 +566,36 @@ export async function initPark3d(root) {
       window.open(zone.link.href, '_blank', 'noopener');
       return;
     }
+    if (onSelect) {
+      onSelect(id);
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+  };
+
+  // Zoom sur une attraction : la caméra se place devant elle et la cadre.
+  const focusZone = (id) => {
+    const zone = zones.find((z) => z.id === id);
+    if (!zone) {
+      return;
+    }
+    const [x, , z] = zone.pos;
+    focus.target.set(x, Math.min(zone.anchor.y, 7) * 0.45, z);
+    const desired = Math.atan2(x, z);
+    const delta = ((desired - view.target + Math.PI) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2) - Math.PI;
+    view.target += delta;
+    view.polarTarget = 0.98;
+    focus.goal = 1;
+    root.classList.add('is-focused');
+    setHovered(null);
+    requestRender();
+  };
+
+  const clearFocus = () => {
+    focus.goal = 0;
+    view.polarTarget = startPolar;
+    root.classList.remove('is-focused');
+    requestRender();
   };
 
   canvas.addEventListener('pointermove', (event) => {
@@ -681,13 +728,17 @@ export async function initPark3d(root) {
     stepIntro(now);
     if (!reduced) {
       elapsed += dt;
-      if (!dragging && !hovered) {
+      if (!dragging && !hovered && focus.goal === 0) {
         view.target += dt * 0.035;
       }
     }
 
     view.azimuth += (view.target - view.azimuth) * (reduced ? 1 : 0.06);
     view.polar += (view.polarTarget - view.polar) * (reduced ? 1 : 0.08);
+    focus.amount += (focus.goal - focus.amount) * (reduced ? 1 : 0.07);
+    if (Math.abs(focus.goal - focus.amount) < 0.001) {
+      focus.amount = focus.goal;
+    }
     view.px += (view.pointerX - view.px) * 0.05;
     view.py += (view.pointerY - view.py) * 0.05;
     placeCamera();
@@ -714,7 +765,7 @@ export async function initPark3d(root) {
 
     renderer.render(scene, camera);
 
-    const settling = Math.abs(view.target - view.azimuth) > 0.0005 || Math.abs(view.polarTarget - view.polar) > 0.0005 || Math.abs(view.pointerX - view.px) > 0.001;
+    const settling = focus.amount !== focus.goal || Math.abs(view.target - view.azimuth) > 0.0005 || Math.abs(view.polarTarget - view.polar) > 0.0005 || Math.abs(view.pointerX - view.px) > 0.001;
     if (visible && (!reduced || settling || !opened)) {
       frame = requestAnimationFrame(renderFrame);
     }
@@ -775,5 +826,5 @@ export async function initPark3d(root) {
   root.classList.add('is-ready');
   requestRender();
 
-  return { relabel };
+  return { relabel, focusZone, clearFocus };
 }
