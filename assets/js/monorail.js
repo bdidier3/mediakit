@@ -32,23 +32,30 @@ const TRAINS = {
   <path class="mono-joint" d="M60 11v10M100 11v10M140 11v10"/>
   <circle class="mono-light" cx="220" cy="31" r="2.4"/>
 </svg>`,
-  // Fête foraine : petits wagons jaunes à toit rouge et hublots ronds.
+  // Fête foraine : trois wagons jaunes à toit rouge, hublots ronds, attelés entre eux.
   fair: `
 <svg viewBox="0 0 230 46" aria-hidden="true">
+  <path class="mono-joint" d="M70 27h8M144 27h8"/>
+  <g class="mono-skirt">
+    <rect x="8" y="34" width="58" height="7" rx="2"/><rect x="82" y="34" width="58" height="7" rx="2"/><rect x="156" y="34" width="64" height="7" rx="2"/>
+  </g>
   <g class="mono-body">
-    <rect x="6" y="10" width="64" height="26" rx="7"/>
-    <rect x="80" y="10" width="64" height="26" rx="7"/>
-    <path d="M154 10h44c14 0 26 10 26 26h-70z"/>
+    <rect x="4" y="12" width="66" height="23" rx="5"/>
+    <rect x="78" y="12" width="66" height="23" rx="5"/>
+    <path d="M152 17c0-3 2-5 5-5h45c14 0 24 9 24 23h-74z"/>
   </g>
   <g class="mono-stripe">
-    <path d="M4 12c0-6 4-9 9-9h50c5 0 9 3 9 9z"/><path d="M78 12c0-6 4-9 9-9h50c5 0 9 3 9 9z"/><path d="M152 12c0-6 4-9 9-9h40c8 0 14 3 18 9z"/>
+    <rect x="6" y="5" width="62" height="8" rx="4"/>
+    <rect x="80" y="5" width="62" height="8" rx="4"/>
+    <path d="M154 13c0-4 3-8 8-8h36c8 0 14 3 18 8z"/>
   </g>
-  <path class="mono-skirt" d="M10 34h214v8H10z"/>
   <g class="mono-windows">
-    <circle cx="24" cy="23" r="6"/><circle cx="52" cy="23" r="6"/><circle cx="98" cy="23" r="6"/><circle cx="126" cy="23" r="6"/><circle cx="172" cy="23" r="6"/><path d="M190 17h8c8 0 14 4 16 10h-24z"/>
+    <circle cx="23" cy="23.5" r="5.5"/><circle cx="51" cy="23.5" r="5.5"/>
+    <circle cx="97" cy="23.5" r="5.5"/><circle cx="125" cy="23.5" r="5.5"/>
+    <circle cx="171" cy="23.5" r="5.5"/>
+    <path d="M190 18h10c9 0 16 4 19 11h-29z"/>
   </g>
-  <path class="mono-joint" d="M70 26h10M144 26h10"/>
-  <circle class="mono-light" cx="221" cy="31" r="2.4"/>
+  <circle class="mono-light" cx="222" cy="31" r="2.4"/>
 </svg>`,
   // Nuit : rame bleu nuit aux fenêtres allumées.
   night: `
