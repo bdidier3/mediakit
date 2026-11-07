@@ -3135,11 +3135,12 @@ a.video-title:hover {
 .game-panel {
   position: fixed;
   z-index: 45;
-  top: 72px;
-  right: 16px;
-  bottom: 16px;
-  width: min(820px, calc(100vw - 32px), 58vw);
-  min-width: min(560px, calc(100vw - 32px));
+  --panel-gap: clamp(20px, 3vw, 48px);
+  top: 84px;
+  right: var(--panel-gap);
+  bottom: var(--panel-gap);
+  width: min(820px, calc(100vw - 2 * var(--panel-gap)), 56vw);
+  min-width: min(560px, calc(100vw - 2 * var(--panel-gap)));
   pointer-events: none;
 }
 
@@ -3170,7 +3171,8 @@ a.video-title:hover {
   justify-content: space-between;
   gap: 12px;
   padding: 12px 14px;
-  background: repeating-linear-gradient(-45deg, var(--ticket) 0 14px, var(--night) 14px 28px);
+  background: var(--night-deep);
+  border-bottom: 3px solid var(--ticket);
 }
 
 .game-panel-ride {
@@ -3563,9 +3565,17 @@ a.video-title:hover {
 }
 
 .game-panel .info-panel-head {
-  min-height: 52px;
-  padding: 8px 12px;
-  font-size: 0.78rem;
+  min-height: 0;
+  padding: 12px;
+  font-size: 0.8rem;
+  background: var(--night-deep);
+  border-bottom: 2px solid #2b4466;
+  color: var(--ticket);
+}
+
+.game-panel .info-panel-head span {
+  padding: 0;
+  background: none;
 }
 
 .game-panel .info-panel-body {

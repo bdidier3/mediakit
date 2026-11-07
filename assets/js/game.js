@@ -13,11 +13,29 @@ const ZONES = ZONE_LAYOUT.map(({ id }) => id);
 
 // Barre de défilement du panneau : un rail vertical sur lequel le wagon
 // descend avec la lecture. Clic ou glisser sur le rail pour se déplacer.
+// Le wagon glisse en douceur vers sa position (pas de saut quand des images
+// se chargent et allongent le contenu).
 function initPanelRail(body, rail) {
   const car = rail.querySelector('.panel-rail-car');
   car.innerHTML = CAR_SVG;
+  const reduced = prefersReducedMotion();
   let lastTop = 0;
+  let target = 0;
+  let current = 0;
+  let frame = 0;
   let dragging = false;
+
+  const render = () => {
+    frame = 0;
+    current = reduced || dragging ? target : current + (target - current) * 0.25;
+    if (Math.abs(target - current) < 0.3) {
+      current = target;
+    }
+    car.style.transform = `translateY(${current.toFixed(1)}px)`;
+    if (current !== target) {
+      frame = requestAnimationFrame(render);
+    }
+  };
 
   const update = () => {
     const max = body.scrollHeight - body.clientHeight;
@@ -25,31 +43,32 @@ function initPanelRail(body, rail) {
     if (max <= 4) {
       return;
     }
-    const progress = body.scrollTop / max;
-    const travel = rail.clientHeight - car.offsetHeight;
     // Le wagon pointe dans le sens de la lecture : vers le bas, ou vers le haut en remontant.
     if (body.scrollTop !== lastTop) {
       car.classList.toggle('is-up', body.scrollTop < lastTop);
       lastTop = body.scrollTop;
     }
-    car.style.transform = `translateY(${(progress * travel).toFixed(1)}px)`;
+    target = (body.scrollTop / max) * (rail.clientHeight - car.offsetHeight);
+    if (!frame) {
+      frame = requestAnimationFrame(render);
+    }
   };
 
-  const scrollToPointer = (event, behavior) => {
+  const scrollToPointer = (event) => {
     const rect = rail.getBoundingClientRect();
-    const ratio = Math.min(1, Math.max(0, (event.clientY - rect.top) / rect.height));
-    body.scrollTo({ top: ratio * (body.scrollHeight - body.clientHeight), behavior });
+    const ratio = Math.min(1, Math.max(0, (event.clientY - rect.top - car.offsetHeight / 2) / (rect.height - car.offsetHeight)));
+    body.scrollTop = ratio * (body.scrollHeight - body.clientHeight);
   };
 
   rail.addEventListener('pointerdown', (event) => {
     event.preventDefault();
     dragging = true;
     rail.setPointerCapture(event.pointerId);
-    scrollToPointer(event, prefersReducedMotion() ? 'auto' : 'smooth');
+    scrollToPointer(event);
   });
   rail.addEventListener('pointermove', (event) => {
     if (dragging) {
-      scrollToPointer(event, 'auto');
+      scrollToPointer(event);
     }
   });
   const stop = () => { dragging = false; };
@@ -59,7 +78,10 @@ function initPanelRail(body, rail) {
   body.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update, { passive: true });
   if ('ResizeObserver' in window) {
-    new ResizeObserver(update).observe(body);
+    // Le contenu change de hauteur (images, vidéo chargées) : on recalcule la position.
+    const observer = new ResizeObserver(update);
+    observer.observe(body);
+    [...body.children].forEach((child) => observer.observe(child));
   }
   return update;
 }

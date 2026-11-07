@@ -104,6 +104,10 @@ function initReelControls() {
   next.addEventListener('click', () => reel.scrollBy({ left: step(), behavior: behavior() }));
   reel.addEventListener('scroll', updateReelButtons, { passive: true });
   window.addEventListener('resize', updateReelButtons, { passive: true });
+  // Le carrousel peut apparaître après coup (panneau du jeu) : on réévalue les flèches.
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(updateReelButtons).observe(reel);
+  }
 }
 
 async function loadParkViews() {
