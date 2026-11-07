@@ -36,16 +36,9 @@
   <main>
     <!-- Station 1 : l'entrée du parc, avec le plan 3D interactif -->
     <section class="hero" id="top">
+      <div class="night-sky" aria-hidden="true"><span class="moon"></span></div>
       <div class="park3d" id="park3d">
         <div class="park3d-labels" id="park3d-labels"></div>
-        <div class="park3d-controls">
-          <button class="round-button" type="button" data-rotate="-1" data-i18n-attr="aria-label:park.rotateLeft;title:park.rotateLeft">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4.5h4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <button class="round-button" type="button" data-rotate="1" data-i18n-attr="aria-label:park.rotateRight;title:park.rotateRight">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
         <div class="park3d-fallback" data-park-map data-here="top"></div>
         <div class="park3d-loader" aria-hidden="true">
           <svg viewBox="0 0 120 120">

@@ -317,6 +317,29 @@ function buildShop(group) {
   return null;
 }
 
+// Lampadaires allumés le long de l'allée circulaire (lumière émissive : aucun coût d'éclairage).
+function buildLamps(scene) {
+  const count = 14;
+  const poles = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.06, 0.08, 1.8, 5), mat(COLORS.night), count);
+  const bulbs = new THREE.InstancedMesh(
+    new THREE.SphereGeometry(0.26, 8, 6),
+    new THREE.MeshBasicMaterial({ color: 0xffe08a }),
+    count
+  );
+  const matrix = new THREE.Matrix4();
+  for (let i = 0; i < count; i += 1) {
+    const angle = (i / count) * Math.PI * 2 + 0.22;
+    const x = Math.cos(angle) * (RING.outer + 0.5);
+    const z = Math.sin(angle) * (RING.outer + 0.5);
+    matrix.makeTranslation(x, 0.9, z);
+    poles.setMatrixAt(i, matrix);
+    matrix.makeTranslation(x, 1.9, z);
+    bulbs.setMatrixAt(i, matrix);
+  }
+  poles.castShadow = true;
+  scene.add(poles, bulbs);
+}
+
 function buildTrees(scene) {
   const spots = [];
   let seed = 7;
@@ -372,12 +395,17 @@ export async function initPark3d(root) {
   root.prepend(canvas);
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xcfe9f8, 70, 140);
+  // Ambiance de nuit : le brouillard se fond dans le ciel bleu nuit de la page.
+  scene.fog = new THREE.Fog(0x13233a, 70, 140);
   const camera = new THREE.PerspectiveCamera(32, 1, 1, 220);
 
-  scene.add(new THREE.HemisphereLight(0xeaf6ff, 0x5c8a4a, 1.6));
-  const sun = new THREE.DirectionalLight(0xfff2d6, 2.4);
-  sun.position.set(18, 30, 14);
+  scene.add(new THREE.HemisphereLight(0x9db8e6, 0x1c2b22, 1.25));
+  // Clair de lune (côté de la lune dessinée dans le ciel) + lumière chaude des allées.
+  const sun = new THREE.DirectionalLight(0xcfe0ff, 1.9);
+  sun.position.set(20, 30, -12);
+  const parkGlow = new THREE.DirectionalLight(0xffd59a, 0.7);
+  parkGlow.position.set(-10, 14, 22);
+  scene.add(parkGlow);
   sun.castShadow = true;
   sun.shadow.mapSize.set(compact ? 512 : 1024, compact ? 512 : 1024);
   Object.assign(sun.shadow.camera, { left: -28, right: 28, top: 28, bottom: -28, near: 1, far: 80 });
@@ -389,6 +417,7 @@ export async function initPark3d(root) {
   scene.add(world);
   const jet = buildGround(world);
   buildTrees(world);
+  buildLamps(world);
 
   // Attractions + zones cliquables (un cylindre invisible facilite la visée).
   const hitMaterial = new THREE.MeshBasicMaterial({ visible: false });
@@ -579,13 +608,6 @@ export async function initPark3d(root) {
     zone.label.addEventListener('blur', () => setHovered(null));
   });
 
-  // Boutons de rotation : alternative au glisser (clavier, un seul pointeur).
-  root.querySelectorAll('[data-rotate]').forEach((button) => {
-    button.addEventListener('click', () => {
-      view.target += Number(button.dataset.rotate) * 0.6;
-      requestRender();
-    });
-  });
 
   /* --- Ouverture du parc : l'île monte en tournant, puis les attractions surgissent une à une --- */
   const INTRO_ISLAND = 0.9;

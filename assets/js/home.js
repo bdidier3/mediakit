@@ -213,6 +213,20 @@ async function initParkMap() {
   }
 }
 
+/* ---------- Bouton de langue sans cadre tant qu'il est sur le ciel de l'accueil ---------- */
+
+function initHeaderOverHero() {
+  const header = document.querySelector('.site-header');
+  const hero = document.getElementById('top');
+  if (!header || !hero) {
+    return;
+  }
+  const update = () => header.classList.toggle('over-hero', window.scrollY < hero.offsetHeight - 60);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+}
+
 /* ---------- Station 5 : l'écran POV ne tourne que lorsqu'il est visible ---------- */
 
 function initPovVideo() {
@@ -242,6 +256,7 @@ initBoards();
 initBadgeSwing();
 initStamps();
 initPovVideo();
+initHeaderOverHero();
 initMonorails(document.querySelectorAll('.has-rail'));
 
 // Le fichier de stats (plusieurs centaines de Ko) attend que le parc soit ouvert,
