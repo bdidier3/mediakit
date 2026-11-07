@@ -173,7 +173,7 @@ ol {
 .has-rail::before {
   top: -8px;
   height: 16px;
-  border-radius: 3px;
+  border-radius: 8px;
   background:
     linear-gradient(var(--ticket), var(--ticket)) 0 4px / 100% 2px no-repeat,
     linear-gradient(to bottom, #eef2f6 0 35%, #bcc7d2 35% 78%, #8796a6 78% 100%);
@@ -260,53 +260,43 @@ ol {
   filter: drop-shadow(0 0 3px rgba(255, 201, 60, 0.9));
 }
 
-/* Portails de gare aux deux extrémités : la rame y entre et en sort.
-   Arche en pierre claire, clé de voûte jaune, ouverture sombre en dégradé. */
-.monorail-portal {
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  width: 60px;
-  height: 58px;
-  border-radius: 30px 30px 3px 3px;
-  background:
-    repeating-linear-gradient(0deg, transparent 0 11px, rgba(110, 125, 142, 0.28) 11px 12px),
-    linear-gradient(to bottom, #eef2f6, #c3ccd6);
-  box-shadow: inset 0 0 0 2px #8796a6, 0 3px 6px rgba(7, 17, 29, 0.25);
+/* La rame apparaît et disparaît en fondu aux extrémités de la voie. */
+.monorail {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);
 }
 
-/* Ouverture du tunnel. */
-.monorail-portal::before {
+/* Panneau rond de station planté au début de la voie, sur un mât fin. */
+.monorail-sign {
+  position: absolute;
+  z-index: 5;
+  top: -66px;
+  left: calc(var(--beam-end) + 28px);
+  display: grid;
+  justify-items: center;
+  pointer-events: none;
+}
+
+.monorail-sign b {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: inset 0 0 0 4px var(--rail), 0 3px 6px rgba(7, 17, 29, 0.3);
+  color: var(--night);
+  font-family: var(--font-sign);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.monorail-sign::after {
   content: "";
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  top: 16px;
-  bottom: 0;
-  border-radius: 18px 18px 0 0;
-  background: linear-gradient(to bottom, #050b14, #1b2c45);
-  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.6), 0 0 0 2px #8796a6;
-}
-
-/* Clé de voûte. */
-.monorail-portal::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 50%;
-  width: 14px;
-  height: 11px;
-  transform: translateX(-50%);
-  background: var(--ticket);
-  clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%);
-}
-
-.monorail-portal--start {
-  left: 0;
-}
-
-.monorail-portal--end {
-  right: 0;
+  width: 4px;
+  height: 24px;
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(to right, #8796a6, #c3ccd6);
 }
 
 @media (min-width: 1100px) {

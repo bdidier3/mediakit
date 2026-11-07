@@ -1,7 +1,8 @@
 // Monorail entre les stations : sur la poutre en haut de chaque section, une
 // rame traverse l'écran au rythme du scroll. On descend : elle va vers la
-// droite ; on remonte : elle repart vers la gauche. Elle disparaît dans un
-// tunnel avant le rail vertical, pour ne jamais le masquer.
+// droite ; on remonte : elle repart vers la gauche. Elle apparaît et disparaît
+// en fondu aux extrémités, avant le rail vertical, pour ne jamais le masquer.
+// Un panneau rond indique le numéro de la station au début de la voie.
 
 import { prefersReducedMotion } from './ui.js';
 
@@ -81,9 +82,15 @@ export function initMonorails(sections) {
     line.className = 'monorail';
     line.setAttribute('aria-hidden', 'true');
     const variant = TRAINS[section.dataset.mono] ? section.dataset.mono : 'classic';
-    line.innerHTML = `<div class="monorail-train monorail-train--${variant}">${TRAINS[variant]}</div>
-      <span class="monorail-portal monorail-portal--start"></span>
-      <span class="monorail-portal monorail-portal--end"></span>`;
+    line.innerHTML = `<div class="monorail-train monorail-train--${variant}">${TRAINS[variant]}</div>`;
+    const station = section.querySelector('.station-chip span')?.textContent.trim();
+    if (station) {
+      const sign = document.createElement('span');
+      sign.className = 'monorail-sign';
+      sign.setAttribute('aria-hidden', 'true');
+      sign.innerHTML = `<b>${station}</b>`;
+      section.prepend(sign);
+    }
     section.prepend(line);
     return { line, train: line.querySelector('.monorail-train'), target: 0, current: 0, facing: 1 };
   });
