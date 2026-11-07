@@ -3107,3 +3107,10 @@ a.video-title:hover {
     transition-delay: 0s !important;
   }
 }
+
+/* Arabe : chaque paragraphe prend le sens de lecture de son texte (droite à gauche),
+   sans retourner la mise en page du parc. */
+html[lang="ar"] :is(p, h1, h2, h3, h4, figcaption, dd, dt) {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
