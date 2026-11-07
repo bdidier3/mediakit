@@ -420,7 +420,7 @@ export async function initPark3d(root) {
     } else {
       label.href = `#${zone.id}`;
     }
-    label.innerHTML = `<b>${zone.link ? ICONS[zone.link.icon] : zone.station}</b><span><strong></strong><small></small></span>`;
+    label.innerHTML = `<b>${zone.link ? ICONS[zone.link.icon] : zone.station}</b><span class="park3d-label-name"></span>`;
     labelsLayer.append(label);
 
     return { ...zone, group, ride, plinthMaterial, hit, animate, anchor: new THREE.Vector3(zone.pos[0], Math.min(height, 6.5) + 1, zone.pos[2]), label, scale: 1 };
@@ -430,8 +430,7 @@ export async function initPark3d(root) {
   const relabel = () => {
     canvas.setAttribute('aria-label', t('park.mapAria'));
     zones.forEach((zone) => {
-      zone.label.querySelector('strong').textContent = t(`park.zone.${zone.id}`);
-      zone.label.querySelector('small').textContent = zone.link ? zone.link.label : t(`nav.${zone.id}`);
+      zone.label.querySelector('.park3d-label-name').textContent = zone.link ? zone.link.label : t(`nav.${zone.id}`);
     });
     measureLabels();
     requestRender();

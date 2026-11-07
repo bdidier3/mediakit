@@ -953,30 +953,17 @@ ol {
   background: var(--night);
 }
 
-.park3d-label strong {
-  display: block;
+.park3d-label-name {
   font-family: var(--font-sign);
   font-weight: 400;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   line-height: 1.1;
-}
-
-.park3d-label small {
-  display: block;
-  font-family: var(--font-fun);
-  font-weight: 600;
-  font-size: 0.78rem;
-  color: var(--sky-deep);
 }
 
 .park3d-label:hover,
 .park3d-label.is-active {
   z-index: 1;
   background: var(--ticket);
-}
-
-.park3d-label.is-active small {
-  color: var(--night);
 }
 
 .park3d-controls {
@@ -1216,15 +1203,8 @@ ol {
   background: var(--night);
 }
 
-  /* Étiquettes compactes : le nom de la section suffit, le parc reste visible. */
-  .park3d-label strong {
-    display: none;
-  }
-
-  .park3d-label small {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--night);
+  .park3d-label-name {
+    font-size: 0.74rem;
   }
 
   .park3d-label::after {
