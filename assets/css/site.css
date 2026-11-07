@@ -215,13 +215,50 @@ ol {
   filter: drop-shadow(0 4px 3px rgba(7, 17, 29, 0.25));
 }
 
-.mono-body { fill: var(--white); stroke: var(--night); stroke-width: 2; }
-.mono-stripe { fill: var(--rail); }
-.mono-skirt { fill: var(--sky-deep); }
-.mono-windows { fill: var(--night); }
-.mono-windows path { fill: var(--sky); }
-.mono-joint { stroke: var(--night); stroke-width: 2; opacity: 0.35; }
+.monorail-train {
+  --body: var(--white);
+  --outline: var(--night);
+  --stripe: var(--rail);
+  --skirt: var(--sky-deep);
+  --window: var(--night);
+  --windshield: var(--sky);
+}
+
+.mono-body { fill: var(--body); stroke: var(--outline); stroke-width: 2; }
+.mono-stripe { fill: var(--stripe); }
+.mono-skirt { fill: var(--skirt); }
+.mono-windows { fill: var(--window); }
+.mono-windows path { fill: var(--windshield); }
+.mono-joint { fill: none; stroke: var(--outline); stroke-width: 2; opacity: 0.35; }
 .mono-light { fill: var(--ticket); }
+
+/* Une rame par station. */
+.monorail-train--bullet {
+  --body: var(--sky);
+  --stripe: var(--ticket);
+  --skirt: var(--night);
+  --windshield: var(--night);
+}
+
+.monorail-train--fair {
+  --body: var(--ticket);
+  --stripe: var(--rail);
+  --skirt: var(--rail-dark);
+  --windshield: var(--sky);
+}
+
+.monorail-train--night {
+  --body: #1d3150;
+  --outline: var(--sky);
+  --stripe: var(--sky);
+  --skirt: #0c1828;
+  --window: var(--ticket);
+  --windshield: var(--ticket);
+}
+
+.monorail-train--night .mono-windows {
+  filter: drop-shadow(0 0 3px rgba(255, 201, 60, 0.9));
+}
 
 /* Tunnels aux deux extrémités : la rame y entre et en sort. */
 .monorail-portal {
