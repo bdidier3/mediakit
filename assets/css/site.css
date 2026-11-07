@@ -4006,27 +4006,31 @@ html[data-theme="day"] .theme-icon--moon {
   border-color: transparent;
 }
 
-/* Nuit : aucune zone claire dans la fiche d'un parc. */
+/* Logo du parc : sur une petite enseigne crème (la plupart des logos ont des
+   textes foncés, illisibles directement sur le bleu). La nuit, elle est tamisée. */
+.game-panel .park-logo {
+  background: #f4efe2;
+  box-shadow: 0 0 0 2px var(--ticket);
+}
+
 html[data-theme="night"] .game-panel .park-logo {
-  padding: 0;
-  background: none;
-  filter: brightness(0) invert(1);
+  filter: brightness(0.88);
 }
 
 html[data-theme="night"] .game-panel .park-map-frame iframe {
   filter: invert(0.92) hue-rotate(180deg) saturate(0.85);
 }
 
-html[data-theme="night"] .game-panel .segmented {
+.game-panel .segmented {
   background: #1b2e4b;
   box-shadow: 0 0 0 2px #2b4466;
 }
 
-html[data-theme="night"] .game-panel .segmented button {
+.game-panel .segmented button:not([aria-pressed="true"]) {
   color: var(--sky);
 }
 
-html[data-theme="night"] .game-panel .segmented button:hover {
+.game-panel .segmented button:not([aria-pressed="true"]):hover {
   color: var(--white);
 }
 
@@ -4065,7 +4069,7 @@ html[data-theme="day"] .hero-sign {
 }
 
 html[data-theme="day"] .hero-sign span {
-  color: var(--sky-deep);
+  color: #0f3d66;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
@@ -4091,6 +4095,13 @@ html[data-theme="day"] .game-panel-head {
 html[data-theme="day"] .game-panel .ticket::before,
 html[data-theme="day"] .game-panel .ticket::after {
   background: #1c4a74;
+}
+
+/* Jour : carte et filtres dans le bleu du panneau, pas dans le bleu nuit. */
+html[data-theme="day"] .game-panel .park-map-frame,
+html[data-theme="day"] .game-panel .segmented {
+  background: #153a5c;
+  box-shadow: 0 0 0 2px #2e6596;
 }
 
 /* Arabe : chaque paragraphe prend le sens de lecture de son texte (droite à gauche),
