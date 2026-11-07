@@ -71,7 +71,9 @@ function normalizeVideo(item) {
     searchText: `${title} ${description}`.toLowerCase(),
     views: Number(item.views) || 0,
     likes: Number(item.likes) || 0,
-    comments: Number(item.comments) || 0
+    comments: Number(item.comments) || 0,
+    // Vignette TikTok enregistrée dans le site par la mise à jour quotidienne.
+    thumb: platform === 'tiktok' && Boolean(item.thumb) && /^\d+$/.test(id)
   };
 }
 

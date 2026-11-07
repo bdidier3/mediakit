@@ -176,11 +176,8 @@ export function initGame(getPark) {
     station.classList.toggle('is-tiktok', zone.link?.icon === 'tiktok');
   };
 
-  const open = (id, sub = '') => {
-    clearTimeout(timer);
-    const switching = current !== null;
-    const sameZone = current === id;
-    current = id;
+  // Remplit le panneau avec le contenu de l'attraction (ou la fiche d'un parc).
+  const fill = (id, sub) => {
     const showDetail = id === 'videos' && sub && parkView;
     parkName = showDetail ? parkView.show(sub) : null;
     sections.forEach((el) => { el.hidden = showDetail || el.id !== id; });
@@ -188,13 +185,32 @@ export function initGame(getPark) {
       detail.hidden = !showDetail;
     }
     relabel();
+    smooth.stop();
+    body.scrollTop = 0;
+    requestAnimationFrame(updateRail);
+  };
+
+  const open = (id, sub = '') => {
+    clearTimeout(timer);
+    const switching = current !== null && panel.classList.contains('is-open');
+    const sameZone = current === id;
+    current = id;
     if (!sameZone) {
       getPark()?.focusZone(id);
     }
     panel.hidden = false;
-    smooth.stop();
-    body.scrollTop = 0;
-    requestAnimationFrame(updateRail);
+    if (switching && !reduced) {
+      // D'une attraction à l'autre : l'ancien contenu s'efface, le nouveau glisse en place
+      // pendant que la caméra vole vers la nouvelle attraction.
+      panel.classList.add('is-swapping');
+      timer = setTimeout(() => {
+        fill(id, sub);
+        panel.classList.remove('is-swapping');
+        body.focus({ preventScroll: true });
+      }, 200);
+      return;
+    }
+    fill(id, sub);
     // Le panneau arrive pendant que la caméra zoome sur l'attraction.
     timer = setTimeout(() => {
       panel.classList.add('is-open');
@@ -210,7 +226,7 @@ export function initGame(getPark) {
     clearTimeout(timer);
     const previous = current;
     current = null;
-    panel.classList.remove('is-open');
+    panel.classList.remove('is-open', 'is-swapping');
     getPark()?.clearFocus();
     timer = setTimeout(() => {
       panel.hidden = true;

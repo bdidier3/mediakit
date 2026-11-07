@@ -32,8 +32,8 @@ function saveLayout(layout) {
   }
 }
 
-// Les miniatures YouTube sont publiques ; TikTok ne fournit plus de miniature
-// via oEmbed, les vidéos TikTok gardent donc une vignette neutre.
+// Les miniatures YouTube sont publiques ; celles de TikTok expirent, le site en
+// garde donc une copie (thumbs/tiktok). Sans copie, la vignette reste neutre.
 function revealThumbs(root) {
   root.querySelectorAll('.thumb img:not(.is-loaded)').forEach((img) => {
     if (img.complete && img.naturalWidth > 0) {
@@ -44,7 +44,10 @@ function revealThumbs(root) {
   });
 }
 
-function youtubeThumb(video) {
+function thumbUrl(video) {
+  if (video.platform === 'tiktok') {
+    return video.thumb ? `thumbs/tiktok/${video.id}.webp` : '';
+  }
   const id = video.id || (video.url.match(/[?&]v=([\w-]{6,})/) || [])[1];
   return id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : '';
 }
@@ -53,9 +56,8 @@ function renderVideoItem(video) {
   const hasLink = /^https?:\/\//i.test(video.url);
   const url = escapeHtml(video.url);
   const linkAttrs = `href="${url}" target="_blank" rel="noopener noreferrer"`;
-  const image = video.platform === 'youtube' && youtubeThumb(video)
-    ? `<img src="${escapeHtml(youtubeThumb(video))}" alt="" loading="lazy" decoding="async">`
-    : '';
+  const src = thumbUrl(video);
+  const image = src ? `<img src="${escapeHtml(src)}" alt="" loading="lazy" decoding="async">` : '';
   const thumb = hasLink
     ? `<a class="thumb thumb--${video.platform}" ${linkAttrs} tabindex="-1" aria-hidden="true">${ICONS[video.platform] || ICONS.play}${image}</a>`
     : `<span class="thumb thumb--${video.platform}">${ICONS[video.platform] || ICONS.play}${image}</span>`;
@@ -122,12 +124,20 @@ export function createParkView(root) {
       sentinel.remove();
       return;
     }
+    // Dans le panneau du jeu, c'est le panneau qui défile : la marge d'avance s'y applique.
     const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting) && !appendBatch()) {
+      if (!entries.some((entry) => entry.isIntersecting)) {
+        return;
+      }
+      if (!appendBatch()) {
         observer.disconnect();
         sentinel.remove();
+        return;
       }
-    }, { rootMargin: '600px 0px' });
+      // Toujours en vue après ce lot (écran haut) : on relance l'observation pour le suivant.
+      observer.unobserve(sentinel);
+      observer.observe(sentinel);
+    }, { root: list.closest('.game-panel-body'), rootMargin: '600px 0px' });
     observer.observe(sentinel);
     listObservers.push(observer);
   };

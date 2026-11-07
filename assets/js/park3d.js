@@ -484,7 +484,8 @@ export async function initPark3d(root, { onSelect, theme = 'night' } = {}) {
   let halfV = 1;
   const center = new THREE.Vector3(0, 1.5, 1);
   // Zoom sur une attraction : `amount` glisse de 0 (vue d'ensemble) à 1 (attraction cadrée).
-  const focus = { amount: 0, goal: 0, target: new THREE.Vector3() };
+  // `point` suit `target` en douceur : passer d'une attraction à l'autre fait voler la caméra.
+  const focus = { amount: 0, goal: 0, target: new THREE.Vector3(), point: new THREE.Vector3() };
 
   const resize = () => {
     width = root.clientWidth;
@@ -525,7 +526,7 @@ export async function initPark3d(root, { onSelect, theme = 'night' } = {}) {
     const wide = width >= 900;
     const lateral = wide ? -f * r * halfH * 0.42 : 0;
     const vertical = wide ? 0 : -f * r * halfV * 0.48;
-    pivot.lerpVectors(center, focus.target, f);
+    pivot.lerpVectors(center, focus.point, f);
     camera.position.set(
       pivot.x + Math.sin(az) * Math.sin(polar) * r,
       pivot.y + Math.cos(polar) * r,
@@ -583,13 +584,21 @@ export async function initPark3d(root, { onSelect, theme = 'night' } = {}) {
       return;
     }
     const [x, , z] = zone.pos;
+    const switching = focus.goal === 1;
     focus.target.set(x, Math.min(zone.anchor.y, 7) * 0.45, z);
+    if (switching) {
+      // D'une attraction à l'autre : la caméra prend un peu de recul pendant le trajet, puis replonge.
+      focus.amount = Math.min(focus.amount, 0.6);
+    } else {
+      focus.point.copy(focus.target);
+    }
     const desired = Math.atan2(x, z);
     const delta = ((desired - view.target + Math.PI) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2) - Math.PI;
     view.target += delta;
     view.polarTarget = 0.98;
     focus.goal = 1;
     root.classList.add('is-focused');
+    zones.forEach((other) => other.label.classList.toggle('is-current', other === zone));
     setHovered(null);
     requestRender();
   };
@@ -598,6 +607,7 @@ export async function initPark3d(root, { onSelect, theme = 'night' } = {}) {
     focus.goal = 0;
     view.polarTarget = startPolar;
     root.classList.remove('is-focused');
+    zones.forEach((zone) => zone.label.classList.remove('is-current'));
     requestRender();
   };
 
@@ -742,6 +752,10 @@ export async function initPark3d(root, { onSelect, theme = 'night' } = {}) {
     if (Math.abs(focus.goal - focus.amount) < 0.001) {
       focus.amount = focus.goal;
     }
+    focus.point.lerp(focus.target, reduced ? 1 : 0.06);
+    if (focus.point.distanceToSquared(focus.target) < 0.0001) {
+      focus.point.copy(focus.target);
+    }
     view.px += (view.pointerX - view.px) * 0.05;
     view.py += (view.pointerY - view.py) * 0.05;
     placeCamera();
@@ -768,7 +782,7 @@ export async function initPark3d(root, { onSelect, theme = 'night' } = {}) {
 
     renderer.render(scene, camera);
 
-    const settling = focus.amount !== focus.goal || Math.abs(view.target - view.azimuth) > 0.0005 || Math.abs(view.polarTarget - view.polar) > 0.0005 || Math.abs(view.pointerX - view.px) > 0.001;
+    const settling = focus.amount !== focus.goal || !focus.point.equals(focus.target) || Math.abs(view.target - view.azimuth) > 0.0005 || Math.abs(view.polarTarget - view.polar) > 0.0005 || Math.abs(view.pointerX - view.px) > 0.001;
     // Zoom terminé sur une attraction : le parc s'arrête derrière le panneau
     // (moins de calcul, défilement du panneau plus fluide). Il repart au retour.
     const parked = focus.goal === 1 && focus.amount === 1 && !dragging;

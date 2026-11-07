@@ -15,6 +15,10 @@ from yt_dlp import YoutubeDL
 ROOT = Path(__file__).resolve().parents[1]
 STATS_DIR = ROOT / "stats"
 OUTPUT_COMPACT = STATS_DIR / "stats_compact.json"
+# Vignettes TikTok : leurs adresses d'origine expirent au bout de quelques jours,
+# on en garde donc une petite copie dans le site.
+THUMBS_DIR = ROOT / "thumbs" / "tiktok"
+THUMB_WIDTH = 240
 
 YOUTUBE_CHANNEL_ID = "UCMxkVdDL3CkI9tog4m_Nf4g"
 TIKTOK_PROFILE_URL = "https://www.tiktok.com/@clip2ep.fan"
@@ -209,7 +213,7 @@ def _entry_to_video(entry: dict[str, Any], platform: str) -> dict[str, Any]:
     # l'ancienne (et ses hashtags, qui rattachent la vidéo à un parc).
     description = _clean_text(entry.get("description"))
 
-    return {
+    video = {
         "platform": platform,
         "id": video_id,
         "url": webpage_url,
@@ -219,6 +223,44 @@ def _entry_to_video(entry: dict[str, Any], platform: str) -> dict[str, Any]:
         "likes": _to_int(entry.get("like_count") or entry.get("likes")),
         "comments": _to_int(entry.get("comment_count") or entry.get("comments")),
     }
+    # Adresse de la couverture, utilisée pour la vignette puis retirée avant l'écriture.
+    covers = {thumb.get("id"): thumb.get("url") for thumb in entry.get("thumbnails") or [] if isinstance(thumb, dict)}
+    cover = covers.get("cover") or covers.get("originCover") or entry.get("thumbnail")
+    if platform == "tiktok" and cover:
+        video["_cover"] = cover
+    return video
+
+
+def _save_tiktok_thumbs(covers: dict[str, str]) -> None:
+    """Télécharge les vignettes TikTok manquantes (les déjà présentes ne bougent pas)."""
+    from io import BytesIO
+
+    from PIL import Image
+
+    THUMBS_DIR.mkdir(parents=True, exist_ok=True)
+    saved = 0
+    for video_id, url in covers.items():
+        target = THUMBS_DIR / f"{video_id}.webp"
+        if target.exists() or not re.fullmatch(r"\d+", video_id):
+            continue
+        try:
+            request = urllib.request.Request(url, headers={"User-Agent": BROWSER_UA, "Referer": "https://www.tiktok.com/"})
+            with urllib.request.urlopen(request, timeout=20) as response:
+                image = Image.open(BytesIO(response.read())).convert("RGB")
+            image.thumbnail((THUMB_WIDTH, THUMB_WIDTH * 2))
+            image.save(target, "WEBP", quality=62, method=6)
+            saved += 1
+        except Exception as exc:
+            print(f"[warn] tiktok thumb {video_id}: {exc}")
+    print(f"[ok] {saved} new tiktok thumbs")
+
+
+def _mark_thumbs(videos: list[dict[str, Any]]) -> None:
+    """Indique au site quelles vidéos ont une vignette enregistrée."""
+    for video in videos:
+        video.pop("thumb", None)
+        if video.get("platform") == "tiktok" and (THUMBS_DIR / f"{video.get('id')}.webp").exists():
+            video["thumb"] = 1
 
 
 def _extract_from_source(platform: str, url: str) -> list[dict[str, Any]]:
@@ -367,6 +409,7 @@ def main() -> None:
             except Exception as exc:
                 print(f"[warn] extraction failed for {platform} ({url}): {exc}")
 
+    covers = {video["id"]: video.pop("_cover") for video in extracted if video.get("_cover")}
     extracted = _dedupe(extracted)
 
     if not extracted:
@@ -375,6 +418,12 @@ def main() -> None:
     else:
         extracted = _merge_with_previous(extracted, previous)
         extracted = _dedupe(extracted)
+
+    try:
+        _save_tiktok_thumbs(covers)
+    except Exception as exc:
+        print(f"[warn] tiktok thumbs skipped: {exc}")
+    _mark_thumbs(extracted)
 
     extracted.sort(
         key=lambda item: (

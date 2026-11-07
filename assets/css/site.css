@@ -1092,10 +1092,13 @@ ol {
 }
 
 .park3d-label-name {
+  max-width: 16em;
+  overflow: hidden;
   font-family: var(--font-sign);
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 1.1;
+  transition: max-width 0.3s var(--ease-out), opacity 0.2s ease;
 }
 
 .park3d-label:hover,
@@ -3125,11 +3128,51 @@ a.video-title:hover {
 }
 
 /* En entrant dans une attraction, le plan s'efface derrière son panneau. */
-.park3d.is-focused .park3d-label,
 .page-game:has(.game-panel.is-open) .park3d-hint {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+}
+
+/* Les autres attractions restent là, en simples pastilles qui respirent :
+   on comprend qu'on peut y aller directement. Leur nom revient au survol. */
+.park3d.is-focused .park3d-label {
+  gap: 0;
+  padding: 4px;
+  opacity: 0.92;
+  transition: opacity 0.3s ease, padding 0.3s var(--ease-out), gap 0.3s var(--ease-out), background-color 0.2s ease;
+}
+
+.park3d.is-focused .park3d-label-name {
+  max-width: 0;
+  opacity: 0;
+}
+
+.park3d.is-focused .park3d-label b {
+  animation: label-ping 2.6s ease-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.35s);
+}
+
+.park3d.is-focused .park3d-label:is(:hover, :focus-visible, .is-active) {
+  gap: 8px;
+  padding-right: 12px;
+  opacity: 1;
+}
+
+.park3d.is-focused .park3d-label:is(:hover, :focus-visible, .is-active) .park3d-label-name {
+  max-width: 16em;
+  opacity: 1;
+}
+
+/* L'attraction ouverte n'a pas besoin de pastille : on est dedans. */
+.park3d.is-focused .park3d-label.is-current {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes label-ping {
+  0% { box-shadow: 0 0 0 0 rgba(255, 201, 60, 0.75); }
+  70%, 100% { box-shadow: 0 0 0 9px rgba(255, 201, 60, 0); }
 }
 
 .game-panel {
@@ -3142,12 +3185,20 @@ a.video-title:hover {
   width: min(820px, calc(100vw - 2 * var(--panel-gap)), 56vw);
   min-width: min(560px, calc(100vw - 2 * var(--panel-gap)));
   pointer-events: none;
+  /* Le panneau prend la hauteur de son contenu (centré), sans dépasser l'écran. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-panel[hidden] {
+  display: none;
 }
 
 .game-panel-sheet {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  max-height: 100%;
   border-radius: 20px;
   background: var(--night);
   color: var(--white);
@@ -3162,6 +3213,24 @@ a.video-title:hover {
 .game-panel.is-open .game-panel-sheet {
   opacity: 1;
   transform: none;
+}
+
+/* Changement d'attraction, panneau ouvert : le contenu et le titre s'effacent puis reviennent. */
+.game-panel-body,
+.game-panel-ride {
+  transition: opacity 0.22s ease, transform 0.32s var(--ease-out);
+}
+
+.game-panel.is-swapping .game-panel-body {
+  opacity: 0;
+  transform: translateY(14px);
+  transition-duration: 0.18s;
+}
+
+.game-panel.is-swapping .game-panel-ride {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition-duration: 0.18s;
 }
 
 /* Bandeau rayé de l'attraction, comme les panneaux du site. */
@@ -3923,6 +3992,7 @@ a.video-title:hover {
     width: auto;
     min-width: 0;
     height: 74dvh;
+    justify-content: flex-end;
   }
 
   .game-panel-sheet {
