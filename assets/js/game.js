@@ -11,11 +11,63 @@ import { ICONS, prefersReducedMotion } from './ui.js';
 
 const ZONES = ZONE_LAYOUT.map(({ id }) => id);
 
+// Défilement doux du panneau : la molette et le rail fixent une cible, et le
+// contenu glisse vers elle image par image (au lieu de sauter par paliers).
+function initSmoothScroll(body) {
+  const reduced = prefersReducedMotion();
+  let target = 0;
+  let frame = 0;
+
+  const step = () => {
+    const distance = target - body.scrollTop;
+    if (Math.abs(distance) < 0.5) {
+      body.scrollTop = target;
+      frame = 0;
+      return;
+    }
+    body.scrollTop += distance * 0.16;
+    frame = requestAnimationFrame(step);
+  };
+
+  const scrollTo = (top) => {
+    const max = body.scrollHeight - body.clientHeight;
+    target = Math.min(max, Math.max(0, top));
+    if (reduced) {
+      body.scrollTop = target;
+      return;
+    }
+    if (!frame) {
+      frame = requestAnimationFrame(step);
+    }
+  };
+
+  // Arrête la glisse en cours (glisser sur le rail, toucher, clavier) sans à-coup.
+  const stop = () => {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    target = body.scrollTop;
+  };
+
+  body.addEventListener('wheel', (event) => {
+    // Zoom (Ctrl) et défilement horizontal du carrousel : on laisse faire le navigateur.
+    if (reduced || event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+      return;
+    }
+    event.preventDefault();
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? body.clientHeight : 1;
+    scrollTo((frame ? target : body.scrollTop) + event.deltaY * unit);
+  }, { passive: false });
+  body.addEventListener('touchstart', stop, { passive: true });
+  body.addEventListener('keydown', stop);
+
+  return { scrollTo, stop };
+}
+
 // Barre de défilement du panneau : un rail vertical sur lequel le wagon
-// descend avec la lecture. Clic ou glisser sur le rail pour se déplacer.
-// Le wagon glisse en douceur vers sa position (pas de saut quand des images
-// se chargent et allongent le contenu).
-function initPanelRail(body, rail) {
+// descend avec la lecture. Clic pour y glisser, glisser pour suivre le doigt.
+// Le wagon suit sa position en douceur (pas de saut quand des images se
+// chargent et allongent le contenu).
+function initPanelRail(body, rail, smooth) {
   const car = rail.querySelector('.panel-rail-car');
   car.innerHTML = CAR_SVG;
   const reduced = prefersReducedMotion();
@@ -27,7 +79,7 @@ function initPanelRail(body, rail) {
 
   const render = () => {
     frame = 0;
-    current = reduced || dragging ? target : current + (target - current) * 0.25;
+    current = reduced || dragging ? target : current + (target - current) * 0.35;
     if (Math.abs(target - current) < 0.3) {
       current = target;
     }
@@ -44,7 +96,7 @@ function initPanelRail(body, rail) {
       return;
     }
     // Le wagon pointe dans le sens de la lecture : vers le bas, ou vers le haut en remontant.
-    if (body.scrollTop !== lastTop) {
+    if (Math.abs(body.scrollTop - lastTop) > 1) {
       car.classList.toggle('is-up', body.scrollTop < lastTop);
       lastTop = body.scrollTop;
     }
@@ -54,26 +106,31 @@ function initPanelRail(body, rail) {
     }
   };
 
-  const scrollToPointer = (event) => {
+  const topAtPointer = (event) => {
     const rect = rail.getBoundingClientRect();
     const ratio = Math.min(1, Math.max(0, (event.clientY - rect.top - car.offsetHeight / 2) / (rect.height - car.offsetHeight)));
-    body.scrollTop = ratio * (body.scrollHeight - body.clientHeight);
+    return ratio * (body.scrollHeight - body.clientHeight);
   };
 
   rail.addEventListener('pointerdown', (event) => {
     event.preventDefault();
     dragging = true;
-    rail.setPointerCapture(event.pointerId);
-    scrollToPointer(event);
+    try {
+      rail.setPointerCapture(event.pointerId);
+    } catch {
+      // Pointeur déjà relâché : le clic suffit, sans capture.
+    }
+    smooth.scrollTo(topAtPointer(event));
   });
   rail.addEventListener('pointermove', (event) => {
-    if (dragging) {
-      scrollToPointer(event);
+    if (dragging && event.buttons) {
+      smooth.stop();
+      body.scrollTop = topAtPointer(event);
     }
   });
-  const stop = () => { dragging = false; };
-  rail.addEventListener('pointerup', stop);
-  rail.addEventListener('pointercancel', stop);
+  const release = () => { dragging = false; };
+  rail.addEventListener('pointerup', release);
+  rail.addEventListener('pointercancel', release);
 
   body.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update, { passive: true });
@@ -97,7 +154,8 @@ export function initGame(getPark) {
   const section = document.getElementById('game-panel-section');
   const station = document.getElementById('game-panel-station');
   const sections = ZONES.map((id) => document.getElementById(id)).filter(Boolean);
-  const updateRail = initPanelRail(body, panel.querySelector('.panel-rail'));
+  const smooth = initSmoothScroll(body);
+  const updateRail = initPanelRail(body, panel.querySelector('.panel-rail'), smooth);
   const reduced = prefersReducedMotion();
   let current = null;
   let timer = 0;
@@ -121,6 +179,7 @@ export function initGame(getPark) {
     relabel();
     getPark()?.focusZone(id);
     panel.hidden = false;
+    smooth.stop();
     body.scrollTop = 0;
     requestAnimationFrame(updateRail);
     // Le panneau arrive pendant que la caméra zoome sur l'attraction.

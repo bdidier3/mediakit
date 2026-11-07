@@ -767,7 +767,10 @@ export async function initPark3d(root, { onSelect } = {}) {
     renderer.render(scene, camera);
 
     const settling = focus.amount !== focus.goal || Math.abs(view.target - view.azimuth) > 0.0005 || Math.abs(view.polarTarget - view.polar) > 0.0005 || Math.abs(view.pointerX - view.px) > 0.001;
-    if (visible && (!reduced || settling || !opened)) {
+    // Zoom terminé sur une attraction : le parc s'arrête derrière le panneau
+    // (moins de calcul, défilement du panneau plus fluide). Il repart au retour.
+    const parked = focus.goal === 1 && focus.amount === 1 && !dragging;
+    if (visible && ((!reduced && !parked) || settling || !opened)) {
       frame = requestAnimationFrame(renderFrame);
     }
   }
